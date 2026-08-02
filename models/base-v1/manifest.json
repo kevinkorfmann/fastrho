@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "model_id": "base-v1",
+  "artifact_version": "1",
+  "status": "available",
+  "paper_roles": [
+    "ordinary-demography phased specialist",
+    "base architecture benchmark"
+  ],
+  "files": {
+    "checkpoint": {
+      "name": "model.ckpt",
+      "bytes": 196914893,
+      "sha256": "353945b4bfd0a1c1043afc7b48cb294ac810341b28ba152916c22e54d04cbc15"
+    },
+    "stats": {
+      "name": "feat_stats.npz",
+      "bytes": 3042,
+      "sha256": "b2d0d08f061685120fc7afce15d96334993c124a9f417ff75c547f1aae57642e",
+      "source_sha256": "5941846fbc1a070a56ec1ff945695c4675f030d09daec0179307838645b0be05"
+    }
+  },
+  "training": {
+    "seed": 0,
+    "regions": 15000,
+    "validation_regions": 400,
+    "selected_epoch": 45,
+    "global_step": 7176,
+    "historical_source_revision": "301108f52210197cd83a4a1c7e849788572e0970",
+    "input_views": [
+      "phased"
+    ],
+    "feature_count": 17,
+    "conditioning_dimensions": 2
+  },
+  "release": {
+    "doi": null,
+    "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/base-v1",
+    "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/base-v1/base-v1.zip",
+    "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/base-v1/model.ckpt",
+    "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/base-v1/feat_stats.npz"
+  },
+  "license": "MIT"
+}

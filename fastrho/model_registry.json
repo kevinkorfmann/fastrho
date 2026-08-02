@@ -4,7 +4,7 @@
   "models": [
     {
       "id": "domain-randomized-v1",
-      "role": "primary phased and unphased model",
+      "role": "primary phased and unphased general model",
       "status": "available",
       "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/domain-randomized-v1",
       "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/domain-randomized-v1.zip",
@@ -16,28 +16,107 @@
       "stats_sha256": "6198b021f1df6bba48cb672a71386d188714f3e87c5cb166dbdee25c497e55ba",
       "model_card": "models/domain-randomized-v1/MODEL_CARD.md",
       "artifact_manifest": "models/domain-randomized-v1/manifest.json",
-      "supported_inputs": ["phased", "unphased", "unpolarized"],
+      "supported_inputs": [
+        "phased",
+        "unphased",
+        "unpolarized"
+      ],
+      "public_release": true
+    },
+    {
+      "id": "base-v1",
+      "role": "ordinary-demography phased specialist",
+      "status": "available",
+      "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/base-v1",
+      "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/base-v1/base-v1.zip",
+      "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/base-v1/model.ckpt",
+      "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/base-v1/feat_stats.npz",
+      "sha256": "77d2497241b747a057f10d248650593c0af6f83e0e8695b893f06be171f9d614",
+      "archive_sha256": "77d2497241b747a057f10d248650593c0af6f83e0e8695b893f06be171f9d614",
+      "checkpoint_sha256": "353945b4bfd0a1c1043afc7b48cb294ac810341b28ba152916c22e54d04cbc15",
+      "stats_sha256": "b2d0d08f061685120fc7afce15d96334993c124a9f417ff75c547f1aae57642e",
+      "model_card": "models/base-v1/MODEL_CARD.md",
+      "artifact_manifest": "models/base-v1/manifest.json",
+      "supported_inputs": [
+        "phased"
+      ],
+      "public_release": true
+    },
+    {
+      "id": "composite-ld-v1",
+      "role": "unphased and unpolarized composite-LD specialist",
+      "status": "available",
+      "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/composite-ld-v1",
+      "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/composite-ld-v1/composite-ld-v1.zip",
+      "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/composite-ld-v1/model.ckpt",
+      "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/composite-ld-v1/feat_stats.npz",
+      "sha256": "35330b7393574c7f7e874db77db7fdb56f8a5b6afd67049af86bff5eee656d00",
+      "archive_sha256": "35330b7393574c7f7e874db77db7fdb56f8a5b6afd67049af86bff5eee656d00",
+      "checkpoint_sha256": "95a467ea54499e5b80458528da32f1f2b03843ce659446f1bd6ab2df4d12b0b2",
+      "stats_sha256": "1f1ccfc065b3fa87d4b7da7e48eaecee29655f848e20dde7d162ff1e969918c8",
+      "model_card": "models/composite-ld-v1/MODEL_CARD.md",
+      "artifact_manifest": "models/composite-ld-v1/manifest.json",
+      "supported_inputs": [
+        "unpolarized"
+      ],
+      "public_release": true
+    },
+    {
+      "id": "high-ne-v1",
+      "role": "high effective population size mosquito and dipteran specialist",
+      "status": "available",
+      "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/high-ne-v1",
+      "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/high-ne-v1/high-ne-v1.zip",
+      "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/high-ne-v1/model.ckpt",
+      "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/high-ne-v1/feat_stats.npz",
+      "sha256": "037c9baffaf0f209206645240b82be5c317202a0e18d62dfee3ba1c10b9fb3cd",
+      "archive_sha256": "037c9baffaf0f209206645240b82be5c317202a0e18d62dfee3ba1c10b9fb3cd",
+      "checkpoint_sha256": "4941f72fa5a0b6c812e265ef7fbb997d073d95c7785c328c3710d1ad03208875",
+      "stats_sha256": "547e5f529ea0a18bc531abeb1ec8b711f9a0ecc3be1236e7b9936f11e04203e4",
+      "model_card": "models/high-ne-v1/MODEL_CARD.md",
+      "artifact_manifest": "models/high-ne-v1/manifest.json",
+      "supported_inputs": [
+        "phased"
+      ],
       "public_release": true
     },
     {
       "id": "selfing-v1",
-      "role": "selfing-regime specialist",
-      "status": "artifact-pending",
-      "checkpoint_url": null,
-      "stats_url": null,
-      "sha256": null,
-      "supported_inputs": ["unpolarized"],
-      "public_release": false
+      "role": "predominant-selfing phased specialist",
+      "status": "available",
+      "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/selfing-v1",
+      "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/selfing-v1/selfing-v1.zip",
+      "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/selfing-v1/model.ckpt",
+      "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/selfing-v1/feat_stats.npz",
+      "sha256": "d27a8aff78ad92cf20321544b47ac465e7c2fc5d11b71b87acf44201cef5b8dc",
+      "archive_sha256": "d27a8aff78ad92cf20321544b47ac465e7c2fc5d11b71b87acf44201cef5b8dc",
+      "checkpoint_sha256": "be51f3ceb7d8d206c15f54e2301d12b3f64e2a366fdc3472dacae7f310d27799",
+      "stats_sha256": "12ea406f40c134fe8b4e62ad1927b40a185d83cbd80b5ce846a3ac4ceea3aa30",
+      "model_card": "models/selfing-v1/MODEL_CARD.md",
+      "artifact_manifest": "models/selfing-v1/manifest.json",
+      "supported_inputs": [
+        "phased"
+      ],
+      "public_release": true
     },
     {
-      "id": "high-ne-v1",
-      "role": "high effective population size specialist",
-      "status": "artifact-pending",
-      "checkpoint_url": null,
-      "stats_url": null,
-      "sha256": null,
-      "supported_inputs": ["phased"],
-      "public_release": false
+      "id": "dog-bottleneck-v1",
+      "role": "severe canine bottleneck specialist",
+      "status": "available",
+      "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/dog-bottleneck-v1",
+      "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/dog-bottleneck-v1/dog-bottleneck-v1.zip",
+      "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/dog-bottleneck-v1/model.ckpt",
+      "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/dog-bottleneck-v1/feat_stats.npz",
+      "sha256": "f5282a7d2bdc850a1a2a63c1ef43984311a08bc7ee7b74cb98d72906ae2f3b75",
+      "archive_sha256": "f5282a7d2bdc850a1a2a63c1ef43984311a08bc7ee7b74cb98d72906ae2f3b75",
+      "checkpoint_sha256": "326f2df597606e90998828c0cc39d437dc6ce64bf14a7336ff133dbfb03d95b9",
+      "stats_sha256": "d21fcf67597db8caa8108bde641c8e390901258e503fd96f48feec4119caeede",
+      "model_card": "models/dog-bottleneck-v1/MODEL_CARD.md",
+      "artifact_manifest": "models/dog-bottleneck-v1/manifest.json",
+      "supported_inputs": [
+        "unpolarized"
+      ],
+      "public_release": true
     }
   ]
 }

@@ -137,3 +137,30 @@ def test_primary_model_manifest_is_deposit_ready() -> None:
     assert manifest["training"]["validation_pearson"] == pytest.approx(0.8618586659431458)
     assert manifest["release"]["landing_page"].startswith("https://github.com/")
     assert manifest["release"]["archive_url"].endswith("domain-randomized-v1.zip")
+
+
+def test_public_registry_exposes_qualified_checkpoint_set() -> None:
+    registry = json.loads(
+        (release.ROOT / "fastrho" / "model_registry.json").read_text(encoding="utf-8")
+    )
+    expected_inputs = {
+        "domain-randomized-v1": {"phased", "unphased", "unpolarized"},
+        "base-v1": {"phased"},
+        "composite-ld-v1": {"unpolarized"},
+        "high-ne-v1": {"phased"},
+        "selfing-v1": {"phased"},
+        "dog-bottleneck-v1": {"unpolarized"},
+    }
+    models = {record["id"]: record for record in registry["models"]}
+    assert set(models) == set(expected_inputs)
+
+    for model_id, inputs in expected_inputs.items():
+        record = models[model_id]
+        assert record["status"] == "available"
+        assert set(record["supported_inputs"]) == inputs
+        manifest = json.loads(
+            (release.ROOT / record["artifact_manifest"]).read_text(encoding="utf-8")
+        )
+        assert manifest["model_id"] == model_id
+        assert manifest["files"]["checkpoint"]["sha256"] == record["checkpoint_sha256"]
+        assert manifest["files"]["stats"]["sha256"] == record["stats_sha256"]

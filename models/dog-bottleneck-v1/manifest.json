@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "model_id": "dog-bottleneck-v1",
+  "artifact_version": "1",
+  "status": "available",
+  "paper_roles": [
+    "canine bottleneck specialist",
+    "village-dog to breed transfer analysis"
+  ],
+  "files": {
+    "checkpoint": {
+      "name": "model.ckpt",
+      "bytes": 196914893,
+      "sha256": "326f2df597606e90998828c0cc39d437dc6ce64bf14a7336ff133dbfb03d95b9"
+    },
+    "stats": {
+      "name": "feat_stats.npz",
+      "bytes": 3082,
+      "sha256": "d21fcf67597db8caa8108bde641c8e390901258e503fd96f48feec4119caeede",
+      "source_sha256": "948f74011045ed217e5eed274ae241bc50251eaadb3f5ed7cb6fa62f8ac1aa1b"
+    }
+  },
+  "training": {
+    "seed": 0,
+    "regions": 15000,
+    "validation_regions": 300,
+    "selected_epoch": 17,
+    "global_step": 2808,
+    "historical_source_revision": "301108f52210197cd83a4a1c7e849788572e0970",
+    "input_views": [
+      "unpolarized"
+    ],
+    "feature_count": 17,
+    "conditioning_dimensions": 2,
+    "ld_radii_bp": [
+      5000,
+      25000,
+      50000
+    ]
+  },
+  "release": {
+    "doi": null,
+    "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/dog-bottleneck-v1",
+    "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/dog-bottleneck-v1/dog-bottleneck-v1.zip",
+    "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/dog-bottleneck-v1/model.ckpt",
+    "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/dog-bottleneck-v1/feat_stats.npz"
+  },
+  "license": "MIT"
+}

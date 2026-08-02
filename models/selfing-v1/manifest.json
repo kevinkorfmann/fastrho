@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "model_id": "selfing-v1",
+  "artifact_version": "1",
+  "status": "available",
+  "paper_roles": [
+    "Arabidopsis selfing specialist",
+    "selfing-aware historical LD analysis"
+  ],
+  "files": {
+    "checkpoint": {
+      "name": "model.ckpt",
+      "bytes": 196914893,
+      "sha256": "be51f3ceb7d8d206c15f54e2301d12b3f64e2a366fdc3472dacae7f310d27799"
+    },
+    "stats": {
+      "name": "feat_stats.npz",
+      "bytes": 3054,
+      "sha256": "12ea406f40c134fe8b4e62ad1927b40a185d83cbd80b5ce846a3ac4ceea3aa30",
+      "source_sha256": "f5467d180ab245576bc80906277b98f31c3bcbb081f503319e627e414e4f6efd"
+    }
+  },
+  "training": {
+    "seed": 0,
+    "regions": 4000,
+    "validation_regions": 300,
+    "selected_epoch": 48,
+    "global_step": 2058,
+    "historical_source_revision": null,
+    "input_views": [
+      "phased"
+    ],
+    "feature_count": 17,
+    "conditioning_dimensions": 2,
+    "historical_campaign": "campaign_self2"
+  },
+  "release": {
+    "doi": null,
+    "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/selfing-v1",
+    "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/selfing-v1/selfing-v1.zip",
+    "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/selfing-v1/model.ckpt",
+    "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/selfing-v1/feat_stats.npz"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "model_id": "high-ne-v1",
+  "artifact_version": "1",
+  "status": "available",
+  "paper_roles": [
+    "high-effective-population-size dipteran specialist",
+    "Anopheles population atlas"
+  ],
+  "files": {
+    "checkpoint": {
+      "name": "model.ckpt",
+      "bytes": 196914893,
+      "sha256": "4941f72fa5a0b6c812e265ef7fbb997d073d95c7785c328c3710d1ad03208875"
+    },
+    "stats": {
+      "name": "feat_stats.npz",
+      "bytes": 3054,
+      "sha256": "547e5f529ea0a18bc531abeb1ec8b711f9a0ecc3be1236e7b9936f11e04203e4",
+      "source_sha256": "4bb92ade2dfc50f76eff1a7524f1684aae59270820d7a8281d713c6bb7b367da"
+    }
+  },
+  "training": {
+    "seed": 0,
+    "regions": 15000,
+    "validation_regions": 300,
+    "selected_epoch": 37,
+    "global_step": 5928,
+    "historical_source_revision": "301108f52210197cd83a4a1c7e849788572e0970",
+    "input_views": [
+      "phased"
+    ],
+    "feature_count": 17,
+    "conditioning_dimensions": 2,
+    "maximum_effective_population_size": 2000000,
+    "maximum_mean_recombination_rate_per_bp": 5e-8
+  },
+  "release": {
+    "doi": null,
+    "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/high-ne-v1",
+    "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/high-ne-v1/high-ne-v1.zip",
+    "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/high-ne-v1/model.ckpt",
+    "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/high-ne-v1/feat_stats.npz"
+  },
+  "license": "MIT"
+}

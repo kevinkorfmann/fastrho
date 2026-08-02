@@ -15,14 +15,17 @@ For a VCF, `auto` distinguishes phased (`|`) from unphased (`/`) GT calls. It ca
 alleles are polarized. Never feed unphased data to a phased-only checkpoint or silently treat an
 unknown reference allele as ancestral.
 
-The machine-readable registry included with the package, `fastrho/model_registry.json`, currently
-declares one released general model and two planned specialist artifacts:
+The machine-readable registry included with the package, `fastrho/model_registry.json`, declares
+one released general model and five specialist artifacts:
 
 | Model | Intended use | Views | Status |
 |---|---|---|---|
 | `domain-randomized-v1` | Primary general model | phased, unphased, unpolarized | `available` |
-| `selfing-v1` | Strong-selfing regime | unpolarized | `artifact-pending` |
-| `high-ne-v1` | High-$N_e$ regime | phased | `artifact-pending` |
+| `base-v1` | Ordinary-demography specialist | phased | `available` |
+| `composite-ld-v1` | Folded composite-LD specialist | unpolarized | `available` |
+| `high-ne-v1` | Mosquito/dipteran high-$N_e$ regime | phased | `available` |
+| `selfing-v1` | Strong-selfing regime | phased | `available` |
+| `dog-bottleneck-v1` | Severe canine bottleneck regime | unpolarized | `available` |
 
 The numerical ranges in a model's training manifest are a qualification domain, not a guarantee for
 every dataset inside those ranges.
@@ -32,27 +35,28 @@ every dataset inside those ranges.
 The Python API is identical for every model. Choose a biological regime, keep its checkpoint and
 statistics archive together, and pass an input view that the registry declares:
 
-:::{note}
-Only `domain-randomized-v1` is currently downloadable. The specialist rows document intended
-selection behavior for artifacts whose registry status is still `artifact-pending`.
-:::
-
 | Start with | Use it for | Set `input_mode` to |
 |---|---|---|
 | `domain-randomized-v1` | General outbred transfer across diverse demographic histories | `phased`, `unphased`, or `unpolarized` |
-| `selfing-v1` | Predominantly selfing populations | `unpolarized` |
+| `base-v1` | Ordinary-demography data with reliable phase and ancestral state | `phased` |
+| `composite-ld-v1` | Unphased and unpolarized diploid data | `unpolarized` |
+| `selfing-v1` | Predominantly selfing populations represented as polarized haplotypes | `phased` |
 | `high-ne-v1` | High-diversity, high-$N_e$ cohorts | `phased` |
+| `dog-bottleneck-v1` | Village-dog or breed-like bottleneck histories | `unpolarized` |
 
 ```python
 from pathlib import Path
 import fastrho
 
-model_id = "domain-randomized-v1"  # selfing-v1 and high-ne-v1 are not released yet
+model_id = "domain-randomized-v1"
 bundle = Path("downloaded-models") / model_id
 input_mode = {
     "domain-randomized-v1": "unpolarized",  # phased/unphased are also supported
-    "selfing-v1": "unpolarized",
+    "base-v1": "phased",
+    "composite-ld-v1": "unpolarized",
+    "selfing-v1": "phased",
     "high-ne-v1": "phased",
+    "dog-bottleneck-v1": "unpolarized",
 }[model_id]
 
 pred = fastrho.quick_map_from_vcf(
@@ -105,6 +109,10 @@ Recent bottlenecks can erase fine-scale information. Selfing changes effective r
 Inversions, selection, admixture, and relatedness can create long-range LD that resembles suppressed
 crossing over. Choose a specialized checkpoint only when its training regime matches the mechanism
 you intend to model.
+
+Large sample size is not the same qualification as large effective population size. `high-ne-v1`
+targets the latter. The experimental large-$n$ `rich` checkpoint is not publicly registered because
+it did not establish a general advantage on its target neutral high-$n$ benchmark.
 
 ## Pick a reporting scale
 

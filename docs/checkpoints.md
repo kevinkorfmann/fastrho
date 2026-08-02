@@ -1,8 +1,24 @@
-# Checkpoints: download and verify
+# Checkpoints: choose, download, and verify
 
-The current released model is `domain-randomized-v1`. Its checkpoint supports phased, unphased, and
-unpolarized inputs; its matching `feat_stats.npz` model companion is mandatory. The registry points
-to a public, checksummed download for this model release.
+fastrho publishes one general model and five qualified specialists. Every release contains a
+checkpoint and its mandatory `feat_stats.npz` companion; never mix files between releases.
+
+| Model | Use when | Required `input_mode` |
+|---|---|---|
+| `domain-randomized-v1` | General use; one model across phased, unphased, and unpolarized data | matching view |
+| `base-v1` | Ordinary-demography, phased and ancestrally polarized haplotypes | `phased` |
+| `composite-ld-v1` | Unphased diploid genotypes without trustworthy ancestral polarization | `unpolarized` |
+| `high-ne-v1` | Very large effective population size, especially mosquitoes and other dipterans | `phased` |
+| `selfing-v1` | Predominantly selfing, near-homozygous accessions represented as haplotypes | `phased` |
+| `dog-bottleneck-v1` | Village-dog/breed-like severe bottleneck histories | `unpolarized` |
+
+Read the model card linked by the registry before choosing a specialist. A biological label does not
+override the input contract: notably, `selfing-v1` is a phased haplotype model, while the dog model
+uses folded unpolarized genotype tokens.
+
+If an older installed fastrho version reports an unknown specialist ID, install the current source
+release or download the bundle directly from its linked GitHub Release. The artifact remains
+verifiable from the archive SHA-256 in the registry and release page.
 
 ## Download with verification
 
@@ -12,8 +28,11 @@ fastrho-fetch-model \
   --output-dir downloaded-models
 ```
 
+Change `--model-id` to any available model above. For example, download the mosquito/high-$N_e$
+specialist with `--model-id high-ne-v1`.
+
 The fetcher reads the machine registry, downloads the versioned archive, checks the archive digest,
-checks every embedded member, and only then unpacks it. The usable files are:
+checks every embedded member, and only then unpacks it. For the example above, the usable files are:
 
 ```text
 downloaded-models/domain-randomized-v1/model.ckpt
@@ -50,9 +69,9 @@ your VCF would change the model's input scale and invalidate the pretrained chec
 ## What should I do with it?
 
 For a new cohort, chromosome, population, or species: **nothing**. Use the unchanged archive from
-the same release as `model.ckpt`. The domain-randomized archive already contains separate scaling
-arrays for its supported phased, unphased, and unpolarized views; `input_mode` selects the correct
-set.
+the same release as `model.ckpt`. The domain-randomized archive contains separate scaling arrays for
+its supported views; a single-view specialist contains metadata that selects and enforces its one
+training-time featurizer.
 
 ```python
 from pathlib import Path
@@ -108,6 +127,13 @@ simulation priors, feature views, optimization settings, and the checkpoint-sele
 training can still differ at the bit level across hardware or CUDA libraries. A retrain should be
 compared on the held-out benchmark suite; it should not be relabeled as the released checkpoint unless
 its files match the published hashes exactly.
+
+## Experimental checkpoints not released as defaults
+
+The retained `rich` large-sample-size checkpoint remains a research artifact. It was developed for
+roughly 200-haplotype neutral human panels, but its own evaluation did not establish a general
+advantage over pyrho in that regime. It is therefore not in the public registry. Large sample size
+is also different from large effective population size: use `high-ne-v1` for the latter.
 
 ## Retraining
 

@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "model_id": "composite-ld-v1",
+  "artifact_version": "1",
+  "status": "available",
+  "paper_roles": [
+    "unphased and unpolarized specialist",
+    "folded composite-LD comparison"
+  ],
+  "files": {
+    "checkpoint": {
+      "name": "model.ckpt",
+      "bytes": 196914893,
+      "sha256": "95a467ea54499e5b80458528da32f1f2b03843ce659446f1bd6ab2df4d12b0b2"
+    },
+    "stats": {
+      "name": "feat_stats.npz",
+      "bytes": 3074,
+      "sha256": "1f1ccfc065b3fa87d4b7da7e48eaecee29655f848e20dde7d162ff1e969918c8",
+      "source_sha256": "bb5fc12d248237a76472e636f27442d0d5d55370298df0504d3066a21f72bab2"
+    }
+  },
+  "training": {
+    "seed": 0,
+    "regions": 15000,
+    "validation_regions": 400,
+    "selected_epoch": 44,
+    "global_step": 7020,
+    "historical_source_revision": "301108f52210197cd83a4a1c7e849788572e0970",
+    "input_views": [
+      "unpolarized"
+    ],
+    "feature_count": 17,
+    "conditioning_dimensions": 2
+  },
+  "release": {
+    "doi": null,
+    "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/composite-ld-v1",
+    "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/composite-ld-v1/composite-ld-v1.zip",
+    "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/composite-ld-v1/model.ckpt",
+    "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/composite-ld-v1/feat_stats.npz"
+  },
+  "license": "MIT"
+}
