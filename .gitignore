@@ -1,0 +1,32 @@
+# Python environments, caches, coverage, and packages
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+lightning_logs/
+build/
+dist/
+*.egg-info/
+
+# Local operating-system and editor state
+.DS_Store
+.idea/
+.vscode/
+*~
+*.swp
+
+# Local data, downloaded models, checkpoints, and generated output
+data/
+downloaded-models/
+checkpoints/
+tmp/
+output/
+docs/_build/
+
+# Genomic indexes belong beside uncommitted source data
+*.csi
+*.tbi

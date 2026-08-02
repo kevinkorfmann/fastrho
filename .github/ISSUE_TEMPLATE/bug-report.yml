@@ -1,0 +1,41 @@
+name: Bug report
+description: Report incorrect behavior in the package, CLI, or data pipeline.
+title: "[bug] "
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping make fastrho more reliable.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include the command or API call, expected behavior, and observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide a small example or the shortest sequence of steps that reproduces the problem.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: fastrho version or commit
+      placeholder: 0.1.0 or a commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python, operating system, accelerator, and relevant package versions.
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Data safety
+      options:
+        - label: I removed credentials, private genotype data, and restricted dataset content.
+          required: true

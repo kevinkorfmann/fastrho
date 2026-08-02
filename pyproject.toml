@@ -1,0 +1,85 @@
+[project]
+name = "fastrho"
+version = "0.1.0"
+description = "Amortized fine-scale recombination-map inference with bidirectional Mamba SSMs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Kevin Korfmann" }]
+keywords = ["population genetics", "recombination", "genomics", "Mamba"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+dependencies = [
+    "numpy>=1.26,<3",
+    "scipy>=1.11,<2",
+    "tqdm>=4.66",
+    "msprime>=1.3,<2",
+    "tskit>=0.5.6,<2",
+    "numba>=0.59",
+]
+
+[project.optional-dependencies]
+inference = ["torch>=2.4", "mamba-ssm>=2.2", "causal-conv1d>=1.4", "einops>=0.7"]
+train = ["torch>=2.4", "mamba-ssm>=2.2", "causal-conv1d>=1.4", "lightning>=2.4", "einops>=0.7"]
+# Backward-compatible extra name.
+torch = ["torch>=2.4", "mamba-ssm>=2.2", "causal-conv1d>=1.4", "lightning>=2.4", "einops>=0.7"]
+sim = ["stdpopsim>=0.3.0"]
+# I/O conveniences: cyvcf2 accelerates VCF reading, pandas backs fastrho.to_dataframe.
+io = ["cyvcf2", "pandas"]
+eval = ["scikit-learn"]
+figures = ["matplotlib>=3.8,<4"]
+dev = ["pytest>=8", "ruff>=0.9", "build>=1.2"]
+
+[project.urls]
+Repository = "https://github.com/kevinkorfmann/fastrho"
+Documentation = "https://fastrho.readthedocs.io/"
+Issues = "https://github.com/kevinkorfmann/fastrho/issues"
+Changelog = "https://github.com/kevinkorfmann/fastrho/blob/main/CHANGELOG.md"
+
+[project.scripts]
+fastrho-simulate = "fastrho.simulate:main"
+fastrho-preprocess = "fastrho.preprocess:main"
+fastrho-train = "fastrho.train:main"
+fastrho = "fastrho.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["fastrho"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/fastrho",
+    "/tests",
+    "/docs",
+    "/README.md",
+    "/LICENSE",
+    "/CITATION.cff",
+    "/pyproject.toml",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv.extra-build-dependencies]
+# Both extension packages import torch from setup.py but omit it from their
+# isolated PEP 517 build requirements. Keep the locked torch build visible to
+# their builders on Betty rather than disabling isolation globally.
+mamba-ssm = ["torch", "numpy"]
+causal-conv1d = ["torch", "numpy"]

@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "model_id": "domain-randomized-v1",
+  "artifact_version": "1",
+  "status": "available",
+  "release_roles": [
+    "general-purpose phased, unphased, and unpolarized inference"
+  ],
+  "files": {
+    "checkpoint": {
+      "name": "model.ckpt",
+      "bytes": 196930253,
+      "sha256": "d1ef4caae0c16b8c0cb1e5cfc79d1982950bff2e3509ea08a9f244fc9bb3f79f"
+    },
+    "stats": {
+      "name": "feat_stats.npz",
+      "bytes": 4308,
+      "sha256": "6198b021f1df6bba48cb672a71386d188714f3e87c5cb166dbdee25c497e55ba"
+    }
+  },
+  "training": {
+    "seed": 0,
+    "regions": 15000,
+    "validation_regions": 400,
+    "validation_seed_overlap_is_historical": true,
+    "selected_epoch": 53,
+    "validation_pearson": 0.8618586659431458,
+    "global_step": 8424,
+    "input_views": [
+      "phased",
+      "unphased",
+      "unpolarized"
+    ]
+  },
+  "release": {
+    "doi": null,
+    "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/domain-randomized-v1",
+    "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/domain-randomized-v1.zip",
+    "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/model.ckpt",
+    "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/feat_stats.npz"
+  },
+  "license": "MIT"
+}

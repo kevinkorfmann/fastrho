@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use fastrho, cite the archived software release."
+title: "fastrho"
+type: software
+version: 0.1.0
+date-released: 2026-07-20
+authors:
+  - family-names: Korfmann
+    given-names: Kevin
+  - family-names: Mathieson
+    given-names: Sara
+repository-code: "https://github.com/kevinkorfmann/fastrho"
+license: MIT
+keywords:
+  - population genetics
+  - recombination maps
+  - state-space models

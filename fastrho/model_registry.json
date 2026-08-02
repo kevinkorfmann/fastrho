@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "package_version": "0.1.0",
+  "models": [
+    {
+      "id": "domain-randomized-v1",
+      "role": "primary phased and unphased model",
+      "status": "available",
+      "landing_page": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/domain-randomized-v1",
+      "archive_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/domain-randomized-v1.zip",
+      "checkpoint_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/model.ckpt",
+      "stats_url": "https://github.com/kevinkorfmann/fastrho-models/releases/download/domain-randomized-v1/feat_stats.npz",
+      "sha256": "b4c711f7031372e11a85229ac726675bbd16ad6875030d581e5cab2eeb1e97d7",
+      "archive_sha256": "b4c711f7031372e11a85229ac726675bbd16ad6875030d581e5cab2eeb1e97d7",
+      "checkpoint_sha256": "d1ef4caae0c16b8c0cb1e5cfc79d1982950bff2e3509ea08a9f244fc9bb3f79f",
+      "stats_sha256": "6198b021f1df6bba48cb672a71386d188714f3e87c5cb166dbdee25c497e55ba",
+      "model_card": "models/domain-randomized-v1/MODEL_CARD.md",
+      "artifact_manifest": "models/domain-randomized-v1/manifest.json",
+      "supported_inputs": ["phased", "unphased", "unpolarized"],
+      "public_release": true
+    },
+    {
+      "id": "selfing-v1",
+      "role": "selfing-regime specialist",
+      "status": "artifact-pending",
+      "checkpoint_url": null,
+      "stats_url": null,
+      "sha256": null,
+      "supported_inputs": ["unpolarized"],
+      "public_release": false
+    },
+    {
+      "id": "high-ne-v1",
+      "role": "high effective population size specialist",
+      "status": "artifact-pending",
+      "checkpoint_url": null,
+      "stats_url": null,
+      "sha256": null,
+      "supported_inputs": ["phased"],
+      "public_release": false
+    }
+  ]
+}
