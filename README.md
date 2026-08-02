@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/_static_public/fastrho_schematic.png" width="960" alt="fastrho method schematic showing SNP feature tokens, bidirectional state-space inference, and interval-level recombination-rate output">
+  <img src="https://raw.githubusercontent.com/kevinkorfmann/fastrho/main/docs/_static_public/fastrho_schematic.png" width="960" alt="fastrho method schematic showing SNP feature tokens, bidirectional state-space inference, and interval-level recombination-rate output">
 </p>
 
 `fastrho` is a research package for amortized, fine-scale recombination-map inference. A

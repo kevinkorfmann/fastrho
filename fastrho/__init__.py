@@ -34,7 +34,7 @@ __version__ = "0.1.0"
 
 # The inference code lives in ``fastrho.translate``, which imports torch at module top.
 # Re-export everything lazily (PEP 562) so a bare ``import fastrho`` -- used by the docs
-# build, the paper-number tests, and any CPU-only tooling -- never imports torch/mamba-ssm.
+# build, the test suite, and any CPU-only tooling -- never imports torch/mamba-ssm.
 # Torch-free helpers (VCF reading, tidy output) resolve from ``fastrho.io`` so they keep
 # working with no GPU stack installed; the rest resolve from ``fastrho.translate``.
 _IO_EXPORTS = (

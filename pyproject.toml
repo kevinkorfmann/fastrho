@@ -5,13 +5,19 @@ description = "Amortized fine-scale recombination-map inference with bidirection
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-authors = [{ name = "Kevin Korfmann" }]
+authors = [
+    { name = "Kevin Korfmann" },
+    { name = "Sara Mathieson" },
+]
 keywords = ["population genetics", "recombination", "genomics", "Mamba"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
 
