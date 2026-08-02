@@ -1,6 +1,6 @@
 [project]
 name = "fastrho"
-version = "0.1.0"
+version = "0.1.1"
 description = "Amortized fine-scale recombination-map inference with bidirectional Mamba SSMs"
 readme = "README.md"
 license = "MIT"
@@ -53,6 +53,8 @@ fastrho-simulate = "fastrho.simulate:main"
 fastrho-preprocess = "fastrho.preprocess:main"
 fastrho-train = "fastrho.train:main"
 fastrho = "fastrho.cli:main"
+fastrho-fetch-model = "fastrho.model_release:main"
+fastrho-verify-model = "fastrho.model_release:verify_main"
 
 [build-system]
 requires = ["hatchling"]

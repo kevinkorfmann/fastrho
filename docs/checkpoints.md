@@ -6,10 +6,8 @@ to a public, checksummed download for this model release.
 
 ## Download with verification
 
-From the repository root:
-
 ```bash
-python3 scripts/fetch_model_release.py \
+fastrho-fetch-model \
   --model-id domain-randomized-v1 \
   --output-dir downloaded-models
 ```
@@ -94,9 +92,9 @@ the two paths shown above; there is no separate setup step for `feat_stats.npz`.
 For files obtained another way, verify them directly:
 
 ```bash
-python3 scripts/verify_model_release.py \
+fastrho-verify-model \
   --model-id domain-randomized-v1 \
-  --checkpoint model.ckpt --stats feat_stats.npz
+  --bundle downloaded-models/domain-randomized-v1
 ```
 
 ## What is exactly reproducible

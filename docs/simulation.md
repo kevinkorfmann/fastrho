@@ -6,7 +6,7 @@ to genotypes, fastrho inference, aligned windows, and quantitative evaluation.
 :::{important}
 This example requires a compatible model bundle. `feat_stats.npz` is the checkpoint's unchanged
 companion archive, not statistics computed from this simulation. Download and verify both files
-with `scripts/fetch_model_release.py`; see {ref}`feat-stats-file`.
+with `fastrho-fetch-model`; see {ref}`feat-stats-file`.
 :::
 
 ## Simulate, infer, and score

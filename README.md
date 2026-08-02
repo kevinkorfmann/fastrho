@@ -6,7 +6,8 @@
 
 <p align="center">
   <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="API tests" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml/badge.svg"></a>
-  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="29 tests passing" src="https://img.shields.io/badge/tests-29%20passing-brightgreen?logo=pytest&logoColor=white"></a>
+  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="31 tests passing" src="https://img.shields.io/badge/tests-31%20passing-brightgreen?logo=pytest&logoColor=white"></a>
+  <a href="https://pypi.org/project/fastrho/"><img alt="PyPI" src="https://img.shields.io/pypi/v/fastrho?logo=pypi&logoColor=white"></a>
   <a href="https://fastrho.readthedocs.io/"><img alt="Documentation" src="https://img.shields.io/badge/docs-Read%20the%20Docs-8CA1AF?logo=readthedocs&logoColor=white"></a>
   <img alt="Tested on Python 3.10 and 3.12" src="https://img.shields.io/badge/Python-3.10%20%7C%203.12-3776AB?logo=python&logoColor=white">
   <img alt="Research alpha" src="https://img.shields.io/badge/status-research%20alpha-f59e0b">
@@ -33,7 +34,14 @@ the population-scaled recombination rate for every adjacent-SNP interval.
 
 ## Installation
 
-Clone the public source repository and create the locked environment:
+Install the CPU package and common VCF/DataFrame helpers from PyPI:
+
+```bash
+python -m pip install "fastrho[io]"
+```
+
+GPU inference requires Linux, an NVIDIA GPU, and compatible PyTorch, CUDA, and Mamba-SSM builds.
+For the fully locked inference environment, clone the public source repository:
 
 ```bash
 git clone https://github.com/kevinkorfmann/fastrho.git
@@ -42,8 +50,7 @@ uv sync --frozen --extra inference --extra io
 source .venv/bin/activate
 ```
 
-Inference is tested on Python 3.10 and 3.12 and requires Linux, an NVIDIA GPU, and a CUDA toolchain
-compatible with the locked PyTorch and Mamba-SSM builds. `uv` is recommended because the lockfile
+Inference is tested on Python 3.10 and 3.12. `uv` is recommended for inference because the lockfile
 also records the extension build requirements. CPU-only VCF inspection, simulation, and data
 conversion do not load the model. Record the environment used for a run with its checkpoint IDs.
 
@@ -54,7 +61,7 @@ companion. Keep the two files together; `feat_stats.npz` is part of the trained 
 be recomputed from a prediction cohort.
 
 ```bash
-python3 scripts/fetch_model_release.py \
+fastrho-fetch-model \
   --model-id domain-randomized-v1 \
   --output-dir downloaded-models
 ```

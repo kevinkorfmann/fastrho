@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 
+from fastrho import model_release as installed_release
 from scripts import package_model_release as release
 from scripts import verify_model_release as verifier
 
@@ -23,10 +24,15 @@ def fixture_root(tmp_path: Path, checkpoint: bytes = b"checkpoint", stats: bytes
         "model_id": "test-v1",
         "files": {
             "checkpoint": {
+                "name": "model.ckpt",
                 "bytes": len(checkpoint),
                 "sha256": digest(checkpoint),
             },
-            "stats": {"bytes": len(stats), "sha256": digest(stats)},
+            "stats": {
+                "name": "feat_stats.npz",
+                "bytes": len(stats),
+                "sha256": digest(stats),
+            },
         },
     }
     (model_dir / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
@@ -85,6 +91,24 @@ def test_model_release_rejects_wrong_checkpoint(tmp_path: Path) -> None:
     )
     with pytest.raises(ValueError, match="bytes; expected"):
         release.checked_file(checkpoint, manifest["files"]["checkpoint"])
+
+
+def test_installed_release_verifies_archive(monkeypatch, tmp_path: Path) -> None:
+    output = tmp_path / "release.zip"
+    build(monkeypatch, tmp_path, output)
+    record = {
+        "checkpoint_sha256": digest(b"checkpoint"),
+        "stats_sha256": digest(b"stats"),
+    }
+    installed_release.verify_archive("test-v1", output, record)
+
+
+def test_installed_release_safe_extract_rejects_traversal(tmp_path: Path) -> None:
+    archive_path = tmp_path / "unsafe.zip"
+    with zipfile.ZipFile(archive_path, "w") as archive:
+        archive.writestr("../outside", b"unsafe")
+    with pytest.raises(ValueError, match="unsafe archive member"):
+        installed_release.safe_extract(archive_path, tmp_path / "models")
 
 
 def test_archive_verification_rejects_modified_payload(

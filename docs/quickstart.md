@@ -9,8 +9,14 @@ fastrho, and evaluates the inferred map against the exact generative truth.
 
 ## 1. Install
 
+Install the CPU package and VCF/DataFrame helpers from PyPI:
+
+```bash
+python -m pip install "fastrho[io]"
+```
+
 Inference is tested on Python 3.10 and 3.12 on Linux and requires an NVIDIA GPU plus a CUDA
-toolchain compatible with PyTorch and Mamba-SSM. Use the locked `uv` environment:
+toolchain compatible with PyTorch and Mamba-SSM. For inference, use the locked `uv` environment:
 
 ```bash
 git clone https://github.com/kevinkorfmann/fastrho.git
@@ -19,9 +25,8 @@ uv sync --frozen --extra inference --extra io
 source .venv/bin/activate
 ```
 
-There is not yet a public PyPI package; do not install an unrelated package with a similar name.
-`uv` is recommended because the project lockfile records the extension packages' build-time Torch
-and NumPy needs.
+`uv` is recommended for inference because the project lockfile records the extension packages'
+build-time Torch and NumPy needs.
 
 You also need two files from the **same trained model release**:
 
@@ -36,7 +41,7 @@ unchanged. See {ref}`feat-stats-file` for its exact contents and the retraining 
 Download and verify the current model in one command:
 
 ```bash
-python3 scripts/fetch_model_release.py --model-id domain-randomized-v1 \
+fastrho-fetch-model --model-id domain-randomized-v1 \
   --output-dir downloaded-models
 ```
 

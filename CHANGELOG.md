@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 - 2026-08-02
+
+- Added an installed, checksumming `fastrho-fetch-model` command.
+- Documented installation from PyPI.
+
 ## 0.1.0 - 2026-07-20
 
 - Removed an obsolete runtime dependency.

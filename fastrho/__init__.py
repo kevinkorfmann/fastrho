@@ -30,7 +30,7 @@ in-memory equivalents. See ``docs/python-api.md`` for complete call patterns and
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # The inference code lives in ``fastrho.translate``, which imports torch at module top.
 # Re-export everything lazily (PEP 562) so a bare ``import fastrho`` -- used by the docs
