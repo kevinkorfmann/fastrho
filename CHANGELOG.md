@@ -4,6 +4,8 @@
 
 - Added an installed, checksumming `fastrho-fetch-model` command.
 - Documented installation from PyPI.
+- Published and registered verified base, composite-LD, high-$N_e$, selfing, and dog-bottleneck
+  checkpoint bundles with model cards and explicit input contracts.
 
 ## 0.1.0 - 2026-07-20
 

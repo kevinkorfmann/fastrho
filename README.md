@@ -54,11 +54,21 @@ Inference is tested on Python 3.10 and 3.12. `uv` is recommended for inference b
 also records the extension build requirements. CPU-only VCF inspection, simulation, and data
 conversion do not load the model. Record the environment used for a run with its checkpoint IDs.
 
-## Download the verified model bundle
+## Download a verified model bundle
 
-The `domain-randomized-v1` release contains the checkpoint and its required feature-statistics
-companion. Keep the two files together; `feat_stats.npz` is part of the trained model and must not
-be recomputed from a prediction cohort.
+The model registry includes a general checkpoint plus qualified specialists for ordinary phased
+data, folded composite LD, mosquito-scale effective population size, predominant selfing, and severe
+canine bottlenecks. Keep each checkpoint with its own `feat_stats.npz`; the companion is part of the
+trained model and must not be recomputed from a prediction cohort.
+
+| Model | Primary use | Input mode |
+|---|---|---|
+| `domain-randomized-v1` | General default across input views | matching view |
+| `base-v1` | Ordinary phased/polarized data | `phased` |
+| `composite-ld-v1` | Unphased/unpolarized diploid data | `unpolarized` |
+| `high-ne-v1` | Mosquito and other high-$N_e$ dipteran data | `phased` |
+| `selfing-v1` | Predominantly selfing haplotype panels | `phased` |
+| `dog-bottleneck-v1` | Severe canine bottleneck histories | `unpolarized` |
 
 ```bash
 fastrho-fetch-model \
@@ -66,8 +76,8 @@ fastrho-fetch-model \
   --output-dir downloaded-models
 ```
 
-The public, checksummed model artifacts are also available from the
-[`domain-randomized-v1` release](https://github.com/kevinkorfmann/fastrho-models/releases/tag/domain-randomized-v1).
+Change the model ID to download a specialist. All public, checksummed artifacts and model cards are
+available from the [fastrho-models releases](https://github.com/kevinkorfmann/fastrho-models/releases).
 
 ## Make a map
 
