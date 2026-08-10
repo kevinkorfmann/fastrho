@@ -26,6 +26,8 @@ checkpoints/
 tmp/
 output/
 docs/_build/
+examples/manuscript_species/data/
+examples/manuscript_species/maps/
 
 # Genomic indexes belong beside uncommitted source data
 *.csi

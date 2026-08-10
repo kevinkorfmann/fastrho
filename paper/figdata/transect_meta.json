@@ -1,0 +1,10 @@
+{
+ "buffalo": {"latin": "Bubalus bubalis", "common": "Water buffalo", "clade": "Mammals", "order_idx": 6, "source": "EVA PRJEB72029 (one breed)", "n_dip": 46, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "yak":     {"latin": "Bos grunniens", "common": "Yak", "clade": "Mammals", "order_idx": 7, "source": "EVA PRJEB50815 (Indian)", "n_dip": 30, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "goat":    {"latin": "Capra hircus", "common": "Goat", "clade": "Mammals", "order_idx": 8, "source": "NextGen — Iran", "n_dip": 20, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "pig":     {"latin": "Sus scrofa", "common": "Pig", "clade": "Mammals", "order_idx": 9, "source": "EVA PRJEB89712 (Danish Landrace)", "n_dip": 20, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "donkey":  {"latin": "Equus asinus", "common": "Donkey", "clade": "Mammals", "order_idx": 10, "source": "Todd 2022 (Chinese)", "n_dip": 51, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "dugong":  {"latin": "Dugong dugon", "common": "Dugong", "clade": "Mammals", "order_idx": 11, "source": "EVA PRJEB79357 (one locality)", "n_dip": 23, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "tilapia": {"latin": "Oreochromis niloticus", "common": "Nile tilapia", "clade": "Fish", "order_idx": 30, "source": "EVA PRJEB102261", "n_dip": 73, "regime": "outbred", "specialist_note": null, "specialist_r": null},
+ "aspen":   {"latin": "Populus tremula", "common": "Aspen", "clade": "Plants", "order_idx": 62, "source": "SwAsp (Swedish)", "n_dip": 99, "regime": "outbred", "specialist_note": null, "specialist_r": null}
+}

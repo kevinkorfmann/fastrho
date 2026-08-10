@@ -1,0 +1,865 @@
+{
+  "schema_version": 1,
+  "variant": "phase2",
+  "expected_maps": 45,
+  "observed_maps": 45,
+  "status": "passed",
+  "errors": [],
+  "maps": [
+    {
+      "cohort": "colu_AO",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 853350,
+      "Ne_est": 348920.9753188191,
+      "windows": {
+        "50000": {
+          "n_windows": 984,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 492,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_AO",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 1118475,
+      "Ne_est": 353530.6905716125,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_AO",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 797393,
+      "Ne_est": 385682.55059938855,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_AO",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 1066884,
+      "Ne_est": 393200.7014636518,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_AO",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 307756,
+      "Ne_est": 306190.06809959764,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_BF",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 2007019,
+      "Ne_est": 1133430.257866755,
+      "windows": {
+        "50000": {
+          "n_windows": 987,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 494,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_BF",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 2538656,
+      "Ne_est": 990721.3286586922,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_BF",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1721553,
+      "Ne_est": 1027701.6084056074,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_BF",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2410444,
+      "Ne_est": 1087000.2982914427,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_BF",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 813103,
+      "Ne_est": 1036952.057029739,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_CI",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 1619378,
+      "Ne_est": 870463.7093601385,
+      "windows": {
+        "50000": {
+          "n_windows": 987,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 494,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_CI",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 2014614,
+      "Ne_est": 697108.5933672983,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_CI",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1433039,
+      "Ne_est": 860955.9806790495,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_CI",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2031781,
+      "Ne_est": 941394.1472532299,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_CI",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 611958,
+      "Ne_est": 793504.6759644782,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_GH",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 1579348,
+      "Ne_est": 835291.2578088125,
+      "windows": {
+        "50000": {
+          "n_windows": 984,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 492,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_GH",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 1967706,
+      "Ne_est": 683607.6091051742,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_GH",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1451529,
+      "Ne_est": 890969.449654261,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_GH",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2021068,
+      "Ne_est": 935413.4278944645,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "colu_GH",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 654186,
+      "Ne_est": 858529.2877846827,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_BF",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 2167617,
+      "Ne_est": 1375027.6335984753,
+      "windows": {
+        "50000": {
+          "n_windows": 987,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 494,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_BF",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 3039048,
+      "Ne_est": 1093251.773738383,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_BF",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1857358,
+      "Ne_est": 1064238.3467722693,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_BF",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2561781,
+      "Ne_est": 1108587.096107511,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_BF",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 934604,
+      "Ne_est": 1150000.502964015,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_CM",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 2114491,
+      "Ne_est": 1341483.4905490833,
+      "windows": {
+        "50000": {
+          "n_windows": 987,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 494,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_CM",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 2985542,
+      "Ne_est": 1093246.358350553,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_CM",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1842971,
+      "Ne_est": 1062798.6467589817,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_CM",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2579028,
+      "Ne_est": 1120430.061638272,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_CM",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 949889,
+      "Ne_est": 1163664.862292517,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GA",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 1064107,
+      "Ne_est": 374077.2076770109,
+      "windows": {
+        "50000": {
+          "n_windows": 987,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 494,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GA",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 1583663,
+      "Ne_est": 404324.8718397607,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GA",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1017351,
+      "Ne_est": 441758.10912815266,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GA",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 1449489,
+      "Ne_est": 467744.45357298024,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GA",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 309581,
+      "Ne_est": 291549.47449329065,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GN",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 2139135,
+      "Ne_est": 1358574.9831953167,
+      "windows": {
+        "50000": {
+          "n_windows": 984,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 492,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GN",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 3086929,
+      "Ne_est": 1124813.1594948822,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GN",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1859286,
+      "Ne_est": 1062109.7086463359,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GN",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2578597,
+      "Ne_est": 1113773.9428598082,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_GN",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 958009,
+      "Ne_est": 1122011.9840683017,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_UG",
+      "arm": "2L",
+      "n_hap": 80,
+      "n_snp": 1908393,
+      "Ne_est": 1162669.629190654,
+      "windows": {
+        "50000": {
+          "n_windows": 987,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 494,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_UG",
+      "arm": "2R",
+      "n_hap": 80,
+      "n_snp": 2794348,
+      "Ne_est": 1020590.8343567924,
+      "windows": {
+        "50000": {
+          "n_windows": 1231,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 616,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_UG",
+      "arm": "3L",
+      "n_hap": 80,
+      "n_snp": 1728807,
+      "Ne_est": 998826.8483299018,
+      "windows": {
+        "50000": {
+          "n_windows": 839,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 420,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_UG",
+      "arm": "3R",
+      "n_hap": 80,
+      "n_snp": 2394271,
+      "Ne_est": 1045214.4491676704,
+      "windows": {
+        "50000": {
+          "n_windows": 1064,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 532,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    },
+    {
+      "cohort": "gamb_UG",
+      "arm": "X",
+      "n_hap": 80,
+      "n_snp": 898662,
+      "Ne_est": 1111473.1317843234,
+      "windows": {
+        "50000": {
+          "n_windows": 487,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        },
+        "100000": {
+          "n_windows": 244,
+          "finite_rate_fraction": 1.0,
+          "positive_rate_fraction": 1.0
+        }
+      }
+    }
+  ]
+}

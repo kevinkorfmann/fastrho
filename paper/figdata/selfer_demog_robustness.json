@@ -1,0 +1,11 @@
+{
+  "_note": "pyrho A. thaliana chr1 Pearson r vs the Salome/TAIR10 map when its make_table lookup table is rebuilt under different assumed demographies. ONLY the demography changes: the chr1 region VCFs (156 haplotypes, 8 x 4 Mb regions) and the optimize flags (--ploidy 1 -w 50 -bpen 50) are identical to the paper run. Produced by scripts/pyrho_demog_check.sh + scripts/score_rmaps.py on sesame. The constant-Ne value equals selfer_chroms.npz c1_pyrho_r (the published chr1 baseline).",
+  "chrom": "1",
+  "n_hap": 156,
+  "mu": 7e-09,
+  "models": {
+    "constant_Ne": {"desc": "constant Ne=266722 (fastrho data-driven estimate; paper baseline)", "pearson": -0.3553},
+    "African2Epoch_1H18": {"desc": "stdpopsim AraTha 2-epoch expansion (Ne 100218 -> 746148)", "pearson": -0.352},
+    "African3Epoch_1H18": {"desc": "stdpopsim AraTha 3-epoch bottleneck (Ne 203077 -> 24076 -> 161744)", "pearson": -0.354}
+  }
+}

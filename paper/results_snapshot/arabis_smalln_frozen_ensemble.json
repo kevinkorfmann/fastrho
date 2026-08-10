@@ -1,0 +1,57 @@
+{
+  "arabis_cross_map_used_for_selection": false,
+  "campaign": "arabis_smalln_self3",
+  "members": [
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed0/logs/fastrho/version_0/checkpoints/epoch=39-val_pearson=0.818.ckpt",
+      "checkpoint_sha256": "828fb525a98aeaa25b14501aef776f82894988af99ffaa2f95a071eee8cc79f3",
+      "seed": 0,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed0/shards/feat_stats.npz",
+      "stats_sha256": "c7f5ab012709f29a35ff8a46a52a0256dac98862832abc14e9257e97ef039bca",
+      "validation_pearson": 0.8177161812782288
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed1/logs/fastrho/version_0/checkpoints/epoch=38-val_pearson=0.819.ckpt",
+      "checkpoint_sha256": "c1cc91a57034a953528298e20fc26a6d0837ad319bec45ab0d572fb6662cd2e0",
+      "seed": 1,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed1/shards/feat_stats.npz",
+      "stats_sha256": "c7f5ab012709f29a35ff8a46a52a0256dac98862832abc14e9257e97ef039bca",
+      "validation_pearson": 0.8193666338920593
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed2/logs/fastrho/version_0/checkpoints/epoch=39-val_pearson=0.819.ckpt",
+      "checkpoint_sha256": "567a9c51c7e7f9a45a7bdae68edd30f55b1d73246b38c9cb85ba750a9b3bf03d",
+      "seed": 2,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed2/shards/feat_stats.npz",
+      "stats_sha256": "c7f5ab012709f29a35ff8a46a52a0256dac98862832abc14e9257e97ef039bca",
+      "validation_pearson": 0.8187135457992554
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed3/logs/fastrho/version_0/checkpoints/epoch=39-val_pearson=0.820.ckpt",
+      "checkpoint_sha256": "96a8b8aa72a02141874fd77241c9bf985b08ef1cd97267d1230685c40d4f71bc",
+      "seed": 3,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed3/shards/feat_stats.npz",
+      "stats_sha256": "c7f5ab012709f29a35ff8a46a52a0256dac98862832abc14e9257e97ef039bca",
+      "validation_pearson": 0.8199464678764343
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed4/logs/fastrho/version_0/checkpoints/epoch=39-val_pearson=0.819.ckpt",
+      "checkpoint_sha256": "1ad63b73e915764ac08be9fdf621a2ccc58e995485b875cf975e54ade466ea21",
+      "seed": 4,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/smalln_self3/seeds/seed4/shards/feat_stats.npz",
+      "stats_sha256": "c7f5ab012709f29a35ff8a46a52a0256dac98862832abc14e9257e97ef039bca",
+      "validation_pearson": 0.8189084529876709
+    }
+  ],
+  "schema_version": 1,
+  "selection_data": "simulated validation only",
+  "training_panel_sizes": [
+    8,
+    12,
+    16,
+    24,
+    25,
+    32,
+    50
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "benchmark": "committed bench (10x2Mb, n=10, Ne=1e4)",
+  "n_regions": 10,
+  "n_scored": 10,
+  "scales": {
+    "1kb": {
+      "fastrho": {
+        "pearson": 0.7537793579009548,
+        "pearson_log": 0.7583168691331444,
+        "spearman": 0.629709445669808,
+        "n": 15996
+      },
+      "pyrho": {
+        "pearson": 0.5871562230634307,
+        "pearson_log": 0.6067379685532415,
+        "spearman": 0.5026399369052683,
+        "n": 15996
+      }
+    },
+    "10kb": {
+      "fastrho": {
+        "pearson": 0.8590639165522151,
+        "pearson_log": 0.8362332824863276,
+        "spearman": 0.6976400812032723,
+        "n": 1600
+      },
+      "pyrho": {
+        "pearson": 0.6995881291630052,
+        "pearson_log": 0.7220302129020691,
+        "spearman": 0.620306668541086,
+        "n": 1600
+      }
+    },
+    "25kb": {
+      "fastrho": {
+        "pearson": 0.8863284273201573,
+        "pearson_log": 0.8581231030708776,
+        "spearman": 0.7277642089183104,
+        "n": 640
+      },
+      "pyrho": {
+        "pearson": 0.7724186896043468,
+        "pearson_log": 0.787950008209054,
+        "spearman": 0.692069930357054,
+        "n": 640
+      }
+    }
+  },
+  "coverage_overall": 0.9374609431332019,
+  "coverage_by_true_rate_decile": [
+    0.9516943042537851,
+    0.9918288872867099,
+    0.9561045814343967,
+    0.9222589792060492,
+    0.9426906265177271,
+    0.9396509936984974,
+    0.9404536862003781,
+    0.9456681350954479,
+    0.8915865384615385,
+    0.8930545541937034
+  ],
+  "coverage_lowest_decile": 0.9516943042537851,
+  "nominal": 0.95,
+  "n_regions_matched": 8,
+  "note_pyrho_fail": "pyrho failed on 2/10 regions (non-segregating); accuracy compared on the 8 regions both methods produced a map for; coverage uses all 10 fastrho regions."
+}

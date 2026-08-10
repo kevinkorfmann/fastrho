@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "run_date": "2026-07-20",
+  "software": {
+    "ReLERNN": "2.0.0",
+    "TensorFlow": "2.18.1"
+  },
+  "design": {
+    "n_train": 100000,
+    "n_validation": 10000,
+    "n_test": 10000,
+    "max_sites": 256,
+    "simulation_seed": 1,
+    "phased": true,
+    "training_demography": "ReLERNN standard demographic-equilibrium simulator",
+    "rate_prior_rule": "ceil(1.15 * length-weighted map-rate quantile 0.999 / mutation rate)",
+    "interpolation_or_cross_regime_borrowing": false,
+    "pipeline": "scripts/run_relernn_config.py CONFIG auto 256 40 GPU; scripts/bench.py ingest; scripts/bench.py score"
+  },
+  "configurations": {
+    "const_n20": {
+      "upper_rho_theta_ratio": 16,
+      "n_regions_scored": 19,
+      "pearson_25kb": 0.4129395657367673,
+      "pearson_100kb": 0.538000457421007
+    },
+    "bottleneck_n20": {
+      "upper_rho_theta_ratio": 16,
+      "n_regions_scored": 19,
+      "pearson_25kb": 0.055194241804135534,
+      "pearson_100kb": 0.08601236856829596
+    },
+    "expansion_n20": {
+      "upper_rho_theta_ratio": 16,
+      "n_regions_scored": 24,
+      "pearson_25kb": 0.15323447336144663,
+      "pearson_100kb": 0.22645237563619422
+    },
+    "real_decode": {
+      "upper_rho_theta_ratio": 26,
+      "n_regions_scored": 19,
+      "pearson_25kb": 0.23502173305364552,
+      "pearson_100kb": 0.3385924754638855
+    },
+    "real_hapmap": {
+      "upper_rho_theta_ratio": 43,
+      "n_regions_scored": 18,
+      "pearson_25kb": 0.021762429538910222,
+      "pearson_100kb": 0.044315274542321516
+    },
+    "real_dog": {
+      "upper_rho_theta_ratio": 72,
+      "n_regions_scored": 20,
+      "pearson_25kb": 0.209104576717997,
+      "pearson_100kb": 0.29350673943154054
+    }
+  }
+}

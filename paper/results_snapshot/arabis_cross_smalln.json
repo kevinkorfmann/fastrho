@@ -1,0 +1,1101 @@
+{
+  "checkpoint_sha256": "ensemble_manifest:2dddffb2d8ee63151f07d2161245f6bacb4cb2061d7de0fde964e4cca38c4d1c",
+  "cross_map_audit": {
+    "chromosomes": {
+      "chr1": {
+        "isotonic_rms_cm": 0.02925447427770738,
+        "map_span_cm": 184.86304940448198,
+        "orientation": 1,
+        "physical_span_mb": 31.285195,
+        "raw_markers": 304,
+        "unique_positions": 304
+      },
+      "chr2": {
+        "isotonic_rms_cm": 3.1138594524101095e-06,
+        "map_span_cm": 129.138307733054,
+        "orientation": 1,
+        "physical_span_mb": 25.367191,
+        "raw_markers": 232,
+        "unique_positions": 232
+      },
+      "chr3": {
+        "isotonic_rms_cm": 1.4372104128956152e-06,
+        "map_span_cm": 207.661198544656,
+        "orientation": 1,
+        "physical_span_mb": 29.785801,
+        "raw_markers": 244,
+        "unique_positions": 244
+      },
+      "chr4": {
+        "isotonic_rms_cm": 0.038176204601353965,
+        "map_span_cm": 185.585949457513,
+        "orientation": 1,
+        "physical_span_mb": 37.232015,
+        "raw_markers": 369,
+        "unique_positions": 369
+      },
+      "chr5": {
+        "isotonic_rms_cm": 0.5519179673686359,
+        "map_span_cm": 138.71593893343982,
+        "orientation": 1,
+        "physical_span_mb": 26.269114,
+        "raw_markers": 202,
+        "unique_positions": 202
+      },
+      "chr6": {
+        "isotonic_rms_cm": 0.14508507086780567,
+        "map_span_cm": 138.11646113300802,
+        "orientation": 1,
+        "physical_span_mb": 21.051823,
+        "raw_markers": 160,
+        "unique_positions": 160
+      },
+      "chr7": {
+        "isotonic_rms_cm": 0.22149732553330814,
+        "map_span_cm": 114.960445291307,
+        "orientation": 1,
+        "physical_span_mb": 20.298471,
+        "raw_markers": 220,
+        "unique_positions": 220
+      },
+      "chr8": {
+        "isotonic_rms_cm": 1.0247969028328092,
+        "map_span_cm": 239.709990966127,
+        "orientation": 1,
+        "physical_span_mb": 36.591633,
+        "raw_markers": 351,
+        "unique_positions": 351
+      }
+    },
+    "markers": 2082
+  },
+  "cross_map_sha256": "b980746fe7ffc1b5bbb7691d131bdd8329f8e427995abd2786185383c5273bed",
+  "interpretation": "chromosome-relative inferred recombination-map shape versus one contemporary interspecific F2 map",
+  "model_campaign": "arabis_smalln_self3",
+  "model_training_n_lines": [
+    8,
+    12,
+    16,
+    24,
+    25,
+    32,
+    50
+  ],
+  "parent_excluded_2Mb": {
+    "between_species": {
+      "pearson": 0.09325171239711992,
+      "spearman": 0.1411074859627596
+    },
+    "maps": {
+      "consensus": {
+        "circular_shift_p_one_sided": 0.00029997000299970003,
+        "n_windows": 102,
+        "pearson": 0.382987066302319,
+        "spearman": 0.43940379189261014,
+        "spearman_chromosome_bootstrap_ci95": [
+          0.2656603725456436,
+          0.6079184982989856
+        ],
+        "spearman_excluding_distorted_chr4_chr7": 0.43907040328092956,
+        "spearman_leave_one_chromosome_out": {
+          "chr1": 0.463210172237681,
+          "chr2": 0.40267558528428093,
+          "chr3": 0.5112529792305074,
+          "chr4": 0.437873754152824,
+          "chr5": 0.38828661974729384,
+          "chr6": 0.4390647846975619,
+          "chr7": 0.44357076780758553,
+          "chr8": 0.43220637092046127
+        }
+      },
+      "nemorensis": {
+        "circular_shift_p_one_sided": 0.42455754424557546,
+        "n_windows": 102,
+        "pearson": 0.04394892746925398,
+        "spearman": 0.02284974356944547,
+        "spearman_chromosome_bootstrap_ci95": [
+          -0.1874835697955087,
+          0.23036965099809328
+        ],
+        "spearman_excluding_distorted_chr4_chr7": 0.02807928913192071,
+        "spearman_leave_one_chromosome_out": {
+          "chr1": 0.06436899017294213,
+          "chr2": -0.02083134257047301,
+          "chr3": 0.07299965951651347,
+          "chr4": 0.0034199726402188778,
+          "chr5": 0.012059101946742395,
+          "chr6": 0.0609053743546895,
+          "chr7": 0.042747157649726954,
+          "chr8": -0.057514168458080904
+        }
+      },
+      "sagittata": {
+        "circular_shift_p_one_sided": 9.999000099990002e-05,
+        "n_windows": 102,
+        "pearson": 0.4522140506628357,
+        "spearman": 0.5102657038976314,
+        "spearman_chromosome_bootstrap_ci95": [
+          0.3667454818656345,
+          0.6754610727200151
+        ],
+        "spearman_excluding_distorted_chr4_chr7": 0.48833902939166096,
+        "spearman_leave_one_chromosome_out": {
+          "chr1": 0.5336198090944314,
+          "chr2": 0.5001433349259437,
+          "chr3": 0.5645897173987063,
+          "chr4": 0.5051983584131327,
+          "chr5": 0.4462526237807136,
+          "chr6": 0.49783653128823363,
+          "chr7": 0.4968965414341559,
+          "chr8": 0.5444401016220441
+        }
+      }
+    },
+    "outer_quarters_to_center_half_ratio": {
+      "consensus": 1.360171766678569,
+      "cross": 1.5837819549973537,
+      "nemorensis": 1.0788169530581853,
+      "sagittata": 1.7227937451365605
+    },
+    "per_chromosome": {
+      "chr1": {
+        "consensus": {
+          "pearson": 0.14961365347297007,
+          "spearman": 0.2879120879120879
+        },
+        "nemorensis": {
+          "pearson": -0.201834388115433,
+          "spearman": -0.24395604395604395
+        },
+        "sagittata": {
+          "pearson": 0.29110994732020196,
+          "spearman": 0.389010989010989
+        }
+      },
+      "chr2": {
+        "consensus": {
+          "pearson": 0.7552656288579244,
+          "spearman": 0.881818181818182
+        },
+        "nemorensis": {
+          "pearson": 0.2726350142251803,
+          "spearman": 0.45454545454545453
+        },
+        "sagittata": {
+          "pearson": 0.6740221326262945,
+          "spearman": 0.8000000000000002
+        }
+      },
+      "chr3": {
+        "consensus": {
+          "pearson": -0.18204984167761695,
+          "spearman": 0.027472527472527472
+        },
+        "nemorensis": {
+          "pearson": -0.29784176636945886,
+          "spearman": -0.14285714285714285
+        },
+        "sagittata": {
+          "pearson": -0.02117453298106275,
+          "spearman": 0.23626373626373626
+        }
+      },
+      "chr4": {
+        "consensus": {
+          "pearson": 0.784351065840534,
+          "spearman": 0.26470588235294124
+        },
+        "nemorensis": {
+          "pearson": 0.40561650243216457,
+          "spearman": 0.056372549019607844
+        },
+        "sagittata": {
+          "pearson": 0.8616113809160716,
+          "spearman": 0.5122549019607844
+        }
+      },
+      "chr5": {
+        "consensus": {
+          "pearson": 0.6908440413289691,
+          "spearman": 0.7272727272727274
+        },
+        "nemorensis": {
+          "pearson": 0.14725914993349362,
+          "spearman": -0.06293706293706294
+        },
+        "sagittata": {
+          "pearson": 0.8501811083107903,
+          "spearman": 0.8531468531468532
+        }
+      },
+      "chr6": {
+        "consensus": {
+          "pearson": 0.38576898785964925,
+          "spearman": 0.33333333333333337
+        },
+        "nemorensis": {
+          "pearson": -0.3096929900006855,
+          "spearman": -0.4666666666666666
+        },
+        "sagittata": {
+          "pearson": 0.43744103684479235,
+          "spearman": 0.6333333333333333
+        }
+      },
+      "chr7": {
+        "consensus": {
+          "pearson": 0.26705514244383305,
+          "spearman": 0.19999999999999998
+        },
+        "nemorensis": {
+          "pearson": -0.109464968260771,
+          "spearman": -0.41666666666666663
+        },
+        "sagittata": {
+          "pearson": 0.8084596136302977,
+          "spearman": 0.41666666666666663
+        }
+      },
+      "chr8": {
+        "consensus": {
+          "pearson": 0.4793332747003034,
+          "spearman": 0.7034313725490197
+        },
+        "nemorensis": {
+          "pearson": 0.22261114782035255,
+          "spearman": 0.556372549019608
+        },
+        "sagittata": {
+          "pearson": 0.526050557687004,
+          "spearman": 0.46323529411764713
+        }
+      }
+    },
+    "window_mb": 2.0
+  },
+  "parent_excluded_population_map_audit": {
+    "nemorensis": {
+      "chromosomes": {
+        "chr1": {
+          "Ne_estimated": 68151.57339947257,
+          "n_accessions": 11,
+          "n_snps": 39850
+        },
+        "chr2": {
+          "Ne_estimated": 69541.99275159508,
+          "n_accessions": 11,
+          "n_snps": 39878
+        },
+        "chr3": {
+          "Ne_estimated": 64628.518051696126,
+          "n_accessions": 11,
+          "n_snps": 39266
+        },
+        "chr4": {
+          "Ne_estimated": 55020.33377170044,
+          "n_accessions": 11,
+          "n_snps": 25114
+        },
+        "chr5": {
+          "Ne_estimated": 60445.21517288228,
+          "n_accessions": 11,
+          "n_snps": 25382
+        },
+        "chr6": {
+          "Ne_estimated": 71082.66723373371,
+          "n_accessions": 11,
+          "n_snps": 29571
+        },
+        "chr7": {
+          "Ne_estimated": 64782.41741314793,
+          "n_accessions": 11,
+          "n_snps": 33653
+        },
+        "chr8": {
+          "Ne_estimated": 58049.32318347486,
+          "n_accessions": 11,
+          "n_snps": 33180
+        }
+      },
+      "n_accessions": 11,
+      "total_chromosome_snps": 265894
+    },
+    "sagittata": {
+      "chromosomes": {
+        "chr1": {
+          "Ne_estimated": 78746.9056424214,
+          "n_accessions": 24,
+          "n_snps": 45014
+        },
+        "chr2": {
+          "Ne_estimated": 86123.86177180843,
+          "n_accessions": 24,
+          "n_snps": 42302
+        },
+        "chr3": {
+          "Ne_estimated": 72337.44870786273,
+          "n_accessions": 24,
+          "n_snps": 37105
+        },
+        "chr4": {
+          "Ne_estimated": 72057.21663172849,
+          "n_accessions": 24,
+          "n_snps": 28199
+        },
+        "chr5": {
+          "Ne_estimated": 73186.01805401794,
+          "n_accessions": 24,
+          "n_snps": 26770
+        },
+        "chr6": {
+          "Ne_estimated": 84567.48157873415,
+          "n_accessions": 24,
+          "n_snps": 29903
+        },
+        "chr7": {
+          "Ne_estimated": 78247.7471305578,
+          "n_accessions": 24,
+          "n_snps": 35643
+        },
+        "chr8": {
+          "Ne_estimated": 66356.76090093744,
+          "n_accessions": 24,
+          "n_snps": 25624
+        }
+      },
+      "n_accessions": 24,
+      "total_chromosome_snps": 270560
+    }
+  },
+  "population_map_audit": {
+    "nemorensis": {
+      "chromosomes": {
+        "chr1": {
+          "Ne_estimated": 67829.5978610438,
+          "n_accessions": 12,
+          "n_snps": 39957
+        },
+        "chr2": {
+          "Ne_estimated": 69580.27185807186,
+          "n_accessions": 12,
+          "n_snps": 40148
+        },
+        "chr3": {
+          "Ne_estimated": 65236.29023206735,
+          "n_accessions": 12,
+          "n_snps": 40001
+        },
+        "chr4": {
+          "Ne_estimated": 54876.539890190856,
+          "n_accessions": 12,
+          "n_snps": 25305
+        },
+        "chr5": {
+          "Ne_estimated": 61046.49676717968,
+          "n_accessions": 12,
+          "n_snps": 25472
+        },
+        "chr6": {
+          "Ne_estimated": 71589.85278255864,
+          "n_accessions": 12,
+          "n_snps": 29964
+        },
+        "chr7": {
+          "Ne_estimated": 65111.881072882046,
+          "n_accessions": 12,
+          "n_snps": 34065
+        },
+        "chr8": {
+          "Ne_estimated": 57943.75820291931,
+          "n_accessions": 12,
+          "n_snps": 33650
+        }
+      },
+      "n_accessions": 12,
+      "total_chromosome_snps": 268562
+    },
+    "sagittata": {
+      "chromosomes": {
+        "chr1": {
+          "Ne_estimated": 78987.61677527947,
+          "n_accessions": 25,
+          "n_snps": 45138
+        },
+        "chr2": {
+          "Ne_estimated": 85106.78810997606,
+          "n_accessions": 25,
+          "n_snps": 42176
+        },
+        "chr3": {
+          "Ne_estimated": 72133.53461509726,
+          "n_accessions": 25,
+          "n_snps": 36999
+        },
+        "chr4": {
+          "Ne_estimated": 71801.41771990476,
+          "n_accessions": 25,
+          "n_snps": 28132
+        },
+        "chr5": {
+          "Ne_estimated": 73018.95204084975,
+          "n_accessions": 25,
+          "n_snps": 26715
+        },
+        "chr6": {
+          "Ne_estimated": 83956.47059420086,
+          "n_accessions": 25,
+          "n_snps": 29809
+        },
+        "chr7": {
+          "Ne_estimated": 77923.51645266153,
+          "n_accessions": 25,
+          "n_snps": 35563
+        },
+        "chr8": {
+          "Ne_estimated": 66586.15147075558,
+          "n_accessions": 25,
+          "n_snps": 25531
+        }
+      },
+      "n_accessions": 25,
+      "total_chromosome_snps": 270063
+    }
+  },
+  "primary_resolution": "2Mb",
+  "resolutions": {
+    "1Mb": {
+      "between_species": {
+        "pearson": 0.20218094058140929,
+        "spearman": 0.17022892054006877
+      },
+      "maps": {
+        "consensus": {
+          "circular_shift_p_one_sided": 0.0036996300369963003,
+          "n_windows": 218,
+          "pearson": 0.2052780575253539,
+          "spearman": 0.274063529257779,
+          "spearman_chromosome_bootstrap_ci95": [
+            0.07763947841655199,
+            0.42692230897923356
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.29257762925277514,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.24712889669084911,
+            "chr2": 0.27950758711935997,
+            "chr3": 0.3602820314311084,
+            "chr4": 0.2833444971838234,
+            "chr5": 0.22714965813791999,
+            "chr6": 0.24670421790540148,
+            "chr7": 0.28421044617024516,
+            "chr8": 0.26401395000253797
+          }
+        },
+        "nemorensis": {
+          "circular_shift_p_one_sided": 0.6514348565143485,
+          "n_windows": 218,
+          "pearson": -0.013722299363914107,
+          "spearman": -0.04077040822531707,
+          "spearman_chromosome_bootstrap_ci95": [
+            -0.21287358654722105,
+            0.11557371033367382
+          ],
+          "spearman_excluding_distorted_chr4_chr7": -0.026360416978402915,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": -0.0184646392406092,
+            "chr2": -0.050790350614077974,
+            "chr3": 0.03503260769725361,
+            "chr4": -0.022160160281707243,
+            "chr5": -0.07500267079750013,
+            "chr6": -0.05694755889894017,
+            "chr7": -0.0447647327546825,
+            "chr8": -0.09055060508733183
+          }
+        },
+        "sagittata": {
+          "circular_shift_p_one_sided": 9.999000099990002e-05,
+          "n_windows": 218,
+          "pearson": 0.2931591476812803,
+          "spearman": 0.3666568404251191,
+          "spearman_chromosome_bootstrap_ci95": [
+            0.2133372942327531,
+            0.5113346085836176
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.37304991659323544,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.3368062892468399,
+            "chr2": 0.39312084742350223,
+            "chr3": 0.4170854710948401,
+            "chr4": 0.3531243686120962,
+            "chr5": 0.32439339511778215,
+            "chr6": 0.3351544679249192,
+            "chr7": 0.3874569818790924,
+            "chr8": 0.3902706296511205
+          }
+        }
+      },
+      "outer_quarters_to_center_half_ratio": {
+        "consensus": 1.436802788007091,
+        "cross": 1.6231358347588993,
+        "nemorensis": 1.119243462555755,
+        "sagittata": 1.919570868182683
+      },
+      "per_chromosome": {
+        "chr1": {
+          "consensus": {
+            "pearson": 0.26990801682302434,
+            "spearman": 0.3704115684093437
+          },
+          "nemorensis": {
+            "pearson": -0.21934111836947576,
+            "spearman": -0.1835372636262514
+          },
+          "sagittata": {
+            "pearson": 0.41354962051777655,
+            "spearman": 0.5550611790878754
+          }
+        },
+        "chr2": {
+          "consensus": {
+            "pearson": 0.017114270326922604,
+            "spearman": 0.3
+          },
+          "nemorensis": {
+            "pearson": -0.010796668122031592,
+            "spearman": 0.04869565217391304
+          },
+          "sagittata": {
+            "pearson": 0.03515467276240116,
+            "spearman": 0.33826086956521734
+          }
+        },
+        "chr3": {
+          "consensus": {
+            "pearson": -0.2972419599822092,
+            "spearman": -0.2911877394636015
+          },
+          "nemorensis": {
+            "pearson": -0.3510517123305567,
+            "spearman": -0.4652435686918446
+          },
+          "sagittata": {
+            "pearson": -0.07303728233467836,
+            "spearman": 0.07717569786535304
+          }
+        },
+        "chr4": {
+          "consensus": {
+            "pearson": 0.3774726430597084,
+            "spearman": 0.19510939510939512
+          },
+          "nemorensis": {
+            "pearson": -0.08010620912710918,
+            "spearman": -0.12715572715572715
+          },
+          "sagittata": {
+            "pearson": 0.4081640465489505,
+            "spearman": 0.44375804375804373
+          }
+        },
+        "chr5": {
+          "consensus": {
+            "pearson": 0.4978912238259283,
+            "spearman": 0.6461538461538462
+          },
+          "nemorensis": {
+            "pearson": 0.37218119032396396,
+            "spearman": 0.18461538461538463
+          },
+          "sagittata": {
+            "pearson": 0.5798490581397313,
+            "spearman": 0.6623076923076924
+          }
+        },
+        "chr6": {
+          "consensus": {
+            "pearson": 0.2856984118324515,
+            "spearman": 0.34736842105263155
+          },
+          "nemorensis": {
+            "pearson": 0.006925387665072991,
+            "spearman": 0.08721804511278194
+          },
+          "sagittata": {
+            "pearson": 0.49635087519184257,
+            "spearman": 0.5834586466165413
+          }
+        },
+        "chr7": {
+          "consensus": {
+            "pearson": 0.3935438597383272,
+            "spearman": 0.0894736842105263
+          },
+          "nemorensis": {
+            "pearson": 0.032375638064220794,
+            "spearman": 0.007017543859649123
+          },
+          "sagittata": {
+            "pearson": 0.5965603303045619,
+            "spearman": 0.18947368421052632
+          }
+        },
+        "chr8": {
+          "consensus": {
+            "pearson": 0.2669918476762227,
+            "spearman": 0.40566280566280566
+          },
+          "nemorensis": {
+            "pearson": 0.07852915039264934,
+            "spearman": 0.2193050193050193
+          },
+          "sagittata": {
+            "pearson": 0.2538485861457377,
+            "spearman": 0.2885456885456885
+          }
+        }
+      },
+      "window_mb": 1.0
+    },
+    "2Mb": {
+      "between_species": {
+        "pearson": 0.1412752663207303,
+        "spearman": 0.1980480743676881
+      },
+      "maps": {
+        "consensus": {
+          "circular_shift_p_one_sided": 0.0015998400159984002,
+          "n_windows": 102,
+          "pearson": 0.3190304308888702,
+          "spearman": 0.37801878417424833,
+          "spearman_chromosome_bootstrap_ci95": [
+            0.15369294589823476,
+            0.5861645831735562
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.4055228981544771,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.3897361840019725,
+            "chr2": 0.3328555502468546,
+            "chr3": 0.46406196799455235,
+            "chr4": 0.41418800078170803,
+            "chr5": 0.31736428365641844,
+            "chr6": 0.3711169466742263,
+            "chr7": 0.3729969263823818,
+            "chr8": 0.36388508891928867
+          }
+        },
+        "nemorensis": {
+          "circular_shift_p_one_sided": 0.5489451054894511,
+          "n_windows": 102,
+          "pearson": -0.022603758700626274,
+          "spearman": -0.020972457040107213,
+          "spearman_chromosome_bootstrap_ci95": [
+            -0.2590152236108934,
+            0.20902004710961197
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.016541353383458645,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.019724560600190205,
+            "chr2": -0.07278229017359453,
+            "chr3": 0.06952672795369426,
+            "chr4": 0.008716044557357827,
+            "chr5": -0.050730542865374324,
+            "chr6": -0.04356778371281072,
+            "chr7": -0.01635283936617827,
+            "chr8": -0.0788938831346492
+          }
+        },
+        "sagittata": {
+          "circular_shift_p_one_sided": 9.999000099990002e-05,
+          "n_windows": 102,
+          "pearson": 0.4524763984760104,
+          "spearman": 0.5190640708845299,
+          "spearman_chromosome_bootstrap_ci95": [
+            0.3708339052420109,
+            0.6873606205743951
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.4936431989063568,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.5406114613786059,
+            "chr2": 0.5132505175983437,
+            "chr3": 0.5768300987402113,
+            "chr4": 0.5133672073480555,
+            "chr5": 0.45270609540272455,
+            "chr6": 0.5048640744830055,
+            "chr7": 0.5029990152487243,
+            "chr8": 0.5554035567715458
+          }
+        }
+      },
+      "outer_quarters_to_center_half_ratio": {
+        "consensus": 1.3492561654032038,
+        "cross": 1.5837819549973537,
+        "nemorensis": 1.0962844544205836,
+        "sagittata": 1.68826989020518
+      },
+      "per_chromosome": {
+        "chr1": {
+          "consensus": {
+            "pearson": 0.14086341904712268,
+            "spearman": 0.2923076923076923
+          },
+          "nemorensis": {
+            "pearson": -0.35417560036666645,
+            "spearman": -0.2175824175824176
+          },
+          "sagittata": {
+            "pearson": 0.29291289131271925,
+            "spearman": 0.432967032967033
+          }
+        },
+        "chr2": {
+          "consensus": {
+            "pearson": 0.8594175452069687,
+            "spearman": 0.8909090909090911
+          },
+          "nemorensis": {
+            "pearson": 0.531654041910177,
+            "spearman": 0.4727272727272727
+          },
+          "sagittata": {
+            "pearson": 0.6568722449107991,
+            "spearman": 0.8000000000000002
+          }
+        },
+        "chr3": {
+          "consensus": {
+            "pearson": -0.32688396996967284,
+            "spearman": -0.1868131868131868
+          },
+          "nemorensis": {
+            "pearson": -0.4463476172685079,
+            "spearman": -0.6428571428571429
+          },
+          "sagittata": {
+            "pearson": -0.027224680268100803,
+            "spearman": 0.26373626373626374
+          }
+        },
+        "chr4": {
+          "consensus": {
+            "pearson": 0.5197567213259967,
+            "spearman": 0.06617647058823531
+          },
+          "nemorensis": {
+            "pearson": -0.06295050447791432,
+            "spearman": -0.22794117647058826
+          },
+          "sagittata": {
+            "pearson": 0.8503375135711405,
+            "spearman": 0.502450980392157
+          }
+        },
+        "chr5": {
+          "consensus": {
+            "pearson": 0.7345634578273968,
+            "spearman": 0.7692307692307694
+          },
+          "nemorensis": {
+            "pearson": 0.2970200326813932,
+            "spearman": 0.1328671328671329
+          },
+          "sagittata": {
+            "pearson": 0.8517202447162229,
+            "spearman": 0.8391608391608393
+          }
+        },
+        "chr6": {
+          "consensus": {
+            "pearson": 0.2913821914242517,
+            "spearman": 0.3666666666666667
+          },
+          "nemorensis": {
+            "pearson": 0.0020244333134738198,
+            "spearman": 0.09999999999999999
+          },
+          "sagittata": {
+            "pearson": 0.4521597206610349,
+            "spearman": 0.6666666666666667
+          }
+        },
+        "chr7": {
+          "consensus": {
+            "pearson": 0.6646754196256763,
+            "spearman": 0.18333333333333335
+          },
+          "nemorensis": {
+            "pearson": 0.40593682841032197,
+            "spearman": -0.18333333333333335
+          },
+          "sagittata": {
+            "pearson": 0.8316919600052275,
+            "spearman": 0.5
+          }
+        },
+        "chr8": {
+          "consensus": {
+            "pearson": 0.47776347066155045,
+            "spearman": 0.6053921568627452
+          },
+          "nemorensis": {
+            "pearson": 0.11222914110782752,
+            "spearman": 0.4460784313725491
+          },
+          "sagittata": {
+            "pearson": 0.5498735285097855,
+            "spearman": 0.45833333333333337
+          }
+        }
+      },
+      "window_mb": 2.0
+    },
+    "5Mb": {
+      "between_species": {
+        "pearson": 0.04224487551831435,
+        "spearman": 0.050965250965250966
+      },
+      "maps": {
+        "consensus": {
+          "circular_shift_p_one_sided": 0.0306969303069693,
+          "n_windows": 36,
+          "pearson": 0.305602813478312,
+          "spearman": 0.24736164736164734,
+          "spearman_chromosome_bootstrap_ci95": [
+            0.0021941286769014447,
+            0.487176522620086
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.30666666666666664,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.26370967741935486,
+            "chr2": 0.1979472140762463,
+            "chr3": 0.28005865102639294,
+            "chr4": 0.3088669950738916,
+            "chr5": 0.219208211143695,
+            "chr6": 0.285427807486631,
+            "chr7": 0.25367647058823534,
+            "chr8": 0.17152391546162402
+          }
+        },
+        "nemorensis": {
+          "circular_shift_p_one_sided": 0.9803019698030196,
+          "n_windows": 36,
+          "pearson": -0.1936904702351733,
+          "spearman": -0.2625482625482626,
+          "spearman_chromosome_bootstrap_ci95": [
+            -0.5964590552098195,
+            0.18121748910445667
+          ],
+          "spearman_excluding_distorted_chr4_chr7": -0.21367521367521364,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": -0.18709677419354842,
+            "chr2": -0.3244134897360703,
+            "chr3": -0.18951612903225803,
+            "chr4": -0.21477832512315267,
+            "chr5": -0.2694281524926686,
+            "chr6": -0.20153743315508021,
+            "chr7": -0.2620320855614973,
+            "chr8": -0.44560622914349274
+          }
+        },
+        "sagittata": {
+          "circular_shift_p_one_sided": 9.999000099990002e-05,
+          "n_windows": 36,
+          "pearson": 0.5492619565483565,
+          "spearman": 0.5588159588159589,
+          "spearman_chromosome_bootstrap_ci95": [
+            0.4247576225937895,
+            0.7097526238930452
+          ],
+          "spearman_excluding_distorted_chr4_chr7": 0.507008547008547,
+          "spearman_leave_one_chromosome_out": {
+            "chr1": 0.6185483870967743,
+            "chr2": 0.5824780058651026,
+            "chr3": 0.5260263929618768,
+            "chr4": 0.5423645320197044,
+            "chr5": 0.530791788856305,
+            "chr6": 0.5461229946524064,
+            "chr7": 0.5401069518716578,
+            "chr8": 0.5879866518353727
+          }
+        }
+      },
+      "outer_quarters_to_center_half_ratio": {
+        "consensus": 1.2267212971730868,
+        "cross": 1.7391235956828508,
+        "nemorensis": 0.9932816751676715,
+        "sagittata": 1.5231464053235415
+      },
+      "per_chromosome": {
+        "chr1": {
+          "consensus": {
+            "pearson": -0.1333390574653252,
+            "spearman": 0.19999999999999998
+          },
+          "nemorensis": {
+            "pearson": -0.7783849054014912,
+            "spearman": -0.7
+          },
+          "sagittata": {
+            "pearson": 0.19247554641569314,
+            "spearman": 0.19999999999999998
+          }
+        },
+        "chr2": {
+          "consensus": {
+            "pearson": 0.9907208280358024,
+            "spearman": 1.0
+          },
+          "nemorensis": {
+            "pearson": 0.4668757987918972,
+            "spearman": 0.6000000000000001
+          },
+          "sagittata": {
+            "pearson": 0.9006421255026782,
+            "spearman": 1.0
+          }
+        },
+        "chr3": {
+          "consensus": {
+            "pearson": -0.09991431735926846,
+            "spearman": -0.39999999999999997
+          },
+          "nemorensis": {
+            "pearson": -0.6756589834248482,
+            "spearman": -1.0
+          },
+          "sagittata": {
+            "pearson": 0.5869911965142438,
+            "spearman": 0.6000000000000001
+          }
+        },
+        "chr4": {
+          "consensus": {
+            "pearson": 0.44876389447206255,
+            "spearman": 0.0
+          },
+          "nemorensis": {
+            "pearson": -0.22545015311553523,
+            "spearman": -0.3214285714285715
+          },
+          "sagittata": {
+            "pearson": 0.9204006028739224,
+            "spearman": 0.5357142857142858
+          }
+        },
+        "chr5": {
+          "consensus": {
+            "pearson": 0.5547402192779514,
+            "spearman": 0.7999999999999999
+          },
+          "nemorensis": {
+            "pearson": -0.503837614579438,
+            "spearman": -0.39999999999999997
+          },
+          "sagittata": {
+            "pearson": 0.8091179109403333,
+            "spearman": 1.0
+          }
+        },
+        "chr6": {
+          "consensus": {
+            "pearson": 0.153225620819852,
+            "spearman": -0.5
+          },
+          "nemorensis": {
+            "pearson": -0.5608222270054346,
+            "spearman": -0.5
+          },
+          "sagittata": {
+            "pearson": 0.883069429056948,
+            "spearman": 0.5
+          }
+        },
+        "chr7": {
+          "consensus": {
+            "pearson": -0.0008645235941767758,
+            "spearman": -0.5
+          },
+          "nemorensis": {
+            "pearson": -0.0024016925528808175,
+            "spearman": -0.5
+          },
+          "sagittata": {
+            "pearson": 0.03782634117238364,
+            "spearman": -0.5
+          }
+        },
+        "chr8": {
+          "consensus": {
+            "pearson": 0.7915849028497138,
+            "spearman": 0.6571428571428573
+          },
+          "nemorensis": {
+            "pearson": 0.7720841749731908,
+            "spearman": 0.7714285714285715
+          },
+          "sagittata": {
+            "pearson": 0.6849040381130592,
+            "spearman": 0.6
+          }
+        }
+      },
+      "window_mb": 5.0
+    }
+  },
+  "sample_assignments": {
+    "accessions": {
+      "nemorensis": [
+        "10",
+        "25",
+        "29",
+        "30",
+        "163",
+        "233",
+        "293",
+        "309",
+        "337",
+        "358",
+        "393",
+        "435"
+      ],
+      "sagittata": [
+        "19",
+        "34",
+        "69",
+        "72",
+        "94",
+        "114",
+        "116",
+        "173",
+        "174",
+        "175",
+        "176",
+        "177",
+        "261",
+        "267",
+        "271",
+        "272",
+        "277",
+        "323",
+        "325",
+        "326",
+        "344",
+        "359",
+        "360",
+        "370",
+        "380"
+      ]
+    },
+    "counts": {
+      "nemorensis": 12,
+      "sagittata": 25
+    },
+    "sha256": "abe0f5dd120e447dbc9e326e044b0a7cad63d549bfb31bffb7da050809ae0f1d"
+  },
+  "schema_version": 1,
+  "source_commit": "10c9092ce9e08c16b0a958d4062932262a8c6bc4",
+  "stats_sha256": "ensemble_manifest:2dddffb2d8ee63151f07d2161245f6bacb4cb2061d7de0fde964e4cca38c4d1c",
+  "variant_pipeline_software": {
+    "bcftools": "bcftools 1.24",
+    "bwa-mem2": "2.2.1",
+    "samtools": "samtools 1.24"
+  }
+}

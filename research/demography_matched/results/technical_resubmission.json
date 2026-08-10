@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-22",
+  "original_collate": {
+    "job_id": "7159756",
+    "state": "FAILED",
+    "exit_code": 1,
+    "technical_reason": "The constant and matched ReLERNN arms were independently filtered to positive predictions, producing unequal paired window counts (1801 and 1848) before collation."
+  },
+  "replacement_collate": {
+    "job_id": "7161419",
+    "state": "COMPLETED",
+    "exit_code": 0,
+    "elapsed_seconds": 21
+  },
+  "repair": {
+    "rule": "Rederive both arms on the joint set of finite, strictly-positive truth and predictions.",
+    "changed": [
+      "collation and paired support filtering"
+    ],
+    "unchanged": [
+      "evaluation inputs",
+      "truth maps",
+      "predictions",
+      "training data and seeds",
+      "demographic histories",
+      "rate priors",
+      "epochs",
+      "registered endpoints"
+    ],
+    "selection_on_arabis_or_manuscript_outcomes": false,
+    "collation_script_sha256": "0333e3dd6823001de08208516c6be9b17a44a631774e3c0294b64084c87a1e0a",
+    "benchmark_test_sha256": "35fe53051d394d2fc2d44858096c6bb338725454f387bed55196444d0959c9fb"
+  }
+}

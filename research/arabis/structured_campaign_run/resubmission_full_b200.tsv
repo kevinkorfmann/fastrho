@@ -1,0 +1,11 @@
+hardware=full_B200
+old_train=7152122
+cleanup=7152324
+train=7152325
+freeze=7152326
+simulation_audit=7152327
+gate=7152328
+infer=7152329
+ensemble=7152330
+evaluate=7152331
+finalize=7152332

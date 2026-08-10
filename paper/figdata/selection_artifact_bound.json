@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_npz": "paper/figdata/selection_dr_figdata.npz",
+    "interpretation": "Calibration-bound test for generic sweep artefacts. It uses simulated hard sweeps with known true maps and does not replace allele-defined resistance-carrier or sweep-core controls at real resistance loci.",
+    "thresholds_pred_true": [
+      0.25,
+      0.35,
+      0.5
+    ]
+  },
+  "neutral": {
+    "fastrho": {
+      "n_windows": 2400,
+      "median_pred_true": 0.6551715403802741,
+      "q05_pred_true": 0.29160864350999083,
+      "q95_pred_true": 1.0505591946506738,
+      "frac_pred_true_le": {
+        "0.25": 0.027083333333333334,
+        "0.35": 0.08833333333333333,
+        "0.5": 0.21833333333333332
+      }
+    },
+    "pyrho": {
+      "n_windows": 2400,
+      "median_pred_true": 0.7683470192960572,
+      "q05_pred_true": 0.30616360174829726,
+      "q95_pred_true": 1.6881151209357868,
+      "frac_pred_true_le": {
+        "0.25": 0.027916666666666666,
+        "0.35": 0.07541666666666667,
+        "0.5": 0.19125
+      }
+    }
+  },
+  "hard_sweep": {
+    "fastrho": {
+      "n_windows": 2720,
+      "median_pred_true": 0.5967260854908795,
+      "q05_pred_true": 0.21969851542269309,
+      "q95_pred_true": 1.0680628183786562,
+      "frac_pred_true_le": {
+        "0.25": 0.06691176470588235,
+        "0.35": 0.13161764705882353,
+        "0.5": 0.30772058823529413
+      },
+      "excess_frac_vs_neutral": {
+        "0.25": 0.03982843137254902,
+        "0.35": 0.0432843137254902,
+        "0.5": 0.08938725490196081
+      }
+    },
+    "pyrho": {
+      "n_windows": 2720,
+      "median_pred_true": 0.5174678652514377,
+      "q05_pred_true": 0.049029362927433554,
+      "q95_pred_true": 1.6187881229036827,
+      "frac_pred_true_le": {
+        "0.25": 0.22426470588235295,
+        "0.35": 0.3323529411764706,
+        "0.5": 0.47941176470588237
+      },
+      "excess_frac_vs_neutral": {
+        "0.25": 0.19634803921568628,
+        "0.35": 0.2569362745098039,
+        "0.5": 0.2881617647058824
+      }
+    }
+  }
+}

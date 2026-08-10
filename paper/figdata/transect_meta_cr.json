@@ -1,0 +1,4 @@
+{
+ "celegans": {"latin": "Caenorhabditis elegans", "common": "Roundworm (selfer)", "clade": "Nematodes", "regime": "selfing", "order_idx": 90, "source": "CaeNDR wild isotypes", "n_dip": 75, "specialist_note": "extreme selfer: LD map inverts vs meiotic map", "specialist_r": null},
+ "remanei": {"latin": "Caenorhabditis remanei", "common": "Roundworm (outcrosser)", "clade": "Nematodes", "regime": "outbred", "order_idx": 91, "source": "Teterina 2023 (14 wild isolates, WGS)", "n_dip": 14, "specialist_note": null, "specialist_r": null}
+}

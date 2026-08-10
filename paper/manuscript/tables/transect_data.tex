@@ -1,0 +1,27 @@
+% SI table: ten-species cross-species comparison.
+% n = sampled diploid individuals, except DGRP and jewel wasp where n is the number of inbred lines.
+% Recovery = Pearson r vs an external map, or split-sample rho followed by fastrho-pyrho r.
+{\footnotesize
+\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{1.02}
+\begin{tabular}{@{}llrll@{}}
+\toprule
+Common name / \emph{species} & Data source (accession) & $n$ & Chr. & Recovery \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Mammals}}\\
+Human / \emph{Homo sapiens}            & IGSR 1000G \texttt{20130502}, CEU & 99  & 2 & $r{=}{+}0.87$ (HapMap)\\
+Cattle / \emph{B.\ taurus\,\(\times\)\,B.\ indicus} & EBI NextGen \texttt{UGBT} (Uganda) & 25 & 1 & $\rho{=}0.59$; $r_{\rm pyrho}{=}0.60$\\
+Sheep / \emph{Ovis aries}              & EBI NextGen \texttt{IROA} (Iran) & 20 & 1 & $\rho{=}0.73$; $r_{\rm pyrho}{=}0.75$\\
+Goat / \emph{Capra hircus}             & EBI NextGen \texttt{IRCH} (Iran) & 20 & 1 & $\rho{=}0.72$; $r_{\rm pyrho}{=}0.82$\\
+Donkey$^{\dagger}$ / \emph{Equus asinus} & Todd 2022 (Chinese cohort) & 51 & CM027690.1 & $\rho{=}0.86$; $r_{\rm pyrho}{=}0.73$\\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Insects}}\\
+Fruit fly / \emph{D.\ melanogaster}    & DGRP inbred lines                 & 205 lines & 2L & $r{=}{+}0.49$ (Comeron)\\
+Jewel wasp$^{\dagger}$ / \emph{N.\ vitripennis} & EVA \texttt{PRJEB33514} & 34 lines & NC\_015868.2 & $\rho{=}0.72$; $r_{\rm pyrho}{=}0.50$\\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Plants}}\\
+Thale cress / \emph{A.\ thaliana}      & 1001 Genomes                      & 78 & (1--5) & $r{=}{+}0.27$ (Salom\'e)\\
+Aspen / \emph{Populus tremula}         & SwAsp (\texttt{PRJEB79788})       & 99 & chr1 & $\rho{=}0.94$; $r_{\rm pyrho}{=}0.64$\\
+Chinese chestnut$^{\dagger}$ / \emph{C.\ mollissima} & EVA \texttt{PRJEB87510} & 97 & Chr1 & $\rho{=}0.92$; $r_{\rm pyrho}{=}0.57$\\
+\bottomrule
+\end{tabular}
+}

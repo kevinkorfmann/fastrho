@@ -1,0 +1,80 @@
+/* Keep download labels and data cards usable on narrow screens. */
+.sd-card,
+.sd-card-body {
+  min-width: 0;
+}
+
+a.reference.download,
+a.reference.download code {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+:root {
+  --fastrho-blue: #116a9e;
+  --fastrho-sky: #8fd0ee;
+  --fastrho-ink: #16324a;
+}
+
+.content {
+  --content-width: 52rem;
+}
+
+.hero-figure img {
+  background: #ffffff;
+  border: 1px solid rgba(17, 106, 158, 0.16);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.8rem rgba(22, 50, 74, 0.12);
+  padding: 0.35rem;
+}
+
+.quick-card {
+  border: 1px solid rgba(17, 106, 158, 0.18) !important;
+  border-radius: 0.8rem !important;
+  box-shadow: 0 0.35rem 1.25rem rgba(22, 50, 74, 0.07);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.quick-card:hover {
+  box-shadow: 0 0.6rem 1.6rem rgba(22, 50, 74, 0.12);
+  transform: translateY(-2px);
+}
+
+.quick-card .sd-card-title {
+  color: var(--fastrho-blue);
+  font-weight: 700;
+}
+
+.api-card {
+  border: 1px solid rgba(17, 106, 158, 0.16) !important;
+  border-radius: 0.7rem !important;
+}
+
+.api-card .sd-card-title {
+  color: var(--fastrho-blue);
+  font-weight: 700;
+}
+
+.api-card code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+table.docutils {
+  font-size: 0.94rem;
+}
+
+table.docutils td,
+table.docutils th {
+  overflow-wrap: anywhere;
+}
+
+table.docutils code,
+table.docutils code .pre {
+  white-space: normal;
+}
+
+code.literal {
+  border-radius: 0.25rem;
+}

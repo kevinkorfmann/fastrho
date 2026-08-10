@@ -1,0 +1,76 @@
+{
+  "arabis_cross_map_used_for_selection": false,
+  "campaign": "arabis_structured_selfing_v1",
+  "frozen_utc": "2026-07-21T10:36:41.977578+00:00",
+  "members": [
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed0/logs/fastrho/version_0/checkpoints/epoch=39-val_pearson=0.863.ckpt",
+      "checkpoint_sha256": "dbf9c91d444c768a8dff67a5eb3cb9cb9d27c715dcfa3f2e57fdf4f4d489cc6a",
+      "seed": 0,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed0/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8628542423248291
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed1/logs/fastrho/version_0/checkpoints/epoch=35-val_pearson=0.862.ckpt",
+      "checkpoint_sha256": "b015027aa2020cb4d31b727e3a233e6b94347657df19ee8cf559d35d13cca397",
+      "seed": 1,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed1/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8617681264877319
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed2/logs/fastrho/version_0/checkpoints/epoch=37-val_pearson=0.861.ckpt",
+      "checkpoint_sha256": "75bb8a026b04f33f4c4951bc2b82e1b563684e53572465e57600540a23ab9bd9",
+      "seed": 2,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed2/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8614206314086914
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed3/logs/fastrho/version_0/checkpoints/epoch=39-val_pearson=0.861.ckpt",
+      "checkpoint_sha256": "fe043730def6c42dcc294d79c400112051062c8ed87f169c75cc079a3e388aa1",
+      "seed": 3,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed3/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8612993359565735
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed4/logs/fastrho/version_0/checkpoints/epoch=38-val_pearson=0.861.ckpt",
+      "checkpoint_sha256": "7166f6d69081eaf98c07dd763910b08e2fb2e308401fde8002922b4d8955bd31",
+      "seed": 4,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed4/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8614138960838318
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed5/logs/fastrho/version_0/checkpoints/epoch=37-val_pearson=0.862.ckpt",
+      "checkpoint_sha256": "d7f84236d6afb79da61588d0bd3cd9313d69ed87905ec06a5abcb666e9ea3282",
+      "seed": 5,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed5/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8622062802314758
+    },
+    {
+      "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed6/logs/fastrho/version_0/checkpoints/epoch=37-val_pearson=0.861.ckpt",
+      "checkpoint_sha256": "9203b6bdd32ab9b056d836ad8f389280df5c340f6ed2218ddb6db8acb4118805",
+      "seed": 6,
+      "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed6/shards/feat_stats.npz",
+      "stats_sha256": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+      "validation_pearson": 0.8610540628433228
+    }
+  ],
+  "preregistration": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/preregistration.json",
+  "preregistration_sha256": "c8fc5fd8353360952527c02554a22514809ab6c1dd6ae0f8441598d4b531a8db",
+  "schema_version": 1,
+  "selection_data": "simulated validation only",
+  "training_panel_sizes": [
+    8,
+    12,
+    16,
+    24,
+    25,
+    32,
+    50
+  ]
+}

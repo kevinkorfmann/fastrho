@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "variant": "phase2",
+  "status": "complete",
+  "release": "Ag1000G Phase 2 AR1",
+  "release_date": "2017-11-06",
+  "reference_assembly": "AgamP4",
+  "wild_sample_count_release": 1142,
+  "country_count_release": 13,
+  "cross_sample_count_release": 234,
+  "pedigree_cross_count": 11,
+  "atlas_diploids_per_cohort": 40,
+  "five_arm_intersection_count": 1058,
+  "sample_availability_rule": "present in all five released chromosome-arm HDF5 files",
+  "selection_seed": 2026,
+  "chromosome_arms": ["2R", "2L", "3R", "3L", "X"],
+  "reporting_windows_bp": [50000, 100000],
+  "citation_keys": ["malariagen_phase2_ar1_2017", "ag1000g2020"],
+  "terms_lifted": "2022-03-22",
+  "analysis_completed_utc": "2026-08-06T19:14:53Z",
+  "submission_eligible": true,
+  "submission_gate": "Passed after 45-map QC, result promotion, checksum verification, figure inspection, Phase 2 manuscript staging, and compilation."
+}

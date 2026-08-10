@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "policy": "Every included PDF has one executable producer and checksummed committed inputs. Optional cosmetic silhouettes are checksummed when present.",
+  "deterministic_build_environment": {
+    "SOURCE_DATE_EPOCH": "1420070400"
+  },
+  "figures": [
+    {
+      "output": "paper/figures/fig5_unphased.pdf",
+      "manuscript_target": "figures_phase2/fig5_unphased.pdf",
+      "output_sha256": "380a4f42becab1ee6d43f041733be08647dc387729c0fbaef19a6a336edcd8a2",
+      "producer": "scripts/fig_unphased.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_unphased.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figures/_stdpopsim_panelc_track10.json",
+          "sha256": "9d6380046ab0d8a1177c98140524425fc55501a8beb670a8e72971a3352f150e"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_phased.json",
+          "sha256": "95a136253afd2f4caac7e8855fa1c95cac67d4aae947f19a19a7d5ecff08f2ae"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_unphased.json",
+          "sha256": "ebff26618ab0de4c7a303159ce0258d9b669333ff78dce513e66ff9bccee92bb"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_unphased_gt.json",
+          "sha256": "d5707796f4423ea654fc41398759b6bd75edb0e8cb7929d93007da304394dfff"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_unphased_gt_dr.json",
+          "sha256": "68b2a544c177458ded4c7931d5d7cc06ba81caab5166a4ac899b4d7538835eb4"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_unphased_unpol_gt.json",
+          "sha256": "2375c013d24b6c87925dec7fd59818cb266f03e41addbd8b2cf891a1e3526243"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_unphased_unpol_gt_dr.json",
+          "sha256": "b4469cd98d71249b671e15b9300e1e9a34e43c031f763c9671eef72c1bb2b55e"
+        },
+        {
+          "path": "paper/figures/_stdpopsim_unphased_unpol_gt_gtmodel.json",
+          "sha256": "ece8dd2063cfba58010b5a9f1cbbbe7921ac8aff9711b1d1a461d6603fa7b073"
+        },
+        {
+          "path": "paper/figures/silhouettes/arabidopsis.png",
+          "sha256": "f94984123e8f78cf2f8c13716792df6e98308a40acd8457fa75b3ceae8228a5e"
+        },
+        {
+          "path": "paper/figures/silhouettes/baboon.png",
+          "sha256": "f9f7231d51e799844fa2f5c62f76d7bf84f5dcf04a8f750bf0c655f4461c5969"
+        },
+        {
+          "path": "paper/figures/silhouettes/dog.png",
+          "sha256": "44b6e7910d816cf9d2a178dae0b90502dc9ddfcfd36008acd862de33abf804a6"
+        },
+        {
+          "path": "paper/figures/silhouettes/fly.png",
+          "sha256": "61f2438de600d86db0e156a0ee8938197037c4ae4fe662893260017d511c5e00"
+        },
+        {
+          "path": "paper/figures/silhouettes/human.png",
+          "sha256": "f0590d01e80602eb3f241818958890009f06528b1372f3ce85af68ff1d7f5af7"
+        },
+        {
+          "path": "paper/figures/silhouettes/orangutan.png",
+          "sha256": "c6749d873b4182a43c9a2ac8347b5f699b53649cd755dc885cf50f8c21118241"
+        },
+        {
+          "path": "paper/figures/silhouettes/worm.png",
+          "sha256": "fca0a12c77fcd4c76c3a08c56300678c97890ec5ed3774e407c921dedf3d9c02"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_gene_conversion.pdf",
+      "manuscript_target": "figures_phase2/fig_gene_conversion.pdf",
+      "output_sha256": "63794bd0bb1d7528e8828f1d0091b7d807ef20e7f69a069e7b8406905daa44a4",
+      "producer": "scripts/fig_gene_conversion.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_gene_conversion.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/gene_conversion.npz",
+          "sha256": "54d7ef0bfa798eab81808a7ec928a03d94696af876e96c3b87532bd999702ddb"
+        },
+        {
+          "path": "paper/results_snapshot/gene_conversion.json",
+          "sha256": "df79b3b0d2111941043f1a9b93994c42b7b1f9a96c5028daa98469b035bb2234"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_redpoll_karyotype.pdf",
+      "manuscript_target": "figures_phase2/fig_redpoll_karyotype.pdf",
+      "output_sha256": "8d43d042e61d1dfb2118e9d94c62aead36c272492e93deb7e96bb34c886bcc73",
+      "producer": "scripts/fig_redpoll_karyotype.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_redpoll_karyotype.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/fieldguide_redpoll.npz",
+          "sha256": "3697d3b2d978c5860b0bbfd36e430a237340ff9971d8324e6138ed8720884919"
+        },
+        {
+          "path": "paper/figdata/redpoll_karyotype_ld.json",
+          "sha256": "fc03df135c900ba3a3dabc299001f5df0bfe18564755407e20c69cc1a7e11f04"
+        },
+        {
+          "path": "paper/figdata/redpoll_karyotype_maps.json",
+          "sha256": "424751507652eb674cbfc7c8e3ecac079ade33bda6868ce3960be004f609fe3d"
+        },
+        {
+          "path": "paper/figdata/redpoll_karyotype_maps.npz",
+          "sha256": "242820ff5f1f6b53076eee1a270c8403c753acdd9414063c46d38ec8e136ea9f"
+        },
+        {
+          "path": "paper/figdata/redpoll_karyotype_null.json",
+          "sha256": "8cfd552b78bbc834ba33372b5a38210fe0ecb0f2b3ca83b2c02dcc1e39deaf5b"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_si_arabis_cross.pdf",
+      "manuscript_target": "figures_phase2/fig_si_arabis_cross.pdf",
+      "output_sha256": "88e9b672bfa3a5e59a5721ba7def8cae82eaf737d08a61ce1d4712e3cf4598bc",
+      "producer": "scripts/fig_arabis_cross.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_arabis_cross.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/arabis_cross.npz",
+          "sha256": "e1c29c1fac5b9f940b93b6d4f0ec6e30d7e096281748d05acb8c563ab43bdd79"
+        },
+        {
+          "path": "paper/figdata/arabis_cross_structured.npz",
+          "sha256": "8b2a3117479d488788488a4f3d7aad308b149d5260f3a320fe36938283ecd72c"
+        },
+        {
+          "path": "paper/results_snapshot/arabis_cross.json",
+          "sha256": "c8aa3d23dd1b2b537ef12cb5c7ee8f80caa272d8e7246dec4c636eefe20f2964"
+        },
+        {
+          "path": "paper/results_snapshot/arabis_cross_smalln.json",
+          "sha256": "a3a34f8e9bc3e5136990d332fa584787fdd65f47aa9ecf04a42d53360a193788"
+        },
+        {
+          "path": "paper/results_snapshot/arabis_cross_structured.json",
+          "sha256": "2af7883a01d2f6418aa1288f9b6c9d9c7b993edf64756511be7a7e0229fdb55e"
+        },
+        {
+          "path": "paper/results_snapshot/arabis_window_diagnostics.json",
+          "sha256": "cd5ecdbd3d9ad5341015e982261a6bdab85ffab5f69331e36cc64484d7b298b0"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_si_demography_mating_limits.pdf",
+      "manuscript_target": "figures_phase2/fig_si_demography_mating_limits.pdf",
+      "output_sha256": "410f7e66eeca34d965250d449997edd54c585d9d84e4052101e00e788e564b0d",
+      "producer": "scripts/fig_si_unique.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_si_unique.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/dog_fig.npz",
+          "sha256": "a2ba2f884949d3921cee46502141717b86b4cb5a8c991d555333f5fadf516791"
+        },
+        {
+          "path": "paper/figdata/identifiability.json",
+          "sha256": "1461861439b2b8756242f293e557fc90f8a05c33459c1934659202ad251c91e7"
+        },
+        {
+          "path": "paper/figdata/mechanism.json",
+          "sha256": "0af8fb63ffc737c3f9b6c8081bf541c00df0e8b7c5d0af31952b8d7d5f225811"
+        },
+        {
+          "path": "paper/figdata/realmaps.npz",
+          "sha256": "b9361419da441992c381a76ebb993748ac357b31ef27a1ed189157bfe496164c"
+        },
+        {
+          "path": "paper/figdata/relernn_showdown.npz",
+          "sha256": "62e232df39c0a78ca423584d2ea418cb7b5a421123882d82a33ae86ceee958fe"
+        },
+        {
+          "path": "paper/figdata/repro_showdown.npz",
+          "sha256": "58c616b0bbbb059bee21b94c11379e4c2cc05bc3163c525d8b8dfa4c934390bf"
+        },
+        {
+          "path": "paper/figdata/selection_dr_figdata.npz",
+          "sha256": "0d96d7bcacb51af455a538015dca9fbe234faf25f9e293dc51fdbe02f0dfdff0"
+        },
+        {
+          "path": "paper/figdata/selfer_ceiling.json",
+          "sha256": "00c65e41e2f224a0b72d6706a0985743d2c0b80055064341dc92e602e78af036"
+        },
+        {
+          "path": "paper/results_snapshot/demography_matched.json",
+          "sha256": "65bc711ba48d46b095beb1902445d077044441d0bd25a4e5960cef4551d95a61"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_si_relernn_mechanisms.pdf",
+      "manuscript_target": "figures_phase2/fig_si_relernn_mechanisms.pdf",
+      "output_sha256": "641c6db0191434d3cebd30abd15adf15cb03077199e9f9d88ddc0a445531bc3a",
+      "producer": "scripts/fig_si_unique.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_si_unique.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/dog_fig.npz",
+          "sha256": "a2ba2f884949d3921cee46502141717b86b4cb5a8c991d555333f5fadf516791"
+        },
+        {
+          "path": "paper/figdata/identifiability.json",
+          "sha256": "1461861439b2b8756242f293e557fc90f8a05c33459c1934659202ad251c91e7"
+        },
+        {
+          "path": "paper/figdata/mechanism.json",
+          "sha256": "0af8fb63ffc737c3f9b6c8081bf541c00df0e8b7c5d0af31952b8d7d5f225811"
+        },
+        {
+          "path": "paper/figdata/realmaps.npz",
+          "sha256": "b9361419da441992c381a76ebb993748ac357b31ef27a1ed189157bfe496164c"
+        },
+        {
+          "path": "paper/figdata/relernn_showdown.npz",
+          "sha256": "62e232df39c0a78ca423584d2ea418cb7b5a421123882d82a33ae86ceee958fe"
+        },
+        {
+          "path": "paper/figdata/repro_showdown.npz",
+          "sha256": "58c616b0bbbb059bee21b94c11379e4c2cc05bc3163c525d8b8dfa4c934390bf"
+        },
+        {
+          "path": "paper/figdata/selection_dr_figdata.npz",
+          "sha256": "0d96d7bcacb51af455a538015dca9fbe234faf25f9e293dc51fdbe02f0dfdff0"
+        },
+        {
+          "path": "paper/figdata/selfer_ceiling.json",
+          "sha256": "00c65e41e2f224a0b72d6706a0985743d2c0b80055064341dc92e602e78af036"
+        },
+        {
+          "path": "paper/results_snapshot/demography_matched.json",
+          "sha256": "65bc711ba48d46b095beb1902445d077044441d0bd25a4e5960cef4551d95a61"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_si_resolution.pdf",
+      "manuscript_target": "figures_phase2/fig_si_resolution.pdf",
+      "output_sha256": "a922ecbe20d42f751b91a3b6f44f39341a948e95b1296dfd56a548b9310c4079",
+      "producer": "scripts/fig_si_unique.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_si_unique.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/dog_fig.npz",
+          "sha256": "a2ba2f884949d3921cee46502141717b86b4cb5a8c991d555333f5fadf516791"
+        },
+        {
+          "path": "paper/figdata/identifiability.json",
+          "sha256": "1461861439b2b8756242f293e557fc90f8a05c33459c1934659202ad251c91e7"
+        },
+        {
+          "path": "paper/figdata/mechanism.json",
+          "sha256": "0af8fb63ffc737c3f9b6c8081bf541c00df0e8b7c5d0af31952b8d7d5f225811"
+        },
+        {
+          "path": "paper/figdata/realmaps.npz",
+          "sha256": "b9361419da441992c381a76ebb993748ac357b31ef27a1ed189157bfe496164c"
+        },
+        {
+          "path": "paper/figdata/relernn_showdown.npz",
+          "sha256": "62e232df39c0a78ca423584d2ea418cb7b5a421123882d82a33ae86ceee958fe"
+        },
+        {
+          "path": "paper/figdata/repro_showdown.npz",
+          "sha256": "58c616b0bbbb059bee21b94c11379e4c2cc05bc3163c525d8b8dfa4c934390bf"
+        },
+        {
+          "path": "paper/figdata/selection_dr_figdata.npz",
+          "sha256": "0d96d7bcacb51af455a538015dca9fbe234faf25f9e293dc51fdbe02f0dfdff0"
+        },
+        {
+          "path": "paper/figdata/selfer_ceiling.json",
+          "sha256": "00c65e41e2f224a0b72d6706a0985743d2c0b80055064341dc92e602e78af036"
+        },
+        {
+          "path": "paper/results_snapshot/demography_matched.json",
+          "sha256": "65bc711ba48d46b095beb1902445d077044441d0bd25a4e5960cef4551d95a61"
+        }
+      ]
+    },
+    {
+      "output": "paper/figures/fig_treeoflife_panel.pdf",
+      "manuscript_target": "figures_phase2/fig_treeoflife_panel.pdf",
+      "output_sha256": "09ccbebf5b969ea52cc5a2010ece4ff894c55000e07a3e6c0dd30eb48f9d725a",
+      "producer": "scripts/fig_treeoflife_panel.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_treeoflife_panel.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/transect.json",
+          "sha256": "16ba8574bc85f16de69dea97bcbe6b7a35276bbe628b3c5225cb1e18b79408ad"
+        },
+        {
+          "path": "paper/figdata/transect_pyrho.json",
+          "sha256": "f67dfa34835f4b949c57d139973f8c995a559515568c2d5bcbdad4b2a12ab0f0"
+        },
+        {
+          "path": "paper/figdata/silhouettes/aspen.png",
+          "sha256": "92cdae4d23c0117ebf111a240cd5765c2517d5f6f23572bd2658c7f4db867408"
+        },
+        {
+          "path": "paper/figdata/silhouettes/athal.png",
+          "sha256": "0f7aefba7c0ebf0997dd4e3b6193d0b78294df44fa352b64e7d7e44e1f88f3ae"
+        },
+        {
+          "path": "paper/figdata/silhouettes/cattle.png",
+          "sha256": "814c6a074bde2029c8d69dc7a6b991ecefa0b9d521af71f9ac54cf29386b69f9"
+        },
+        {
+          "path": "paper/figdata/silhouettes/chestnut.png",
+          "sha256": "c573738871fe90492826b865c6402c828f5ddeb833b5940c418281feed108e60"
+        },
+        {
+          "path": "paper/figdata/silhouettes/dmel.png",
+          "sha256": "a72009a2eeb16df2997cc654431feade67b82b4ca6488d63014777ad002227ab"
+        },
+        {
+          "path": "paper/figdata/silhouettes/donkey.png",
+          "sha256": "6f0af5e8cf359d58b548b250892892b8477de643d5cad9c81ff8128c9ece1d66"
+        },
+        {
+          "path": "paper/figdata/silhouettes/goat.png",
+          "sha256": "61f6bcc70ef38aec63eeebfc924b9e1ae2167bfab0e49df69fe91589a8daeaea"
+        },
+        {
+          "path": "paper/figdata/silhouettes/human.png",
+          "sha256": "cda77ddadaa8e8a930e00783a5093b20d6af76c32bf120591f1e65386991188e"
+        },
+        {
+          "path": "paper/figdata/silhouettes/jewelwasp.png",
+          "sha256": "ac833f2660e17494d04941cee704245245ac583007d9987c2d8ce2f6eaffff27"
+        },
+        {
+          "path": "paper/figdata/silhouettes/sheep.png",
+          "sha256": "88bc7b9548507d95c6a852f89c1f0f19fec52a96b2f28f0f21b08d379a55b795"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fastrho_header_mark.pdf",
+      "manuscript_target": "figures_phase2/fastrho_header_mark.pdf",
+      "output_sha256": "8c59981223b3249f68c0677be2583e44b76397bac17efdc54acc5020846bc447",
+      "producer": "paper/manuscript/figures/fastrho_header_mark.svg",
+      "command": [],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/manuscript/figures/fastrho_header_mark.svg",
+          "sha256": "c8457cc23f076185820a9f6ce4f15cb127996f03d63ff8dc7878f30b638ffce7"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fig1_complete.pdf",
+      "manuscript_target": "figures_phase2/fig1_complete.pdf",
+      "output_sha256": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
+      "producer": "paper/manuscript/figures/fig1_complete.tex",
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "fig1_architecture.tex",
+        "fig1_complete.tex"
+      ],
+      "cwd": "paper/manuscript/figures",
+      "inputs": [
+        {
+          "path": "paper/manuscript/figures/fig1_architecture.tex",
+          "sha256": "45eae567621807e8a1b89228a378a90860659a1f134572b88267226f693217d2"
+        },
+        {
+          "path": "paper/manuscript/figures/fig1_complete.tex",
+          "sha256": "b34f73efe5fd19690753c173c4c17dea6dc971b84a563feefb00cce2bf71f17c"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fig1_method_validation.pdf",
+      "manuscript_target": "figures_phase2/fig1_method_validation.pdf",
+      "output_sha256": "3c44a3830e59b06ae0eafbb4d9326b5a4e9503795bf0eebcac09de059e4391a0",
+      "producer": "scripts/fig_manuscript.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_manuscript.py",
+        "fig1"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/selection_dr.json",
+          "sha256": "17b9955300bc223ca8bca3c80c92240ef4b45fe5af39e4fd9d6be3d6d6edfd29"
+        },
+        {
+          "path": "paper/figdata/selection_dr_figdata.npz",
+          "sha256": "0d96d7bcacb51af455a538015dca9fbe234faf25f9e293dc51fdbe02f0dfdff0"
+        },
+        {
+          "path": "paper/results_snapshot/demography_matched.json",
+          "sha256": "65bc711ba48d46b095beb1902445d077044441d0bd25a4e5960cef4551d95a61"
+        },
+        {
+          "path": "paper/results_snapshot/summary.json",
+          "sha256": "f559522026d3ecd3d9dbf660640fc2c908891a7e361a91cf1182deb1a19c3fc9"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fig2_history_rescue.pdf",
+      "manuscript_target": "figures_phase2/fig2_history_rescue.pdf",
+      "output_sha256": "9aa8c135f2c0122a2c2b9de5fdf1ea5a7078d8b5dbfb727bd7b9363ffa0b8c9c",
+      "producer": "scripts/fig_manuscript_history.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "scripts/fig_manuscript_history.py"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/figdata/canid_empirical_ld.json",
+          "sha256": "ea62733895d5ae15cd128bd08c2d6746992bc07f14f66fcbcf5f748b52e8ddb3"
+        },
+        {
+          "path": "paper/figdata/canid_empirical_scale.json",
+          "sha256": "9337b95475356723f0d53fc66bcfa107a071112a88dd1bae2ccaa1c8fc2b426e"
+        },
+        {
+          "path": "paper/figdata/dog_fig.npz",
+          "sha256": "a2ba2f884949d3921cee46502141717b86b4cb5a8c991d555333f5fadf516791"
+        },
+        {
+          "path": "paper/figdata/selfer_ceiling.json",
+          "sha256": "00c65e41e2f224a0b72d6706a0985743d2c0b80055064341dc92e602e78af036"
+        },
+        {
+          "path": "paper/figdata/selfer_chroms.npz",
+          "sha256": "5ee68a39db107d2d97beb14c900a57689e1eff48f80a6e3cdbd6b8abda55467e"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fig_phase2_anopheles.pdf",
+      "manuscript_target": "figures_phase2/fig_phase2_anopheles.pdf",
+      "output_sha256": "cc7a660e9cb818c8b536e2ee5573f03898843c2ef924d19a6e55b4e079255f79",
+      "producer": "paper/anopheles_variants/common/plot_phase2.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "paper/anopheles_variants/common/plot_phase2.py",
+        "--maps",
+        "paper/anopheles_variants/phase2/maps",
+        "--selection",
+        "paper/anopheles_variants/phase2/cohorts/selection.tsv",
+        "--results",
+        "paper/anopheles_variants/phase2/results",
+        "--out",
+        "paper/manuscript/figures"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/anopheles_variants/common/plot_phase2.py",
+          "sha256": "5eb36332e7f8f7b6be95d65b7bc3845f683dfc77178c486c4f17f4973e17f9f0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/cohorts/selection.tsv",
+          "sha256": "a2467f0165ec59505d332c5415e3095799097077fdadbfa26fcc7b2bb8641a83"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__2L.npz",
+          "sha256": "55827e4a934b780039999afca14dd57032a9f9c08dce7efdb4fb293fea8688a0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__2R.npz",
+          "sha256": "13bde800db1803b8ea9bc4571e02910a489a5c8c5db183e864c8c5af26523fb0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__3L.npz",
+          "sha256": "a44ab87fb7b7d72496616b461df874f1ed2309a20ab47df8026f9325362fe069"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__3R.npz",
+          "sha256": "4a9bab67969b45e64048f1958b6b49db6ad62b9bb2e9afb00a5e23ffce701c16"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__X.npz",
+          "sha256": "72d175b17e80f664ee6d45e4380379800dd7e89ed8e65542a0bda2051ce712ef"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__2L.npz",
+          "sha256": "c38bd17d1ce647bf4e949109924ecc00c1e385ee9f65979c7f3611e0134d716c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__2R.npz",
+          "sha256": "41520c6869091ab0196b33c972e031ab2950f2994d356582d9e0aff55f3cd581"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__3L.npz",
+          "sha256": "08eed0776c5fc633d6356ad48fd0da316e08114236373804c21e361219e9f324"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__3R.npz",
+          "sha256": "c0d13ce08981946021457ebf91ad43cd78f04820f8f1d507859f2da11ac74188"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__X.npz",
+          "sha256": "1a1bee4a2c1fd286f61712484fb52d364f662323d7fc9cbdc2abecf8ac57ce6c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__2L.npz",
+          "sha256": "52c61a0ae84af528f5600c61fe96f268aa2306b16a1a6127d74d458612b02ba1"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__2R.npz",
+          "sha256": "c710f94d9278e9d9b81f99433972998c33511659debb03249f82769d30c27521"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__3L.npz",
+          "sha256": "db9af367c7ec67c498005df2fa15c22b5ccdbd53bbdde87a3ed10d6a9fef7d63"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__3R.npz",
+          "sha256": "cf3ae124ece557329f0d25a2731f5fc3fe00e3f5b70f9c77ea76e5bc27cb9b9b"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__X.npz",
+          "sha256": "8721aab12922d3821c045a556ac122fd5a8dfa0b3f4309391ef59e4b5df49b25"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__2L.npz",
+          "sha256": "cc5ed0fe7b6618a462bc0c6352095363669c9535b4cb7cd454f0fa35624fd870"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__2R.npz",
+          "sha256": "c878460d5f74d53a9935286fc5069729f8b4975e4bee442a98ce535c2f832241"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__3L.npz",
+          "sha256": "4ea6d19fdc76ee70f6debca522209d808ecb0639c10d13e5a7531dd428645f03"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__3R.npz",
+          "sha256": "69f0f669ec5dad479b24094261ca193d6996ce4973e7251fbdcfe8e0d679d0bf"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__X.npz",
+          "sha256": "e64b4d9230f19cd7dd5f2d51cf533e9eb52a88906fc793afd9f1ce2ec07fb0a3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__2L.npz",
+          "sha256": "505484222106df11b784beba3d5af8e8e6a2f5c8391ef9e89aa44c9220071c03"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__2R.npz",
+          "sha256": "cfe2d70309468c037e295c6955e779a050b6ce37415f5cbcb69e1e06e0cfe5ac"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__3L.npz",
+          "sha256": "ecb6733c489441634d2724370605bb8f60aceafbbbb8950c5482a78e2817fec5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__3R.npz",
+          "sha256": "0b609cf2da45380cd20ef89931135566379de8d9b96459b0b7cdea8e0c22c009"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__X.npz",
+          "sha256": "a4fae03aef456a32cdabba0982f3048481ee5e7dc3dcc06ace80add249638f0b"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__2L.npz",
+          "sha256": "69362d40b87b55a74fbe935c953601c64880c0061d058bdf9d2ce90ceb3fbc27"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__2R.npz",
+          "sha256": "6ef8a908480bff2ce5242d8c0e20f071d042b1b0ce85e1a4d8dc818fb0d1c674"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__3L.npz",
+          "sha256": "a6856790d3db2b7b04cad750463c19c5a21046e4c882bc187281019d1f32543f"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__3R.npz",
+          "sha256": "0faed6d20217622b6d4f923ce37dbacee13e5c84ca0ad22b161905c7a6c1b38a"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__X.npz",
+          "sha256": "ded60e979a147aec08b757c085c637d441566922b38af87e0f700a99a26696d2"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__2L.npz",
+          "sha256": "92f9794b467c8a66c7259c8dc9c5ac706bf69d127fc64181001c8c6b7859c6b3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__2R.npz",
+          "sha256": "7262be9cfe58f591b8165c284d2a77962ddb6a7c455281cf5ad8d3dac0dbcbf7"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__3L.npz",
+          "sha256": "d6c8e2a70e40f7a6c1098d7725d33adbfcf15771b277690e05a8ca0df6c7a5fb"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__3R.npz",
+          "sha256": "2d905a0248d62ced788be22065e53752b54d23faf90fcb58bc9c3ea951eb27e4"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__X.npz",
+          "sha256": "d3fadb88b0c66f5529a6049cb5bfa5de2e544b3e8dc7ae8e0200e7077fe87306"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__2L.npz",
+          "sha256": "eff146d608e4e4cd690a1ac6ea64b53f1d0d2519d42dd6d08d7a6fb7c670e0c5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__2R.npz",
+          "sha256": "550e993f83f70ef34c1ed582e123f369e2b9fe0cd7083782bfe82678c932911c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__3L.npz",
+          "sha256": "37b77a966eacddee8d1a79d3c5cca45470f3f8f5ff5e75b919b5430a97369070"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__3R.npz",
+          "sha256": "ce14ebbe017132548ca28232b6d205c77c99ec8712647db179b65b6199fa0f0f"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__X.npz",
+          "sha256": "4bf8b52e9abdbca2bed0ee351f799949ae9dba89d19d8d1c1fb92fb01e7d3e6e"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__2L.npz",
+          "sha256": "952061b764c4073e30b7b4f9fc80df4a9f69fffe28ee134d176548f0dafdbe1c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__2R.npz",
+          "sha256": "fb5f39442f2c6d657ef475be4cd44ad9376b41cfce16ca1577aeeb4870ce68a5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__3L.npz",
+          "sha256": "3cc136fdea31865a9da5d89e5a78f23dd65b16ca24d995c0c886027bd59157de"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__3R.npz",
+          "sha256": "4b3b48ee3d152c7fc608b1c1f58439c4b395b48e96c0d3d01dadcf01d2dc026d"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__X.npz",
+          "sha256": "e2733fdfbe78cd6238de4f1cb67b27eb6df9ea5330733dfaca9c3077be7446f3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree.json",
+          "sha256": "006c5e7aad71f544f43730c8656d9d03323c0583ea1f2d849a31230fc3621b64"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_2la.json",
+          "sha256": "8f2a84d4ca3e59003690d316aba67c536a6b5b4b2f434335dc9bfc328380af37"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_pyrho.json",
+          "sha256": "5574f72c627d7620759dd53a2e48483846a0fe3d111b2ef41e6847810e0082ea"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_resistance.json",
+          "sha256": "929a13d81584fe5c283eb2f137b13ade24d5c9469c8581c5269a6bfce71c9111"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fig_phase2_pedigree.pdf",
+      "manuscript_target": "figures_phase2/fig_phase2_pedigree.pdf",
+      "output_sha256": "4a4a07ba72e28a9d0f74d6bfe6ca760283af42f65866b812f9109879e523000a",
+      "producer": "paper/anopheles_variants/common/plot_phase2.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "paper/anopheles_variants/common/plot_phase2.py",
+        "--maps",
+        "paper/anopheles_variants/phase2/maps",
+        "--selection",
+        "paper/anopheles_variants/phase2/cohorts/selection.tsv",
+        "--results",
+        "paper/anopheles_variants/phase2/results",
+        "--out",
+        "paper/manuscript/figures"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/anopheles_variants/common/plot_phase2.py",
+          "sha256": "5eb36332e7f8f7b6be95d65b7bc3845f683dfc77178c486c4f17f4973e17f9f0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/cohorts/selection.tsv",
+          "sha256": "a2467f0165ec59505d332c5415e3095799097077fdadbfa26fcc7b2bb8641a83"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__2L.npz",
+          "sha256": "55827e4a934b780039999afca14dd57032a9f9c08dce7efdb4fb293fea8688a0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__2R.npz",
+          "sha256": "13bde800db1803b8ea9bc4571e02910a489a5c8c5db183e864c8c5af26523fb0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__3L.npz",
+          "sha256": "a44ab87fb7b7d72496616b461df874f1ed2309a20ab47df8026f9325362fe069"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__3R.npz",
+          "sha256": "4a9bab67969b45e64048f1958b6b49db6ad62b9bb2e9afb00a5e23ffce701c16"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__X.npz",
+          "sha256": "72d175b17e80f664ee6d45e4380379800dd7e89ed8e65542a0bda2051ce712ef"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__2L.npz",
+          "sha256": "c38bd17d1ce647bf4e949109924ecc00c1e385ee9f65979c7f3611e0134d716c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__2R.npz",
+          "sha256": "41520c6869091ab0196b33c972e031ab2950f2994d356582d9e0aff55f3cd581"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__3L.npz",
+          "sha256": "08eed0776c5fc633d6356ad48fd0da316e08114236373804c21e361219e9f324"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__3R.npz",
+          "sha256": "c0d13ce08981946021457ebf91ad43cd78f04820f8f1d507859f2da11ac74188"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__X.npz",
+          "sha256": "1a1bee4a2c1fd286f61712484fb52d364f662323d7fc9cbdc2abecf8ac57ce6c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__2L.npz",
+          "sha256": "52c61a0ae84af528f5600c61fe96f268aa2306b16a1a6127d74d458612b02ba1"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__2R.npz",
+          "sha256": "c710f94d9278e9d9b81f99433972998c33511659debb03249f82769d30c27521"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__3L.npz",
+          "sha256": "db9af367c7ec67c498005df2fa15c22b5ccdbd53bbdde87a3ed10d6a9fef7d63"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__3R.npz",
+          "sha256": "cf3ae124ece557329f0d25a2731f5fc3fe00e3f5b70f9c77ea76e5bc27cb9b9b"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__X.npz",
+          "sha256": "8721aab12922d3821c045a556ac122fd5a8dfa0b3f4309391ef59e4b5df49b25"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__2L.npz",
+          "sha256": "cc5ed0fe7b6618a462bc0c6352095363669c9535b4cb7cd454f0fa35624fd870"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__2R.npz",
+          "sha256": "c878460d5f74d53a9935286fc5069729f8b4975e4bee442a98ce535c2f832241"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__3L.npz",
+          "sha256": "4ea6d19fdc76ee70f6debca522209d808ecb0639c10d13e5a7531dd428645f03"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__3R.npz",
+          "sha256": "69f0f669ec5dad479b24094261ca193d6996ce4973e7251fbdcfe8e0d679d0bf"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__X.npz",
+          "sha256": "e64b4d9230f19cd7dd5f2d51cf533e9eb52a88906fc793afd9f1ce2ec07fb0a3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__2L.npz",
+          "sha256": "505484222106df11b784beba3d5af8e8e6a2f5c8391ef9e89aa44c9220071c03"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__2R.npz",
+          "sha256": "cfe2d70309468c037e295c6955e779a050b6ce37415f5cbcb69e1e06e0cfe5ac"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__3L.npz",
+          "sha256": "ecb6733c489441634d2724370605bb8f60aceafbbbb8950c5482a78e2817fec5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__3R.npz",
+          "sha256": "0b609cf2da45380cd20ef89931135566379de8d9b96459b0b7cdea8e0c22c009"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__X.npz",
+          "sha256": "a4fae03aef456a32cdabba0982f3048481ee5e7dc3dcc06ace80add249638f0b"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__2L.npz",
+          "sha256": "69362d40b87b55a74fbe935c953601c64880c0061d058bdf9d2ce90ceb3fbc27"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__2R.npz",
+          "sha256": "6ef8a908480bff2ce5242d8c0e20f071d042b1b0ce85e1a4d8dc818fb0d1c674"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__3L.npz",
+          "sha256": "a6856790d3db2b7b04cad750463c19c5a21046e4c882bc187281019d1f32543f"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__3R.npz",
+          "sha256": "0faed6d20217622b6d4f923ce37dbacee13e5c84ca0ad22b161905c7a6c1b38a"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__X.npz",
+          "sha256": "ded60e979a147aec08b757c085c637d441566922b38af87e0f700a99a26696d2"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__2L.npz",
+          "sha256": "92f9794b467c8a66c7259c8dc9c5ac706bf69d127fc64181001c8c6b7859c6b3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__2R.npz",
+          "sha256": "7262be9cfe58f591b8165c284d2a77962ddb6a7c455281cf5ad8d3dac0dbcbf7"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__3L.npz",
+          "sha256": "d6c8e2a70e40f7a6c1098d7725d33adbfcf15771b277690e05a8ca0df6c7a5fb"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__3R.npz",
+          "sha256": "2d905a0248d62ced788be22065e53752b54d23faf90fcb58bc9c3ea951eb27e4"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__X.npz",
+          "sha256": "d3fadb88b0c66f5529a6049cb5bfa5de2e544b3e8dc7ae8e0200e7077fe87306"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__2L.npz",
+          "sha256": "eff146d608e4e4cd690a1ac6ea64b53f1d0d2519d42dd6d08d7a6fb7c670e0c5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__2R.npz",
+          "sha256": "550e993f83f70ef34c1ed582e123f369e2b9fe0cd7083782bfe82678c932911c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__3L.npz",
+          "sha256": "37b77a966eacddee8d1a79d3c5cca45470f3f8f5ff5e75b919b5430a97369070"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__3R.npz",
+          "sha256": "ce14ebbe017132548ca28232b6d205c77c99ec8712647db179b65b6199fa0f0f"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__X.npz",
+          "sha256": "4bf8b52e9abdbca2bed0ee351f799949ae9dba89d19d8d1c1fb92fb01e7d3e6e"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__2L.npz",
+          "sha256": "952061b764c4073e30b7b4f9fc80df4a9f69fffe28ee134d176548f0dafdbe1c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__2R.npz",
+          "sha256": "fb5f39442f2c6d657ef475be4cd44ad9376b41cfce16ca1577aeeb4870ce68a5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__3L.npz",
+          "sha256": "3cc136fdea31865a9da5d89e5a78f23dd65b16ca24d995c0c886027bd59157de"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__3R.npz",
+          "sha256": "4b3b48ee3d152c7fc608b1c1f58439c4b395b48e96c0d3d01dadcf01d2dc026d"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__X.npz",
+          "sha256": "e2733fdfbe78cd6238de4f1cb67b27eb6df9ea5330733dfaca9c3077be7446f3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree.json",
+          "sha256": "006c5e7aad71f544f43730c8656d9d03323c0583ea1f2d849a31230fc3621b64"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_2la.json",
+          "sha256": "8f2a84d4ca3e59003690d316aba67c536a6b5b4b2f434335dc9bfc328380af37"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_pyrho.json",
+          "sha256": "5574f72c627d7620759dd53a2e48483846a0fe3d111b2ef41e6847810e0082ea"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_resistance.json",
+          "sha256": "929a13d81584fe5c283eb2f137b13ade24d5c9469c8581c5269a6bfce71c9111"
+        }
+      ]
+    },
+    {
+      "output": "paper/manuscript/figures/fig_phase2_pyrho.pdf",
+      "manuscript_target": "figures_phase2/fig_phase2_pyrho.pdf",
+      "output_sha256": "9e681ea3b310ba95b058f30b75d3580222d7b43d289b83747baf3a2857acd551",
+      "producer": "paper/anopheles_variants/common/plot_phase2.py",
+      "command": [
+        "uv",
+        "run",
+        "--extra",
+        "figures",
+        "python",
+        "paper/anopheles_variants/common/plot_phase2.py",
+        "--maps",
+        "paper/anopheles_variants/phase2/maps",
+        "--selection",
+        "paper/anopheles_variants/phase2/cohorts/selection.tsv",
+        "--results",
+        "paper/anopheles_variants/phase2/results",
+        "--out",
+        "paper/manuscript/figures"
+      ],
+      "cwd": ".",
+      "inputs": [
+        {
+          "path": "paper/anopheles_variants/common/plot_phase2.py",
+          "sha256": "5eb36332e7f8f7b6be95d65b7bc3845f683dfc77178c486c4f17f4973e17f9f0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/cohorts/selection.tsv",
+          "sha256": "a2467f0165ec59505d332c5415e3095799097077fdadbfa26fcc7b2bb8641a83"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__2L.npz",
+          "sha256": "55827e4a934b780039999afca14dd57032a9f9c08dce7efdb4fb293fea8688a0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__2R.npz",
+          "sha256": "13bde800db1803b8ea9bc4571e02910a489a5c8c5db183e864c8c5af26523fb0"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__3L.npz",
+          "sha256": "a44ab87fb7b7d72496616b461df874f1ed2309a20ab47df8026f9325362fe069"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__3R.npz",
+          "sha256": "4a9bab67969b45e64048f1958b6b49db6ad62b9bb2e9afb00a5e23ffce701c16"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_AO__X.npz",
+          "sha256": "72d175b17e80f664ee6d45e4380379800dd7e89ed8e65542a0bda2051ce712ef"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__2L.npz",
+          "sha256": "c38bd17d1ce647bf4e949109924ecc00c1e385ee9f65979c7f3611e0134d716c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__2R.npz",
+          "sha256": "41520c6869091ab0196b33c972e031ab2950f2994d356582d9e0aff55f3cd581"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__3L.npz",
+          "sha256": "08eed0776c5fc633d6356ad48fd0da316e08114236373804c21e361219e9f324"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__3R.npz",
+          "sha256": "c0d13ce08981946021457ebf91ad43cd78f04820f8f1d507859f2da11ac74188"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_BF__X.npz",
+          "sha256": "1a1bee4a2c1fd286f61712484fb52d364f662323d7fc9cbdc2abecf8ac57ce6c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__2L.npz",
+          "sha256": "52c61a0ae84af528f5600c61fe96f268aa2306b16a1a6127d74d458612b02ba1"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__2R.npz",
+          "sha256": "c710f94d9278e9d9b81f99433972998c33511659debb03249f82769d30c27521"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__3L.npz",
+          "sha256": "db9af367c7ec67c498005df2fa15c22b5ccdbd53bbdde87a3ed10d6a9fef7d63"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__3R.npz",
+          "sha256": "cf3ae124ece557329f0d25a2731f5fc3fe00e3f5b70f9c77ea76e5bc27cb9b9b"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_CI__X.npz",
+          "sha256": "8721aab12922d3821c045a556ac122fd5a8dfa0b3f4309391ef59e4b5df49b25"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__2L.npz",
+          "sha256": "cc5ed0fe7b6618a462bc0c6352095363669c9535b4cb7cd454f0fa35624fd870"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__2R.npz",
+          "sha256": "c878460d5f74d53a9935286fc5069729f8b4975e4bee442a98ce535c2f832241"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__3L.npz",
+          "sha256": "4ea6d19fdc76ee70f6debca522209d808ecb0639c10d13e5a7531dd428645f03"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__3R.npz",
+          "sha256": "69f0f669ec5dad479b24094261ca193d6996ce4973e7251fbdcfe8e0d679d0bf"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/colu_GH__X.npz",
+          "sha256": "e64b4d9230f19cd7dd5f2d51cf533e9eb52a88906fc793afd9f1ce2ec07fb0a3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__2L.npz",
+          "sha256": "505484222106df11b784beba3d5af8e8e6a2f5c8391ef9e89aa44c9220071c03"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__2R.npz",
+          "sha256": "cfe2d70309468c037e295c6955e779a050b6ce37415f5cbcb69e1e06e0cfe5ac"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__3L.npz",
+          "sha256": "ecb6733c489441634d2724370605bb8f60aceafbbbb8950c5482a78e2817fec5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__3R.npz",
+          "sha256": "0b609cf2da45380cd20ef89931135566379de8d9b96459b0b7cdea8e0c22c009"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_BF__X.npz",
+          "sha256": "a4fae03aef456a32cdabba0982f3048481ee5e7dc3dcc06ace80add249638f0b"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__2L.npz",
+          "sha256": "69362d40b87b55a74fbe935c953601c64880c0061d058bdf9d2ce90ceb3fbc27"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__2R.npz",
+          "sha256": "6ef8a908480bff2ce5242d8c0e20f071d042b1b0ce85e1a4d8dc818fb0d1c674"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__3L.npz",
+          "sha256": "a6856790d3db2b7b04cad750463c19c5a21046e4c882bc187281019d1f32543f"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__3R.npz",
+          "sha256": "0faed6d20217622b6d4f923ce37dbacee13e5c84ca0ad22b161905c7a6c1b38a"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_CM__X.npz",
+          "sha256": "ded60e979a147aec08b757c085c637d441566922b38af87e0f700a99a26696d2"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__2L.npz",
+          "sha256": "92f9794b467c8a66c7259c8dc9c5ac706bf69d127fc64181001c8c6b7859c6b3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__2R.npz",
+          "sha256": "7262be9cfe58f591b8165c284d2a77962ddb6a7c455281cf5ad8d3dac0dbcbf7"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__3L.npz",
+          "sha256": "d6c8e2a70e40f7a6c1098d7725d33adbfcf15771b277690e05a8ca0df6c7a5fb"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__3R.npz",
+          "sha256": "2d905a0248d62ced788be22065e53752b54d23faf90fcb58bc9c3ea951eb27e4"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GA__X.npz",
+          "sha256": "d3fadb88b0c66f5529a6049cb5bfa5de2e544b3e8dc7ae8e0200e7077fe87306"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__2L.npz",
+          "sha256": "eff146d608e4e4cd690a1ac6ea64b53f1d0d2519d42dd6d08d7a6fb7c670e0c5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__2R.npz",
+          "sha256": "550e993f83f70ef34c1ed582e123f369e2b9fe0cd7083782bfe82678c932911c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__3L.npz",
+          "sha256": "37b77a966eacddee8d1a79d3c5cca45470f3f8f5ff5e75b919b5430a97369070"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__3R.npz",
+          "sha256": "ce14ebbe017132548ca28232b6d205c77c99ec8712647db179b65b6199fa0f0f"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_GN__X.npz",
+          "sha256": "4bf8b52e9abdbca2bed0ee351f799949ae9dba89d19d8d1c1fb92fb01e7d3e6e"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__2L.npz",
+          "sha256": "952061b764c4073e30b7b4f9fc80df4a9f69fffe28ee134d176548f0dafdbe1c"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__2R.npz",
+          "sha256": "fb5f39442f2c6d657ef475be4cd44ad9376b41cfce16ca1577aeeb4870ce68a5"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__3L.npz",
+          "sha256": "3cc136fdea31865a9da5d89e5a78f23dd65b16ca24d995c0c886027bd59157de"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__3R.npz",
+          "sha256": "4b3b48ee3d152c7fc608b1c1f58439c4b395b48e96c0d3d01dadcf01d2dc026d"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/maps/gamb_UG__X.npz",
+          "sha256": "e2733fdfbe78cd6238de4f1cb67b27eb6df9ea5330733dfaca9c3077be7446f3"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree.json",
+          "sha256": "006c5e7aad71f544f43730c8656d9d03323c0583ea1f2d849a31230fc3621b64"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_2la.json",
+          "sha256": "8f2a84d4ca3e59003690d316aba67c536a6b5b4b2f434335dc9bfc328380af37"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_pyrho.json",
+          "sha256": "5574f72c627d7620759dd53a2e48483846a0fe3d111b2ef41e6847810e0082ea"
+        },
+        {
+          "path": "paper/anopheles_variants/phase2/results/phase2_resistance.json",
+          "sha256": "929a13d81584fe5c283eb2f137b13ade24d5c9469c8581c5269a6bfce71c9111"
+        }
+      ]
+    }
+  ]
+}

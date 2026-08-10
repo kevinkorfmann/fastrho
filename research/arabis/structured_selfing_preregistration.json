@@ -1,0 +1,83 @@
+{
+  "arabis_cross_map_used_for_training_or_selection": false,
+  "campaign": "arabis_structured_selfing_v1",
+  "decision_rule": "Run Arabis inference only if the frozen ensemble passes every simulation-only gate. Report the result regardless of its sign and do not choose members from Arabis correlation.",
+  "conditioning": {
+    "n_haplotypes": "the exact number of simulated haploid genomes, stored explicitly in every shard",
+    "legacy_diploid_conversion_used": false
+  },
+  "design_mixture": {
+    "diffuse_island": 0.3,
+    "nemorensis_panel_6_plus_six_singletons": 0.2,
+    "panmictic": 0.3,
+    "sagittata_panel_15_5_5": 0.2
+  },
+  "ensemble_members": 7,
+  "frozen_checkpoint_selection": "maximum pooled simulated validation Pearson within each seed",
+  "gates": {
+    "minimum_member_validation_pearson": 0.5,
+    "minimum_median_estimated_Ne_100kb_pearson": {
+      "diffuse_island": 0.2,
+      "nemorensis_panel": 0.2,
+      "panmictic": 0.35,
+      "sagittata_panel": 0.2
+    },
+    "minimum_median_true_Ne_100kb_pearson": {
+      "diffuse_island": 0.35,
+      "nemorensis_panel": 0.35,
+      "panmictic": 0.5,
+      "sagittata_panel": 0.35
+    },
+    "minimum_shards_per_audit_stratum": 200
+  },
+  "panel_sizes": [8, 12, 16, 24, 25, 32, 50],
+  "population_structure_prior": {
+    "diffuse_island_demes": "uniform integer from 2 through min(5,n), with a Dirichlet-multinomial allocation and at least one haplotype per deme",
+    "four_Ne_m_range_log10": [-2.0, 1.0],
+    "post_split_size_factor_log10_range": [-0.45, 0.45],
+    "pre_recent_change_size_factor_log10_range": [-0.3, 0.3],
+    "recent_size_change_time_as_fraction_of_split": [0.03, 0.45],
+    "split_time_in_effective_Ne_units_log10": [-1.25, 0.35]
+  },
+  "recombination_target": {
+    "definition": "coalescent-effective rate r_eff = r_meiotic * (1-F), where F=selfing/(2-selfing)",
+    "interpretive_constraint": "For spatially constant selfing this is a chromosome-wide scalar and cannot by itself rescue or destroy chromosome-relative map-shape correlation."
+  },
+  "simulation_prior": {
+    "census_Ne_log10_range": [4.7, 5.7],
+    "map_kind_probabilities": {
+      "gp": 0.5,
+      "hotspot": 0.35,
+      "pericentromere": 0.15
+    },
+    "meiotic_mean_rate_log10_range": [-8.15, -7.35],
+    "mutation_rate_log10_range": [-8.35, -7.95],
+    "region_length_bp": 1000000,
+    "seed_rule": "NumPy Generator seed = 9000000 + region index"
+  },
+  "simulation_tractability": {
+    "maximum_4Ne_rL": 6000.0,
+    "method": "reduce census and effective Ne for draws above the cap while retaining the drawn meiotic map"
+  },
+  "schema_version": 1,
+  "selfing_prior": {
+    "0.70_to_0.90": 0.2,
+    "0.90_to_0.98": 0.5,
+    "0.98_to_0.997": 0.3
+  },
+  "simulation_counts": {
+    "audit": 1600,
+    "train": 16000,
+    "validation": 1600
+  },
+  "training": {
+    "batch_size": 48,
+    "checkpoint_count_retained_per_seed": 3,
+    "epochs": 40,
+    "gradient_accumulation": 2,
+    "learning_rate": 0.0004,
+    "model_preset": "base",
+    "precision": "16-mixed",
+    "seed_rule": "41001 + ensemble member index"
+  }
+}

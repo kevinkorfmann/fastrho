@@ -1,0 +1,7 @@
+2026-08-06T18:28:33Z
+Linux sesame 6.8.0-111-generic #111-Ubuntu SMP PREEMPT_DYNAMIC Sat Apr 11 23:16:02 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+Python 3.12.3
+Python 3.12.3
+usage: pyrho <command> <options>
+Tesla V100S-PCIE-32GB, 580.126.20, 32768 MiB
+Tesla V100S-PCIE-32GB, 580.126.20, 32768 MiB

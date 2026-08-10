@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "user_models": "fastrho/model_registry.json",
+  "paper_support_release": "https://github.com/kevinkorfmann/fastrho-models/releases/tag/paper-phase2-checkpoints-v1",
+  "policy": "Paper-support checkpoints reproduce frozen analyses and are not recommended as general-purpose user models.",
+  "groups": [
+    {
+      "id": "arabis-smalln-ensemble",
+      "provenance": "paper/results_snapshot/arabis_smalln_frozen_ensemble.json",
+      "files": {
+        "arabis-smalln-feat-stats.npz": "c7f5ab012709f29a35ff8a46a52a0256dac98862832abc14e9257e97ef039bca",
+        "arabis-smalln-seed0.ckpt": "7fe56bfff7e93de3f816d3afe79d922861c59ce1a5e6f6c1ec6b3db82b1ad4e8",
+        "arabis-smalln-seed1.ckpt": "7bce7e7515dee88c326391dac1566c7b996a62285d82ee95a36e842489106624",
+        "arabis-smalln-seed2.ckpt": "b50f2e8f9e4ac1996e76d871d08cda82e5c47f762288cadfe12e2ea2b8307838",
+        "arabis-smalln-seed3.ckpt": "ffed035eda27c0b5b04b364ad67bc225f7a0bb5bd75bacbfd317231f7b5d62b2",
+        "arabis-smalln-seed4.ckpt": "fd959a00ab31501ac9a42779a1a0f9871a8cb39ea67d92bfed3e7f839c6b03bc"
+      },
+      "original_checkpoint_sha256": {
+        "arabis-smalln-seed0.ckpt": "828fb525a98aeaa25b14501aef776f82894988af99ffaa2f95a071eee8cc79f3",
+        "arabis-smalln-seed1.ckpt": "c1cc91a57034a953528298e20fc26a6d0837ad319bec45ab0d572fb6662cd2e0",
+        "arabis-smalln-seed2.ckpt": "567a9c51c7e7f9a45a7bdae68edd30f55b1d73246b38c9cb85ba750a9b3bf03d",
+        "arabis-smalln-seed3.ckpt": "96a8b8aa72a02141874fd77241c9bf985b08ef1cd97267d1230685c40d4f71bc",
+        "arabis-smalln-seed4.ckpt": "1ad63b73e915764ac08be9fdf621a2ccc58e995485b875cf975e54ade466ea21"
+      }
+    },
+    {
+      "id": "arabis-structured-ensemble",
+      "provenance": "paper/results_snapshot/arabis_structured_frozen_ensemble.json",
+      "files": {
+        "arabis-structured-feat-stats.npz": "03e68b0e27fe3f8a646c0ac2eef986fb8c967a883846ff0b764b2111fd737258",
+        "arabis-structured-preregistration.json": "c8fc5fd8353360952527c02554a22514809ab6c1dd6ae0f8441598d4b531a8db",
+        "arabis-structured-seed0.ckpt": "31655cdc91b817e851154e56f33f22f220849f75df91ce25f56e179f135b7f16",
+        "arabis-structured-seed1.ckpt": "128ba8bb385e48b1caad0f01a95c9330801419dcd1f229b95e24dc45a35654c9",
+        "arabis-structured-seed2.ckpt": "ff19ef75068a7f219e9c6c72b3ff938d28e7de197609d5c67427a46297b48a3a",
+        "arabis-structured-seed3.ckpt": "38db3ce010de137f007fe58140046aa50b8d83778ebbe0136c0b58872ef6dd18",
+        "arabis-structured-seed4.ckpt": "ccc1478885f6c8e592038ee55ea32dd3f4d34aedd2c49dc07c397a522c1b919b",
+        "arabis-structured-seed5.ckpt": "44c9b131346ad9650785eb7fd9e8ba4c96677a3dffb25f5cad3e977330d2e928",
+        "arabis-structured-seed6.ckpt": "f2764d4c0069235056295f1a9181f95f98dd634b47859768dfb33300b6b13fcd"
+      },
+      "original_checkpoint_sha256": {
+        "arabis-structured-seed0.ckpt": "dbf9c91d444c768a8dff67a5eb3cb9cb9d27c715dcfa3f2e57fdf4f4d489cc6a",
+        "arabis-structured-seed1.ckpt": "b015027aa2020cb4d31b727e3a233e6b94347657df19ee8cf559d35d13cca397",
+        "arabis-structured-seed2.ckpt": "75bb8a026b04f33f4c4951bc2b82e1b563684e53572465e57600540a23ab9bd9",
+        "arabis-structured-seed3.ckpt": "fe043730def6c42dcc294d79c400112051062c8ed87f169c75cc079a3e388aa1",
+        "arabis-structured-seed4.ckpt": "7166f6d69081eaf98c07dd763910b08e2fb2e308401fde8002922b4d8955bd31",
+        "arabis-structured-seed5.ckpt": "d7f84236d6afb79da61588d0bd3cd9313d69ed87905ec06a5abcb666e9ea3282",
+        "arabis-structured-seed6.ckpt": "9203b6bdd32ab9b056d836ad8f389280df5c340f6ed2218ddb6db8acb4118805"
+      }
+    },
+    {
+      "id": "canid-structure-paper-analysis",
+      "provenance": "paper/analysis/canid/wolf_followup.json",
+      "files": {
+        "canid-structure.ckpt": "1933c7eeb60a148c9ff698927bf027fb1d84fb20277b9610063180d0b46a6934",
+        "canid-structure-feat-stats.npz": "31de29b6e680da6d8c077ec6aa934b0cf39cfc9e1d5f5966233c0fb4db7fd7f7",
+        "canid-wolf33-map.npz": "297421f143e8ac1bba7fafa43f46ad051b301e399ea510b521b5791ac669a0bd",
+        "canid-dog67-map.npz": "2cfc4c8cb1e1998076affcda4be6b2f79eb0cbe8cb498d2b92bcbf595b55b57f",
+        "canid-village42-map.npz": "b1bc4edbbc794cc0a10c30c505d0dcca68025da0b400d39019ee8d99d7dfbbb1"
+      },
+      "original_checkpoint_sha256": {
+        "canid-structure.ckpt": "55b298e0c4ebaea583cc94436f48228a4943c55b8de30a3d4f157f5f044d6fe5"
+      }
+    }
+  ]
+}

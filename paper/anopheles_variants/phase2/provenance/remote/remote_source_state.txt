@@ -1,0 +1,2 @@
+Remote inference source directory: /home/kkor/fastrho
+Git metadata unavailable on Sesame; canonical source scripts are checksum-promoted from the local manuscript repository.

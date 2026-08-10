@@ -1,0 +1,29 @@
+{
+  "arabis_cross_map_used_for_model_selection": false,
+  "artifact_sha256": {
+    "cross_results": "2af7883a01d2f6418aa1288f9b6c9d9c7b993edf64756511be7a7e0229fdb55e",
+    "cross_windows": "8b2a3117479d488788488a4f3d7aad308b149d5260f3a320fe36938283ecd72c",
+    "dataset": "4716d979815341b15a257e0a2735a0edd7be7fcdc97c216617d506342ae954f2",
+    "frozen_ensemble": "de2cbfe193efd2a4780c10c9b3012850cb40ade72faef896dcd41bc398dbe143",
+    "preregistered_inputs": "7e98ffeab3a28e516bf1e896c818921ba2cf6e7fb038b36ff931d3ebb680dda3",
+    "preregistration": "c8fc5fd8353360952527c02554a22514809ab6c1dd6ae0f8441598d4b531a8db",
+    "simulation_design_audit": "20a869fc87990b37d3eac714e7def234147d8e9b8cefcc3b8b9577c6f2353196",
+    "simulation_gate": "6da088f2e03c14c190ebf3a0710e3338a3d034e8930a338e56e0b03a6f61ea74",
+    "smoke": "91495f905bc35d89943a28ccfedb2b3100618681d1d2a32bb7f5a3988bff50e1"
+  },
+  "campaign": "arabis_structured_selfing_v1",
+  "complete": true,
+  "map_counts": {
+    "ensemble": 32,
+    "seed0": 32,
+    "seed1": 32,
+    "seed2": 32,
+    "seed3": 32,
+    "seed4": 32,
+    "seed5": 32,
+    "seed6": 32
+  },
+  "schema_version": 1,
+  "simulation_gate_passed": true,
+  "verified_utc": "2026-07-21T10:51:04.587811+00:00"
+}

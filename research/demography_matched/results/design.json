@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-07-21",
+  "objective": "Separate competitor workflow misspecification from attainable performance under matched demography.",
+  "evaluation_data": {
+    "source": "Archived campaign configurations generated before this comparison",
+    "archive": "docs/data/downloads/demography_matched_inputs.zip",
+    "archive_sha256": "6c18b21b09cc9a9543c2ba9363c8a7920b26ae763f4510160efd8b6550f2c792",
+    "configurations": [
+      "bottleneck_n20",
+      "expansion_n20"
+    ],
+    "technical_validation": "Before creating any method arm, deterministically remove each VCF row containing a GT allele other than 0 or 1. Retain the raw frozen VCFs and record the raw and validated hashes plus every removed coordinate.",
+    "reuse_rule": "All arms within a scenario use byte-identical validated VCF, truth-map NPZ, tree-sequence, and genome files."
+  },
+  "histories": {
+    "bottleneck": {
+      "present_size": 10000,
+      "events_generations_ago": [
+        [1000, 1000],
+        [3000, 10000]
+      ]
+    },
+    "expansion": {
+      "present_size": 10000,
+      "events_generations_ago": [
+        [2000, 1000]
+      ]
+    }
+  },
+  "ReLERNN": {
+    "version": "2.0.0",
+    "source_commit": "6655efd",
+    "compatibility_patch": "research/demography_matched/patches/relernn_keras3_hdf5.patch",
+    "compatibility_patch_sha256": "459f1e82c4cd9267403b3ce1a8ac1d126f6c2873e3263784c8c78d94c53b6808",
+    "compatibility_patch_scope": "Save and reload only the trained weights for ReLERNN's fixed GRU architecture, avoiding Keras 3 whole-model serialization failures while leaving simulation, architecture, optimization, evaluation, and prediction unchanged.",
+    "runtime_image": "nvcr.io/nvidia/tensorflow:25.02-tf2-py3",
+    "runtime_reason": "NVIDIA's Blackwell-optimized TensorFlow image is required for Betty B200 GPUs; every paired arm uses the same image.",
+    "arms": [
+      "constant",
+      "matched"
+    ],
+    "n_train": 100000,
+    "n_validation": 10000,
+    "n_test": 10000,
+    "max_sites": 256,
+    "simulation_seed": 1,
+    "training_seed": 1,
+    "epochs": 100,
+    "rate_prior_rule": "ceil(1.15 * length-weighted truth-map rate quantile 0.999 / mutation rate), held equal between demographic arms of a scenario"
+  },
+  "pyrho": {
+    "version": "0.2.1",
+    "python": "3.12",
+    "source_commit": "fe7d1cfe1e5b10bee1f1d0828dbf1dc5391d9888",
+    "ldpop_source_commit": "cceed0150194ea8bf3415aa9bf3ee002e6b6e480",
+    "archived_runtime_pins": {
+      "numpy": "1.26.4",
+      "scipy": "1.12.0",
+      "numba": "0.60.0",
+      "llvmlite": "0.43.0",
+      "pandas": "2.1.4",
+      "tables": "3.11.1",
+      "cyvcf2": "0.31.4"
+    },
+    "arms": [
+      "constant",
+      "matched"
+    ],
+    "window": 50,
+    "block_penalty": 25,
+    "isolation_rule": "Only the population-size history supplied to make_table changes within a scenario."
+  },
+  "endpoints": {
+    "primary": "Pooled Pearson correlation with the exact map at 25 kb",
+    "secondary": [
+      "Pooled Pearson correlation at 100 kb",
+      "Spearman correlation at 25 and 100 kb",
+      "Median estimated-to-true rate ratio at 25 and 100 kb",
+      "Number of jointly scored windows"
+    ]
+  },
+  "analysis_rules": [
+    "Report every completed arm; do not select runs by Arabis or manuscript-favorable outcomes.",
+    "Do not tune epochs, map scale, rate-prior rule, pyrho window, or block penalty after viewing results.",
+    "Permit only technical fixes that preserve the frozen data, histories, seeds, and endpoints.",
+    "Use Betty Slurm allocations for all Betty computation."
+  ]
+}

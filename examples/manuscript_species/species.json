@@ -1,0 +1,984 @@
+{
+  "schema_version": 1,
+  "manuscript_title": "Scalable inference of recombination maps across evolutionary contexts",
+  "accessed": "2026-07-20",
+  "description": "Source, cohort, and inference presets for the ten-species cross-species comparison, excluded candidate panels, the dog-wolf control, three Anopheles species, and redpoll.",
+  "species": [
+    {
+      "key": "human",
+      "common_name": "Human",
+      "scientific_name": "Homo sapiens",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 99,
+        "selection": "CEU samples from the integrated phase-3 panel"
+      },
+      "source": {
+        "label": "1000 Genomes phase 3, GRCh37",
+        "landing_page": "https://www.internationalgenome.org/announcements/initial-phase-3-variant-list-and-phased-genotypes-2014-06-24/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "human.chr2.vcf.gz",
+            "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr2.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "human.chr2.vcf.gz.tbi",
+            "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr2.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi"
+          },
+          {
+            "role": "metadata",
+            "filename": "human.phase3.panel.tsv",
+            "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/integrated_call_samples_v3.20130502.ALL.panel"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "2",
+        "mutation_rate": 1.29E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      },
+      "notes": "The manuscript comparison used chr2:20-36 Mb; make a CEU sample list from the panel file before prepare."
+    },
+    {
+      "key": "dog",
+      "common_name": "Dog",
+      "scientific_name": "Canis lupus familiaris",
+      "paper_roles": [
+        "canid_control",
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 67,
+        "selection": "manuscript village-dog/canid cohort; select IDs from the release metadata"
+      },
+      "source": {
+        "label": "NHGRI Plassais 722-canid release",
+        "landing_page": "https://research.nhgri.nih.gov/dog_genome/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "canids.722.vcf.gz",
+            "url": "https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g.990.SNP.INDEL.chrAll.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "canids.722.vcf.gz.tbi",
+            "url": "https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g.990.SNP.INDEL.chrAll.vcf.gz.tbi"
+          },
+          {
+            "role": "metadata",
+            "filename": "canids.722.metadata.xlsx",
+            "url": "https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g_Metadata_May2018.xlsx"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "chr1",
+        "mutation_rate": 4.0E-9,
+        "input_mode": "unpolarized",
+        "model_id": null,
+        "model_profile": "canid specialist (not registered for public release)",
+        "window_size_bp": 100000
+      },
+      "notes": "The manuscript slice is chr1:1-40 Mb. The canid checkpoint is not yet a public registered artifact."
+    },
+    {
+      "key": "vervet",
+      "common_name": "Vervet monkey",
+      "scientific_name": "Chlorocebus sabaeus",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 120,
+        "selection": "whole panel capped at 120 individuals"
+      },
+      "source": {
+        "label": "EVA PRJEB22988",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB22988/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "vervet.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB22988/Svardal_et_al_2017_vervet_monkey_SNPs_imputed_phased.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "donkey",
+      "common_name": "Donkey",
+      "scientific_name": "Equus asinus",
+      "paper_roles": [
+        "transect",
+        "transect: context-limited"
+      ],
+      "cohort": {
+        "n_individuals": 51,
+        "selection": "Chinese samples identified by CHI-prefixed IDs"
+      },
+      "source": {
+        "label": "EVA PRJEB55549",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB55549/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "donkey.phased.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB55549/all_phased_autosomes2_newchr.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "CM027690.1",
+        "mutation_rate": 7.2E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "goat",
+      "common_name": "Goat",
+      "scientific_name": "Capra hircus",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 20,
+        "selection": "Iranian IRCH population file"
+      },
+      "source": {
+        "label": "EBI NextGen Capra IRCH",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/nextgen/capra/variants/population_sites/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "goat.IRCH.chr1.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/nextgen/capra/variants/population_sites/IRCH.population_sites.CHIR1_0.20140307.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "goat.IRCH.chr1.vcf.gz.tbi",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/nextgen/capra/variants/population_sites/IRCH.population_sites.CHIR1_0.20140307.vcf.gz.tbi"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "sheep",
+      "common_name": "Sheep",
+      "scientific_name": "Ovis aries",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 20,
+        "selection": "Iranian IROA population file"
+      },
+      "source": {
+        "label": "EBI NextGen Ovis IROA",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/nextgen/ovis/variants/population_sites/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "sheep.IROA.chr1.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/nextgen/ovis/variants/population_sites/IROA.population_sites.OARv3_1.20140307.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "sheep.IROA.chr1.vcf.gz.tbi",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/nextgen/ovis/variants/population_sites/IROA.population_sites.OARv3_1.20140307.vcf.gz.tbi"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "cattle",
+      "common_name": "Cattle",
+      "scientific_name": "Bos taurus × Bos indicus",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 25,
+        "selection": "Ugandan UGBT population file"
+      },
+      "source": {
+        "label": "EBI NextGen Bos UGBT",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/nextgen/bos/variants/population_sites/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "cattle.UGBT.chr1.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/nextgen/bos/variants/population_sites/UGBT.population_sites.UMD3_1.20140307.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "cattle.UGBT.chr1.vcf.gz.tbi",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/nextgen/bos/variants/population_sites/UGBT.population_sites.UMD3_1.20140307.vcf.gz.tbi"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 1.2E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "buffalo",
+      "common_name": "Water buffalo",
+      "scientific_name": "Bubalus bubalis",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 46,
+        "selection": "Z-prefixed single-breed samples"
+      },
+      "source": {
+        "label": "EVA PRJEB72029",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB72029/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "buffalo.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB72029/final.snp.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "NC_037545.1",
+        "mutation_rate": 1.2E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "yak",
+      "common_name": "Yak",
+      "scientific_name": "Bos grunniens",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 30,
+        "selection": "complete Indian-yak panel"
+      },
+      "source": {
+        "label": "EVA PRJEB50815",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB50815/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "yak.indian.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB50815/Yak_Indian.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "CM016690.1",
+        "mutation_rate": 1.2E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "pig",
+      "common_name": "Pig",
+      "scientific_name": "Sus scrofa",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 20,
+        "selection": "Danish Landrace DLR cohort"
+      },
+      "source": {
+        "label": "EVA PRJEB89712",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB89712/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "pig.DLR.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB89712/DLR.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "greattit",
+      "common_name": "Great tit",
+      "scientific_name": "Parus major",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 120,
+        "selection": "whole panel capped at 120 individuals"
+      },
+      "source": {
+        "label": "EVA PRJEB24964",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB24964/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "greattit.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB24964/GreatTits_PolyMonoMinorHom1.10_NoUN_NoScaffolds.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 4.6E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "mallard",
+      "common_name": "Mallard",
+      "scientific_name": "Anas platyrhynchos",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 120,
+        "selection": "whole panel capped at 120 individuals"
+      },
+      "source": {
+        "label": "EVA PRJEB43764",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB43764/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "mallard.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB43764/Duck_variants.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "Chr1",
+        "mutation_rate": 4.6E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "chicken",
+      "common_name": "Chicken",
+      "scientific_name": "Gallus gallus",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 20,
+        "selection": "White Leghorn samples selected from the source study metadata"
+      },
+      "source": {
+        "label": "Tan 2024 genomic variants of local chickens",
+        "landing_page": "https://doi.org/10.6084/m9.figshare.24847623.v1",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "chicken.chr1.vcf.gz",
+            "url": "https://ndownloader.figshare.com/files/43718331",
+            "size_bytes": 7214221308
+          },
+          {
+            "role": "index",
+            "filename": "chicken.chr1.vcf.gz.tbi",
+            "url": "https://ndownloader.figshare.com/files/43718313",
+            "size_bytes": 189669
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 4.6E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      },
+      "notes": "The exact White Leghorn ID list is not included in this source release; reconstruct it from the study metadata and pass it to data.py prepare."
+    },
+    {
+      "key": "tilapia",
+      "common_name": "Nile tilapia",
+      "scientific_name": "Oreochromis niloticus",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 73,
+        "selection": "complete 73-sample source cohort"
+      },
+      "source": {
+        "label": "EVA PRJEB102261",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB102261/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "tilapia.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB102261/G0723-06-UMD_73-samples.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "NC_031967.2",
+        "mutation_rate": 3.5E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "trout",
+      "common_name": "Rainbow trout",
+      "scientific_name": "Oncorhynchus mykiss",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 92,
+        "selection": "complete 92-sample source cohort"
+      },
+      "source": {
+        "label": "EVA PRJEB109732",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB109732/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "trout.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB109732/G0424-02-UMD_Trout_GT90.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 8.0E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "oyster",
+      "common_name": "Eastern oyster",
+      "scientific_name": "Crassostrea virginica",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 120,
+        "selection": "whole panel capped at 120 individuals"
+      },
+      "source": {
+        "label": "EVA PRJEB96926",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB96926/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "oyster.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB96926/Oysters_Genotypes.upload.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "CM008245.1",
+        "mutation_rate": 2.0E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      },
+      "notes": "The manuscript table abbreviates this accession as CM008245; confirm the .1 suffix in the downloaded header."
+    },
+    {
+      "key": "dmel",
+      "common_name": "Fruit fly",
+      "scientific_name": "Drosophila melanogaster",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 205,
+        "selection": "205 DGRP inbred lines represented as haploidized genomes"
+      },
+      "source": {
+        "label": "DGRP2 NCSU dm6 SNP calls",
+        "landing_page": "https://resources.aertslab.org/DGRP2/NCSU/final/dm6/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "dgrp2.dm6.snps.vcf.gz",
+            "url": "https://resources.aertslab.org/DGRP2/NCSU/final/dm6/DGRP2.source_NCSU.dm6.final.SNPs_only.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "dgrp2.dm6.snps.vcf.gz.csi",
+            "url": "https://resources.aertslab.org/DGRP2/NCSU/final/dm6/DGRP2.source_NCSU.dm6.final.SNPs_only.vcf.gz.csi"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "2L",
+        "mutation_rate": 5.5E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "honeybee",
+      "common_name": "Honeybee",
+      "scientific_name": "Apis mellifera",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 100,
+        "selection": "100 haploid drones from the 629-sample diversity subset"
+      },
+      "source": {
+        "label": "SeqApiPop drone panel, Zenodo 5592452",
+        "landing_page": "https://zenodo.org/records/5592452",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "honeybee.870.vcf.gz",
+            "url": "https://zenodo.org/api/records/5592452/files/MetaGenotypesCalled870_raw_snps_allfilter.vcf.gz/content",
+            "size_bytes": 26659809698,
+            "checksum": "md5:49954ba163383fb0fd7fdedcb6c70cf2"
+          },
+          {
+            "role": "metadata",
+            "filename": "honeybee.629.samples.txt",
+            "url": "https://zenodo.org/api/records/5592452/files/Diversity_Study_629_Samples.txt/content",
+            "size_bytes": 4065,
+            "checksum": "md5:a588171861a7c53352fca08fd140c3a7"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "NC_037638.1",
+        "mutation_rate": 3.4E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      },
+      "notes": "The source is 26.7 GB; inspect available storage before downloading. Haploid drones should be represented consistently with the selected checkpoint."
+    },
+    {
+      "key": "jewelwasp",
+      "common_name": "Jewel wasp",
+      "scientific_name": "Nasonia vitripennis",
+      "paper_roles": [
+        "transect",
+        "transect: context-limited"
+      ],
+      "cohort": {
+        "n_individuals": 34,
+        "selection": "complete 34-sample source cohort"
+      },
+      "source": {
+        "label": "EVA PRJEB33514",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB33514/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "jewelwasp.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB33514/JGIL_10.filt.all.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "NC_015868.2",
+        "mutation_rate": 3.0E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      },
+      "notes": "The manuscript table abbreviates this accession as NC_015868; confirm the .2 suffix in the downloaded header."
+    },
+    {
+      "key": "celegans",
+      "common_name": "Roundworm",
+      "scientific_name": "Caenorhabditis elegans",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 75,
+        "selection": "75 wild isotypes selected as a coherent analysis cohort"
+      },
+      "source": {
+        "label": "CaeNDR 20250625 hard-filtered isotype VCF",
+        "landing_page": "https://caendr.org/data/data-release/c-elegans/20250625/vcf",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "celegans.20250625.isotype.vcf.gz",
+            "url": "https://caendr-open-access-data-bucket.s3.us-east-2.amazonaws.com/dataset_release/c_elegans/20250625/variation/WI.20250625.hard-filter.isotype.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "celegans.20250625.isotype.vcf.gz.tbi",
+            "url": "https://caendr-open-access-data-bucket.s3.us-east-2.amazonaws.com/dataset_release/c_elegans/20250625/variation/WI.20250625.hard-filter.isotype.vcf.gz.tbi"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "I",
+        "mutation_rate": 2.7E-9,
+        "input_mode": "phased",
+        "model_id": "selfing-v1",
+        "model_profile": "selfing specialist",
+        "window_size_bp": 100000
+      },
+      "notes": "Wild isotypes are not diploid outbred samples; preserve the haploid-isotype representation and use a selfing-compatible checkpoint."
+    },
+    {
+      "key": "athal",
+      "common_name": "Thale cress",
+      "scientific_name": "Arabidopsis thaliana",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 78,
+        "selection": "south-Swedish accessions; the extended analysis used chromosomes 1-5"
+      },
+      "source": {
+        "label": "1001 Genomes release 3.1",
+        "landing_page": "https://1001genomes.org/data/GMI-MPI/releases/v3.1/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "athal.1001g.v3.1.vcf.gz",
+            "url": "https://1001genomes.org/data/GMI-MPI/releases/v3.1/1001genomes_snp-short-indel_only_ACGTN.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "1",
+        "mutation_rate": 7.0E-9,
+        "input_mode": "phased",
+        "model_id": "selfing-v1",
+        "model_profile": "selfing specialist",
+        "window_size_bp": 100000
+      },
+      "notes": "Pass the paper's south-Swedish accession list for exact cohort reproduction; use --contig 2 through 5 for the remaining chromosomes."
+    },
+    {
+      "key": "aspen",
+      "common_name": "Aspen",
+      "scientific_name": "Populus tremula",
+      "paper_roles": [
+        "transect"
+      ],
+      "cohort": {
+        "n_individuals": 99,
+        "selection": "complete Swedish SwAsp cohort"
+      },
+      "source": {
+        "label": "EVA PRJEB79788 SwAsp",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB79788/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "aspen.SwAsp.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB79788/SwAsp_AfterBatchRemoval_Het.MAF.HWE.recode.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "chr1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "chestnut",
+      "common_name": "Chinese chestnut",
+      "scientific_name": "Castanea mollissima",
+      "paper_roles": [
+        "transect",
+        "transect: context-limited"
+      ],
+      "cohort": {
+        "n_individuals": 97,
+        "selection": "complete 97-sample WGS cohort"
+      },
+      "source": {
+        "label": "EVA PRJEB87510",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB87510/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "chestnut.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB87510/variants_data.WGS97.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "Chr1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "beech",
+      "common_name": "European beech",
+      "scientific_name": "Fagus sylvatica",
+      "paper_roles": [
+        "excluded: cohort-design review"
+      ],
+      "cohort": {
+        "n_individuals": 120,
+        "selection": "whole panel capped at 120 individuals"
+      },
+      "source": {
+        "label": "EVA PRJEB80328",
+        "landing_page": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB80328/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "beech.vcf.gz",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/eva/PRJEB80328/maf.all.6.vcf.gz"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "Bhaga_1",
+        "mutation_rate": 1.0E-8,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized outbred",
+        "window_size_bp": 100000
+      }
+    },
+    {
+      "key": "wolf",
+      "common_name": "Wolf",
+      "scientific_name": "Canis lupus",
+      "paper_roles": [
+        "canid_control"
+      ],
+      "cohort": {
+        "n_individuals": null,
+        "selection": "wolf IDs selected from the Plassais release metadata; size depends on the stated control"
+      },
+      "source": {
+        "label": "NHGRI Plassais 722-canid release",
+        "landing_page": "https://research.nhgri.nih.gov/dog_genome/",
+        "download_kind": "direct",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "canids.722.vcf.gz",
+            "url": "https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g.990.SNP.INDEL.chrAll.vcf.gz"
+          },
+          {
+            "role": "index",
+            "filename": "canids.722.vcf.gz.tbi",
+            "url": "https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g.990.SNP.INDEL.chrAll.vcf.gz.tbi"
+          },
+          {
+            "role": "metadata",
+            "filename": "canids.722.metadata.xlsx",
+            "url": "https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g_Metadata_May2018.xlsx"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "chr1",
+        "mutation_rate": 4.0E-9,
+        "input_mode": "unpolarized",
+        "model_id": null,
+        "model_profile": "canid specialist (not registered for public release)",
+        "window_size_bp": 100000
+      },
+      "notes": "Use a wolf-only sample list from the metadata; do not mix it with the dog cohort unless that mixture is the analysis target."
+    },
+    {
+      "key": "anopheles_gambiae",
+      "common_name": "African malaria mosquito",
+      "scientific_name": "Anopheles gambiae",
+      "paper_roles": [
+        "primary_anopheles"
+      ],
+      "cohort": {
+        "n_individuals": 40,
+        "selection": "five Phase 2 populations; exactly 40 individuals each, sampled with seed 2026"
+      },
+      "source": {
+        "label": "MalariaGEN Ag1000G Phase 2 AR1 phased haplotypes",
+        "landing_page": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/",
+        "download_kind": "manual",
+        "instructions": "Run paper/anopheles_variants/phase2/download_release.sh, then use extract_phase2_hdf5.py for gamb_BF, gamb_CM, gamb_GA, gamb_GN, or gamb_UG on each chromosome arm.",
+        "files": []
+      },
+      "inference": {
+        "contig": "2R",
+        "mutation_rate": 3.5E-9,
+        "input_mode": "phased",
+        "model_id": "high-ne-v1",
+        "model_profile": "high-Ne dipteran",
+        "window_size_bp": 50000
+      },
+      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all five Phase 2 populations."
+    },
+    {
+      "key": "anopheles_coluzzii",
+      "common_name": "African malaria mosquito",
+      "scientific_name": "Anopheles coluzzii",
+      "paper_roles": [
+        "primary_anopheles"
+      ],
+      "cohort": {
+        "n_individuals": 40,
+        "selection": "four Phase 2 populations; exactly 40 individuals each, sampled with seed 2026"
+      },
+      "source": {
+        "label": "MalariaGEN Ag1000G Phase 2 AR1 phased haplotypes",
+        "landing_page": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/",
+        "download_kind": "manual",
+        "instructions": "Run paper/anopheles_variants/phase2/download_release.sh, then use extract_phase2_hdf5.py for colu_AO, colu_BF, colu_CI, or colu_GH on each chromosome arm.",
+        "files": []
+      },
+      "inference": {
+        "contig": "2R",
+        "mutation_rate": 3.5E-9,
+        "input_mode": "phased",
+        "model_id": "high-ne-v1",
+        "model_profile": "high-Ne dipteran",
+        "window_size_bp": 50000
+      },
+      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all four Phase 2 populations."
+    },
+    {
+      "key": "redpoll",
+      "common_name": "Redpoll",
+      "scientific_name": "Acanthis flammea",
+      "paper_roles": [
+        "primary_redpoll"
+      ],
+      "cohort": {
+        "n_individuals": 72,
+        "selection": "all 72 published genomes; arrangement-specific maps use PCA-defined groups of 37 and 28"
+      },
+      "source": {
+        "label": "Funk et al. 2021 Dryad dataset",
+        "landing_page": "https://doi.org/10.5061/dryad.q83bk3jjm",
+        "download_kind": "manual",
+        "instructions": "Download 100p_0.05maf.vcf.gz (860 MB, SHA-256 below) from the Dryad data-files panel. Dryad prepares downloads interactively and does not expose a stable anonymous file URL to this utility.",
+        "files": [
+          {
+            "role": "primary",
+            "filename": "100p_0.05maf.vcf.gz",
+            "url": "https://datadryad.org/dataset/doi%3A10.5061/dryad.q83bk3jjm",
+            "size_bytes": 860341281,
+            "checksum": "sha256:70384c75b8859f8f0500748879b4ce84bdd7298864a7b8b1a6cfe8f836f21678"
+          }
+        ]
+      },
+      "inference": {
+        "contig": "ScYwTfa_10461",
+        "mutation_rate": 4.6E-9,
+        "input_mode": "unpolarized",
+        "model_id": "domain-randomized-v1",
+        "model_profile": "domain-randomized, folded phase-invariant view",
+        "window_size_bp": 500000
+      },
+      "notes": "The manuscript inversion is 18.9-75.0 Mb on chromosome 1. Reproducing arrangement-specific maps also requires the committed PCA grouping workflow, not only the pooled preset."
+    }
+  ]
+}

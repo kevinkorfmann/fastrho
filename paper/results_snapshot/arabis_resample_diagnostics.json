@@ -1,0 +1,1165 @@
+{
+  "by_design": {
+    "leave_one_out": {
+      "spearman_subset_vs_cross": {
+        "median": -0.037127299251912625,
+        "range": [
+          -0.18559691491707708,
+          0.02284974356944547
+        ]
+      },
+      "spearman_subset_vs_full": {
+        "median": 0.9558385307405669,
+        "range": [
+          0.7357888844281344,
+          0.9717502304199581
+        ]
+      }
+    },
+    "stratified_n12": {
+      "spearman_subset_vs_cross": {
+        "median": 0.5921708104562599,
+        "range": [
+          0.5146309605260926,
+          0.6326625238194864
+        ]
+      },
+      "spearman_subset_vs_full": {
+        "median": 0.8769472606883761,
+        "range": [
+          0.8439929658299925,
+          0.9066558854629038
+        ]
+      }
+    }
+  },
+  "cross_map_audit": {
+    "chromosomes": {
+      "chr1": {
+        "isotonic_rms_cm": 0.02925447427770738,
+        "map_span_cm": 184.86304940448198,
+        "orientation": 1,
+        "physical_span_mb": 31.285195,
+        "raw_markers": 304,
+        "unique_positions": 304
+      },
+      "chr2": {
+        "isotonic_rms_cm": 3.1138594524101095e-06,
+        "map_span_cm": 129.138307733054,
+        "orientation": 1,
+        "physical_span_mb": 25.367191,
+        "raw_markers": 232,
+        "unique_positions": 232
+      },
+      "chr3": {
+        "isotonic_rms_cm": 1.4372104128956152e-06,
+        "map_span_cm": 207.661198544656,
+        "orientation": 1,
+        "physical_span_mb": 29.785801,
+        "raw_markers": 244,
+        "unique_positions": 244
+      },
+      "chr4": {
+        "isotonic_rms_cm": 0.038176204601353965,
+        "map_span_cm": 185.585949457513,
+        "orientation": 1,
+        "physical_span_mb": 37.232015,
+        "raw_markers": 369,
+        "unique_positions": 369
+      },
+      "chr5": {
+        "isotonic_rms_cm": 0.5519179673686359,
+        "map_span_cm": 138.71593893343982,
+        "orientation": 1,
+        "physical_span_mb": 26.269114,
+        "raw_markers": 202,
+        "unique_positions": 202
+      },
+      "chr6": {
+        "isotonic_rms_cm": 0.14508507086780567,
+        "map_span_cm": 138.11646113300802,
+        "orientation": 1,
+        "physical_span_mb": 21.051823,
+        "raw_markers": 160,
+        "unique_positions": 160
+      },
+      "chr7": {
+        "isotonic_rms_cm": 0.22149732553330814,
+        "map_span_cm": 114.960445291307,
+        "orientation": 1,
+        "physical_span_mb": 20.298471,
+        "raw_markers": 220,
+        "unique_positions": 220
+      },
+      "chr8": {
+        "isotonic_rms_cm": 1.0247969028328092,
+        "map_span_cm": 239.709990966127,
+        "orientation": 1,
+        "physical_span_mb": 36.591633,
+        "raw_markers": 351,
+        "unique_positions": 351
+      }
+    },
+    "markers": 2082
+  },
+  "design_note": "Subsets and frozen models were selected without the F2 map.",
+  "panels": [
+    {
+      "accessions": "25,29,30,163,233,293,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "10",
+      "panel": "nemorensis_loo_10",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.24395604395604395,
+          "subset_vs_full": 0.9032967032967033
+        },
+        "chr2": {
+          "subset_vs_cross": 0.45454545454545453,
+          "subset_vs_full": 0.7454545454545456
+        },
+        "chr3": {
+          "subset_vs_cross": -0.14285714285714285,
+          "subset_vs_full": 0.6703296703296703
+        },
+        "chr4": {
+          "subset_vs_cross": 0.056372549019607844,
+          "subset_vs_full": 0.8651960784313727
+        },
+        "chr5": {
+          "subset_vs_cross": -0.06293706293706294,
+          "subset_vs_full": 0.9090909090909092
+        },
+        "chr6": {
+          "subset_vs_cross": -0.4666666666666666,
+          "subset_vs_full": 0.3666666666666667
+        },
+        "chr7": {
+          "subset_vs_cross": -0.41666666666666663,
+          "subset_vs_full": 0.7833333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.556372549019608,
+          "subset_vs_full": 0.411764705882353
+        }
+      },
+      "spearman_subset_vs_cross": 0.02284974356944547,
+      "spearman_subset_vs_full": 0.7357888844281344,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,29,30,163,233,293,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "25",
+      "panel": "nemorensis_loo_25",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.1164835164835165,
+          "subset_vs_full": 0.9252747252747253
+        },
+        "chr2": {
+          "subset_vs_cross": 0.5272727272727273,
+          "subset_vs_full": 0.9636363636363637
+        },
+        "chr3": {
+          "subset_vs_cross": -0.48901098901098894,
+          "subset_vs_full": 0.9615384615384615
+        },
+        "chr4": {
+          "subset_vs_cross": -0.3088235294117647,
+          "subset_vs_full": 0.9681372549019608
+        },
+        "chr5": {
+          "subset_vs_cross": 0.37762237762237766,
+          "subset_vs_full": 0.8811188811188813
+        },
+        "chr6": {
+          "subset_vs_cross": 0.2333333333333333,
+          "subset_vs_full": 0.9500000000000001
+        },
+        "chr7": {
+          "subset_vs_cross": -0.18333333333333335,
+          "subset_vs_full": 0.9666666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.2058823529411765,
+          "subset_vs_full": 0.8651960784313727
+        }
+      },
+      "spearman_subset_vs_cross": -0.026762641998066168,
+      "spearman_subset_vs_full": 0.9717502304199581,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,30,163,233,293,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "29",
+      "panel": "nemorensis_loo_29",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.4021978021978022,
+          "subset_vs_full": 0.9120879120879121
+        },
+        "chr2": {
+          "subset_vs_cross": 0.33636363636363636,
+          "subset_vs_full": 0.6000000000000001
+        },
+        "chr3": {
+          "subset_vs_cross": -0.38461538461538464,
+          "subset_vs_full": 0.9120879120879121
+        },
+        "chr4": {
+          "subset_vs_cross": -0.09313725490196079,
+          "subset_vs_full": 0.9509803921568628
+        },
+        "chr5": {
+          "subset_vs_cross": -0.04895104895104895,
+          "subset_vs_full": 0.8601398601398602
+        },
+        "chr6": {
+          "subset_vs_cross": -0.15,
+          "subset_vs_full": 0.6333333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": 0.049999999999999996,
+          "subset_vs_full": 0.7833333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5612745098039216,
+          "subset_vs_full": 0.6519607843137255
+        }
+      },
+      "spearman_subset_vs_cross": 0.008464752814516174,
+      "spearman_subset_vs_full": 0.887702076889585,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,163,233,293,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "30",
+      "panel": "nemorensis_loo_30",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.3450549450549451,
+          "subset_vs_full": 0.8989010989010989
+        },
+        "chr2": {
+          "subset_vs_cross": 0.41818181818181827,
+          "subset_vs_full": 0.9818181818181818
+        },
+        "chr3": {
+          "subset_vs_cross": -0.5659340659340659,
+          "subset_vs_full": 0.9725274725274725
+        },
+        "chr4": {
+          "subset_vs_cross": -0.3308823529411765,
+          "subset_vs_full": 0.9754901960784315
+        },
+        "chr5": {
+          "subset_vs_cross": 0.04195804195804196,
+          "subset_vs_full": 0.8391608391608393
+        },
+        "chr6": {
+          "subset_vs_cross": 0.18333333333333335,
+          "subset_vs_full": 0.8666666666666667
+        },
+        "chr7": {
+          "subset_vs_cross": -0.18333333333333335,
+          "subset_vs_full": 0.8666666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5294117647058825,
+          "subset_vs_full": 0.7401960784313727
+        }
+      },
+      "spearman_subset_vs_cross": -0.05718373093734274,
+      "spearman_subset_vs_full": 0.9460223578040271,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,233,293,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "163",
+      "panel": "nemorensis_loo_163",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.3802197802197802,
+          "subset_vs_full": 0.8989010989010989
+        },
+        "chr2": {
+          "subset_vs_cross": 0.5818181818181819,
+          "subset_vs_full": 0.9636363636363637
+        },
+        "chr3": {
+          "subset_vs_cross": -0.5989010989010989,
+          "subset_vs_full": 0.9780219780219779
+        },
+        "chr4": {
+          "subset_vs_cross": -0.26715686274509803,
+          "subset_vs_full": 0.9338235294117647
+        },
+        "chr5": {
+          "subset_vs_cross": -0.02097902097902098,
+          "subset_vs_full": 0.9300699300699302
+        },
+        "chr6": {
+          "subset_vs_cross": -0.11666666666666665,
+          "subset_vs_full": 0.7166666666666667
+        },
+        "chr7": {
+          "subset_vs_cross": -0.13333333333333333,
+          "subset_vs_full": 0.9833333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.29656862745098045,
+          "subset_vs_full": 0.8799019607843139
+        }
+      },
+      "spearman_subset_vs_cross": -0.07102589185246337,
+      "spearman_subset_vs_full": 0.9629179365680713,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,293,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "233",
+      "panel": "nemorensis_loo_233",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.2879120879120879,
+          "subset_vs_full": 0.9604395604395607
+        },
+        "chr2": {
+          "subset_vs_cross": 0.36363636363636365,
+          "subset_vs_full": 0.9090909090909091
+        },
+        "chr3": {
+          "subset_vs_cross": -0.5,
+          "subset_vs_full": 0.9725274725274725
+        },
+        "chr4": {
+          "subset_vs_cross": -0.3995098039215687,
+          "subset_vs_full": 0.9460784313725492
+        },
+        "chr5": {
+          "subset_vs_cross": 0.1398601398601399,
+          "subset_vs_full": 0.8251748251748254
+        },
+        "chr6": {
+          "subset_vs_cross": 0.19999999999999998,
+          "subset_vs_full": 0.7999999999999999
+        },
+        "chr7": {
+          "subset_vs_cross": 0.016666666666666666,
+          "subset_vs_full": 0.8666666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.28186274509803927,
+          "subset_vs_full": 0.9019607843137255
+        }
+      },
+      "spearman_subset_vs_cross": -0.07283532465182554,
+      "spearman_subset_vs_full": 0.9467687488337639,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,233,309,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "293",
+      "panel": "nemorensis_loo_293",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.2879120879120879,
+          "subset_vs_full": 0.9296703296703297
+        },
+        "chr2": {
+          "subset_vs_cross": 0.5909090909090909,
+          "subset_vs_full": 0.9
+        },
+        "chr3": {
+          "subset_vs_cross": -0.5549450549450549,
+          "subset_vs_full": 0.9780219780219779
+        },
+        "chr4": {
+          "subset_vs_cross": -0.31617647058823534,
+          "subset_vs_full": 0.9632352941176472
+        },
+        "chr5": {
+          "subset_vs_cross": 0.02097902097902098,
+          "subset_vs_full": 0.9580419580419581
+        },
+        "chr6": {
+          "subset_vs_cross": 0.15,
+          "subset_vs_full": 0.9833333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": -0.19999999999999998,
+          "subset_vs_full": 0.9833333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.43137254901960786,
+          "subset_vs_full": 0.9166666666666667
+        }
+      },
+      "spearman_subset_vs_cross": -0.01877851977088057,
+      "spearman_subset_vs_full": 0.9638791977427325,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,233,293,337,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "309",
+      "panel": "nemorensis_loo_309",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.09010989010989012,
+          "subset_vs_full": 0.8681318681318682
+        },
+        "chr2": {
+          "subset_vs_cross": 0.4727272727272727,
+          "subset_vs_full": 0.9818181818181818
+        },
+        "chr3": {
+          "subset_vs_cross": -0.5659340659340659,
+          "subset_vs_full": 0.9835164835164836
+        },
+        "chr4": {
+          "subset_vs_cross": -0.27941176470588236,
+          "subset_vs_full": 0.9558823529411765
+        },
+        "chr5": {
+          "subset_vs_cross": -0.14685314685314685,
+          "subset_vs_full": 0.8181818181818183
+        },
+        "chr6": {
+          "subset_vs_cross": 0.0,
+          "subset_vs_full": 0.9
+        },
+        "chr7": {
+          "subset_vs_cross": -0.13333333333333333,
+          "subset_vs_full": 0.9833333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.24754901960784317,
+          "subset_vs_full": 0.9068627450980394
+        }
+      },
+      "spearman_subset_vs_cross": -0.039937574568422,
+      "spearman_subset_vs_full": 0.9565057590853316,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,233,293,309,358,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "337",
+      "panel": "nemorensis_loo_337",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.3098901098901099,
+          "subset_vs_full": 0.956043956043956
+        },
+        "chr2": {
+          "subset_vs_cross": 0.6000000000000001,
+          "subset_vs_full": 0.9090909090909091
+        },
+        "chr3": {
+          "subset_vs_cross": -0.45604395604395603,
+          "subset_vs_full": 0.9395604395604396
+        },
+        "chr4": {
+          "subset_vs_cross": -0.10539215686274511,
+          "subset_vs_full": 0.9607843137254902
+        },
+        "chr5": {
+          "subset_vs_cross": -0.04895104895104895,
+          "subset_vs_full": 0.9370629370629372
+        },
+        "chr6": {
+          "subset_vs_cross": 0.09999999999999999,
+          "subset_vs_full": 0.9333333333333332
+        },
+        "chr7": {
+          "subset_vs_cross": -0.08333333333333334,
+          "subset_vs_full": 0.9
+        },
+        "chr8": {
+          "subset_vs_cross": 0.6102941176470589,
+          "subset_vs_full": 0.7745098039215688
+        }
+      },
+      "spearman_subset_vs_cross": 0.021470051059931806,
+      "spearman_subset_vs_full": 0.9594234694743032,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,233,293,309,337,393,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "358",
+      "panel": "nemorensis_loo_358",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.2175824175824176,
+          "subset_vs_full": 0.8681318681318682
+        },
+        "chr2": {
+          "subset_vs_cross": 0.5,
+          "subset_vs_full": 0.9454545454545454
+        },
+        "chr3": {
+          "subset_vs_cross": -0.510989010989011,
+          "subset_vs_full": 0.9615384615384615
+        },
+        "chr4": {
+          "subset_vs_cross": -0.41421568627450983,
+          "subset_vs_full": 0.9460784313725492
+        },
+        "chr5": {
+          "subset_vs_cross": 0.2797202797202798,
+          "subset_vs_full": 0.9720279720279721
+        },
+        "chr6": {
+          "subset_vs_cross": 0.33333333333333337,
+          "subset_vs_full": 0.9
+        },
+        "chr7": {
+          "subset_vs_cross": 0.0,
+          "subset_vs_full": 0.9166666666666666
+        },
+        "chr8": {
+          "subset_vs_cross": 0.14215686274509806,
+          "subset_vs_full": 0.7965686274509804
+        }
+      },
+      "spearman_subset_vs_cross": -0.041147632752995454,
+      "spearman_subset_vs_full": 0.9551713023958022,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,233,293,309,337,358,435",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "393",
+      "panel": "nemorensis_loo_393",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.3450549450549451,
+          "subset_vs_full": 0.9384615384615385
+        },
+        "chr2": {
+          "subset_vs_cross": 0.44545454545454555,
+          "subset_vs_full": 0.990909090909091
+        },
+        "chr3": {
+          "subset_vs_cross": -0.6483516483516483,
+          "subset_vs_full": 0.9835164835164836
+        },
+        "chr4": {
+          "subset_vs_cross": -0.29901960784313725,
+          "subset_vs_full": 0.9705882352941178
+        },
+        "chr5": {
+          "subset_vs_cross": -0.08391608391608392,
+          "subset_vs_full": 0.8881118881118882
+        },
+        "chr6": {
+          "subset_vs_cross": 0.21666666666666667,
+          "subset_vs_full": 0.9500000000000001
+        },
+        "chr7": {
+          "subset_vs_cross": -0.19999999999999998,
+          "subset_vs_full": 0.9500000000000001
+        },
+        "chr8": {
+          "subset_vs_cross": -0.5857843137254902,
+          "subset_vs_full": 0.08333333333333334
+        }
+      },
+      "spearman_subset_vs_cross": -0.18559691491707708,
+      "spearman_subset_vs_full": 0.8942386528772809,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,163,233,293,309,337,358,393",
+      "design": "leave_one_out",
+      "n_windows": 102,
+      "omitted": "435",
+      "panel": "nemorensis_loo_435",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.3362637362637363,
+          "subset_vs_full": 0.9428571428571428
+        },
+        "chr2": {
+          "subset_vs_cross": 0.6272727272727273,
+          "subset_vs_full": 0.9181818181818183
+        },
+        "chr3": {
+          "subset_vs_cross": -0.576923076923077,
+          "subset_vs_full": 0.967032967032967
+        },
+        "chr4": {
+          "subset_vs_cross": -0.28921568627450983,
+          "subset_vs_full": 0.965686274509804
+        },
+        "chr5": {
+          "subset_vs_cross": -0.013986013986013986,
+          "subset_vs_full": 0.9090909090909092
+        },
+        "chr6": {
+          "subset_vs_cross": 0.31666666666666665,
+          "subset_vs_full": 0.9
+        },
+        "chr7": {
+          "subset_vs_cross": -0.25,
+          "subset_vs_full": 0.8666666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.37990196078431376,
+          "subset_vs_full": 0.9558823529411765
+        }
+      },
+      "spearman_subset_vs_cross": -0.03431702393540325,
+      "spearman_subset_vs_full": 0.9653493618922143,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "34,72,94,114,173,174,176,271,272,323,326,360",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_00",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.6307692307692307,
+          "subset_vs_full": 0.8813186813186813
+        },
+        "chr2": {
+          "subset_vs_cross": 0.8636363636363636,
+          "subset_vs_full": 0.9090909090909091
+        },
+        "chr3": {
+          "subset_vs_cross": 0.34615384615384615,
+          "subset_vs_full": 0.8516483516483516
+        },
+        "chr4": {
+          "subset_vs_cross": 0.38480392156862747,
+          "subset_vs_full": 0.41421568627450983
+        },
+        "chr5": {
+          "subset_vs_cross": 0.8881118881118882,
+          "subset_vs_full": 0.8671328671328673
+        },
+        "chr6": {
+          "subset_vs_cross": 0.5166666666666667,
+          "subset_vs_full": 0.8333333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": 0.41666666666666663,
+          "subset_vs_full": 0.8499999999999999
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5955882352941178,
+          "subset_vs_full": 0.8333333333333335
+        }
+      },
+      "spearman_subset_vs_cross": 0.5929228559634947,
+      "spearman_subset_vs_full": 0.8611147236939571,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "34,69,173,177,261,267,271,323,325,326,344,380",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_01",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.3494505494505495,
+          "subset_vs_full": 0.9472527472527472
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7727272727272727,
+          "subset_vs_full": 0.9454545454545454
+        },
+        "chr3": {
+          "subset_vs_cross": 0.15934065934065936,
+          "subset_vs_full": 0.8956043956043955
+        },
+        "chr4": {
+          "subset_vs_cross": 0.5637254901960785,
+          "subset_vs_full": 0.49754901960784315
+        },
+        "chr5": {
+          "subset_vs_cross": 0.8461538461538463,
+          "subset_vs_full": 0.7482517482517484
+        },
+        "chr6": {
+          "subset_vs_cross": 0.5666666666666667,
+          "subset_vs_full": 0.8666666666666667
+        },
+        "chr7": {
+          "subset_vs_cross": 0.5,
+          "subset_vs_full": 0.7999999999999999
+        },
+        "chr8": {
+          "subset_vs_cross": 0.7843137254901962,
+          "subset_vs_full": 0.8039215686274511
+        }
+      },
+      "spearman_subset_vs_cross": 0.6326625238194864,
+      "spearman_subset_vs_full": 0.8497039881029793,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "34,72,114,176,177,261,271,277,325,359,360,380",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_02",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.49890109890109896,
+          "subset_vs_full": 0.9516483516483516
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7545454545454545,
+          "subset_vs_full": 0.9545454545454546
+        },
+        "chr3": {
+          "subset_vs_cross": 0.03296703296703297,
+          "subset_vs_full": 0.8351648351648352
+        },
+        "chr4": {
+          "subset_vs_cross": 0.7230392156862746,
+          "subset_vs_full": 0.8431372549019609
+        },
+        "chr5": {
+          "subset_vs_cross": 0.7832167832167832,
+          "subset_vs_full": 0.6083916083916086
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6,
+          "subset_vs_full": 0.8666666666666667
+        },
+        "chr7": {
+          "subset_vs_cross": 0.6,
+          "subset_vs_full": 0.6833333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.661764705882353,
+          "subset_vs_full": 0.7107843137254903
+        }
+      },
+      "spearman_subset_vs_cross": 0.5634177923788952,
+      "spearman_subset_vs_full": 0.881832729246654,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "19,34,72,114,174,176,177,261,267,344,359,360",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_03",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.3362637362637363,
+          "subset_vs_full": 0.956043956043956
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7818181818181819,
+          "subset_vs_full": 0.9090909090909091
+        },
+        "chr3": {
+          "subset_vs_cross": 0.3021978021978022,
+          "subset_vs_full": 0.9285714285714285
+        },
+        "chr4": {
+          "subset_vs_cross": 0.5465686274509804,
+          "subset_vs_full": 0.32352941176470595
+        },
+        "chr5": {
+          "subset_vs_cross": 0.9440559440559443,
+          "subset_vs_full": 0.9370629370629372
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6833333333333333,
+          "subset_vs_full": 0.9333333333333332
+        },
+        "chr7": {
+          "subset_vs_cross": 0.5833333333333334,
+          "subset_vs_full": 0.65
+        },
+        "chr8": {
+          "subset_vs_cross": 0.6764705882352942,
+          "subset_vs_full": 0.8700980392156864
+        }
+      },
+      "spearman_subset_vs_cross": 0.5950037036827612,
+      "spearman_subset_vs_full": 0.8829296978812673,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "19,94,114,116,175,177,267,271,272,325,359,360",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_04",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.3538461538461538,
+          "subset_vs_full": 0.9604395604395607
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7727272727272727,
+          "subset_vs_full": 0.9454545454545454
+        },
+        "chr3": {
+          "subset_vs_cross": 0.21978021978021978,
+          "subset_vs_full": 0.8791208791208791
+        },
+        "chr4": {
+          "subset_vs_cross": 0.6372549019607844,
+          "subset_vs_full": 0.3970588235294118
+        },
+        "chr5": {
+          "subset_vs_cross": 0.8881118881118882,
+          "subset_vs_full": 0.9090909090909092
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6333333333333333,
+          "subset_vs_full": 0.9
+        },
+        "chr7": {
+          "subset_vs_cross": 0.48333333333333334,
+          "subset_vs_full": 0.6166666666666666
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5637254901960785,
+          "subset_vs_full": 0.8284313725490197
+        }
+      },
+      "spearman_subset_vs_cross": 0.5714810772910529,
+      "spearman_subset_vs_full": 0.8787906203527263,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "72,94,176,177,261,267,271,325,326,359,360,370",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_05",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.3758241758241759,
+          "subset_vs_full": 0.9516483516483516
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7545454545454545,
+          "subset_vs_full": 0.9272727272727275
+        },
+        "chr3": {
+          "subset_vs_cross": 0.14835164835164835,
+          "subset_vs_full": 0.8571428571428571
+        },
+        "chr4": {
+          "subset_vs_cross": 0.6200980392156864,
+          "subset_vs_full": 0.607843137254902
+        },
+        "chr5": {
+          "subset_vs_cross": 0.9090909090909092,
+          "subset_vs_full": 0.8181818181818183
+        },
+        "chr6": {
+          "subset_vs_cross": 0.5333333333333333,
+          "subset_vs_full": 0.9166666666666666
+        },
+        "chr7": {
+          "subset_vs_cross": 0.5,
+          "subset_vs_full": 0.7333333333333334
+        },
+        "chr8": {
+          "subset_vs_cross": 0.7475490196078433,
+          "subset_vs_full": 0.8259803921568629
+        }
+      },
+      "spearman_subset_vs_cross": 0.591418764949025,
+      "spearman_subset_vs_full": 0.8536281954865961,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "69,72,94,116,173,176,267,271,277,323,344,360",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_06",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.4021978021978022,
+          "subset_vs_full": 0.9604395604395607
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7636363636363637,
+          "subset_vs_full": 0.8909090909090911
+        },
+        "chr3": {
+          "subset_vs_cross": 0.2582417582417582,
+          "subset_vs_full": 0.9175824175824175
+        },
+        "chr4": {
+          "subset_vs_cross": 0.44117647058823534,
+          "subset_vs_full": 0.9166666666666667
+        },
+        "chr5": {
+          "subset_vs_cross": 0.7272727272727274,
+          "subset_vs_full": 0.8741258741258742
+        },
+        "chr6": {
+          "subset_vs_cross": 0.5833333333333334,
+          "subset_vs_full": 0.9166666666666666
+        },
+        "chr7": {
+          "subset_vs_cross": 0.39999999999999997,
+          "subset_vs_full": 0.8333333333333333
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5343137254901961,
+          "subset_vs_full": 0.7034313725490197
+        }
+      },
+      "spearman_subset_vs_cross": 0.5146309605260926,
+      "spearman_subset_vs_full": 0.8942273439222849,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "19,69,72,173,174,175,272,277,323,326,360,370",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_07",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.39780219780219783,
+          "subset_vs_full": 0.9604395604395607
+        },
+        "chr2": {
+          "subset_vs_cross": 0.8181818181818182,
+          "subset_vs_full": 0.8727272727272729
+        },
+        "chr3": {
+          "subset_vs_cross": 0.39010989010989006,
+          "subset_vs_full": 0.7527472527472527
+        },
+        "chr4": {
+          "subset_vs_cross": 0.6642156862745099,
+          "subset_vs_full": 0.8872549019607844
+        },
+        "chr5": {
+          "subset_vs_cross": 0.7482517482517484,
+          "subset_vs_full": 0.8601398601398602
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6333333333333333,
+          "subset_vs_full": 0.9833333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": 0.09999999999999999,
+          "subset_vs_full": 0.8166666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5955882352941178,
+          "subset_vs_full": 0.786764705882353
+        }
+      },
+      "spearman_subset_vs_cross": 0.5616649043545131,
+      "spearman_subset_vs_full": 0.9066558854629038,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "19,94,116,175,177,261,271,277,325,326,370,380",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_08",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.5032967032967033,
+          "subset_vs_full": 0.9472527472527472
+        },
+        "chr2": {
+          "subset_vs_cross": 0.8090909090909091,
+          "subset_vs_full": 0.9818181818181818
+        },
+        "chr3": {
+          "subset_vs_cross": 0.4450549450549451,
+          "subset_vs_full": 0.6978021978021978
+        },
+        "chr4": {
+          "subset_vs_cross": 0.6421568627450981,
+          "subset_vs_full": 0.7230392156862746
+        },
+        "chr5": {
+          "subset_vs_cross": 0.8391608391608393,
+          "subset_vs_full": 0.8531468531468532
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6833333333333333,
+          "subset_vs_full": 0.8833333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": 0.31666666666666665,
+          "subset_vs_full": 0.75
+        },
+        "chr8": {
+          "subset_vs_cross": 0.7647058823529413,
+          "subset_vs_full": 0.7205882352941178
+        }
+      },
+      "spearman_subset_vs_cross": 0.624814109052253,
+      "spearman_subset_vs_full": 0.8751039010240259,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "72,94,114,173,177,267,271,272,325,326,344,370",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_09",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.4021978021978022,
+          "subset_vs_full": 0.9472527472527472
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7727272727272727,
+          "subset_vs_full": 0.9454545454545454
+        },
+        "chr3": {
+          "subset_vs_cross": 0.20329670329670327,
+          "subset_vs_full": 0.7857142857142857
+        },
+        "chr4": {
+          "subset_vs_cross": 0.6200980392156864,
+          "subset_vs_full": 0.4387254901960785
+        },
+        "chr5": {
+          "subset_vs_cross": 0.8391608391608393,
+          "subset_vs_full": 0.8951048951048951
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6,
+          "subset_vs_full": 0.8833333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": 0.38333333333333336,
+          "subset_vs_full": 0.7166666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.6887254901960785,
+          "subset_vs_full": 0.8014705882352942
+        }
+      },
+      "spearman_subset_vs_cross": 0.6092416780227423,
+      "spearman_subset_vs_full": 0.8439929658299925,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "34,72,94,114,175,176,261,271,277,323,325,370",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_10",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.5384615384615385,
+          "subset_vs_full": 0.9472527472527472
+        },
+        "chr2": {
+          "subset_vs_cross": 0.7727272727272727,
+          "subset_vs_full": 0.9727272727272729
+        },
+        "chr3": {
+          "subset_vs_cross": 0.30769230769230765,
+          "subset_vs_full": 0.8626373626373626
+        },
+        "chr4": {
+          "subset_vs_cross": 0.7009803921568628,
+          "subset_vs_full": 0.8504901960784315
+        },
+        "chr5": {
+          "subset_vs_cross": 0.7132867132867133,
+          "subset_vs_full": 0.6643356643356644
+        },
+        "chr6": {
+          "subset_vs_cross": 0.7,
+          "subset_vs_full": 0.9
+        },
+        "chr7": {
+          "subset_vs_cross": 0.15,
+          "subset_vs_full": 0.7999999999999999
+        },
+        "chr8": {
+          "subset_vs_cross": 0.5049019607843138,
+          "subset_vs_full": 0.6715686274509804
+        }
+      },
+      "spearman_subset_vs_cross": 0.5361971377034905,
+      "spearman_subset_vs_full": 0.8841058292008527,
+      "species": "sagittata"
+    },
+    {
+      "accessions": "72,94,116,173,175,261,267,272,344,359,370,380",
+      "design": "stratified_n12",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "sagittata_n12_11",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.3802197802197802,
+          "subset_vs_full": 0.956043956043956
+        },
+        "chr2": {
+          "subset_vs_cross": 0.8272727272727273,
+          "subset_vs_full": 0.881818181818182
+        },
+        "chr3": {
+          "subset_vs_cross": 0.13736263736263735,
+          "subset_vs_full": 0.9340659340659341
+        },
+        "chr4": {
+          "subset_vs_cross": 0.4926470588235295,
+          "subset_vs_full": 0.4803921568627451
+        },
+        "chr5": {
+          "subset_vs_cross": 0.9580419580419581,
+          "subset_vs_full": 0.8811188811188813
+        },
+        "chr6": {
+          "subset_vs_cross": 0.6833333333333333,
+          "subset_vs_full": 0.9333333333333332
+        },
+        "chr7": {
+          "subset_vs_cross": 0.6333333333333333,
+          "subset_vs_full": 0.5666666666666667
+        },
+        "chr8": {
+          "subset_vs_cross": 0.7377450980392158,
+          "subset_vs_full": 0.8799019607843139
+        }
+      },
+      "spearman_subset_vs_cross": 0.6148622286557611,
+      "spearman_subset_vs_full": 0.8619402774086661,
+      "species": "sagittata"
+    }
+  ],
+  "window_mb": 2.0
+}

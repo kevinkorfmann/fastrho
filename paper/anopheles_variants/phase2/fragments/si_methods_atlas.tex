@@ -1,0 +1,21 @@
+\subsection*{Phase 2 extraction, population definition, and coordinates}
+
+The Phase 2 AR1 resource contains 1,142 wild mosquitoes from 13 countries. The primary atlas uses nine established cohorts: \texttt{colu\_AO}, \texttt{colu\_BF}, \texttt{colu\_CI}, \texttt{colu\_GH}, \texttt{gamb\_BF}, \texttt{gamb\_CM}, \texttt{gamb\_GA}, \texttt{gamb\_GN}, and \texttt{gamb\_UG}. Samples with uncertain species status were not promoted into the primary atlas. The 1,058-sample intersection of the five arm-level HDF5 files was computed before sampling. NumPy seed 2026 selected 40 diploids per cohort, and the resulting identifiers were checksum-frozen and used unchanged on 2R, 2L, 3R, 3L, and X.
+
+{\small\input{generated/phase2_cohorts}}
+
+Complete, segregating, biallelic sites were extracted in release coordinates. The same checkpoint, mutation rate \(3.5\times10^{-9}\), feature statistics, and aggregation code were used for every population. Adjacent-SNP estimates were summarized into nonoverlapping 50- and 100-kb windows. Absolute \(r\) remains conditional on the checkpoint's population-level \(N_e\) estimate, so within-population ratios are used for biological comparisons.
+
+\subsection*{Phase 2 cross calling and comparison}
+
+The released autosomal SHAPEIT files contain 234 individuals in 11 crosses. Parent sex and progeny membership were taken from \texttt{cross.samples.meta.txt}. Haplotype values above one (codes 2 or 255) were treated as missing. For each parent, informative sites required a heterozygous target parent, a homozygous mate, at least eight callable offspring, and no more than 5\% Mendelian errors. The release does not supply the genotype-quality and explicit site-filter representation used by later cross resources; no GQ threshold or held-out-filter partition is therefore claimed here.
+
+The caller retained at most one informative site per 10-kb bin. Adjacent markers were oriented by the majority sibling transmission; more than one discordant sibling initiated a new phase block. A two-state Viterbi path used genotype-error probability 0.0025 and a 1-cM/Mb transition prior. Switches required at least three markers in both state runs and breakpoint width no greater than 1 Mb. Detection-aware exposure excluded the first and last two marker intervals of each offspring-specific phase block. Supported 5-Mb windows required at least 80\% marker-span coverage. Direct and atlas rates were normalized to their arm means before pooling.
+
+\subsection*{Local pyrho comparison}
+
+A frozen seed selected 10 diploids from \texttt{gamb\_BF}, \texttt{colu\_CI}, and \texttt{gamb\_UG} for a matched comparison on 3R:6--14 Mb. Both estimators received the same 20 haplotypes. Pyrho used a constant-size lookup table based on Watterson's estimate, mutation rate \(3.5\times10^{-9}\), optimization window 50, ploidy one, and block penalty 25. Profiles were summarized in 100-kb windows. This compares two LD estimators and is not an independent crossover measurement.
+
+\subsection*{2La positive-control analysis}
+
+The 2La interval was 20.524--42.166 Mb on AgamP4. All \PhaseTwoTagSnpCount{} tag SNPs matched the released 2L haplotypes. For each mosquito, mean tag-allele dosage was computed across called sites and rounded to 0, 1, or 2. Population arrangement frequencies used all eligible release samples. Expected heterokaryotype frequency was \(2p(1-p)\); observed heterokaryotype frequency was also retained as a sensitivity. Suppression depth used median positive 100-kb rates inside and outside the inversion.

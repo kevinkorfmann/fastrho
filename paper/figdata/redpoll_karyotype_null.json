@@ -1,0 +1,175 @@
+{
+  "reps": 5,
+  "records": [
+    {
+      "size": 37,
+      "rep": 0,
+      "karyotype_composition": [
+        20,
+        4,
+        13
+      ],
+      "inside_median": 0.009295722108896239,
+      "core_median": 0.00949992281153961,
+      "flank_median": 0.032090683741952064,
+      "inside_flank_ratio": 0.2896704284534756,
+      "core_flank_ratio": 0.29603366783738505,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 37,
+      "rep": 1,
+      "karyotype_composition": [
+        19,
+        2,
+        16
+      ],
+      "inside_median": 0.008149500773131847,
+      "core_median": 0.00835422569024819,
+      "flank_median": 0.03209784239588445,
+      "inside_flank_ratio": 0.25389559437106485,
+      "core_flank_ratio": 0.26027374635372247,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 37,
+      "rep": 2,
+      "karyotype_composition": [
+        15,
+        2,
+        20
+      ],
+      "inside_median": 0.00809105124021077,
+      "core_median": 0.008274567153874902,
+      "flank_median": 0.032107726960949136,
+      "inside_flank_ratio": 0.25199701149980097,
+      "core_flank_ratio": 0.25771264231625,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 37,
+      "rep": 3,
+      "karyotype_composition": [
+        17,
+        3,
+        17
+      ],
+      "inside_median": 0.008365076972750714,
+      "core_median": 0.008866834707325091,
+      "flank_median": 0.032024927014547636,
+      "inside_flank_ratio": 0.26120518460356823,
+      "core_flank_ratio": 0.27687290913410184,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 37,
+      "rep": 4,
+      "karyotype_composition": [
+        17,
+        5,
+        15
+      ],
+      "inside_median": 0.009039434542868985,
+      "core_median": 0.009425809202340199,
+      "flank_median": 0.03220041865597479,
+      "inside_flank_ratio": 0.2807241309327423,
+      "core_flank_ratio": 0.29272318795119884,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 28,
+      "rep": 0,
+      "karyotype_composition": [
+        15,
+        3,
+        10
+      ],
+      "inside_median": 0.008176374812603346,
+      "core_median": 0.00832394587624655,
+      "flank_median": 0.029933410897165537,
+      "inside_flank_ratio": 0.27315212558611507,
+      "core_flank_ratio": 0.2780821038017677,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 28,
+      "rep": 1,
+      "karyotype_composition": [
+        16,
+        1,
+        11
+      ],
+      "inside_median": 0.00790999991791183,
+      "core_median": 0.008112924352811534,
+      "flank_median": 0.03053254060756066,
+      "inside_flank_ratio": 0.2590678587668236,
+      "core_flank_ratio": 0.26571402809507966,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 28,
+      "rep": 2,
+      "karyotype_composition": [
+        15,
+        3,
+        10
+      ],
+      "inside_median": 0.007789570156236644,
+      "core_median": 0.008143932467741425,
+      "flank_median": 0.03030928560583273,
+      "inside_flank_ratio": 0.2570027633623148,
+      "core_flank_ratio": 0.2686943062153271,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 28,
+      "rep": 3,
+      "karyotype_composition": [
+        15,
+        4,
+        9
+      ],
+      "inside_median": 0.008783967596635339,
+      "core_median": 0.008797571391576667,
+      "flank_median": 0.029924556939433095,
+      "inside_flank_ratio": 0.2935370977894166,
+      "core_flank_ratio": 0.2939917008423161,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    },
+    {
+      "size": 28,
+      "rep": 4,
+      "karyotype_composition": [
+        13,
+        4,
+        11
+      ],
+      "inside_median": 0.008245702457493054,
+      "core_median": 0.008720476516001392,
+      "flank_median": 0.030615265205034985,
+      "inside_flank_ratio": 0.2693330403075184,
+      "core_flank_ratio": 0.28484079617142183,
+      "n_inside": 112,
+      "n_core": 104,
+      "n_flank": 118
+    }
+  ]
+}

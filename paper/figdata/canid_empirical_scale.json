@@ -1,0 +1,13 @@
+{
+  "description": "Chromosome 1 (0-40 Mb) map-shape agreement with the Campbell2016_CanFam3_1 pedigree map after averaging aligned 100-kb windows to each stated scale. The village-dog curve is a metadata-defined sensitivity subset of the full dog panel.",
+  "window_kb": [100, 200, 500, 1000, 2000],
+  "wolf_pearson": [0.22544354036889055, 0.2603053658301764, 0.35443338089948834, 0.38974622261511765, 0.5842939023695237],
+  "dog_pearson": [0.17437518170026198, 0.21527301487678627, 0.2774202751513779, 0.3351709183395101, 0.6377616161796403],
+  "village_dog_pearson": [0.18205191839081014, 0.23488576196452615, 0.26434407723118547, 0.351568627806614, 0.6075001771095762],
+  "n_windows": [358, 179, 72, 36, 18],
+  "wolf_n_haplotypes": 66,
+  "dog_n_haplotypes": 134,
+  "village_dog_n_haplotypes": 84,
+  "source_archives": ["/home/kkor/realdata/maps/wolf33_dogbn_current.npz", "/home/kkor/realdata/maps/dog67_dogbn_current.npz", "/home/kkor/realdata/maps/dog_village42_40mb_explicit.npz"],
+  "model": "campaign_dog_bottleneck"
+}

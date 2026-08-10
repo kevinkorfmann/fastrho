@@ -1,0 +1,2 @@
+campaign	train_shards	val_shards	audit_shards
+structured_selfing_v1	16000	1600	1600

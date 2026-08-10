@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "policy": "Reader-facing counts and accession identifiers transcribed from cited releases or source papers. Computed summaries belong in manuscript_derived.json instead.",
+  "records": {
+    "phase2_release": {
+      "n_mosquitoes": 1142,
+      "n_countries": 13,
+      "n_cross_samples": 234,
+      "citation": "malariagen_phase2_ar1_2017",
+      "source_url": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/"
+    },
+    "arabis_cross": {
+      "n_f2_progeny": 742,
+      "citation": "rahnamae2026arabis",
+      "source_url": "https://doi.org/10.1111/nph.70779"
+    },
+    "arabidopsis_rowan_map": {
+      "n_crossovers": 17077,
+      "n_f2_individuals": 2182,
+      "citation": "rowan2019crossovers",
+      "source_url": "https://doi.org/10.1534/genetics.119.302406"
+    },
+    "named_resources": {
+      "human_1000_genomes": 1000,
+      "arabidopsis_1001_genomes": 1001,
+      "citations": ["1000genomes2015", "genomes1001_2016"]
+    },
+    "transect_accessions": {
+      "chicken_figshare": 24847623,
+      "honeybee_zenodo": 5592452,
+      "citations": ["tan2024chicken", "wragg2022seqapipop"],
+      "source_urls": [
+        "https://figshare.com/articles/dataset/24847623",
+        "https://doi.org/10.5281/zenodo.5592452"
+      ]
+    }
+  }
+}

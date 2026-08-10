@@ -1,0 +1,47 @@
+{
+  "description": "Wolf-minus-dog Pearson differences from 5-Mb block bootstrap",
+  "seed": 20260807,
+  "replicates": 10000,
+  "block_size_bp": 5000000,
+  "source_wolf_map": "/home/kkor/realdata/maps/wolf33_dogbn_current.npz",
+  "comparisons": {
+    "all_dogs": {
+      "source_dog_map": "/home/kkor/realdata/maps/dog67_dogbn_current.npz",
+      "100kb": {
+        "difference": 0.05106835866862855,
+        "ci95": [
+          -0.03898598466288708,
+          0.17866632403704721
+        ],
+        "bootstrap_fraction_le_zero": 0.1478
+      },
+      "1mb": {
+        "difference": 0.05455339610217119,
+        "ci95": [
+          -0.12468734024801914,
+          0.2680512796327829
+        ],
+        "bootstrap_fraction_le_zero": 0.2541
+      }
+    },
+    "village_dogs": {
+      "source_dog_map": "/home/kkor/realdata/maps/dog_village42_40mb_explicit.npz",
+      "100kb": {
+        "difference": 0.04339162197808036,
+        "ci95": [
+          -0.049331543247592306,
+          0.1599366607680177
+        ],
+        "bootstrap_fraction_le_zero": 0.184
+      },
+      "1mb": {
+        "difference": 0.03815804253487787,
+        "ci95": [
+          -0.15204522355846473,
+          0.18642928274283874
+        ],
+        "bootstrap_fraction_le_zero": 0.3323
+      }
+    }
+  }
+}
