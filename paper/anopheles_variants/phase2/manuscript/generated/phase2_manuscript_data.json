@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "inputs": {
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/results/phase2_2la.json": "8f2a84d4ca3e59003690d316aba67c536a6b5b4b2f434335dc9bfc328380af37",
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/results/phase2_resistance.json": "5f32848f4ec927bfd3b3dd865932014d043aa49d4fcffd175ef5a4e886413e98",
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/results/phase2_pyrho.json": "5574f72c627d7620759dd53a2e48483846a0fe3d111b2ef41e6847810e0082ea",
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree.json": "fc61b6fe9041be6b494de9d0ed09e33f578cb9835646f2a7faa461b706addbf9",
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/cohorts/selection.tsv": "a2467f0165ec59505d332c5415e3095799097077fdadbfa26fcc7b2bb8641a83"
+  },
+  "outputs": {
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/results/manuscript_generated/phase2_numbers.tex": "47e3bcb0a12871f3dc3e0a16d613284e01031582f3bed35f6c58428eaf8ca5b9",
+    "/Users/kevinkorfmann/Desktop/lunch_money/fastrho/paper/anopheles_variants/phase2/results/manuscript_generated/phase2_cohorts.tex": "a0e4c39ee13619d4de7cb4896c0a937e1452fbc0c7175af45e934e7925d263aa"
+  },
+  "macros": {
+    "PhaseTwoCohortCount": "9",
+    "PhaseTwoDiploidCount": "360",
+    "PhaseTwoGambiaeCount": "5",
+    "PhaseTwoColuzziiCount": "4",
+    "PhaseTwoTagSnpCount": "202",
+    "PhaseTwoPearsonR": "0.452",
+    "PhaseTwoPearsonP": "0.222",
+    "PhaseTwoSpearmanR": "0.233",
+    "PhaseTwoSpearmanP": "0.546",
+    "PhaseTwoCrossCount": "11",
+    "PhaseTwoProgenyCount": "212",
+    "PhaseTwoTransmissionCount": "424",
+    "PhaseTwoCrossoverCount": "244",
+    "PhaseTwoPedigreeWindowCount": "32",
+    "PhaseTwoPedigreeR": "0.671",
+    "PhaseTwoPedigreeP": "0.002",
+    "PhaseTwoResistanceRatio": "0.705",
+    "PhaseTwoCoreResistanceRatio": "0.406",
+    "PhaseTwoSurveillanceResistanceRatio": "0.530",
+    "PhaseTwoDeduplicatedResistanceRatio": "0.713",
+    "PhaseTwoResistanceSignificantCount": "4",
+    "PhaseTwoResistancePopulationCount": "9",
+    "PhaseTwoGambiaeResistanceRatio": "0.705",
+    "PhaseTwoColuzziiResistanceRatio": "0.724",
+    "PhaseTwoPyrhoMeanR": "0.837"
+  }
+}

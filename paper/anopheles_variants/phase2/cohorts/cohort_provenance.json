@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "source": "/Users/kevinkorfmann/agam_phase2/metadata/samples.meta.txt",
+  "source_sha256": "399ae5d18ac06e1837ce4e32e23607a64df347333340385aec6a8b49de494355",
+  "eligible_samples_source": "/Users/kevinkorfmann/agam_phase2/metadata/five_arm_samples.txt",
+  "eligible_samples_sha256": "192906cc2180a448714e6fdd034ddfb974416b52bb14d02aa09083eeb18de60a",
+  "eligibility_rule": "sample is present in all five released chromosome-arm HDF5 files",
+  "selection_seed": 2026,
+  "diploids_per_cohort": 40,
+  "primary_cohort_count": 9,
+  "primary_species": [
+    "Anopheles gambiae",
+    "Anopheles coluzzii"
+  ],
+  "excluded_uncertain_populations": [
+    "GM",
+    "GW",
+    "KE"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "release": "Ag1000G Phase 2 AR1",
+  "release_page": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/",
+  "ftp_root": "ftp://ngs.sanger.ac.uk/production/ag1000g/phase2/AR1/",
+  "terms_page": "https://www.malariagen.net/data/our-approach-sharing-data/ag1000g-terms-of-use/",
+  "terms_status": "Phase 1 and Phase 2 restrictions lifted in March 2022; datasets identified by MalariaGEN as open access.",
+  "reference_assembly": "AgamP4",
+  "wild_haplotype_files": [
+    {"arm": "2R", "path": "haplotypes/main/hdf5/ag1000g.phase2.ar1.haplotypes.2R.h5", "content_length": 888763203},
+    {"arm": "2L", "path": "haplotypes/main/hdf5/ag1000g.phase2.ar1.haplotypes.2L.h5", "content_length": 632799523},
+    {"arm": "3R", "path": "haplotypes/main/hdf5/ag1000g.phase2.ar1.haplotypes.3R.h5", "content_length": 757811220},
+    {"arm": "3L", "path": "haplotypes/main/hdf5/ag1000g.phase2.ar1.haplotypes.3L.h5", "content_length": 545014493},
+    {"arm": "X", "path": "haplotypes/main/hdf5/ag1000g.phase2.ar1.haplotypes.X.h5", "content_length": 836639597}
+  ],
+  "cross_haplotype_files": [
+    {"arm": "2R", "path": "haplotypes/crosses/shapeit/ag1000g.phase2.ar1.haplotypes.2R.gz", "content_length": 44260506},
+    {"arm": "2L", "path": "haplotypes/crosses/shapeit/ag1000g.phase2.ar1.haplotypes.2L.gz", "content_length": 36916813},
+    {"arm": "3R", "path": "haplotypes/crosses/shapeit/ag1000g.phase2.ar1.haplotypes.3R.gz", "content_length": 39914761},
+    {"arm": "3L", "path": "haplotypes/crosses/shapeit/ag1000g.phase2.ar1.haplotypes.3L.gz", "content_length": 29845258}
+  ],
+  "release_counts": {
+    "wild_diploid_samples": 1142,
+    "countries": 13,
+    "cross_samples": 234,
+    "crosses": 11
+  },
+  "local_space_policy": "The complete PASS VCFs total hundreds of gigabytes and are not duplicated on the local workstation. VCF-dependent pedigree work runs on Betty or Sesame and is checksum-bound there."
+}

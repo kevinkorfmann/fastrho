@@ -31,6 +31,7 @@ the population-scaled recombination rate for every adjacent-SNP interval.
 | **Backbone** | Bidirectional Mamba-2 state-space encoder-decoder |
 | **Rates** | Population-scaled rho and absolute rate conditional on the recorded `Ne_used` |
 | **Stage** | Public research alpha |
+| **Open empirical release** | Ag1000G Phase 2 AR1: 9 populations × 5 chromosome arms |
 
 ## Installation
 
@@ -132,6 +133,17 @@ conversion can change the signal. For a new cohort, record the checkpoint and st
 input view, filtering, mutation rate, effective population size, coordinates, and reporting window;
 then evaluate split-sample repeatability, realistic simulations, or an independent map.
 
+## Phase 2 maps and results
+
+The manuscript's active mosquito analysis uses the freely available Ag1000G Phase 2 AR1 release.
+The repository now includes the frozen nine-population design, 45 population-by-arm maps, the
+public BED atlas, compact 2La, resistance-region, pedigree, and pyrho results, and checksummed
+provenance under [`paper/anopheles_variants/phase2/`](paper/anopheles_variants/phase2/).
+
+Ready-to-use tables and a compact result bundle are listed in the
+[data documentation](https://fastrho.readthedocs.io/en/latest/data.html). Restricted MalariaGEN
+Phase 3 analyses and results are not distributed in this repository.
+
 ## Documentation
 
 The public documentation contains the software guide, method schematic, and synthetic example.
@@ -142,6 +154,7 @@ The public documentation contains the software guide, method schematic, and synt
 - [Interpret the output](https://fastrho.readthedocs.io/en/latest/interpretation.html)
 - [Checkpoints](https://fastrho.readthedocs.io/en/latest/checkpoints.html)
 - [Known-answer simulation](https://fastrho.readthedocs.io/en/latest/simulation.html)
+- [Phase 2 maps and results](https://fastrho.readthedocs.io/en/latest/data.html)
 
 ## Verification
 
