@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "variant": "phase2",
+  "release": "Ag1000G Phase 2 AR1",
+  "rows": [
+    {
+      "cohort": "gamb_BF",
+      "arm": "3R",
+      "region_mb": [
+        6,
+        14
+      ],
+      "n_hap": 20,
+      "n_snp": 216670,
+      "watterson_ne": 545291.8642249241,
+      "selected_sample_ids": [
+        "AB0085-C",
+        "AB0104-C",
+        "AB0134-C",
+        "AB0148-C",
+        "AB0172-C",
+        "AB0197-C",
+        "AB0203-C",
+        "AB0232-C",
+        "AB0235-C",
+        "AB0271-C"
+      ],
+      "spearman_matched": [
+        0.69696081768521,
+        6.940213527898732e-13,
+        80
+      ],
+      "spearman_published": [
+        0.5352969444453994,
+        3.123452067036199e-07,
+        80
+      ],
+      "source_sha256": "2377e6b8341a77670df9ac5202b48007ebfec0449b0be1d40d9d6f371fa5e014",
+      "pyrho_logs": [
+        {
+          "command": [
+            "/home/kkor/venvs/pyrho/bin/pyrho",
+            "make_table",
+            "-n",
+            "20",
+            "-m",
+            "3.5e-09",
+            "-p",
+            "545291.8642249241",
+            "--approx",
+            "-N",
+            "25",
+            "--numthreads",
+            "16",
+            "-o",
+            "/tmp/tmpleyzwvno/lookup.hdf"
+          ],
+          "stdout_tail": "",
+          "stderr_tail": ""
+        },
+        {
+          "command": [
+            "/home/kkor/venvs/pyrho/bin/pyrho",
+            "optimize",
+            "--vcffile",
+            "/tmp/tmpleyzwvno/input.vcf",
+            "--tablefile",
+            "/tmp/tmpleyzwvno/lookup.hdf",
+            "--ploidy",
+            "1",
+            "-w",
+            "50",
+            "-bpen",
+            "25",
+            "--numthreads",
+            "16",
+            "-o",
+            "/tmp/tmpleyzwvno/output.rmap"
+          ],
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      ]
+    },
+    {
+      "cohort": "colu_CI",
+      "arm": "3R",
+      "region_mb": [
+        6,
+        14
+      ],
+      "n_hap": 20,
+      "n_snp": 192391,
+      "watterson_ne": 484189.07578389894,
+      "selected_sample_ids": [
+        "AY0006-C",
+        "AY0011-C",
+        "AY0013-C",
+        "AY0025-C",
+        "AY0026-C",
+        "AY0040-C",
+        "AY0043-C",
+        "AY0059-C",
+        "AY0060-C",
+        "AY0080-C"
+      ],
+      "spearman_matched": [
+        0.939451476793249,
+        5.039918546246453e-38,
+        80
+      ],
+      "spearman_published": [
+        0.7700656352555089,
+        6.893800538017471e-17,
+        80
+      ],
+      "source_sha256": "1bdf1cc936354ed3b2b1b44e5340bc5ce0aae965151eb6597d1bfce2565edead",
+      "pyrho_logs": [
+        {
+          "command": [
+            "/home/kkor/venvs/pyrho/bin/pyrho",
+            "make_table",
+            "-n",
+            "20",
+            "-m",
+            "3.5e-09",
+            "-p",
+            "484189.07578389894",
+            "--approx",
+            "-N",
+            "25",
+            "--numthreads",
+            "16",
+            "-o",
+            "/tmp/tmpn7hho7vo/lookup.hdf"
+          ],
+          "stdout_tail": "",
+          "stderr_tail": ""
+        },
+        {
+          "command": [
+            "/home/kkor/venvs/pyrho/bin/pyrho",
+            "optimize",
+            "--vcffile",
+            "/tmp/tmpn7hho7vo/input.vcf",
+            "--tablefile",
+            "/tmp/tmpn7hho7vo/lookup.hdf",
+            "--ploidy",
+            "1",
+            "-w",
+            "50",
+            "-bpen",
+            "25",
+            "--numthreads",
+            "16",
+            "-o",
+            "/tmp/tmpn7hho7vo/output.rmap"
+          ],
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      ]
+    },
+    {
+      "cohort": "gamb_UG",
+      "arm": "3R",
+      "region_mb": [
+        6,
+        14
+      ],
+      "n_hap": 20,
+      "n_snp": 214029,
+      "watterson_ne": 538645.2781104735,
+      "selected_sample_ids": [
+        "AC0090-C",
+        "AC0095-C",
+        "AC0100-C",
+        "AC0116-C",
+        "AC0117-C",
+        "AC0137-C",
+        "AC0141-C",
+        "AC0167-C",
+        "AC0171-C",
+        "AC0189-C"
+      ],
+      "spearman_matched": [
+        0.8740440344971612,
+        3.6161661178156785e-26,
+        80
+      ],
+      "spearman_published": [
+        0.7218982764908096,
+        4.1629798684805816e-14,
+        80
+      ],
+      "source_sha256": "1b4d5d2942931ead26b1dfa7fd542620e8eb6bf36b10d3ea49da6fcad9177b3d",
+      "pyrho_logs": [
+        {
+          "command": [
+            "/home/kkor/venvs/pyrho/bin/pyrho",
+            "make_table",
+            "-n",
+            "20",
+            "-m",
+            "3.5e-09",
+            "-p",
+            "538645.2781104735",
+            "--approx",
+            "-N",
+            "25",
+            "--numthreads",
+            "16",
+            "-o",
+            "/tmp/tmpxd6916cw/lookup.hdf"
+          ],
+          "stdout_tail": "",
+          "stderr_tail": ""
+        },
+        {
+          "command": [
+            "/home/kkor/venvs/pyrho/bin/pyrho",
+            "optimize",
+            "--vcffile",
+            "/tmp/tmpxd6916cw/input.vcf",
+            "--tablefile",
+            "/tmp/tmpxd6916cw/lookup.hdf",
+            "--ploidy",
+            "1",
+            "-w",
+            "50",
+            "-bpen",
+            "25",
+            "--numthreads",
+            "16",
+            "-o",
+            "/tmp/tmpxd6916cw/output.rmap"
+          ],
+          "stdout_tail": "",
+          "stderr_tail": ""
+        }
+      ]
+    }
+  ],
+  "mean_spearman_matched": 0.8368187763252067,
+  "mean_spearman_published": 0.6757536187305727,
+  "checkpoint_sha256": "4941f72fa5a0b6c812e265ef7fbb997d073d95c7785c328c3710d1ad03208875",
+  "stats_sha256": "4bb92ade2dfc50f76eff1a7524f1684aae59270820d7a8281d713c6bb7b367da"
+}

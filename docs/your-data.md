@@ -15,17 +15,18 @@ For a VCF, `auto` distinguishes phased (`|`) from unphased (`/`) GT calls. It ca
 alleles are polarized. Never feed unphased data to a phased-only checkpoint or silently treat an
 unknown reference allele as ancestral.
 
-The machine-readable registry included with the package, `fastrho/model_registry.json`, declares
-one released general model and five specialist artifacts:
+The machine-readable registry is
+[`fastrho/model_registry.json`](https://github.com/kevinkorfmann/fastrho/blob/main/fastrho/model_registry.json).
+It declares six public, checksummed releases:
 
 | Model | Intended use | Views | Status |
 |---|---|---|---|
 | `domain-randomized-v1` | Primary general model | phased, unphased, unpolarized | `available` |
 | `base-v1` | Ordinary-demography specialist | phased | `available` |
 | `composite-ld-v1` | Folded composite-LD specialist | unpolarized | `available` |
-| `high-ne-v1` | Mosquito/dipteran high-$N_e$ regime | phased | `available` |
+| `dog-bottleneck-v1` | Canine bottleneck specialist | unpolarized | `available` |
 | `selfing-v1` | Strong-selfing regime | phased | `available` |
-| `dog-bottleneck-v1` | Severe canine bottleneck regime | unpolarized | `available` |
+| `high-ne-v1` | High-$N_e$ regime | phased | `available` |
 
 The numerical ranges in a model's training manifest are a qualification domain, not a guarantee for
 every dataset inside those ranges.
@@ -38,11 +39,11 @@ statistics archive together, and pass an input view that the registry declares:
 | Start with | Use it for | Set `input_mode` to |
 |---|---|---|
 | `domain-randomized-v1` | General outbred transfer across diverse demographic histories | `phased`, `unphased`, or `unpolarized` |
-| `base-v1` | Ordinary-demography data with reliable phase and ancestral state | `phased` |
-| `composite-ld-v1` | Unphased and unpolarized diploid data | `unpolarized` |
-| `selfing-v1` | Predominantly selfing populations represented as polarized haplotypes | `phased` |
-| `high-ne-v1` | High-diversity, high-$N_e$ cohorts | `phased` |
-| `dog-bottleneck-v1` | Village-dog or breed-like bottleneck histories | `unpolarized` |
+| `base-v1` | Ordinary-demography, polarized haplotypes | `phased` |
+| `composite-ld-v1` | Unphased and unpolarized diploid genotypes | `unpolarized` |
+| `dog-bottleneck-v1` | Canine cohorts matching the bottleneck prior | `unpolarized` |
+| `selfing-v1` | Predominantly selfing populations | `phased` |
+| `high-ne-v1` | High-diversity, high-$N_e$ cohorts such as *Anopheles* | `phased` |
 
 ```python
 from pathlib import Path
@@ -54,9 +55,9 @@ input_mode = {
     "domain-randomized-v1": "unpolarized",  # phased/unphased are also supported
     "base-v1": "phased",
     "composite-ld-v1": "unpolarized",
+    "dog-bottleneck-v1": "unpolarized",
     "selfing-v1": "phased",
     "high-ne-v1": "phased",
-    "dog-bottleneck-v1": "unpolarized",
 }[model_id]
 
 pred = fastrho.quick_map_from_vcf(
@@ -110,10 +111,6 @@ Inversions, selection, admixture, and relatedness can create long-range LD that 
 crossing over. Choose a specialized checkpoint only when its training regime matches the mechanism
 you intend to model.
 
-Large sample size is not the same qualification as large effective population size. `high-ne-v1`
-targets the latter. The experimental large-$n$ `rich` checkpoint is not publicly registered because
-it did not establish a general advantage on its target neutral high-$n$ benchmark.
-
 ## Pick a reporting scale
 
 fastrho predicts adjacent-SNP intervals. For comparisons and plots, aggregate by physical span:
@@ -151,3 +148,32 @@ For a map someone else can reproduce, save:
 - the exact command or Python script that produced the map.
 
 See {doc}`interpretation` before treating a population map as a meiotic crossover map.
+
+## Start from a manuscript species
+
+The repository includes a machine-readable preset and source route for every active empirical
+analysis. The comparative SI panel is a fixed set of ten species (seven core and three
+context-limited cohorts). Dedicated presets cover dog, wolf, the two Phase 2 *Anopheles* species,
+and redpoll. Restricted Phase 3 analyses and presets are not distributed in this repository.
+
+```bash
+python3 examples/manuscript_species/data.py list
+python3 examples/manuscript_species/data.py show human
+python3 examples/manuscript_species/data.py download human --dry-run --include-companions
+```
+
+The accompanying runner resolves the documented contig, mutation rate, genotype view, model
+profile, and reporting window while still requiring you to supply the checkpoint explicitly:
+
+```bash
+python3 examples/manuscript_species/infer.py \
+  --species human --vcf cohort.chr2.vcf.gz \
+  --checkpoint downloaded-models/domain-randomized-v1/model.ckpt \
+  --stats downloaded-models/domain-randomized-v1/feat_stats.npz \
+  --out map.chr2.bed --dry-run
+```
+
+See the [complete manuscript-species guide](https://github.com/kevinkorfmann/fastrho/tree/main/examples/manuscript_species)
+for direct download commands, deterministic Phase 2 cohort extraction, the fixed 10-species SI
+panel, and its dedicated Phase 2 presets. Source data and generated maps stay outside Git; the
+manifest and utilities that reproduce them are tracked.

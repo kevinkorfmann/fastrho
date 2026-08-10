@@ -70,6 +70,14 @@ Download and verify the checkpoint and its required companion archive.
 
 Understand rho, absolute rate, uncertainty, and the limits of LD maps.
 :::
+
+:::{grid-item-card} Phase 2 maps and results
+:link: data
+:link-type: doc
+:class-card: quick-card
+
+Download the nine-population *Anopheles* maps and plot-ready result tables.
+:::
 ::::
 
 ## Minimal workflow
@@ -112,9 +120,15 @@ scale. Use realistic simulations or independent crossover information before mak
 claim, and describe the result as a population recombination map unless direct evidence supports a
 meiotic interpretation.
 
-:::{note}
-This deployment contains only the software guide, method schematic, and synthetic example.
-Empirical datasets and analyses are not part of it.
+## Open Phase 2 analysis
+
+The active mosquito analysis uses the freely available Ag1000G Phase 2 AR1 release: nine
+populations, five chromosome arms, and a predefined panel of 15 resistance regions. Ready-to-use
+maps, result tables, and provenance are available on the {doc}`data` page.
+
+:::{figure} _static_public/phase2_anopheles.png
+:alt: Phase 2 Anopheles recombination maps, inversion comparison, and resistance-region summaries.
+:width: 100%
 :::
 
 ```{toctree}
@@ -127,4 +141,5 @@ python-api
 your-data
 interpretation
 checkpoints
+data
 ```

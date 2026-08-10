@@ -1,0 +1,17 @@
+release_population	cohort	species	country	n_release	n_arm_complete	primary_eligible	reason
+AOcol	colu_AO	Anopheles coluzzii	Angola	78	78	true	eligible established species-population cohort
+BFcol	colu_BF	Anopheles coluzzii	Burkina Faso	75	72	true	eligible established species-population cohort
+BFgam	gamb_BF	Anopheles gambiae	Burkina Faso	92	67	true	eligible established species-population cohort
+CIcol	colu_CI	Anopheles coluzzii	Cote d'Ivoire	71	71	true	eligible established species-population cohort
+CMgam	gamb_CM	Anopheles gambiae	Cameroon	297	253	true	eligible established species-population cohort
+FRgam		not selected	France	24	12	false	not a prespecified primary species-population cohort
+GAgam	gamb_GA	Anopheles gambiae	Gabon	69	69	true	eligible established species-population cohort
+GHcol	colu_GH	Anopheles coluzzii	Ghana	55	55	true	eligible established species-population cohort
+GHgam		not selected	Ghana	12	12	false	not a prespecified primary species-population cohort
+GM		uncertain	Gambia, The	65	65	false	Far-west samples have uncertain species status in the Phase 2 resource paper.
+GNcol		not selected	Guinea	4	4	false	not a prespecified primary species-population cohort
+GNgam	gamb_GN	Anopheles gambiae	Guinea	40	40	true	eligible established species-population cohort
+GQgam		not selected	Equatorial Guinea	9	9	false	not a prespecified primary species-population cohort
+GW		uncertain	Guinea-Bissau	91	91	false	Far-west samples have uncertain species status in the Phase 2 resource paper.
+KE		uncertain	Kenya	48	48	false	Kenyan samples have uncertain species status in the Phase 2 resource paper.
+UGgam	gamb_UG	Anopheles gambiae	Uganda	112	112	true	eligible established species-population cohort

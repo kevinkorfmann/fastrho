@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "variant": "phase2",
+  "release": "Ag1000G Phase 2 AR1",
+  "reference_assembly": "AgamP4",
+  "cohort_count": 9,
+  "arms": [
+    "2R",
+    "2L",
+    "3R",
+    "3L",
+    "X"
+  ],
+  "window_bp": 50000,
+  "selection_sha256": "421c33f685ef31d1f03e58e09ee7130757c52085a947f317bc1bdfffd5bdc75a",
+  "selected_samples_sha256": "c1d38839e4a03fc05c631e728da6ca2ec3f90f898860991b34e8f37aea66c852",
+  "metadata_sha256": "399ae5d18ac06e1837ce4e32e23607a64df347333340385aec6a8b49de494355",
+  "manifest_sha256": "d235c17c9d0e29572671ff04e5491d4665cb71be1a303656b8e5adc34f9c4aa2"
+}

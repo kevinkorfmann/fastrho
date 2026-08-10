@@ -27,9 +27,7 @@ exclude_patterns = [
     "_build",
     "_scripts",
     "_static",
-    "data",
     "data/**",
-    "data.md",
     "Thumbs.db",
     ".DS_Store",
 ]
