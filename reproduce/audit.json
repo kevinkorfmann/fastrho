@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "manuscript_repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "manuscript_commit": "4faf13c9f84f3686791b1b892923f00cb842e3a2",
+  "manuscript_commit": "b7803a09dc3f6306ed504458e52b03996fc21788",
   "scope": "Phase 2 only",
   "summary": {
     "figures": 15,
     "generated_tex_inputs": 6,
     "declared_artifacts": 22,
-    "numeric_occurrences_inventoried": 970,
-    "numeric_occurrences_bound": 970,
+    "numeric_occurrences_inventoried": 1030,
+    "numeric_occurrences_bound": 1030,
     "artifacts_matching_published_bytes": 22
   },
   "numeric_policy": "Each Phase 2 prose number is assigned to the narrowest active source bundle. Numbers in generated includes inherit the exact producer and inputs of their artifact record.",
@@ -1238,7 +1238,7 @@
       },
       {
         "path": "reproduce/manuscript.lock.json",
-        "sha256": "35a8280482c92fe21f3605d9e914681493f782c1143c8da5f95c494489fc515c"
+        "sha256": "b8e648cb9cd46c748303c0be337f2b0f1c21a0d30bcf7f034c87f05ce1d8f1c8"
       }
     ]
   },
@@ -11398,7 +11398,189 @@
     },
     {
       "file": "si.tex",
-      "line": 246,
+      "line": 255,
+      "column": 70,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\textbf{\\texttt{domain-randomized-v1}} & Multi-view model trained on 15000 simulated regions from the broad demographic prior, with each region represented as phased haplotypes, unphased dosages, and folded unpolar",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 257,
+      "column": 90,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\textbf{\\texttt{composite-ld-v1}} & Single-view specialist trained by re-featurizing the 15000 base-prior simulations as folded, unphased diploid genotypes. & Main Fig.~ ; SI Fig.~ \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 258,
+      "column": 61,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\textbf{\\texttt{high-ne-v1}} & Phased specialist trained on 15000 simulated high-diversity, high-$N_e$ regions representing mosquito and other dipteran regimes. & Main Figs.~ and ; SI Fig.~ \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 259,
+      "column": 61,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "4000",
+      "unit": null,
+      "context": "\\textbf{\\texttt{selfing-v1}} & Phased specialist trained on 4000 simulated regions with 50 200 predominantly selfing lines and selfing-adjusted ancestry and recombination. & Main Fig.~ E G; SI Figs.~ B,",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 259,
+      "column": 89,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "50",
+      "unit": null,
+      "context": "\\textbf{\\texttt{selfing-v1}} & Phased specialist trained on 4000 simulated regions with 50 200 predominantly selfing lines and selfing-adjusted ancestry and recombination. & Main Fig.~ E G; SI Figs.~ B, , and F \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 259,
+      "column": 92,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "200",
+      "unit": null,
+      "context": "\\textbf{\\texttt{selfing-v1}} & Phased specialist trained on 4000 simulated regions with 50 200 predominantly selfing lines and selfing-adjusted ancestry and recombination. & Main Fig.~ E G; SI Figs.~ B, , and F \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 260,
+      "column": 81,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\textbf{\\texttt{dog-bottleneck-v1}} & Folded composite-LD specialist trained on 15000 simulated unphased canine panels with village-dog and severe breed-like bottleneck histories. & Main Fig.~ A, C, D; SI Fig.~ A \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 261,
+      "column": 64,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "8000",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 simulated selfing regions containing 8 50 lines, for the sample-size follow-up. & SI Fig.~ F \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 261,
+      "column": 106,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "8",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 simulated selfing regions containing 8 50 lines, for the sample-size follow-up. & SI Fig.~ F \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 261,
+      "column": 108,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "50",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 simulated selfing regions containing 8 50 lines, for the sample-size follow-up. & SI Fig.~ F \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 262,
+      "column": 63,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "16000",
+      "unit": null,
+      "context": "\\texttt{arabis-structured-ensemble} & Seven models trained on 16000 simulated regions spanning panmixia, weak island structure, and the two empirical sampling layouts. & SI Fig.~ A F \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 263,
+      "column": 91,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "1200",
+      "unit": null,
+      "context": "\\texttt{canid-structure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploids under panmixia and two- or three-deme island models. & SI full-chromosome sensitivity analysis \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 263,
+      "column": 119,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "8",
+      "unit": null,
+      "context": "\\texttt{canid-structure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploids under panmixia and two- or three-deme island models. & SI full-chromosome sensitivity analysis \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 263,
+      "column": 121,
+      "section": "SI Overview > Trained models used in the study",
+      "printed": "20",
+      "unit": null,
+      "context": "\\texttt{canid-structure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploids under panmixia and two- or three-deme island models. & SI full-chromosome sensitivity analysis \\\\",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "sources-and-context"
+      }
+    },
+    {
+      "file": "si.tex",
+      "line": 272,
       "column": 44,
       "section": "SI Tables",
       "printed": "100",
@@ -11411,7 +11593,7 @@
     },
     {
       "file": "si.tex",
-      "line": 246,
+      "line": 272,
       "column": 53,
       "section": "SI Tables",
       "printed": "25",
@@ -13541,9 +13723,37 @@
       "line": 6,
       "column": 20,
       "section": "included:tables_phase2/prior_envelope",
+      "printed": "15000",
+      "unit": "Mb",
+      "context": "\\texttt{base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 6,
+      "column": 26,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "1",
+      "unit": "-Mb",
+      "context": "\\texttt{base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 6,
+      "column": 84,
+      "section": "included:tables_phase2/prior_envelope",
       "printed": "20",
       "unit": null,
-      "context": "Sample size $n$ & $20$ $200$ haplotypes & selfer $50$ $200$ lines; dog $60$ $134$ \\\\",
+      "context": "\\texttt{base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13553,11 +13763,11 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 6,
-      "column": 25,
+      "column": 87,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "200",
       "unit": null,
-      "context": "Sample size $n$ & $20$ $200$ haplotypes & selfer $50$ $200$ lines; dog $60$ $134$ \\\\",
+      "context": "\\texttt{base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, th",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13567,67 +13777,11 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 6,
-      "column": 51,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "50",
-      "unit": null,
-      "context": "Sample size $n$ & $20$ $200$ haplotypes & selfer $50$ $200$ lines; dog $60$ $134$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 6,
-      "column": 56,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "200",
-      "unit": null,
-      "context": "Sample size $n$ & $20$ $200$ haplotypes & selfer $50$ $200$ lines; dog $60$ $134$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 6,
-      "column": 73,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "60",
-      "unit": null,
-      "context": "Sample size $n$ & $20$ $200$ haplotypes & selfer $50$ $200$ lines; dog $60$ $134$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 6,
-      "column": 78,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "134",
-      "unit": null,
-      "context": "Sample size $n$ & $20$ $200$ haplotypes & selfer $50$ $200$ lines; dog $60$ $134$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 7,
-      "column": 24,
+      "column": 121,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "3.2",
       "unit": null,
-      "context": "Mutation rate $\\mu$ & $3.2 e-9$ $2.0 e-8$ & dog $2$ $6 e-9$; selfer $5 e-9$ $1.0 e-8$ \\\\",
+      "context": "\\texttt{base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck hi",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13636,12 +13790,12 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 7,
-      "column": 34,
+      "line": 6,
+      "column": 131,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "2.0",
       "unit": null,
-      "context": "Mutation rate $\\mu$ & $3.2 e-9$ $2.0 e-8$ & dog $2$ $6 e-9$; selfer $5 e-9$ $1.0 e-8$ \\\\",
+      "context": "\\texttt{base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; G",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13650,68 +13804,12 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 7,
-      "column": 50,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "2",
-      "unit": null,
-      "context": "Mutation rate $\\mu$ & $3.2 e-9$ $2.0 e-8$ & dog $2$ $6 e-9$; selfer $5 e-9$ $1.0 e-8$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 7,
-      "column": 54,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "6",
-      "unit": null,
-      "context": "Mutation rate $\\mu$ & $3.2 e-9$ $2.0 e-8$ & dog $2$ $6 e-9$; selfer $5 e-9$ $1.0 e-8$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 7,
-      "column": 70,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "5",
-      "unit": null,
-      "context": "Mutation rate $\\mu$ & $3.2 e-9$ $2.0 e-8$ & dog $2$ $6 e-9$; selfer $5 e-9$ $1.0 e-8$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 7,
-      "column": 78,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "1.0",
-      "unit": null,
-      "context": "Mutation rate $\\mu$ & $3.2 e-9$ $2.0 e-8$ & dog $2$ $6 e-9$; selfer $5 e-9$ $1.0 e-8$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 8,
-      "column": 32,
+      "line": 6,
+      "column": 149,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "2.0",
       "unit": null,
-      "context": "Recombination rate $\\bar r$ & $2.0 e-9$ $2.0 e-8$ & dipteran to $5.0 e-8$ \\\\",
+      "context": "base-v1} & 15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or con",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13720,12 +13818,12 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 8,
-      "column": 42,
+      "line": 6,
+      "column": 159,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "2.0",
       "unit": null,
-      "context": "Recombination rate $\\bar r$ & $2.0 e-9$ $2.0 e-8$ & dipteran to $5.0 e-8$ \\\\",
+      "context": "15000 1-Mb regions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or constant reco",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13734,26 +13832,12 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 8,
-      "column": 66,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "5.0",
-      "unit": null,
-      "context": "Recombination rate $\\bar r$ & $2.0 e-9$ $2.0 e-8$ & dipteran to $5.0 e-8$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 9,
-      "column": 25,
+      "line": 6,
+      "column": 174,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "3.2",
       "unit": null,
-      "context": "Effective size $N_e$ & $3.2 e3$ $6.3 e4$ & dipteran to $2 e6$; selfer $10^{5}$ $4 e5$; dog crash to $50$ \\\\",
+      "context": "ions represented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or constant recombination maps.",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13762,40 +13846,12 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 9,
-      "column": 34,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "6.3",
-      "unit": null,
-      "context": "Effective size $N_e$ & $3.2 e3$ $6.3 e4$ & dipteran to $2 e6$; selfer $10^{5}$ $4 e5$; dog crash to $50$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 9,
-      "column": 57,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "2",
-      "unit": null,
-      "context": "Effective size $N_e$ & $3.2 e3$ $6.3 e4$ & dipteran to $2 e6$; selfer $10^{5}$ $4 e5$; dog crash to $50$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 9,
-      "column": 72,
+      "line": 6,
+      "column": 184,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "10",
       "unit": null,
-      "context": "Effective size $N_e$ & $3.2 e3$ $6.3 e4$ & dipteran to $2 e6$; selfer $10^{5}$ $4 e5$; dog crash to $50$ \\\\",
+      "context": "sented as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or constant recombination maps. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13804,12 +13860,54 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 9,
-      "column": 81,
+      "line": 6,
+      "column": 191,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "4",
+      "printed": "6.3",
       "unit": null,
-      "context": "Effective size $N_e$ & $3.2 e3$ $6.3 e4$ & dipteran to $2 e6$; selfer $10^{5}$ $4 e5$; dog crash to $50$ \\\\",
+      "context": "as phased, polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or constant recombination maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 6,
+      "column": 201,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "polarized haplotypes; 20 200 haplotypes per region. & $\\mu=3.2 e-9$ $2.0 e-8$; $\\bar r=2.0 e-9$ $2.0 e-8$; $N_e=3.2\\times 10^3$ $6.3\\times 10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or constant recombination maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 7,
+      "column": 42,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\texttt{domain-randomized-v1} & The same 15000 broad-prior regions, each represented as phased haplotypes, unphased dosages, and folded unpolarized dosages. & The same demographic and ma",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 8,
+      "column": 37,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\texttt{composite-ld-v1} & The same 15000 broad-prior regions re-featurized as folded, unphased diploid genotypes. & The same demographic and map prior as \\texttt{base-v1}; one comp",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13819,39 +13917,109 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 9,
-      "column": 102,
+      "column": 23,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "15000",
+      "unit": null,
+      "context": "\\texttt{high-ne-v1} & 15000 phased, polarized high-diversity regions initialized at 30 kb and shortened when required for tractable simulation. & The broad prior exten",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 9,
+      "column": 85,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "30",
+      "unit": "kb",
+      "context": "\\texttt{high-ne-v1} & 15000 phased, polarized high-diversity regions initialized at 30 kb and shortened when required for tractable simulation. & The broad prior extended to $N_e=2\\times 10^6$ and mean recombination rates of $",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 9,
+      "column": 180,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "2",
+      "unit": null,
+      "context": "arized high-diversity regions initialized at 30 kb and shortened when required for tractable simulation. & The broad prior extended to $N_e=2\\times 10^6$ and mean recombination rates of $5.0 e-8$ for mosquito and other dipteran regimes. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 9,
+      "column": 188,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "igh-diversity regions initialized at 30 kb and shortened when required for tractable simulation. & The broad prior extended to $N_e=2\\times 10^6$ and mean recombination rates of $5.0 e-8$ for mosquito and other dipteran regimes. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 9,
+      "column": 227,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "5.0",
+      "unit": null,
+      "context": "kb and shortened when required for tractable simulation. & The broad prior extended to $N_e=2\\times 10^6$ and mean recombination rates of $5.0 e-8$ for mosquito and other dipteran regimes. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 23,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "4000",
+      "unit": "Mb",
+      "context": "\\texttt{selfing-v1} & 4000 1-Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 28,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "1",
+      "unit": "-Mb",
+      "context": "\\texttt{selfing-v1} & 4000 1-Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 59,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "50",
       "unit": null,
-      "context": "Effective size $N_e$ & $3.2 e3$ $6.3 e4$ & dipteran to $2 e6$; selfer $10^{5}$ $4 e5$; dog crash to $50$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 10,
-      "column": 35,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "3",
-      "unit": null,
-      "context": "Demography & constant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 10,
-      "column": 55,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "0.03",
-      "unit": null,
-      "context": "Demography & constant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
+      "context": "\\texttt{selfing-v1} & 4000 1-Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing r",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13863,9 +14031,9 @@
       "line": 10,
       "column": 62,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "0.5",
+      "printed": "200",
       "unit": null,
-      "context": "Demography & constant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
+      "context": "\\texttt{selfing-v1} & 4000 1-Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13875,25 +14043,11 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 10,
-      "column": 82,
+      "column": 140,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "3",
+      "printed": "5",
       "unit": null,
-      "context": "Demography & constant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 10,
-      "column": 86,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "20",
-      "unit": null,
-      "context": "Demography & constant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
+      "context": "\\texttt{selfing-v1} & 4000 1-Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coeff",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13905,9 +14059,9 @@
       "line": 10,
       "column": 148,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "0.90",
+      "printed": "1.0",
       "unit": null,
-      "context": "phy & constant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
+      "context": "{selfing-v1} & 4000 1-Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13917,11 +14071,67 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 10,
-      "column": 155,
+      "column": 170,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "Mb phased regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 177,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "4",
+      "unit": null,
+      "context": "ed regions containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 185,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "ns containing 50 200 predominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 208,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "0.90",
+      "unit": null,
+      "context": "edominantly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 10,
+      "column": 215,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "0.99",
       "unit": null,
-      "context": "onstant; sawtooth; $3$-deme island ($m\\,0.03$ $0.5$); bottleneck ($3$ $20\\times$) & dog village$+$breed trunk; selfing rescaling $s\\,0.90$ $0.99$ \\\\",
+      "context": "ntly selfing lines, with one haplotype retained per line. & $\\mu=5 e-9$ $1.0 e-8$; census $N_e=10^5$ $4\\times 10^5$; selfing rate $s=0.90$ $0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13931,11 +14141,11 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 11,
-      "column": 40,
+      "column": 30,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "1",
+      "printed": "15000",
       "unit": null,
-      "context": "Map structure & GP log-rate field $+$ $1$ $6$ hotspots ($5$ $32\\times$ over $1$ $4$\\,kb) & \\\\",
+      "context": "\\texttt{dog-bottleneck-v1} & 15000 folded, unphased canine regions containing 60 134 haplotypes. & $\\mu=2 e-9$ $6 e-9$; village-dog and breed-like histories with severe recen",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -13945,53 +14155,11 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 11,
-      "column": 44,
+      "column": 79,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "6",
+      "printed": "60",
       "unit": null,
-      "context": "Map structure & GP log-rate field $+$ $1$ $6$ hotspots ($5$ $32\\times$ over $1$ $4$\\,kb) & \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 11,
-      "column": 58,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "5",
-      "unit": null,
-      "context": "Map structure & GP log-rate field $+$ $1$ $6$ hotspots ($5$ $32\\times$ over $1$ $4$\\,kb) & \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 11,
-      "column": 62,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "32",
-      "unit": null,
-      "context": "Map structure & GP log-rate field $+$ $1$ $6$ hotspots ($5$ $32\\times$ over $1$ $4$\\,kb) & \\\\",
-      "binding": {
-        "kind": "generated-artifact",
-        "artifact": "tables_phase2/prior_envelope.tex",
-        "producer": "paper/tables/prior_envelope.tex"
-      }
-    },
-    {
-      "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 11,
-      "column": 78,
-      "section": "included:tables_phase2/prior_envelope",
-      "printed": "1",
-      "unit": "kb",
-      "context": "Map structure & GP log-rate field $+$ $1$ $6$ hotspots ($5$ $32\\times$ over $1$ $4$\\,kb) & \\\\",
+      "context": "\\texttt{dog-bottleneck-v1} & 15000 folded, unphased canine regions containing 60 134 haplotypes. & $\\mu=2 e-9$ $6 e-9$; village-dog and breed-like histories with severe recent crashes, reaching $N_e=50$. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -14003,9 +14171,9 @@
       "line": 11,
       "column": 82,
       "section": "included:tables_phase2/prior_envelope",
-      "printed": "4",
-      "unit": "kb",
-      "context": "Map structure & GP log-rate field $+$ $1$ $6$ hotspots ($5$ $32\\times$ over $1$ $4$\\,kb) & \\\\",
+      "printed": "134",
+      "unit": null,
+      "context": "\\texttt{dog-bottleneck-v1} & 15000 folded, unphased canine regions containing 60 134 haplotypes. & $\\mu=2 e-9$ $6 e-9$; village-dog and breed-like histories with severe recent crashes, reaching $N_e=50$. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -14014,12 +14182,278 @@
     },
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
-      "line": 13,
-      "column": 21,
+      "line": 11,
+      "column": 105,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "2",
+      "unit": null,
+      "context": "\\texttt{dog-bottleneck-v1} & 15000 folded, unphased canine regions containing 60 134 haplotypes. & $\\mu=2 e-9$ $6 e-9$; village-dog and breed-like histories with severe recent crashes, reaching $N_e=50$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 11,
+      "column": 113,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "6",
+      "unit": null,
+      "context": "\\texttt{dog-bottleneck-v1} & 15000 folded, unphased canine regions containing 60 134 haplotypes. & $\\mu=2 e-9$ $6 e-9$; village-dog and breed-like histories with severe recent crashes, reaching $N_e=50$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 11,
+      "column": 200,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "50",
+      "unit": null,
+      "context": "regions containing 60 134 haplotypes. & $\\mu=2 e-9$ $6 e-9$; village-dog and breed-like histories with severe recent crashes, reaching $N_e=50$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 64,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "8000",
+      "unit": "Mb",
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 69,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "1",
-      "unit": "Mb",
-      "context": "Region / species & $1$\\,Mb neutral coalescent & $30$\\,kb (high-$N_e$); held-out empirical maps (HomSap, AnoGam, DroMel, CanFam) \\\\",
+      "unit": "-Mb",
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 95,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "8",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 98,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "12",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$;",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 102,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "16",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 106,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "24",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 110,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "25",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 114,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "32",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$;",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 121,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "50",
+      "unit": null,
+      "context": "\\texttt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 146,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "tt{arabis-smalln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 158,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "alln-ensemble} & Five models, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 182,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "dels, each trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 189,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "ach trained on 8000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 216,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "lfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 228,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "s with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 243,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "0.90",
+      "unit": null,
+      "context": "6, 24, 25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 12,
+      "column": 250,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "0.99",
+      "unit": null,
+      "context": "25, 32, or 50 sampled lines. & $\\mu=10^{-8.3}$ $10^{-8.0}$; census $N_e=10^5$ $10^{5.6}$; meiotic $\\bar r=10^{-8.0}$ $10^{-7.4}$; $s=0.90$ $0.99$; GP or hotspot maps. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -14029,11 +14463,403 @@
     {
       "file": "manuscript/tables_phase2/prior_envelope.tex",
       "line": 13,
-      "column": 50,
+      "column": 63,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "16000",
+      "unit": "Mb",
+      "context": "\\texttt{arabis-structured-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\%",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 69,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "1",
+      "unit": "-Mb",
+      "context": "\\texttt{arabis-structured-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% di",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 88,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "1600",
+      "unit": null,
+      "context": "\\texttt{arabis-structured-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 108,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "1600",
+      "unit": null,
+      "context": "\\texttt{arabis-structured-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 156,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "8",
+      "unit": null,
+      "context": "structured-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 159,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "12",
+      "unit": null,
+      "context": "uctured-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 163,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "16",
+      "unit": null,
+      "context": "red-ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 167,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "24",
+      "unit": null,
+      "context": "ensemble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 171,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "25",
+      "unit": null,
+      "context": "mble} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$;",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 175,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "32",
+      "unit": null,
+      "context": "} & Seven models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 182,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "50",
+      "unit": null,
+      "context": "en models trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 188,
       "section": "included:tables_phase2/prior_envelope",
       "printed": "30",
-      "unit": "kb",
-      "context": "Region / species & $1$\\,Mb neutral coalescent & $30$\\,kb (high-$N_e$); held-out empirical maps (HomSap, AnoGam, DroMel, CanFam) \\\\",
+      "unit": "\\%",
+      "context": "els trained on 16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$;",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 203,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "30",
+      "unit": "\\%",
+      "context": "16000 1-Mb regions, with 1600 validation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$; GP, hotspot, o",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 238,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "20",
+      "unit": "\\%",
+      "context": "ation and 1600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$; GP, hotspot, or pericentromeric maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 291,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "were 8, 12, 16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$; GP, hotspot, or pericentromeric maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 302,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "16, 24, 25, 32, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$; GP, hotspot, or pericentromeric maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 316,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "0.70",
+      "unit": null,
+      "context": "2, or 50. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$; GP, hotspot, or pericentromeric maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 13,
+      "column": 323,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "0.997",
+      "unit": null,
+      "context": "0. & 30\\% panmixia, 30\\% diffuse island structure, and 20\\% for each empirical sampling layout; census $N_e=10^{4.7}$ $10^{5.7}$; $s=0.70$ $0.997$; GP, hotspot, or pericentromeric maps. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 91,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "1200",
+      "unit": null,
+      "context": "\\texttt{canid-structure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panm",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 119,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "8",
+      "unit": null,
+      "context": "\\texttt{canid-structure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- o",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 121,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "20",
+      "unit": null,
+      "context": "\\texttt{canid-structure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or t",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 157,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "240",
+      "unit": null,
+      "context": "ructure-}\\linebreak\\texttt{paper-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migratio",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 189,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "15000",
+      "unit": null,
+      "context": "-analysis} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 197,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "80000",
+      "unit": null,
+      "context": "s} & One checkpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 210,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "2",
+      "unit": null,
+      "context": "kpoint fine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 218,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "6",
+      "unit": null,
+      "context": "ine-tuned on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 226,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "45",
+      "unit": "\\%",
+      "context": "d on 1200 simulated regions with 8 20 diploid samples and evaluated on 240 independent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 303,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "dependent regions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
+      "binding": {
+        "kind": "generated-artifact",
+        "artifact": "tables_phase2/prior_envelope.tex",
+        "producer": "paper/tables/prior_envelope.tex"
+      }
+    },
+    {
+      "file": "manuscript/tables_phase2/prior_envelope.tex",
+      "line": 14,
+      "column": 315,
+      "section": "included:tables_phase2/prior_envelope",
+      "printed": "10",
+      "unit": null,
+      "context": "gions. & $N_e=15000$ $80000$; $\\mu=2 e-9$ $6 e-9$; 45\\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$ $10^{-3}$. \\\\",
       "binding": {
         "kind": "generated-artifact",
         "artifact": "tables_phase2/prior_envelope.tex",
@@ -14247,9 +15073,9 @@
       "package_output": "paper/tables/prior_envelope.tex",
       "producer": "paper/tables/prior_envelope.tex",
       "role": "si-table",
-      "published_sha256": "3055989198bfaaeea18f93b0a48c62665ebbc9c07034a62a637a5d70155d053f",
-      "package_sha256": "3055989198bfaaeea18f93b0a48c62665ebbc9c07034a62a637a5d70155d053f",
-      "staged_sha256": "3055989198bfaaeea18f93b0a48c62665ebbc9c07034a62a637a5d70155d053f",
+      "published_sha256": "8c52d97dd5ea078e9ac5a2ce053a38ebf5129c8b62f6d54442bb3debabb93e33",
+      "package_sha256": "8c52d97dd5ea078e9ac5a2ce053a38ebf5129c8b62f6d54442bb3debabb93e33",
+      "staged_sha256": "8c52d97dd5ea078e9ac5a2ce053a38ebf5129c8b62f6d54442bb3debabb93e33",
       "matches_published": true
     },
     {
