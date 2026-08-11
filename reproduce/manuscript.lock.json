@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
   "url": "https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "commit": "de09b7f4fc21bf3fa3d2ccab68105abe6b0f56df",
+  "commit": "4faf13c9f84f3686791b1b892923f00cb842e3a2",
   "variant": "phase2",
   "entrypoints": [
     "main_phase2.tex",
@@ -11,8 +11,8 @@
   "policy": "Only Phase 2 is active. Phase 3 is archived under legacy/phase3 and all legacy variants are intentionally excluded.",
   "files": {
     "latexmkrc": "0d16ca41a592703511808db739d3ffcd6ba882bc6e999548c8fc76e9bcfab95f",
-    "main_phase2.tex": "f6601ee4cc49ebfb47a1d975c36f392771c9af2983a1799f98849cc780b4f62c",
-    "si_phase2.tex": "c2eef51f326a6a2ceac31d6ffa4478f04b8923cf97ea4dbd12040141660170f0",
+    "main_phase2.tex": "18120676845324acdf227549fd82bd8db1afa97b3c8a9132f9fd008398490962",
+    "si_phase2.tex": "361ec3454061467990843360841a9361595f8bdeaf1565cb1b28a0e7b877c70b",
     "refs.bib": "d0fc32a2a81a3cf9befce8a40f6df448165393d4f18d1b0625e723a33781c9ce",
     "figures_phase2/fastrho_header_mark.pdf": "8c59981223b3249f68c0677be2583e44b76397bac17efdc54acc5020846bc447",
     "figures_phase2/fig1_complete.pdf": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",

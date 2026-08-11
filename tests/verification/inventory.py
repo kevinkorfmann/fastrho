@@ -18,14 +18,12 @@ _external_manuscript = os.environ.get("FASTRHO_MANUSCRIPT_ROOT")
 MANUSCRIPT_DIR = (
     Path(_external_manuscript).expanduser().resolve()
     if _external_manuscript
-    else ROOT / "paper" / "manuscript"
+    else ROOT / "tmp" / "reproduce" / "manuscript"
 )
-MAIN_PATH = MANUSCRIPT_DIR / ("main_phase2.tex" if _external_manuscript else "main.tex")
-SI_PATH = MANUSCRIPT_DIR / ("si_phase2.tex" if _external_manuscript else "si.tex")
-BIB_PATH = MANUSCRIPT_DIR / "refs.bib" if _external_manuscript else ROOT / "refs.bib"
-EXTRA_BIB_PATH = MANUSCRIPT_DIR / (
-    "generated_phase2/transect_sources.bib" if _external_manuscript else "generated/transect_sources.bib"
-)
+MAIN_PATH = MANUSCRIPT_DIR / "main_phase2.tex"
+SI_PATH = MANUSCRIPT_DIR / "si_phase2.tex"
+BIB_PATH = MANUSCRIPT_DIR / "refs.bib"
+EXTRA_BIB_PATH = MANUSCRIPT_DIR / "generated_phase2/transect_sources.bib"
 PROVENANCE_PATH = ROOT / "paper" / "data_provenance.yaml"
 
 MAIN = MAIN_PATH.read_text(encoding="utf-8")
