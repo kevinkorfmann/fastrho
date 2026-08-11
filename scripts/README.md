@@ -39,7 +39,7 @@ scoring, prediction archiving, and collation modules are:
 5. `collate_demography_benchmark.py`
 6. `archive_demography_predictions.py`
 
-All Betty computation is submitted through the numbered Slurm files in that analysis directory.
+All cluster computation is submitted through the numbered Slurm files in that analysis directory.
 
 ## Model-release audit
 
@@ -48,13 +48,13 @@ Model publication is a separate release gate from rebuilding figures from commit
 member, and safely unpacks it. `package_model_release.py` performs the inverse release operation and
 creates a byte-reproducible ZIP with `SHA256SUMS`. `verify_model_release.py` checks either loose
 files or the ZIP. `select_model_checkpoint.py` chooses from the exact Lightning metrics CSV rather
-than file modification times. The primary model's full Betty workflow is under
+than file modification times. The primary model's full Slurm workflow is under
 `models/domain-randomized-v1/reproduce/`. Run `release_check.py --strict-models` before submission;
 it fails unless every required paper model has a complete public release record.
 
-The frozen Arabis ensemble members live on Betty. Submit
+The frozen Arabis ensemble members are published in the Phase 2 paper-support model release. Submit
 `slurm/audit_model_artifacts.sbatch` with their frozen JSON manifests to verify every checkpoint,
-statistics archive, and preregistration file on a compute node before building the deposit.
+statistics archive, and preregistration file on a compute node before building a new deposit.
 
 ## Naming and status
 

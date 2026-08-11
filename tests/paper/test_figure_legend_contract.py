@@ -71,7 +71,7 @@ REQUIRED_PHRASES = {
     "fig:method": ("17-value input vector", "six encoder", "four decoder", "Gaussian distribution", "$N_e$"),
     "fig:qualification": ("25-kb resolution", "365,280 held-out intervals", "simulated $N_e$", "estimated-to-true rate", "wall-clock cost", "hard sweep"),
     "fig:history": ("Campbell dog pedigree map", "33 wolves", "120 shared maps", "diamond", "all five", "Salom", "Rowan", "clean-simulation recovery"),
-    "fig:anopheles": ("Phase 2", "nine populations", "five chromosome arms", "Thin lines", "thick lines", "15 selected resistance regions", "100-kb rates", "4,000 resamples"),
+    "fig:anopheles": ("Phase 2", "nine populations", "five chromosome arms", "Thin lines", "thick lines", "15 selected resistance regions", "100-kb rates", "4,000 population-bootstrap samples"),
     "fig:phase2-pedigree": ("all 11 crosses", "nine wild populations", "5-Mb windows", "32 supported", "Marker shapes", "12,869", "circular shifts", "broad resolution"),
     "fig:redpoll": ("37 A/A homokaryotypes", "seven inferred A/B heterokaryotypes", "28 B/B homokaryotypes", "500-kb", "2-Mb", "18.9--75.0-Mb", "matched to the homokaryotype sample sizes"),
     "fig:treeoflife": ("representative chromosome", "Cobalt profiles", "unphased genotypes", "dotted gray", "range-normalized", "100 kb", "sample halves", "vs pyrho"),

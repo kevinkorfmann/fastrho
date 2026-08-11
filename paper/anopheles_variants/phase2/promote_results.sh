@@ -95,6 +95,10 @@ rsync -a "$script_dir/results/manuscript_generated/phase2_cohorts.tex" "$script_
   find paper/anopheles_variants/phase2 -maxdepth 1 -type f \
     \( -name '*.sh' -o -name '*.json' -o -name '*.md' \) -print0 \
     | sort -z | xargs -0 shasum -a 256
+  shasum -a 256 \
+    paper/anopheles_variants/phase2/provenance/anopheles_resistance_panels.tsv \
+    paper/anopheles_variants/phase2/provenance/karyotype_tag_snps.csv \
+    paper/anopheles_variants/phase2/provenance/source_manifest.json
 ) > "$script_dir/provenance/source_code.sha256"
 
 (

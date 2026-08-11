@@ -36,14 +36,14 @@ python3 scripts/verify_model_release.py \
 The package command is deterministic and embeds `SHA256SUMS`. It refuses any checkpoint or
 statistics file that differs from the paper manifest.
 
-## Submit a complete Betty retrain
+## Submit a complete Slurm retrain
 
 The compatibility entry point `scripts/dr_train.sh` delegates here. It only submits Slurm jobs;
 simulation, preprocessing, training, and selection all execute in allocations. Use a new output
 directory because the workflow refuses to mix runs.
 
 ```bash
-export MODEL_ROOT=/vast/projects/smathi/cohort/$USER/fastrho-model-reproduction
+export MODEL_ROOT=/path/to/new/fastrho-model-reproduction
 export FASTRHO_PYTHON=/path/to/cuda/environment/bin/python
 scripts/dr_train.sh
 ```

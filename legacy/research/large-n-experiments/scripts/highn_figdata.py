@@ -10,8 +10,9 @@ import os
 import numpy as np
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCRATCH = ("/private/tmp/claude-501/-Users-kevinkorfmann-Desktop-lunch-money/"
-           "93b512a7-4195-439f-ae37-17fba416df7c/scratchpad/zoom")
+SCRATCH = os.environ.get("FASTRHO_HIGHN_SCRATCH")
+if not SCRATCH:
+    raise RuntimeError("set FASTRHO_HIGHN_SCRATCH to the archived zoom-result directory")
 OUT = os.path.join(HERE, "paper", "figdata", "highn.npz")
 
 # --- sample-size crossover on the const_n benchmark (25 kb Pearson, pooled) ---------------

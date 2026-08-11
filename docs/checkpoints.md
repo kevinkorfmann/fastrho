@@ -131,10 +131,10 @@ training can still differ at the bit level across hardware or CUDA libraries. A 
 compared on the held-out benchmark suite; it should not be relabeled as the paper checkpoint unless
 its files match the published hashes exactly.
 
-## Retrain on Betty
+## Retrain on a Slurm cluster
 
 ```bash
-export MODEL_ROOT=/vast/projects/smathi/cohort/$USER/fastrho-model-reproduction
+export MODEL_ROOT=/path/to/new/fastrho-model-reproduction
 export FASTRHO_PYTHON=/path/to/cuda/environment/bin/python
 scripts/dr_train.sh
 ```

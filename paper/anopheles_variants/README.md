@@ -14,11 +14,10 @@ Large public genotype inputs remain outside Git. Phase 2 records source URLs, se
 commands, environments, and checksums for every promoted artifact. The ready-to-use atlas and result
 tables are documented in `docs/data.md`.
 
-After the Sesame inference and post-processing chain has completed, promote checksum-bound outputs,
-then run the repository-level workflow to stage them into the locked manuscript snapshot:
+The checksum-bound Phase 2 outputs are committed and do not require access to the original compute
+host. Run the repository-level workflow to verify and stage them into the locked manuscript snapshot:
 
 ```bash
-bash paper/anopheles_variants/phase2/promote_results.sh sesame
 ./reproduce/run.sh
 ```
 

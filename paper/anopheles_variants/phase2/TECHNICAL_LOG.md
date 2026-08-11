@@ -13,7 +13,7 @@
   identifiers present in all five chromosome-arm HDF5 files. The all-arm
   intersection was introduced after the first extraction attempt identified a
   selected BFcol mosquito absent from the X release. The superseded extraction
-  remains recoverable on Sesame and is not eligible for promotion.
+  is excluded from the promoted release and is not an active input.
 - Model: unchanged broadened-
   \(N_e\) checkpoint and feature statistics used by the frozen mosquito atlas;
   mutation rate \(3.5\times10^{-9}\).

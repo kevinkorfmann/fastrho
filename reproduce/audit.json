@@ -708,11 +708,15 @@
       },
       {
         "path": "paper/anopheles_variants/phase2/download_release.sh",
-        "sha256": "ad15a16354ceb379d8682ba5460e4708d3e8f55bc97f5a0b5b49ef8275b31ec7"
+        "sha256": "297c426b2f450ffa2f0c32093d54183a76ebf5f2e877583c252716bcf6b16df3"
       },
       {
         "path": "paper/anopheles_variants/phase2/promote_results.sh",
-        "sha256": "6af647a1401252925fdc714804e16d8af6763f82221f26738a24316c5c63c9a9"
+        "sha256": "1917523ad46f4a38a1d3713cff2e6c54a9617afb4b8dcd68e48acfb6dd401f80"
+      },
+      {
+        "path": "paper/anopheles_variants/phase2/provenance/anopheles_resistance_panels.tsv",
+        "sha256": "08fd3cfa586ff014fad9ee29b33bef86ce38bf8fff1320c06f4bcbc08f81ca2b"
       },
       {
         "path": "paper/anopheles_variants/phase2/provenance/karyotype_tag_snps.csv",
@@ -724,11 +728,11 @@
       },
       {
         "path": "paper/anopheles_variants/phase2/provenance/source_code.sha256",
-        "sha256": "98c6e46ab6eb2f01a2087780edc33288c17ad838621352107f0769392a117be7"
+        "sha256": "ba82b957ba56e769f141ec2b17bf8cc5ac391d9606d6aa6a332af3c61c959315"
       },
       {
         "path": "paper/anopheles_variants/phase2/provenance/source_manifest.json",
-        "sha256": "4d260cbb0be339e4847ba7833d01ca7dbddbc1eeec8e64cf34015aac74ab7948"
+        "sha256": "b10394856fa989f34bc8d8dc7a27fda27dea2cc22652f0301cad04e007937464"
       },
       {
         "path": "paper/anopheles_variants/phase2/results/manuscript_generated/phase2_cohorts.tex",
@@ -1128,15 +1132,15 @@
       },
       {
         "path": "paper/anopheles_variants/phase2/run_atlas_sesame.sh",
-        "sha256": "683fb73662d367feb689a20dc0ed9489531d63fadd553b35a953fb0987ee9c4d"
+        "sha256": "92816936105a0c32aa5b64778df7faeb52ef5a8f9ceffe883e694bb1718f5919"
       },
       {
         "path": "paper/anopheles_variants/phase2/run_inference_sesame.sh",
-        "sha256": "d73a1e38b61a0a6b3f5c5913bda0ceb92ec13521a1fea3d7d389600ea5989f2b"
+        "sha256": "c4a2077e41a8ebf701d66de45342c618cbeaff0621a5b80b373032c0728c81d7"
       },
       {
         "path": "paper/anopheles_variants/phase2/run_postprocess_sesame.sh",
-        "sha256": "cf75a1b875e8e661403eb1efc378f6b34e41fa1a80d295f171843042a3517fba"
+        "sha256": "648f540d96d4c64e92325f71a46499a51c78d51bb3edcd69706c35363b1da124"
       }
     ],
     "redpoll": [

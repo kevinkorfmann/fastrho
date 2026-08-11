@@ -74,7 +74,7 @@ For domain-randomized training, create aligned `hap`, `gt`, and `gtf` shard tree
 `--sfs-shape --r2-debias`, then train with `--dr-base`. These feature flags live in this repository;
 no alternate checkout is required.
 
-The exact primary paper model has a numbered Betty Slurm workflow, explicit seed schedule,
+The exact primary paper model has a numbered portable Slurm workflow, explicit seed schedule,
 metric-based checkpoint selection, and byte-level release verification under
 [`models/domain-randomized-v1/reproduce/`](models/domain-randomized-v1/reproduce/).
 
@@ -144,10 +144,10 @@ them.
 | [`examples/manuscript_species/`](examples/manuscript_species/) | Download and inference presets for every empirical manuscript species |
 | [`paper/manuscript/`](paper/manuscript/) | Generated figures and TeX inputs staged into the authoritative Phase 2 manuscript |
 | [`paper/anopheles_variants/phase2/`](paper/anopheles_variants/phase2/) | Active open-data mosquito maps, results, provenance, figures, and release files |
-| [`paper/legacy/`](paper/legacy/) | Publicly shareable superseded manuscript artifacts |
+| [`legacy/`](legacy/) | Superseded analyses, inactive outputs, and historical utilities excluded from Phase 2 |
 | [`paper/results_snapshot/`](paper/results_snapshot/) | Frozen numerical inputs used by the paper audit |
 | [`research/`](research/) | Frozen Phase 2 supporting workflows for Arabis and demography-matched benchmarks |
-| [`research/demography_matched/`](research/demography_matched/) | Ordered Betty Slurm workflow for the paired ReLERNN/pyrho demographic benchmark |
+| [`research/demography_matched/`](research/demography_matched/) | Ordered Slurm workflow and frozen outputs for the paired ReLERNN/pyrho demographic benchmark |
 | [`scripts/`](scripts/) | [Ordered manuscript analysis, figure-generation, and release utilities](scripts/README.md) |
 | [`tests/`](tests/) | Software contracts and independent manuscript-number checks |
 

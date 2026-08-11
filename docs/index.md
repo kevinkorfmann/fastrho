@@ -108,7 +108,7 @@ Choose the input view, checkpoint, cohort, filters, and reporting scale.
 :link-type: doc
 :class-card: quick-card
 
-Download verified weights or submit the numbered Betty training workflow.
+Download verified weights or submit the numbered Slurm training workflow on a compatible cluster.
 :::
 
 :::{grid-item-card} Interpret the map

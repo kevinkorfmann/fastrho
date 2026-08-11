@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-root="${1:-/home/kkor/agam_phase2}"
-repo="${2:-/home/kkor/fastrho}"
+root="${1:-data/ag1000g-phase2-ar1}"
+repo="${2:-$(git rev-parse --show-toplevel)}"
 system_python="${FASTRHO_PHASE2_SYSTEM_PYTHON:-python3}"
-fastrho_python="${FASTRHO_PHASE2_INFERENCE_PYTHON:-/home/kkor/venvs/fastrho/bin/python}"
-checkpoint="/home/kkor/fastrho_data/campaign_hidip/train15k/fastrho/version_0/checkpoints/epoch=37-val_loss=-0.178.ckpt"
-stats="/home/kkor/fastrho_data/campaign_hidip/shards15k/feat_stats.npz"
-pyrho="/home/kkor/venvs/pyrho/bin/pyrho"
+fastrho_python="${FASTRHO_PHASE2_INFERENCE_PYTHON:-python3}"
+checkpoint="${FASTRHO_PHASE2_CHECKPOINT:-$repo/downloaded-models/high-ne-v1/model.ckpt}"
+stats="${FASTRHO_PHASE2_STATS:-$repo/downloaded-models/high-ne-v1/feat_stats.npz}"
+pyrho="${FASTRHO_PHASE2_PYRHO:-pyrho}"
 metadata="$root/raw/metadata/samples.meta.txt"
-selection="$root/cohorts/selection.tsv"
-selected="$root/cohorts/selected_samples.tsv"
+selection="${FASTRHO_PHASE2_SELECTION:-$repo/paper/anopheles_variants/phase2/cohorts/selection.tsv}"
+selected="${FASTRHO_PHASE2_SELECTED_SAMPLES:-$repo/paper/anopheles_variants/phase2/cohorts/selected_samples.tsv}"
+tag_snps="${FASTRHO_PHASE2_TAG_SNPS:-$repo/paper/anopheles_variants/phase2/provenance/karyotype_tag_snps.csv}"
+panel_spec="${FASTRHO_PHASE2_PANEL_SPEC:-$repo/paper/anopheles_variants/phase2/provenance/anopheles_resistance_panels.tsv}"
 maps="$root/maps"
 normalized="$root/normalized"
 results="$root/results"
 logs="$root/logs"
-source="$root/source"
+source="${FASTRHO_PHASE2_SOURCE_DIR:-$repo/paper/anopheles_variants/common}"
 
 test "$(find "$maps" -maxdepth 1 -type f -name '*.npz' | wc -l | tr -d ' ')" = 45
 mkdir -p "$results" "$logs"
@@ -34,14 +36,14 @@ pids=("$!")
 "$system_python" "$source/phase2_2la.py" \
   --hdf5 "$root/raw/haplotypes_main_hdf5/ag1000g.phase2.ar1.haplotypes.2L.h5" \
   --metadata "$metadata" --selected-samples "$selected" --selection "$selection" \
-  --tag-snps "$root/provenance/karyotype_tag_snps.csv" --maps "$maps" \
+  --tag-snps "$tag_snps" --maps "$maps" \
   --out "$results/phase2_2la.json" \
   > "$logs/phase2_2la.log" 2>&1 &
 pids+=("$!")
 
 "$system_python" "$source/phase2_resistance.py" \
   --normalized "$normalized" --maps "$maps" --selection "$selection" \
-  --panel-spec "$root/provenance/anopheles_resistance_panels.tsv" \
+  --panel-spec "$panel_spec" \
   --out "$results/phase2_resistance.json" \
   > "$logs/phase2_resistance.log" 2>&1 &
 pids+=("$!")
