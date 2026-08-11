@@ -1,14 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
-CODE=/home/kkor/fastrho
-DATA=/home/kkor/fastrho_data/campaign_wolf_structure
-PY=/home/kkor/venvs/fastrho/bin/python
-BASE_CKPT=$(cat /home/kkor/fastrho_data/campaign_dog_bottleneck/ckpt.txt)
+FASTRHO_REPO=${FASTRHO_REPO:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}
+MODEL_ROOT=${MODEL_ROOT:?set MODEL_ROOT to a new output directory}
+FASTRHO_PYTHON=${FASTRHO_PYTHON:-python3}
+DOG_CHECKPOINT=${DOG_CHECKPOINT:?set DOG_CHECKPOINT to dog-bottleneck-v1/model.ckpt}
+CUDA_DEVICE=${CUDA_DEVICE:-0}
+CODE=$FASTRHO_REPO
+DATA=$MODEL_ROOT
+PY=$FASTRHO_PYTHON
+BASE_CKPT=$DOG_CHECKPOINT
 RADII=5000,25000,50000
 
 export PYTHONNOUSERSITE=1
-export PYTHONPATH="$CODE"
+export PYTHONPATH="$CODE:${PYTHONPATH:-}"
 cd "$CODE"
 mkdir -p "$DATA"
 
@@ -28,7 +33,7 @@ if ! compgen -G "$DATA/shards/test/*.npz" > /dev/null; then
     --gt-fold --radii "$RADII" --num-processes 32
 fi
 
-CUDA_VISIBLE_DEVICES=1 $PY -m fastrho.train --model base --dataset-path "$DATA/shards" \
+CUDA_VISIBLE_DEVICES="$CUDA_DEVICE" $PY -m fastrho.train --model base --dataset-path "$DATA/shards" \
   --gpus 0 --epochs 12 --batch-size 32 --lr 1e-4 --workers 8 \
   --checkpoint "$BASE_CKPT" --log-dir "$DATA/train" --radii "$RADII" \
   > "$DATA/train.log" 2>&1

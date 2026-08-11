@@ -1,15 +1,16 @@
-\footnotesize
-\begin{tabular}{@{}p{2.15cm}p{5.5cm}p{6.7cm}@{}}
+\scriptsize
+\begin{tabular}{@{}p{3.55cm}p{6.15cm}p{7.05cm}@{}}
 \toprule
-Prior dimension & Base amortized prior (one frozen model) & Regime-specialized extensions \\
+Model or ensemble & Simulated training data & Prior and design \\
 \midrule
-Sample size $n$ & $20$--$200$ haplotypes & selfer $50$--$200$ lines; dog $60$--$134$ \\
-Mutation rate $\mu$ & $3.2\times10^{-9}$--$2.0\times10^{-8}$ & dog $2$--$6\times10^{-9}$; selfer $5\times10^{-9}$--$1.0\times10^{-8}$ \\
-Recombination rate $\bar r$ & $2.0\times10^{-9}$--$2.0\times10^{-8}$ & dipteran to $5.0\times10^{-8}$ \\
-Effective size $N_e$ & $3.2\times10^{3}$--$6.3\times10^{4}$ & dipteran to $2\times10^{6}$; selfer $10^{5}$--$4\times10^{5}$; dog crash to $50$ \\
-Demography & constant; sawtooth; $3$-deme island ($m\,0.03$--$0.5$); bottleneck ($3$--$20\times$) & dog village$+$breed trunk; selfing rescaling $s\,0.90$--$0.99$ \\
-Map structure & GP log-rate field $+$ $1$--$6$ hotspots ($5$--$32\times$ over $1$--$4$\,kb) & --- \\
-Data view & phased haplotypes & unphased composite-LD; unpolarized (folded) \\
-Region / species & $1$\,Mb neutral coalescent & $30$\,kb (high-$N_e$); held-out empirical maps (HomSap, AnoGam, DroMel, CanFam) \\
+\texttt{base-v1} & 15,000 1-Mb regions represented as phased, polarized haplotypes; 20--200 haplotypes per region. & $\mu=3.2\times10^{-9}$--$2.0\times10^{-8}$; $\bar r=2.0\times10^{-9}$--$2.0\times10^{-8}$; $N_e=3.2\times10^3$--$6.3\times10^4$; constant, sawtooth, three-deme island, and bottleneck histories; GP, hotspot, or constant recombination maps. \\
+\texttt{domain-randomized-v1} & The same 15,000 broad-prior regions, each represented as phased haplotypes, unphased dosages, and folded unpolarized dosages. & The same demographic and map prior as \texttt{base-v1}; training randomized the input representation rather than the demographic history. \\
+\texttt{composite-ld-v1} & The same 15,000 broad-prior regions re-featurized as folded, unphased diploid genotypes. & The same demographic and map prior as \texttt{base-v1}; one composite-LD input view only. \\
+\texttt{high-ne-v1} & 15,000 phased, polarized high-diversity regions initialized at 30 kb and shortened when required for tractable simulation. & The broad prior extended to $N_e=2\times10^6$ and mean recombination rates of $5.0\times10^{-8}$ for mosquito and other dipteran regimes. \\
+\texttt{selfing-v1} & 4,000 1-Mb phased regions containing 50--200 predominantly selfing lines, with one haplotype retained per line. & $\mu=5\times10^{-9}$--$1.0\times10^{-8}$; census $N_e=10^5$--$4\times10^5$; selfing rate $s=0.90$--$0.99$; ancestry and recombination rescaled by the inbreeding coefficient. \\
+\texttt{dog-bottleneck-v1} & 15,000 folded, unphased canine regions containing 60--134 haplotypes. & $\mu=2\times10^{-9}$--$6\times10^{-9}$; village-dog and breed-like histories with severe recent crashes, reaching $N_e=50$. \\
+\texttt{arabis-smalln-ensemble} & Five models, each trained on 8,000 1-Mb selfing regions with 8, 12, 16, 24, 25, 32, or 50 sampled lines. & $\mu=10^{-8.3}$--$10^{-8.0}$; census $N_e=10^5$--$10^{5.6}$; meiotic $\bar r=10^{-8.0}$--$10^{-7.4}$; $s=0.90$--$0.99$; GP or hotspot maps. \\
+\texttt{arabis-structured-ensemble} & Seven models trained on 16,000 1-Mb regions, with 1,600 validation and 1,600 independent test regions; panel sizes were 8, 12, 16, 24, 25, 32, or 50. & 30\% panmixia, 30\% diffuse island structure, and 20\% for each empirical sampling layout; census $N_e=10^{4.7}$--$10^{5.7}$; $s=0.70$--$0.997$; GP, hotspot, or pericentromeric maps. \\
+\texttt{canid-structure-}\linebreak\texttt{paper-analysis} & One checkpoint fine-tuned on 1,200 simulated regions with 8--20 diploid samples and evaluated on 240 independent regions. & $N_e=15{,}000$--$80{,}000$; $\mu=2\times10^{-9}$--$6\times10^{-9}$; 45\% panmixia and otherwise two- or three-deme island models with migration $10^{-5.2}$--$10^{-3}$. \\
 \bottomrule
 \end{tabular}

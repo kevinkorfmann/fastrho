@@ -1,24 +1,23 @@
-#!/bin/bash
-# Bottleneck-aware dog model, fully ISOLATED from the existing campaign_dog run.
-#   code:  /home/kkor/fastrho_dog   (separate checkout; does NOT touch /home/kkor/fastrho)
-#   data:  /home/kkor/fastrho_data/campaign_dog_bottleneck
-#   GPU:   1
-# Long-range DISJOINT-BAND + STRIDED radii so the GT featurizer can see the ~Mb breed LD.
-set -e
-CODE=/home/kkor/fastrho_dog
-DP=/home/kkor/fastrho_data/campaign_dog_bottleneck
-PY=/home/kkor/venvs/fastrho/bin/python
+#!/usr/bin/env bash
+# Reproduce the released folded composite-LD canine bottleneck specialist.
+set -euo pipefail
+FASTRHO_REPO=${FASTRHO_REPO:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}
+MODEL_ROOT=${MODEL_ROOT:?set MODEL_ROOT to a new output directory}
+FASTRHO_PYTHON=${FASTRHO_PYTHON:-python3}
+CUDA_DEVICE=${CUDA_DEVICE:-0}
+CODE=$FASTRHO_REPO
+DP=$MODEL_ROOT
+PY=$FASTRHO_PYTHON
 export PYTHONNOUSERSITE=1
-# shadow the editable-installed /home/kkor/fastrho so the isolated copy is used
-export PYTHONPATH="$CODE:$PYTHONPATH"
+# Prefer this checkout over any editable installation.
+export PYTHONPATH="$CODE:${PYTHONPATH:-}"
 cd "$CODE"
 
-NTRAIN=${NTRAIN:-4000}
+NTRAIN=${NTRAIN:-15000}
 NTEST=${NTEST:-300}
-# fine bands (village fine-scale, as in the proven dogmodel) + long bands (breed/bottleneck reach)
-RADII=${RADII:-300,2000,15000,75000,300000,1500000}
-STRIDE=${STRIDE:-48}
-MAXNB=${MAXNB:-400}
+RADII=${RADII:-5000,25000,50000}
+STRIDE=${STRIDE:-0}
+MAXNB=${MAXNB:-200}
 EPOCHS=${EPOCHS:-50}
 DISJOINT=${DISJOINT:-0}            # 1 => disjoint distance bands (cleaner long-range, noisier short)
 FORCE_GEN=${FORCE_GEN:-0}         # 1 => regenerate sims even if present
@@ -42,12 +41,14 @@ PREP="--gt-fold --radii $RADII $DJ --stride-after $STRIDE --max-neighbors $MAXNB
 $PY -m fastrho.preprocess --sim-dir "$DP/train_sims" --out-dir "$DP/shards/train" $PREP > "$DP/prep_train.log" 2>&1
 $PY -m fastrho.preprocess --sim-dir "$DP/test_sims"  --out-dir "$DP/shards/test"  $PREP > "$DP/prep_test.log"  2>&1
 
-CUDA_VISIBLE_DEVICES=1 $PY -m fastrho.train --model base --dataset-path "$DP/shards" --gpus 0 \
+CUDA_VISIBLE_DEVICES="$CUDA_DEVICE" $PY -m fastrho.train --model base --dataset-path "$DP/shards" --gpus 0 \
     --epochs "$EPOCHS" --batch-size 48 --lr 4e-4 --workers 10 --log-dir "$DP/train" \
     --radii "$RADII" $DJ --stride-after "$STRIDE" --max-neighbors "$MAXNB" \
     > "$DP/train.log" 2>&1
 
 ls -t "$DP"/train/fastrho/version_*/checkpoints/*.ckpt | head -1 > "$DP/ckpt.txt"
-CUDA_VISIBLE_DEVICES=1 $PY scripts/realdata_infer.py dog dogbn > "$DP/eval_dog.log" 2>&1
+if [ "${RUN_EMPIRICAL_EVAL:-0}" = "1" ]; then
+  CUDA_VISIBLE_DEVICES="$CUDA_DEVICE" $PY scripts/realdata_infer.py dog dogbn > "$DP/eval_dog.log" 2>&1
+fi
 touch "$DP/DOGBN_DONE"
 echo "DOGBN_DONE"

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
   "url": "https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "commit": "4faf13c9f84f3686791b1b892923f00cb842e3a2",
+  "commit": "b7803a09dc3f6306ed504458e52b03996fc21788",
   "variant": "phase2",
   "entrypoints": [
     "main_phase2.tex",
@@ -12,7 +12,7 @@
   "files": {
     "latexmkrc": "0d16ca41a592703511808db739d3ffcd6ba882bc6e999548c8fc76e9bcfab95f",
     "main_phase2.tex": "18120676845324acdf227549fd82bd8db1afa97b3c8a9132f9fd008398490962",
-    "si_phase2.tex": "361ec3454061467990843360841a9361595f8bdeaf1565cb1b28a0e7b877c70b",
+    "si_phase2.tex": "0beccb4080032e8ad2b687e881d62c32b58b608c656b017e0e054fa4135689d6",
     "refs.bib": "d0fc32a2a81a3cf9befce8a40f6df448165393d4f18d1b0625e723a33781c9ce",
     "figures_phase2/fastrho_header_mark.pdf": "8c59981223b3249f68c0677be2583e44b76397bac17efdc54acc5020846bc447",
     "figures_phase2/fig1_complete.pdf": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
@@ -34,7 +34,7 @@
     "generated_phase2/phase2_numbers.tex": "47e3bcb0a12871f3dc3e0a16d613284e01031582f3bed35f6c58428eaf8ca5b9",
     "generated_phase2/transect_sources.bib": "dbbf4405a92db1612db6d240f4dd4bd8e497d04da9b83fa30a6b892022cd7010",
     "tables_phase2/main_results.tex": "4c29cc327a9a9fc55154efc8fab9a717e56628a4a702a494bf3d0b9c682b9f04",
-    "tables_phase2/prior_envelope.tex": "3055989198bfaaeea18f93b0a48c62665ebbc9c07034a62a637a5d70155d053f",
+    "tables_phase2/prior_envelope.tex": "8c52d97dd5ea078e9ac5a2ce053a38ebf5129c8b62f6d54442bb3debabb93e33",
     "tables_phase2/transect_data.tex": "ffd4452c8d6998d000b24c0ced0381f52fd2348cf97f08e6acaa1a1a4fd89efb"
   }
 }

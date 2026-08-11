@@ -57,3 +57,7 @@ checkpoint hash.
 ```bash
 uv run python reproduce/fetch_support_checkpoints.py --group arabis-structured-ensemble
 ```
+
+Simulation and training entry points for every model named in the paper are indexed in
+[`models/TRAINING.md`](../models/TRAINING.md). They use repository-relative paths and caller-supplied
+output locations, so retraining does not depend on the original Betty or Sesame filesystems.
