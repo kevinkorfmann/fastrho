@@ -14,7 +14,9 @@ def test_audit_targets_the_locked_canonical_manuscript() -> None:
     assert AUDIT["manuscript_commit"] == LOCK["commit"]
     assert AUDIT["manuscript_repository"] == LOCK["repository"]
     assert AUDIT["summary"]["figures"] == 15
-    assert AUDIT["summary"]["declared_artifacts"] == 22
+    # Only files actually included by the locked manuscript belong in the artifact ledger.
+    # The SI's training-prior table is inline, not an input of tables_phase2/prior_envelope.tex.
+    assert AUDIT["summary"]["declared_artifacts"] == 21
 
 
 def test_every_phase2_figure_has_one_declared_artifact() -> None:
