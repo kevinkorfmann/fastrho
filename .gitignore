@@ -21,6 +21,9 @@ dist/
 
 # Local data, downloaded models, checkpoints, and generated output
 data/
+!docs/data/
+!docs/data/downloads/
+!docs/data/downloads/*
 downloaded-models/
 checkpoints/
 tmp/
