@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
   "url": "https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "commit": "0732d86e4efc904bfe584ef9f71f68c96d10ac0d",
+  "commit": "7f0cfd3e4b60e222e9ac9f698222917c134f23ed",
   "variant": "phase2",
   "entrypoints": [
     "main_phase2.tex",
@@ -11,8 +11,8 @@
   "policy": "Only Phase 2 is active. Phase 3 is archived under legacy/phase3 and all legacy variants are intentionally excluded.",
   "files": {
     "latexmkrc": "0d16ca41a592703511808db739d3ffcd6ba882bc6e999548c8fc76e9bcfab95f",
-    "main_phase2.tex": "354d4fc5890e41dcacadcd5ace2ac51092b655657238a423caa7071074760bed",
-    "si_phase2.tex": "c73361b75515cb6f9870af5d1f064f48272fa4931e38f27dc8ab41641fa613dd",
+    "main_phase2.tex": "767d4d85ca3f4270152130b2b50966432b4a5249a728cac997ba8cb7b90b72d4",
+    "si_phase2.tex": "40af53d5fe8944a3af1033210300f9ae560fbb8bb601b6f704667474c3d288e7",
     "refs.bib": "d0fc32a2a81a3cf9befce8a40f6df448165393d4f18d1b0625e723a33781c9ce",
     "figures_phase2/fastrho_header_mark.pdf": "8c59981223b3249f68c0677be2583e44b76397bac17efdc54acc5020846bc447",
     "figures_phase2/fig1_complete.pdf": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
@@ -21,7 +21,7 @@
     "figures_phase2/fig5_unphased.pdf": "380a4f42becab1ee6d43f041733be08647dc387729c0fbaef19a6a336edcd8a2",
     "figures_phase2/fig_gene_conversion.pdf": "63794bd0bb1d7528e8828f1d0091b7d807ef20e7f69a069e7b8406905daa44a4",
     "figures_phase2/fig_phase2_anopheles.pdf": "cc7a660e9cb818c8b536e2ee5573f03898843c2ef924d19a6e55b4e079255f79",
-    "figures_phase2/fig_phase2_pedigree.pdf": "4a4a07ba72e28a9d0f74d6bfe6ca760283af42f65866b812f9109879e523000a",
+    "figures_phase2/fig_phase2_pedigree.pdf": "1f2dfe9ec601b903aa7f66e976be05615a383ffc622690c04873c2c211916301",
     "figures_phase2/fig_phase2_pyrho.pdf": "9e681ea3b310ba95b058f30b75d3580222d7b43d289b83747baf3a2857acd551",
     "figures_phase2/fig_redpoll_karyotype.pdf": "8d43d042e61d1dfb2118e9d94c62aead36c272492e93deb7e96bb34c886bcc73",
     "figures_phase2/fig_si_arabis_cross.pdf": "88e9b672bfa3a5e59a5721ba7def8cae82eaf737d08a61ce1d4712e3cf4598bc",

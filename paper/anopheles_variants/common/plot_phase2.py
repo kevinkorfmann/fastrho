@@ -674,7 +674,7 @@ def pedigree_figure(pedigree: dict, out: Path) -> None:
     ) * 1.08
     ax_b.set_xlim(-0.08, limit)
     ax_b.set_ylim(-0.08, limit)
-    ax_b.set_xlabel("Atlas rate (within-arm relative)")
+    ax_b.set_xlabel("Recombination-landscape rate (within-arm relative)")
     ax_b.set_ylabel("Pedigree rate (within-arm relative)")
     ax_b.set_title("Consistent broad-scale spatial ordering", loc="left", pad=5)
     ax_b.text(

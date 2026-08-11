@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "manuscript_repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "manuscript_commit": "0732d86e4efc904bfe584ef9f71f68c96d10ac0d",
+  "manuscript_commit": "7f0cfd3e4b60e222e9ac9f698222917c134f23ed",
   "scope": "Phase 2 only",
   "summary": {
     "figures": 15,
     "generated_tex_inputs": 5,
     "declared_artifacts": 21,
-    "numeric_occurrences_inventoried": 948,
-    "numeric_occurrences_bound": 948,
+    "numeric_occurrences_inventoried": 949,
+    "numeric_occurrences_bound": 949,
     "artifacts_matching_published_bytes": 21
   },
   "numeric_policy": "Each Phase 2 prose number is assigned to the narrowest active source bundle. Numbers in generated includes inherit the exact producer and inputs of their artifact record.",
@@ -676,7 +676,7 @@
       },
       {
         "path": "paper/anopheles_variants/common/plot_phase2.py",
-        "sha256": "5eb36332e7f8f7b6be95d65b7bc3845f683dfc77178c486c4f17f4973e17f9f0"
+        "sha256": "64bb1a8b3611dda52cf02519e76f551ccd7e44870e67e0c8fc470af2e471b617"
       },
       {
         "path": "paper/anopheles_variants/common/switch_variant.py",
@@ -1238,7 +1238,7 @@
       },
       {
         "path": "reproduce/manuscript.lock.json",
-        "sha256": "55f437d2363d985c76d6fd7ae09c9796d6ceee91fe4d7d059172cb16db518f17"
+        "sha256": "d58abde50a5a851052ad10e9e2482f7de11bc99aca864be5d35e26d9f5f0f871"
       }
     ]
   },
@@ -1376,11 +1376,11 @@
     {
       "file": "main.tex",
       "line": 46,
-      "column": 181,
+      "column": 169,
       "section": "Introduction",
       "printed": "1000",
       "unit": null,
-      "context": "l inferences for ten species spanning mammals, insects, and plants (SI Appendix, Fig.~ ; Tables~ and ). These data were obtained from the 1000 Genomes Project , DGRP2 , the 1001 Genomes Project , EBI NextGen , and the European Variation Archive .",
+      "context": "de additional inferences for ten species spanning mammals, insects, and plants (SI Appendix, Fig.~ ; Tables~ and ). We used data from the 1000 Genomes Project , DGRP2 , the 1001 Genomes Project , EBI NextGen , and the European Variation Archive .",
       "binding": {
         "kind": "source-bundle",
         "bundle": "sources-and-context"
@@ -1389,11 +1389,11 @@
     {
       "file": "main.tex",
       "line": 46,
-      "column": 218,
+      "column": 206,
       "section": "Introduction",
       "printed": "1001",
       "unit": null,
-      "context": "mammals, insects, and plants (SI Appendix, Fig.~ ; Tables~ and ). These data were obtained from the 1000 Genomes Project , DGRP2 , the 1001 Genomes Project , EBI NextGen , and the European Variation Archive .",
+      "context": "ies spanning mammals, insects, and plants (SI Appendix, Fig.~ ; Tables~ and ). We used data from the 1000 Genomes Project , DGRP2 , the 1001 Genomes Project , EBI NextGen , and the European Variation Archive .",
       "binding": {
         "kind": "source-bundle",
         "bundle": "sources-and-context"
@@ -4145,11 +4145,11 @@
     {
       "file": "main.tex",
       "line": 166,
-      "column": 343,
+      "column": 16,
       "section": "Results > Stratification through arrangement segregation weakens the pooled cold block in the known redpoll supergene",
-      "printed": "72",
+      "printed": "1",
       "unit": null,
-      "context": "or B/B homokaryotypes, whereas individuals carrying one copy of each orientation were classified as A/B heterokaryotypes. PCA separated the 72 available genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individ",
+      "context": "The chromosome 1 inversion was present in two alternative orientations, arrangement A and arrangement B. PCA separated the 72 available redpoll genomes into",
       "binding": {
         "kind": "source-bundle",
         "bundle": "redpoll"
@@ -4158,11 +4158,24 @@
     {
       "file": "main.tex",
       "line": 166,
-      "column": 369,
+      "column": 124,
+      "section": "Results > Stratification through arrangement segregation weakens the pooled cold block in the known redpoll supergene",
+      "printed": "72",
+      "unit": null,
+      "context": "The chromosome 1 inversion was present in two alternative orientations, arrangement A and arrangement B. PCA separated the 72 available redpoll genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72",
+      "binding": {
+        "kind": "source-bundle",
+        "bundle": "redpoll"
+      }
+    },
+    {
+      "file": "main.tex",
+      "line": 166,
+      "column": 158,
       "section": "Results > Stratification through arrangement segregation weakens the pooled cold block in the known redpoll supergene",
       "printed": "37",
       "unit": null,
-      "context": "reas individuals carrying one copy of each orientation were classified as A/B heterokaryotypes. PCA separated the 72 available genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individuals were analyzed togethe",
+      "context": "inversion was present in two alternative orientations, arrangement A and arrangement B. PCA separated the 72 available redpoll genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individuals were analyzed togethe",
       "binding": {
         "kind": "source-bundle",
         "bundle": "redpoll"
@@ -4171,11 +4184,11 @@
     {
       "file": "main.tex",
       "line": 166,
-      "column": 433,
+      "column": 222,
       "section": "Results > Stratification through arrangement segregation weakens the pooled cold block in the known redpoll supergene",
       "printed": "28",
       "unit": null,
-      "context": "sified as A/B heterokaryotypes. PCA separated the 72 available genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individuals were analyzed together, differences between the A and B chromosome orientations gener",
+      "context": "nt A and arrangement B. PCA separated the 72 available redpoll genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individuals were analyzed together, differences between the A and B chromosome orientations gener",
       "binding": {
         "kind": "source-bundle",
         "bundle": "redpoll"
@@ -4184,11 +4197,11 @@
     {
       "file": "main.tex",
       "line": 166,
-      "column": 475,
+      "column": 264,
       "section": "Results > Stratification through arrangement segregation weakens the pooled cold block in the known redpoll supergene",
       "printed": "72",
       "unit": null,
-      "context": "ted the 72 available genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individuals were analyzed together, differences between the A and B chromosome orientations generated long-range LD that an LD-based method",
+      "context": "72 available redpoll genomes into 37 A/A homokaryotypes, seven inferred A/B heterokaryotypes, and 28 B/B homokaryotypes (Fig.~ A). When all 72 individuals were analyzed together, differences between the A and B chromosome orientations generated long-range LD that an LD-based method",
       "binding": {
         "kind": "source-bundle",
         "bundle": "redpoll"
@@ -8660,7 +8673,7 @@
       "section": "SI Overview > Phase 2 data description",
       "printed": "2",
       "unit": null,
-      "context": "The Phase 2 AR1 resource contains 1142 wild mosquitoes from 13 countries. The primary atlas uses nine established cohorts: \\texttt{colu\\_AO}, \\texttt{c",
+      "context": "The Phase 2 AR1 resource contains 1142 wild mosquitoes from 13 countries. The primary recombination landscape uses nine established cohorts: \\texttt{co",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -8673,7 +8686,7 @@
       "section": "SI Overview > Phase 2 data description",
       "printed": "1142",
       "unit": null,
-      "context": "The Phase 2 AR1 resource contains 1142 wild mosquitoes from 13 countries. The primary atlas uses nine established cohorts: \\texttt{colu\\_AO}, \\texttt{colu\\_BF}, \\texttt{colu\\_CI}",
+      "context": "The Phase 2 AR1 resource contains 1142 wild mosquitoes from 13 countries. The primary recombination landscape uses nine established cohorts: \\texttt{colu\\_AO}, \\texttt{colu\\_BF},",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -8686,7 +8699,7 @@
       "section": "SI Overview > Phase 2 data description",
       "printed": "13",
       "unit": null,
-      "context": "The Phase 2 AR1 resource contains 1142 wild mosquitoes from 13 countries. The primary atlas uses nine established cohorts: \\texttt{colu\\_AO}, \\texttt{colu\\_BF}, \\texttt{colu\\_CI}, \\texttt{colu\\_GH}, \\te",
+      "context": "The Phase 2 AR1 resource contains 1142 wild mosquitoes from 13 countries. The primary recombination landscape uses nine established cohorts: \\texttt{colu\\_AO}, \\texttt{colu\\_BF}, \\texttt{colu\\_CI}, \\tex",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -8695,11 +8708,11 @@
     {
       "file": "si.tex",
       "line": 197,
-      "column": 383,
+      "column": 413,
       "section": "SI Overview > Phase 2 data description",
       "printed": "1058",
       "unit": null,
-      "context": "tt{gamb\\_GA}, \\texttt{gamb\\_GN}, and \\texttt{gamb\\_UG}. Samples with uncertain species status were not promoted into the primary atlas. The 1058-sample intersection of the five arm-level HDF5 files was computed before sampling. We selected 40 diploids per population and used them for",
+      "context": ", \\texttt{gamb\\_GN}, and \\texttt{gamb\\_UG}. We excluded samples with uncertain species status from the primary recombination landscape. The 1058-sample intersection of the five arm-level HDF5 files was computed before sampling. We selected 40 diploids per population and used them for",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -8708,11 +8721,11 @@
     {
       "file": "si.tex",
       "line": 197,
-      "column": 483,
+      "column": 513,
       "section": "SI Overview > Phase 2 data description",
       "printed": "40",
       "unit": null,
-      "context": "ot promoted into the primary atlas. The 1058-sample intersection of the five arm-level HDF5 files was computed before sampling. We selected 40 diploids per population and used them for chromosomes 2R, 2L, 3R, 3L, and X.",
+      "context": "he primary recombination landscape. The 1058-sample intersection of the five arm-level HDF5 files was computed before sampling. We selected 40 diploids per population and used them for chromosomes 2R, 2L, 3R, 3L, and X.",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -13765,9 +13778,9 @@
       "package_output": "paper/manuscript/figures/fig_phase2_pedigree.pdf",
       "producer": "paper/anopheles_variants/common/plot_phase2.py",
       "role": "main-figure",
-      "published_sha256": "4a4a07ba72e28a9d0f74d6bfe6ca760283af42f65866b812f9109879e523000a",
-      "package_sha256": "4a4a07ba72e28a9d0f74d6bfe6ca760283af42f65866b812f9109879e523000a",
-      "staged_sha256": "4a4a07ba72e28a9d0f74d6bfe6ca760283af42f65866b812f9109879e523000a",
+      "published_sha256": "1f2dfe9ec601b903aa7f66e976be05615a383ffc622690c04873c2c211916301",
+      "package_sha256": "1f2dfe9ec601b903aa7f66e976be05615a383ffc622690c04873c2c211916301",
+      "staged_sha256": "1f2dfe9ec601b903aa7f66e976be05615a383ffc622690c04873c2c211916301",
       "matches_published": true
     },
     {
