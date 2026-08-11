@@ -30,6 +30,31 @@ def main() -> int:
     warnings: list[str] = []
 
     registry = _load_json(ROOT / "fastrho" / "model_registry.json")
+    pyproject_text = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    citation_text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    docs_conf_text = (ROOT / "docs" / "conf.py").read_text(encoding="utf-8")
+    version_sources = {
+        "pyproject.toml": re.search(
+            r"(?m)^version\s*=\s*[\"']([^\"']+)[\"']", pyproject_text
+        ),
+        "CITATION.cff": re.search(r"(?m)^version:\s*[\"']?([^\s\"']+)", citation_text),
+        "fastrho/model_registry.json": registry.get("package_version"),
+        "docs/conf.py release": re.search(
+            r"(?m)^release\s*=\s*[\"']([^\"']+)[\"']", docs_conf_text
+        ),
+        "docs/conf.py version": re.search(
+            r"(?m)^version\s*=\s*[\"']([^\"']+)[\"']", docs_conf_text
+        ),
+    }
+    normalized_versions = {
+        source: value.group(1) if hasattr(value, "group") else value
+        for source, value in version_sources.items()
+    }
+    missing_versions = [source for source, value in normalized_versions.items() if not value]
+    if missing_versions:
+        errors.append(f"missing package version metadata: {', '.join(missing_versions)}")
+    elif len(set(normalized_versions.values())) != 1:
+        errors.append(f"package version metadata disagrees: {normalized_versions}")
     for model in registry["models"]:
         if model.get("paper_release"):
             for field in ("checkpoint_sha256", "stats_sha256", "model_card", "artifact_manifest"):

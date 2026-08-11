@@ -24,6 +24,7 @@ DEFAULT_OUTPUT = ROOT / "docs" / "data" / "downloads"
 PHASE2 = ROOT / "paper" / "anopheles_variants" / "phase2"
 PHASE2_RELEASE = PHASE2 / "release" / "atlas_anopheles"
 PHASE2_RESULTS = PHASE2 / "results"
+PHASE2_MAPS = PHASE2 / "maps"
 DEMOGRAPHY_PREDICTIONS = ROOT / "paper" / "figdata" / "demography_matched_predictions.npz"
 SUPPLEMENTAL_RESOURCES = {
     "demography_matched_inputs.zip": (
@@ -70,6 +71,7 @@ def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
         metadata = {row["cohort"]: row for row in csv.DictReader(handle, delimiter="\t")}
     validation = json.loads((PHASE2_RESULTS / "phase2_2la.json").read_text())
     two_la = {row["pop"]: row for row in validation["rows"]}
+    ne_by_map: dict[tuple[str, str], float] = {}
 
     columns = (
         "cohort",
@@ -83,7 +85,7 @@ def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
         "cM_per_Mb",
         "rho_per_bp",
         "n_haplotypes",
-        "Ne_estimate",
+        "Ne_used",
         "panel_twoLa_frequency",
         "panel_expected_heterokaryotype_frequency",
         "full_twoLa_frequency",
@@ -102,20 +104,39 @@ def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
                 fieldnames=("chrom", "start", "end", "rate", "cm", "rho"),
             )
             for record in records:
+                arm = record["chrom"]
+                map_key = (cohort, arm)
+                if map_key not in ne_by_map:
+                    sidecar = PHASE2_MAPS / f"{cohort}__{arm}.json"
+                    if not sidecar.is_file():
+                        raise FileNotFoundError(
+                            f"Missing arm-specific scale metadata for {cohort}/{arm}: {sidecar}"
+                        )
+                    ne_by_map[map_key] = float(json.loads(sidecar.read_text())["Ne_est"])
+                ne_used = ne_by_map[map_key]
+                rate = float(record["rate"])
+                cm_per_mb = float(record["cm"])
+                rho = float(record["rho"])
+                # The committed BED is rounded for distribution.  Check that its three rate
+                # representations still obey the declared diploid scaling contract.
+                if not np.isclose(rate, rho / (4.0 * ne_used), rtol=2e-5, atol=0.0):
+                    raise ValueError(f"Inconsistent rho/r/Ne scale for {cohort}/{arm}")
+                if not np.isclose(cm_per_mb, rate * 1e8, rtol=5e-4, atol=5e-5):
+                    raise ValueError(f"Inconsistent r/cM scale for {cohort}/{arm}")
                 rows.append(
                     (
                         cohort,
                         meta["release_population"],
                         meta["species"],
                         meta["country"],
-                        record["chrom"],
+                        arm,
                         int(record["start"]),
                         int(record["end"]),
-                        float(record["rate"]),
-                        float(record["cm"]),
-                        float(record["rho"]),
+                        rate,
+                        cm_per_mb,
+                        rho,
                         int(meta["n_hap"]),
-                        float(meta["Ne_est"]),
+                        ne_used,
                         float(arrangement["panel_la_freq"]),
                         float(arrangement["panel_het_expected"]),
                         float(arrangement["la_freq"]),
@@ -535,10 +556,11 @@ DATASETS = {
     "anopheles_maps.tsv.gz": (
         _anopheles,
         "Nine open Ag1000G Phase 2 AR1 population maps across five chromosome arms at 50-kb resolution.",
-        "rate_per_bp and cM_per_Mb; rho_per_bp is population scaled; 2La columns distinguish the 40-mosquito map panel from all eligible released samples",
+        "50-kb, 0-based half-open AgamP4 windows; rho_per_bp is population scaled; rate_per_bp = rho_per_bp / (4 * Ne_used); cM_per_Mb = rate_per_bp * 1e8; Ne_used is the arm-specific auxiliary model estimate; 2La columns distinguish the 40-mosquito map panel from all eligible released samples",
         [
             "paper/anopheles_variants/phase2/release/atlas_anopheles/bed",
             "paper/anopheles_variants/phase2/release/atlas_anopheles/manifest.tsv",
+            "paper/anopheles_variants/phase2/maps/*__*.json",
             "paper/anopheles_variants/phase2/results/phase2_2la.json",
         ],
     ),
@@ -657,6 +679,50 @@ def _phase2_result_bundle() -> bytes:
     return bundle.getvalue()
 
 
+ANOPHELES_README = """fastrho Phase 2 mosquito maps
+================================
+
+Contents
+--------
+anopheles_maps.tsv.gz contains 50-kb population recombination-map windows for
+nine open Ag1000G Phase 2 AR1 cohorts, five AgamP4 chromosome arms, and the
+fixed 40-diploid inference panels.  It also carries cohort/species metadata and
+panel-versus-full-release 2La summaries.
+
+Coordinates and scale
+---------------------
+start_bp/end_bp are 0-based, half-open AgamP4 coordinates.  rho_per_bp is the
+population-scaled output.  rate_per_bp and cM_per_Mb are already placed on an
+absolute scale using the arm-specific auxiliary model estimate in Ne_used:
+
+    rate_per_bp = rho_per_bp / (4 * Ne_used)
+    cM_per_Mb   = rate_per_bp * 1e8
+
+Do not divide rate_per_bp or cM_per_Mb by Ne again.  No rescaling is needed to
+plot the released values.  If an independently justified effective population
+size Ne_target is preferred, recompute the conditional absolute columns from
+rho_per_bp as rho_per_bp / (4 * Ne_target) and multiply by 1e8 for cM/Mb.
+Ne_used is an auxiliary model point estimate, not an independently validated
+demographic or census estimate.  Absolute comparisons therefore remain
+conditional on the selected Ne; retain rho_per_bp for the released
+population-scaled quantity.
+
+Verification
+------------
+The parent documentation download manifest records this archive's SHA-256 and
+the table's row count, columns, source artifacts, byte size, and SHA-256.
+Regenerate it with: python scripts/export_paper_data.py
+"""
+
+
+def _anopheles_download_bundle(table: bytes) -> bytes:
+    bundle = io.BytesIO()
+    with zipfile.ZipFile(bundle, mode="w") as archive:
+        _zip_entry(archive, "README.txt", ANOPHELES_README.encode("utf-8"))
+        _zip_entry(archive, "anopheles_maps.tsv.gz", table)
+    return bundle.getvalue()
+
+
 def build(output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
     generated: dict[str, bytes] = {}
@@ -681,6 +747,7 @@ def build(output: Path) -> None:
     resources = []
     resource_payloads = {
         "phase2_results.zip": _phase2_result_bundle(),
+        "anopheles_maps.zip": _anopheles_download_bundle(generated["anopheles_maps.tsv.gz"]),
     }
     resources.append(
         {
@@ -688,6 +755,14 @@ def build(output: Path) -> None:
             "description": "Compact source results, cohort manifest, and provenance for the active Phase 2 manuscript analysis.",
             "sha256": hashlib.sha256(resource_payloads["phase2_results.zip"]).hexdigest(),
             "bytes": len(resource_payloads["phase2_results.zip"]),
+        }
+    )
+    resources.append(
+        {
+            "file": "anopheles_maps.zip",
+            "description": "Self-documenting mosquito-map download containing the complete table and an explicit coordinate, scale, and Ne-rescaling contract.",
+            "sha256": hashlib.sha256(resource_payloads["anopheles_maps.zip"]).hexdigest(),
+            "bytes": len(resource_payloads["anopheles_maps.zip"]),
         }
     )
     for filename, (source, description) in SUPPLEMENTAL_RESOURCES.items():
@@ -718,7 +793,10 @@ def build(output: Path) -> None:
         "missing values. Coordinates are 0-based half-open where start/end columns are present.\n\n"
         "The active Anopheles analysis uses the open Ag1000G Phase 2 AR1 release: nine "
         "population panels of 40 mosquitoes across five chromosome arms. The map table labels "
-        "2La summaries from both the map panels and all eligible released samples.\n\n"
+        "2La summaries from both the map panels and all eligible released samples. Its "
+        "rho_per_bp column is population-scaled; rate_per_bp and cM_per_Mb are already "
+        "converted with the arm-specific auxiliary estimate in Ne_used and must not be divided "
+        "by Ne again. See resources/anopheles_maps.zip for the complete rescaling contract.\n\n"
         "The tables are plot-ready exports of the compact manuscript artifacts. See manifest.json "
         "for schemas, units, row counts, source artifacts, and SHA-256 checksums. The results/ "
         "directory contains the committed JSON snapshots behind reported paper metrics.\n"

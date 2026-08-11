@@ -51,6 +51,9 @@ files or the ZIP. `select_model_checkpoint.py` chooses from the exact Lightning 
 than file modification times. The primary model's full Slurm workflow is under
 `models/domain-randomized-v1/reproduce/`. Run `release_check.py --strict-models` before submission;
 it fails unless every required paper model has a complete public release record.
+Run `audit_public_releases.py` when online to compare all six user-model archives, checkpoints, and
+statistics files—plus every paper-support asset—against the live GitHub asset names, byte sizes, and
+SHA-256 digests without downloading the large weight files.
 
 The frozen Arabis ensemble members are published in the Phase 2 paper-support model release. Submit
 `slurm/audit_model_artifacts.sbatch` with their frozen JSON manifests to verify every checkpoint,

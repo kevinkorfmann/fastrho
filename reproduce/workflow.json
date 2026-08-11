@@ -76,7 +76,8 @@
         ["uv", "run", "python", "scripts/export_paper_data.py"]
       ],
       "outputs": [
-        "docs/data/downloads/manifest.json"
+        "docs/data/downloads/manifest.json",
+        "docs/data/downloads/anopheles_maps.zip"
       ]
     },
     {

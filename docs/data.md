@@ -49,10 +49,11 @@ The ordered Slurm workflow, design, environment pins, and analysis scripts are i
 :class-card: sd-border-0 sd-shadow-sm
 
 **41,463 windows · 9 populations · open Phase 2 AR1 data**
-*An. gambiae* and *An. coluzzii* across five chromosome arms at 50 kb. Includes $r$, cM/Mb,
-$\rho$, cohort metadata, and 2La summaries for both each fixed 40-mosquito map panel and all
-eligible released samples.
+*An. gambiae* and *An. coluzzii* across five AgamP4 chromosome arms at 50 kb. Includes
+population-scaled $\rho$, absolute $r$ and cM/Mb, the arm-specific $N_e$ used for that conversion,
+cohort/species metadata, and separate fixed-panel and full-release 2La summaries.
 
+{download}`Download self-documented ZIP <data/downloads/anopheles_maps.zip>` ·
 {download}`Download TSV.gz <data/downloads/anopheles_maps.tsv.gz>`
 :::
 
@@ -179,6 +180,37 @@ plt.ylabel("Recombination rate (cM/Mb)")
 plt.show()
 ```
 
+## Mosquito-map scale and $N_e$: read before analysis
+
+The mosquito table is an atlas of **LD-based population recombination maps**, not a direct record
+of contemporary crossovers. Each row is one 0-based, half-open 50-kb AgamP4 window (the terminal
+window of an arm can be shorter). The fixed inference panel contains 40 diploid mosquitoes, or 80
+haplotypes, per cohort. The table includes both *An. gambiae* and *An. coluzzii*, nine release
+populations, and arms 2R, 2L, 3R, 3L, and X.
+
+| Column | Scale and interpretation |
+|---|---|
+| `rho_per_bp` | Population-scaled rate $\rho$ per bp; this is the model-scale map and has not been divided by $N_e$. |
+| `Ne_used` | Arm-specific auxiliary model point estimate used to convert that arm from $\rho$ to absolute $r$; it is not an independently validated demographic or census estimate. |
+| `rate_per_bp` | Per-generation recombination probability per bp, already computed as $\rho/(4N_{e,\mathrm{used}})$. |
+| `cM_per_Mb` | The same pre-scaled absolute value in cM/Mb, computed as `rate_per_bp * 1e8`. |
+| `panel_*` | 2La summaries for the exact fixed 40-mosquito panel used to infer the maps. |
+| `full_*` | 2La summaries from all eligible released Phase 2 samples, provided as population context rather than map inputs. |
+
+**No additional $N_e$ rescaling is needed to plot or use the released `rate_per_bp` or
+`cM_per_Mb` values. Do not divide them by $N_e$ again.** Absolute values are conditional on the
+reported `Ne_used`. If you have an independently justified value $N_{e,\mathrm{target}}$, replace
+the absolute columns—do not rescale them indirectly—with:
+
+```python
+maps["rate_per_bp_external_Ne"] = maps["rho_per_bp"] / (4 * Ne_target)
+maps["cM_per_Mb_external_Ne"] = maps["rate_per_bp_external_Ne"] * 1e8
+```
+
+Keep `rho_per_bp` unchanged. Record the external $N_e$, its source, and the diploid convention
+$\rho=4N_e r$ with any rescaled result. For comparisons focused on spatial shape, state whether
+tracks were normalized within each arm; for absolute comparisons, propagate uncertainty in $N_e$.
+
 For *Arabis*, switch among `baseline_selfing`, `small_panel_selfing`, and `structured_selfing` with
 the `campaign` column. For the tree-of-life table, group by `species_key`; blank reference values
 mean that the track is an inference rather than a reference-map validation.
@@ -188,7 +220,9 @@ mean that the track is an inference rather than a reference-map validation.
 - Genomic `start_bp` and `end_bp` coordinates are 0-based and half-open.
 - Blank cells are missing values, not zeros.
 - `rate_per_bp` is the per-generation recombination probability per base; `rho_per_bp` is
-  population-scaled. The *Arabis* table is explicitly chromosome-relative with mean 1 per series.
+  population-scaled. In the mosquito table, `Ne_used` is arm-specific and exactly identifies the
+  scale conversion represented by each row. The *Arabis* table is explicitly chromosome-relative
+  with mean 1 per series.
 - In `anopheles_maps.tsv.gz`, columns prefixed with `panel_` describe the exact 40-mosquito panel
   used for map inference; columns prefixed with `full_` use all eligible released Phase 2 samples.
 - `phase2_resistance.tsv.gz` reports observational LD-based estimates. A focal/control ratio below

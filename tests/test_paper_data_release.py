@@ -6,6 +6,7 @@ import csv
 import gzip
 import hashlib
 import json
+import math
 import subprocess
 import sys
 import zipfile
@@ -98,6 +99,37 @@ def test_active_phase2_release_has_expected_public_scope() -> None:
         assert archive.testzip() is None
         assert "results/phase2_resistance.json" in archive.namelist()
         assert "release/atlas_anopheles/manifest.tsv" in archive.namelist()
+
+
+def test_mosquito_map_scale_is_arm_specific_and_reproducible() -> None:
+    with gzip.open(DOWNLOADS / "anopheles_maps.tsv.gz", mode="rt", encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    assert rows
+    assert "Ne_used" in rows[0]
+    scales: dict[tuple[str, str], set[float]] = {}
+    for row in rows:
+        ne_used = float(row["Ne_used"])
+        rate = float(row["rate_per_bp"])
+        rho = float(row["rho_per_bp"])
+        cm_per_mb = float(row["cM_per_Mb"])
+        scales.setdefault((row["cohort"], row["chromosome_arm"]), set()).add(ne_used)
+        assert math.isclose(rate, rho / (4 * ne_used), rel_tol=2e-5)
+        assert math.isclose(cm_per_mb, rate * 1e8, rel_tol=5e-4, abs_tol=5e-5)
+    assert all(len(values) == 1 for values in scales.values())
+    assert len(scales) == 45
+    assert len({next(iter(values)) for values in scales.values()}) > 9
+
+
+def test_mosquito_download_is_self_documenting() -> None:
+    with zipfile.ZipFile(DOWNLOADS / "anopheles_maps.zip") as archive:
+        assert archive.testzip() is None
+        assert set(archive.namelist()) == {"README.txt", "anopheles_maps.tsv.gz"}
+        assert archive.read("anopheles_maps.tsv.gz") == (
+            DOWNLOADS / "anopheles_maps.tsv.gz"
+        ).read_bytes()
+        readme = archive.read("README.txt").decode("utf-8")
+    for required in ("0-based", "AgamP4", "rho_per_bp / (4 * Ne_used)", "Do not divide", "Ne_target"):
+        assert required in readme
 
 
 def test_public_bundles_exclude_restricted_anopheles_material() -> None:

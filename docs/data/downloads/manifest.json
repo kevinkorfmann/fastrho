@@ -1,7 +1,7 @@
 {
   "datasets": [
     {
-      "bytes": 766474,
+      "bytes": 765749,
       "columns": [
         "cohort",
         "release_population",
@@ -14,7 +14,7 @@
         "cM_per_Mb",
         "rho_per_bp",
         "n_haplotypes",
-        "Ne_estimate",
+        "Ne_used",
         "panel_twoLa_frequency",
         "panel_expected_heterokaryotype_frequency",
         "full_twoLa_frequency",
@@ -24,13 +24,14 @@
       "description": "Nine open Ag1000G Phase 2 AR1 population maps across five chromosome arms at 50-kb resolution.",
       "file": "anopheles_maps.tsv.gz",
       "rows": 41463,
-      "sha256": "870365059d7c84d816ccaf821252949dcc8f89c07ffdde9dc0a46a1ee955a020",
+      "sha256": "228d44c7b0306586aa3a8dc2a6fff10d58b4c9dde1e8c556ea1a618aa9ac5b79",
       "source_artifacts": [
         "paper/anopheles_variants/phase2/release/atlas_anopheles/bed",
         "paper/anopheles_variants/phase2/release/atlas_anopheles/manifest.tsv",
+        "paper/anopheles_variants/phase2/maps/*__*.json",
         "paper/anopheles_variants/phase2/results/phase2_2la.json"
       ],
-      "units": "rate_per_bp and cM_per_Mb; rho_per_bp is population scaled; 2La columns distinguish the 40-mosquito map panel from all eligible released samples"
+      "units": "50-kb, 0-based half-open AgamP4 windows; rho_per_bp is population scaled; rate_per_bp = rho_per_bp / (4 * Ne_used); cM_per_Mb = rate_per_bp * 1e8; Ne_used is the arm-specific auxiliary model estimate; 2La columns distinguish the 40-mosquito map panel from all eligible released samples"
     },
     {
       "bytes": 775,
@@ -297,6 +298,12 @@
       "description": "Compact source results, cohort manifest, and provenance for the active Phase 2 manuscript analysis.",
       "file": "phase2_results.zip",
       "sha256": "2153702182a5ea69b029e49985553d611035bf161fb98ad9fccdfe41e9afbf97"
+    },
+    {
+      "bytes": 765385,
+      "description": "Self-documenting mosquito-map download containing the complete table and an explicit coordinate, scale, and Ne-rescaling contract.",
+      "file": "anopheles_maps.zip",
+      "sha256": "d60eb21f03cea39aef4e83d8cc97d6135c91c69232a60cf189f980226680ef19"
     },
     {
       "bytes": 7951041,

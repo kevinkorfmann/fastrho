@@ -5,8 +5,8 @@ from __future__ import annotations
 project = "fastrho"
 author = "fastrho authors"
 copyright = "2026, fastrho authors"
-release = "0.1"
-version = "0.1"
+release = "0.1.1"
+version = "0.1.1"
 
 extensions = [
     "myst_parser",

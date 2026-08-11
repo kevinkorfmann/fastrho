@@ -124,12 +124,6 @@
       "role": "si-table"
     },
     {
-      "manuscript_target": "tables_phase2/prior_envelope.tex",
-      "package_output": "paper/tables/prior_envelope.tex",
-      "producer": "paper/tables/prior_envelope.tex",
-      "role": "si-table"
-    },
-    {
       "manuscript_target": "tables_phase2/transect_data.tex",
       "package_output": "paper/tables/transect_data.tex",
       "producer": "paper/figdata/transect.json",

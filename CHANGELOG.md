@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Added a deterministic, self-documented mosquito-map ZIP and explicit AgamP4 coordinate,
+  population-scale, absolute-scale, and effective-population-size rescaling guidance.
+- Replaced the misleading cohort-mean mosquito `Ne_estimate` export with the exact arm-specific
+  `Ne_used` that reproduces every released absolute-rate row.
+- Added row-level mosquito scale contracts and an online audit of all public checkpoint assets.
+- Synchronized the rendered documentation version with package version 0.1.1.
+
 ## 0.1.1 - 2026-08-02
 
 - Added an installed, checksumming `fastrho-fetch-model` command.

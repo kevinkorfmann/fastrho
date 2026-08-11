@@ -161,6 +161,7 @@ python -m pytest tests/test_io_api.py tests/test_phase1_target.py \
   tests/test_phase2_features.py tests/test_stitching.py
 python -m pytest tests/paper
 python scripts/release_check.py
+python scripts/audit_public_releases.py  # online: compare registries with live release assets
 python -m build
 ```
 
