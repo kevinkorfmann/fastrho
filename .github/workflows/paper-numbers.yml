@@ -71,6 +71,5 @@ jobs:
       - name: Validate data and citation provenance
         run: python scripts/release_check.py
 
-      - name: Audit report (number-by-number table + open findings)
-        if: always()
-        run: python tests/paper/audit_report.py
+      - name: Write the number-by-number Phase 2 audit
+        run: python reproduce/audit_phase2.py --check-published
