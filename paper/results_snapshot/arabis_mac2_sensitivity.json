@@ -1,0 +1,137 @@
+{
+  "by_design": {
+    "minimum_minor_allele_count_2": {
+      "spearman_subset_vs_cross": {
+        "median": 0.027542959892791107,
+        "range": [
+          0.027542959892791107,
+          0.027542959892791107
+        ]
+      },
+      "spearman_subset_vs_full": {
+        "median": 0.5847577904563729,
+        "range": [
+          0.5847577904563729,
+          0.5847577904563729
+        ]
+      }
+    }
+  },
+  "cross_map_audit": {
+    "chromosomes": {
+      "chr1": {
+        "isotonic_rms_cm": 0.02925447427770738,
+        "map_span_cm": 184.86304940448198,
+        "orientation": 1,
+        "physical_span_mb": 31.285195,
+        "raw_markers": 304,
+        "unique_positions": 304
+      },
+      "chr2": {
+        "isotonic_rms_cm": 3.1138594524101095e-06,
+        "map_span_cm": 129.138307733054,
+        "orientation": 1,
+        "physical_span_mb": 25.367191,
+        "raw_markers": 232,
+        "unique_positions": 232
+      },
+      "chr3": {
+        "isotonic_rms_cm": 1.4372104128956152e-06,
+        "map_span_cm": 207.661198544656,
+        "orientation": 1,
+        "physical_span_mb": 29.785801,
+        "raw_markers": 244,
+        "unique_positions": 244
+      },
+      "chr4": {
+        "isotonic_rms_cm": 0.038176204601353965,
+        "map_span_cm": 185.585949457513,
+        "orientation": 1,
+        "physical_span_mb": 37.232015,
+        "raw_markers": 369,
+        "unique_positions": 369
+      },
+      "chr5": {
+        "isotonic_rms_cm": 0.5519179673686359,
+        "map_span_cm": 138.71593893343982,
+        "orientation": 1,
+        "physical_span_mb": 26.269114,
+        "raw_markers": 202,
+        "unique_positions": 202
+      },
+      "chr6": {
+        "isotonic_rms_cm": 0.14508507086780567,
+        "map_span_cm": 138.11646113300802,
+        "orientation": 1,
+        "physical_span_mb": 21.051823,
+        "raw_markers": 160,
+        "unique_positions": 160
+      },
+      "chr7": {
+        "isotonic_rms_cm": 0.22149732553330814,
+        "map_span_cm": 114.960445291307,
+        "orientation": 1,
+        "physical_span_mb": 20.298471,
+        "raw_markers": 220,
+        "unique_positions": 220
+      },
+      "chr8": {
+        "isotonic_rms_cm": 1.0247969028328092,
+        "map_span_cm": 239.709990966127,
+        "orientation": 1,
+        "physical_span_mb": 36.591633,
+        "raw_markers": 351,
+        "unique_positions": 351
+      }
+    },
+    "markers": 2082
+  },
+  "design_note": "Subsets and frozen models were selected without the F2 map.",
+  "panels": [
+    {
+      "accessions": "all_12",
+      "design": "minimum_minor_allele_count_2",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "nemorensis_mac2",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.1252747252747253,
+          "subset_vs_full": 0.6967032967032967
+        },
+        "chr2": {
+          "subset_vs_cross": 0.5636363636363637,
+          "subset_vs_full": 0.7545454545454545
+        },
+        "chr3": {
+          "subset_vs_cross": -0.17032967032967034,
+          "subset_vs_full": 0.46703296703296704
+        },
+        "chr4": {
+          "subset_vs_cross": 0.15686274509803924,
+          "subset_vs_full": 0.698529411764706
+        },
+        "chr5": {
+          "subset_vs_cross": 0.17482517482517487,
+          "subset_vs_full": 0.6783216783216784
+        },
+        "chr6": {
+          "subset_vs_cross": -0.33333333333333337,
+          "subset_vs_full": 0.48333333333333334
+        },
+        "chr7": {
+          "subset_vs_cross": -0.19999999999999998,
+          "subset_vs_full": 0.7
+        },
+        "chr8": {
+          "subset_vs_cross": -0.18137254901960786,
+          "subset_vs_full": -0.03921568627450981
+        }
+      },
+      "spearman_subset_vs_cross": 0.027542959892791107,
+      "spearman_subset_vs_full": 0.5847577904563729,
+      "species": "nemorensis"
+    }
+  ],
+  "window_mb": 2.0
+}

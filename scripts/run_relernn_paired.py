@@ -1,0 +1,249 @@
+#!/usr/bin/env python3
+"""Run one frozen ReLERNN demographic arm in separable Slurm stages."""
+
+from __future__ import annotations
+
+import argparse
+import glob
+import hashlib
+import json
+import math
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+import numpy as np
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def combine_vcfs(config_dir: Path) -> Path:
+    regions = sorted(config_dir.glob("region_*.vcf"))
+    if not regions:
+        raise FileNotFoundError(f"No region VCFs in {config_dir}")
+    combined = config_dir / "combined.vcf"
+    contigs: list[str] = []
+    body: list[str] = []
+    sample_line = None
+    for vcf in regions:
+        for line in vcf.read_text().splitlines(keepends=True):
+            if line.startswith("##contig"):
+                contigs.append(line)
+            elif line.startswith("#CHROM"):
+                if sample_line is not None and line != sample_line:
+                    raise ValueError("VCF sample columns differ between regions")
+                sample_line = line
+            elif not line.startswith("#"):
+                body.append(line)
+    if sample_line is None:
+        raise ValueError("No #CHROM header found")
+    combined.write_text(
+        "##fileformat=VCFv4.2\n"
+        + "".join(contigs)
+        + '##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">\n'
+        + sample_line
+        + "".join(body)
+    )
+    return combined
+
+
+def auto_uprtr(config_dir: Path, mu: float) -> int:
+    rates: list[np.ndarray] = []
+    lengths: list[np.ndarray] = []
+    for path in sorted(config_dir.glob("region_*.npz")):
+        with np.load(path, allow_pickle=True) as archive:
+            position = np.asarray(archive["map_position"], float)
+            rate = np.asarray(archive["map_rate"], float)
+        segment = np.diff(position)
+        keep = np.isfinite(rate) & (segment > 0)
+        rates.append(rate[keep])
+        lengths.append(segment[keep])
+    if not rates:
+        raise FileNotFoundError("No truth-map NPZ files available for the frozen prior rule")
+    rate = np.concatenate(rates)
+    length = np.concatenate(lengths)
+    order = np.argsort(rate)
+    rate = rate[order]
+    length = length[order]
+    cdf = np.cumsum(length) / length.sum()
+    quantile = float(rate[np.searchsorted(cdf, 0.999)])
+    return int(math.ceil(1.15 * quantile / mu))
+
+
+def executable(name: str) -> str:
+    path = Path(sys.executable).with_name(name)
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    return str(path)
+
+
+def run(command: list[str], log: Path, env: dict[str, str]) -> None:
+    log.parent.mkdir(parents=True, exist_ok=True)
+    with log.open("w") as handle:
+        subprocess.run(command, env=env, stdout=handle, stderr=subprocess.STDOUT, check=True)
+
+
+def update_manifest(path: Path, values: dict) -> None:
+    current = json.loads(path.read_text()) if path.is_file() else {}
+    current.update(values)
+    path.write_text(json.dumps(current, indent=2, sort_keys=True) + "\n")
+
+
+def simulate(args: argparse.Namespace, config: dict, project: Path, env: dict[str, str]) -> None:
+    if project.exists() and any(project.iterdir()):
+        raise FileExistsError(f"Refusing to overwrite ReLERNN project: {project}")
+    project.mkdir(parents=True, exist_ok=True)
+    combined = combine_vcfs(args.config_dir)
+    uprtr = auto_uprtr(args.config_dir, float(config["mu"]))
+    command = [
+        executable("ReLERNN_SIMULATE"),
+        "--vcf",
+        str(combined),
+        "--genome",
+        str(args.config_dir / "genome.bed"),
+        "--projectDir",
+        str(project),
+        "--assumedMu",
+        str(config["mu"]),
+        "--assumedGenTime",
+        "1",
+        "--upperRhoThetaRatio",
+        str(uprtr),
+        "--nCPU",
+        str(args.n_cpu),
+        "--seed",
+        str(args.seed),
+        "--phased",
+        "--maxSites",
+        str(args.max_sites),
+        "--nTrain",
+        str(args.n_train),
+        "--nVali",
+        str(args.n_validation),
+        "--nTest",
+        str(args.n_test),
+    ]
+    demography = "constant"
+    if args.demography_history is not None:
+        command.extend(["--demographicHistory", str(args.demography_history)])
+        demography = "matched"
+    manifest = args.config_dir / "relernn_run_manifest.json"
+    update_manifest(
+        manifest,
+        {
+            "arm": config["name"],
+            "training_demography": demography,
+            "demography_history": str(args.demography_history) if args.demography_history else None,
+            "demography_sha256": sha256(args.demography_history)
+            if args.demography_history
+            else None,
+            "combined_vcf_sha256": sha256(combined),
+            "upper_rho_theta_ratio": uprtr,
+            "n_train": args.n_train,
+            "n_validation": args.n_validation,
+            "n_test": args.n_test,
+            "max_sites": args.max_sites,
+            "simulation_seed": args.seed,
+            "compatibility_patch_sha256": sha256(Path(os.environ["DEMO_RELERNN_PATCH"])),
+            "simulate_command": command,
+        },
+    )
+    run(command, args.config_dir / "relernn_sim.log", env)
+    update_manifest(manifest, {"simulate_complete": True})
+
+
+def train_predict(
+    args: argparse.Namespace, config: dict, project: Path, env: dict[str, str]
+) -> None:
+    manifest = args.config_dir / "relernn_run_manifest.json"
+    if not manifest.is_file() or not json.loads(manifest.read_text()).get("simulate_complete"):
+        raise RuntimeError("Simulation stage is incomplete")
+    combined = args.config_dir / "combined.vcf"
+    train_command = [
+        executable("ReLERNN_TRAIN"),
+        "--projectDir",
+        str(project),
+        "--nEpochs",
+        str(args.epochs),
+        "--nCPU",
+        str(args.train_cpu),
+        "--seed",
+        str(args.seed),
+        "--gpuID",
+        "0",
+    ]
+    run(train_command, args.config_dir / "relernn_train.log", env)
+    predict_command = [
+        executable("ReLERNN_PREDICT"),
+        "--vcf",
+        str(combined),
+        "--projectDir",
+        str(project),
+        "--phased",
+        "--seed",
+        str(args.seed),
+        "--gpuID",
+        "0",
+    ]
+    run(predict_command, args.config_dir / "relernn_predict.log", env)
+    predictions = sorted(glob.glob(str(project / "*PREDICT*txt")))
+    if not predictions:
+        raise FileNotFoundError("ReLERNN prediction output was not created")
+    update_manifest(
+        manifest,
+        {
+            "epochs": args.epochs,
+            "training_seed": args.seed,
+            "train_command": train_command,
+            "predict_command": predict_command,
+            "prediction": predictions[0],
+            "prediction_sha256": sha256(Path(predictions[0])),
+            "train_predict_complete": True,
+        },
+    )
+    print(predictions[0])
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("stage", choices=("simulate", "train-predict"))
+    parser.add_argument("--config-dir", required=True, type=Path)
+    parser.add_argument("--demography-history", type=Path)
+    parser.add_argument("--n-train", type=int, default=100000)
+    parser.add_argument("--n-validation", type=int, default=10000)
+    parser.add_argument("--n-test", type=int, default=10000)
+    parser.add_argument("--max-sites", type=int, default=256)
+    parser.add_argument("--n-cpu", type=int, default=64)
+    parser.add_argument("--train-cpu", type=int, default=8)
+    parser.add_argument("--epochs", type=int, default=100)
+    parser.add_argument("--seed", type=int, default=1)
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    args.config_dir = args.config_dir.resolve()
+    if args.demography_history is not None:
+        args.demography_history = args.demography_history.resolve()
+        if not args.demography_history.is_file():
+            raise FileNotFoundError(args.demography_history)
+    config = json.loads((args.config_dir / "config.json").read_text())
+    project = args.config_dir / "relernn_project"
+    env = dict(os.environ)
+    env.setdefault("PYTHONHASHSEED", str(args.seed))
+    env.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
+    if args.stage == "simulate":
+        simulate(args, config, project, env)
+    else:
+        train_predict(args, config, project, env)
+
+
+if __name__ == "__main__":
+    main()

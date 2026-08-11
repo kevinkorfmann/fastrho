@@ -41,10 +41,10 @@ def verify_archive(model_id: str, archive_path: Path) -> None:
             raise ValueError(f"archive members differ: {sorted(set(names) ^ expected)}")
         if archive.testzip() is not None:
             raise ValueError("archive CRC validation failed")
-        archived_manifest = archive.read(prefix + "manifest.json")
-        repository_manifest = (
-            release.ROOT / "models" / model_id / "manifest.json"
-        ).read_bytes()
+        archived_manifest = json.loads(archive.read(prefix + "manifest.json"))
+        repository_manifest = json.loads(
+            (release.ROOT / "models" / model_id / "manifest.json").read_text(encoding="utf-8")
+        )
         if archived_manifest != repository_manifest:
             raise ValueError("archived manifest differs from the repository manifest")
 

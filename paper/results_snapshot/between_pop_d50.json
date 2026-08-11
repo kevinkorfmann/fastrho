@@ -1,0 +1,22 @@
+{
+  "diff_frac": 0.5,
+  "scales": {
+    "25kb": {
+      "between_pop_pred": 0.8114923617068153,
+      "between_pop_true": 0.9446971167142449,
+      "within_pop_noise_floor": 0.8716228619107218
+    },
+    "100kb": {
+      "between_pop_pred": 0.8550768769219231,
+      "between_pop_true": 0.9439435985899649,
+      "within_pop_noise_floor": 0.8709907747693693
+    },
+    "500kb": {
+      "between_pop_pred": 0.8409005628517825,
+      "between_pop_true": 0.9290806754221389,
+      "within_pop_noise_floor": 0.7204502814258912
+    }
+  },
+  "differential_hotspot_auc": 0.8260783144504075,
+  "n_windows": 800
+}

@@ -1,0 +1,75 @@
+name: paper-numbers
+
+# Re-derive every number in the manuscript on each change. The suite needs only
+# numpy/scipy/scikit-learn/matplotlib (no torch, no GPU, no private packages), so it runs on a plain
+# runner in seconds.
+
+on:
+  push:
+    paths:
+      - "tests/**"
+      - "paper/**"
+      - "refs.bib"
+      - "docs/**"
+      - "research/demography_matched/**"
+      - "fastrho/**"
+      - "scripts/**"
+      - "reproduce/**"
+      - ".github/workflows/paper-numbers.yml"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rederive:
+    runs-on: ubuntu-latest
+    env:
+      FASTRHO_MANUSCRIPT_ROOT: ${{ github.workspace }}/tmp/reproduce/manuscript
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install audit dependencies
+        run: python -m pip install --quiet -e ".[dev,figures]" scikit-learn
+
+      - name: Fetch the locked Phase 2 manuscript
+        run: python reproduce/fetch_manuscript.py
+
+      - name: Re-derive every paper number and bind every figure
+        run: >-
+          pytest tests/paper
+          tests/verification
+          tests/test_demography_matched_benchmark.py
+          tests/test_paper_data_release.py
+          -q -p no:cacheprovider -rxs
+
+      - name: Validate the complete reproduction workflow
+        run: python reproduce/paper.py preflight --metadata-only
+
+      - name: Lint and parse active software and analysis code
+        run: |
+          ruff check fastrho tests \
+            scripts/archive_demography_predictions.py \
+            scripts/build_manuscript_derived.py \
+            scripts/build_manuscript_figures.py \
+            scripts/build_reproducibility_audit.py \
+            scripts/capture_demography_runtime.py \
+            scripts/collate_demography_benchmark.py \
+            scripts/demography_matched_diagnostics.py \
+            scripts/export_paper_data.py \
+            scripts/prepare_demography_benchmark.py \
+            scripts/run_relernn_paired.py \
+            scripts/score_fastrho_reference.py
+          ruff check reproduce
+          python -m compileall -q fastrho scripts tests
+          python -m compileall -q reproduce
+          find . -type f \( -name '*.sh' -o -name '*.sbatch' \) -print0 | \
+            while IFS= read -r -d '' script; do bash -n "$script"; done
+
+      - name: Validate data and citation provenance
+        run: python scripts/release_check.py
+
+      - name: Write the number-by-number Phase 2 audit
+        run: python reproduce/audit_phase2.py --check-published

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-phase2_root="${1:-/home/kkor/agam_phase2}"
+phase2_root="${1:-data/ag1000g-phase2-ar1}"
 base="ftp://ngs.sanger.ac.uk/production/ag1000g/phase2/AR1"
 mkdir -p "$phase2_root/raw/haplotypes_main_hdf5" \
   "$phase2_root/raw/haplotypes_crosses_shapeit" \

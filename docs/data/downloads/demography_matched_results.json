@@ -1,0 +1,260 @@
+{
+  "design_sha256": "035588a57cb39e77bc25d49911e3c233c98806d3355eae015efc6e04a258d247",
+  "fastrho_reference_sha256": "c792917acaa3b1b76193d30600de7d97e09d093bb821e3d4f4a31384a0f04be8",
+  "input_manifest_sha256": "182f9cd93af601d68b69d3696834645692097166fd2974bac8ce3f721c26ef2d",
+  "scenarios": {
+    "bottleneck": {
+      "fastrho_reference": {
+        "100kb": {
+          "bias_ratio": 0.848200684639401,
+          "l2": 9.249232073072613e-09,
+          "log_l2": 0.42550374953743864,
+          "log_pearson": 0.7971613609096495,
+          "n": 480,
+          "pearson": 0.8330530928642943,
+          "spearman": 0.6361808254302371
+        },
+        "25kb": {
+          "bias_ratio": 0.8906741547603347,
+          "l2": 1.4139587041533745e-08,
+          "log_l2": 0.5564317980573165,
+          "log_pearson": 0.7178472016306223,
+          "n": 1920,
+          "pearson": 0.7757456239789107,
+          "spearman": 0.5120356827232211
+        },
+        "n_regions": 24,
+        "prediction_sha256": "7989cbe0e03eb1735ebfb6fc124c9e6099aad7d5f3a12e27edf40b8885c07296"
+      },
+      "pyrho": {
+        "arms": {
+          "constant": {
+            "100kb": {
+              "bias_ratio": 0.3401542875296715,
+              "n": 480,
+              "pearson": 0.7083795453445796,
+              "spearman": 0.6104096313717151
+            },
+            "25kb": {
+              "bias_ratio": 0.28260776030874013,
+              "n": 1920,
+              "pearson": 0.562746401916414,
+              "spearman": 0.45327787278085013
+            }
+          },
+          "matched": {
+            "100kb": {
+              "bias_ratio": 0.8154126671984241,
+              "n": 480,
+              "pearson": 0.7315186273373635,
+              "spearman": 0.6217116220015512
+            },
+            "25kb": {
+              "bias_ratio": 0.7879668728791216,
+              "n": 1920,
+              "pearson": 0.6191149595398917,
+              "spearman": 0.46740021719698394
+            }
+          }
+        },
+        "matched_minus_constant": {
+          "100kb": {
+            "bias_ratio": 0.4752583796687526,
+            "pearson": 0.023139081992783916,
+            "spearman": 0.011301990629836056
+          },
+          "25kb": {
+            "bias_ratio": 0.5053591125703815,
+            "pearson": 0.0563685576234777,
+            "spearman": 0.014122344416133803
+          }
+        },
+        "support_rule": "finite, strictly positive truth and predictions in both demographic arms"
+      },
+      "relernn": {
+        "arms": {
+          "constant": {
+            "100kb": {
+              "bias_ratio": 0.6801820564927896,
+              "n": 452,
+              "pearson": 0.41271508450520444,
+              "spearman": 0.3243144091432772
+            },
+            "25kb": {
+              "bias_ratio": 0.8393472547545253,
+              "n": 1744,
+              "pearson": 0.2709509601950909,
+              "spearman": 0.1766359883859338
+            },
+            "native_window_bp": {
+              "maximum": 241000,
+              "median": 190500.0,
+              "minimum": 123000,
+              "n_regions": 24
+            }
+          },
+          "matched": {
+            "100kb": {
+              "bias_ratio": 1.041522956858146,
+              "n": 452,
+              "pearson": 0.45546845084471915,
+              "spearman": 0.425187485307193
+            },
+            "25kb": {
+              "bias_ratio": 1.2211615544979408,
+              "n": 1744,
+              "pearson": 0.3019586890991627,
+              "spearman": 0.22502164935104357
+            },
+            "native_window_bp": {
+              "maximum": 241000,
+              "median": 190500.0,
+              "minimum": 123000,
+              "n_regions": 24
+            }
+          }
+        },
+        "matched_minus_constant": {
+          "100kb": {
+            "bias_ratio": 0.3613409003653565,
+            "pearson": 0.04275336633951471,
+            "spearman": 0.10087307616391583
+          },
+          "25kb": {
+            "bias_ratio": 0.3818142997434155,
+            "pearson": 0.031007728904071774,
+            "spearman": 0.04838566096510977
+          }
+        },
+        "support_rule": "finite, strictly positive truth and predictions in both demographic arms"
+      }
+    },
+    "expansion": {
+      "fastrho_reference": {
+        "100kb": {
+          "bias_ratio": 0.5985174597881817,
+          "l2": 1.4953894757023337e-08,
+          "log_l2": 0.7228554260341091,
+          "log_pearson": 0.6662150325976363,
+          "n": 480,
+          "pearson": 0.6817859051231893,
+          "spearman": 0.5706607266409227
+        },
+        "25kb": {
+          "bias_ratio": 0.6874442290533358,
+          "l2": 2.013636207977902e-08,
+          "log_l2": 0.782070042935262,
+          "log_pearson": 0.5858720148559858,
+          "n": 1920,
+          "pearson": 0.6038675415416114,
+          "spearman": 0.4590266003009401
+        },
+        "n_regions": 24,
+        "prediction_sha256": "f6a66b1aebe0a6d94b934b44f8fc6f522f0ceefc157123981f9f9af0b1c0ef26"
+      },
+      "pyrho": {
+        "arms": {
+          "constant": {
+            "100kb": {
+              "bias_ratio": 0.3536431535516066,
+              "n": 480,
+              "pearson": 0.6273295576180573,
+              "spearman": 0.6196613835936287
+            },
+            "25kb": {
+              "bias_ratio": 0.3644905392011102,
+              "n": 1920,
+              "pearson": 0.44695448766492474,
+              "spearman": 0.425895577665218
+            }
+          },
+          "matched": {
+            "100kb": {
+              "bias_ratio": 0.8022746437929255,
+              "n": 480,
+              "pearson": 0.6181232270611716,
+              "spearman": 0.6157675466232662
+            },
+            "25kb": {
+              "bias_ratio": 0.8289065320379985,
+              "n": 1920,
+              "pearson": 0.4443745332207679,
+              "spearman": 0.43580964208624645
+            }
+          }
+        },
+        "matched_minus_constant": {
+          "100kb": {
+            "bias_ratio": 0.4486314902413189,
+            "pearson": -0.009206330556885689,
+            "spearman": -0.0038938369703624964
+          },
+          "25kb": {
+            "bias_ratio": 0.4644159928368883,
+            "pearson": -0.002579954444156818,
+            "spearman": 0.009914064421028435
+          }
+        },
+        "support_rule": "finite, strictly positive truth and predictions in both demographic arms"
+      },
+      "relernn": {
+        "arms": {
+          "constant": {
+            "100kb": {
+              "bias_ratio": 2.681554241358228,
+              "n": 460,
+              "pearson": 0.31850788278125325,
+              "spearman": 0.2569195345395979
+            },
+            "25kb": {
+              "bias_ratio": 3.1604708799587815,
+              "n": 1828,
+              "pearson": 0.21970657998874485,
+              "spearman": 0.15851333474108298
+            },
+            "native_window_bp": {
+              "maximum": 446000,
+              "median": 399500.0,
+              "minimum": 316000,
+              "n_regions": 24
+            }
+          },
+          "matched": {
+            "100kb": {
+              "bias_ratio": 1.6677897051790596,
+              "n": 460,
+              "pearson": 0.2441695932310908,
+              "spearman": 0.1884501432305459
+            },
+            "25kb": {
+              "bias_ratio": 1.7224208876800575,
+              "n": 1828,
+              "pearson": 0.17592245173290683,
+              "spearman": 0.11546531840275655
+            },
+            "native_window_bp": {
+              "maximum": 446000,
+              "median": 399500.0,
+              "minimum": 316000,
+              "n_regions": 24
+            }
+          }
+        },
+        "matched_minus_constant": {
+          "100kb": {
+            "bias_ratio": -1.0137645361791683,
+            "pearson": -0.07433828955016245,
+            "spearman": -0.06846939130905202
+          },
+          "25kb": {
+            "bias_ratio": -1.438049992278724,
+            "pearson": -0.04378412825583802,
+            "spearman": -0.04304801633832643
+          }
+        },
+        "support_rule": "finite, strictly positive truth and predictions in both demographic arms"
+      }
+    }
+  },
+  "schema_version": 1
+}

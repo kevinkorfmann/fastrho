@@ -28,6 +28,9 @@ def registry_record(model_id: str) -> dict:
     record = matches[0]
     if record.get("status") != "available":
         raise ValueError(f"model {model_id!r} is {record.get('status')!r}, not available")
+    base = f"https://github.com/kevinkorfmann/fastrho-models/releases/download/{model_id}"
+    record.setdefault("archive_url", f"{base}/{model_id}.zip")
+    record.setdefault("landing_page", f"https://github.com/kevinkorfmann/fastrho-models/releases/tag/{model_id}")
     return record
 
 

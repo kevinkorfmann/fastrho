@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
+  "url": "https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21",
+  "commit": "4faf13c9f84f3686791b1b892923f00cb842e3a2",
+  "variant": "phase2",
+  "entrypoints": [
+    "main_phase2.tex",
+    "si_phase2.tex"
+  ],
+  "policy": "Only Phase 2 is active. Phase 3 is archived under legacy/phase3 and all legacy variants are intentionally excluded.",
+  "files": {
+    "latexmkrc": "0d16ca41a592703511808db739d3ffcd6ba882bc6e999548c8fc76e9bcfab95f",
+    "main_phase2.tex": "18120676845324acdf227549fd82bd8db1afa97b3c8a9132f9fd008398490962",
+    "si_phase2.tex": "361ec3454061467990843360841a9361595f8bdeaf1565cb1b28a0e7b877c70b",
+    "refs.bib": "d0fc32a2a81a3cf9befce8a40f6df448165393d4f18d1b0625e723a33781c9ce",
+    "figures_phase2/fastrho_header_mark.pdf": "8c59981223b3249f68c0677be2583e44b76397bac17efdc54acc5020846bc447",
+    "figures_phase2/fig1_complete.pdf": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
+    "figures_phase2/fig1_method_validation.pdf": "3c44a3830e59b06ae0eafbb4d9326b5a4e9503795bf0eebcac09de059e4391a0",
+    "figures_phase2/fig2_history_rescue.pdf": "9aa8c135f2c0122a2c2b9de5fdf1ea5a7078d8b5dbfb727bd7b9363ffa0b8c9c",
+    "figures_phase2/fig5_unphased.pdf": "380a4f42becab1ee6d43f041733be08647dc387729c0fbaef19a6a336edcd8a2",
+    "figures_phase2/fig_gene_conversion.pdf": "63794bd0bb1d7528e8828f1d0091b7d807ef20e7f69a069e7b8406905daa44a4",
+    "figures_phase2/fig_phase2_anopheles.pdf": "cc7a660e9cb818c8b536e2ee5573f03898843c2ef924d19a6e55b4e079255f79",
+    "figures_phase2/fig_phase2_pedigree.pdf": "4a4a07ba72e28a9d0f74d6bfe6ca760283af42f65866b812f9109879e523000a",
+    "figures_phase2/fig_phase2_pyrho.pdf": "9e681ea3b310ba95b058f30b75d3580222d7b43d289b83747baf3a2857acd551",
+    "figures_phase2/fig_redpoll_karyotype.pdf": "8d43d042e61d1dfb2118e9d94c62aead36c272492e93deb7e96bb34c886bcc73",
+    "figures_phase2/fig_si_arabis_cross.pdf": "88e9b672bfa3a5e59a5721ba7def8cae82eaf737d08a61ce1d4712e3cf4598bc",
+    "figures_phase2/fig_si_demography_mating_limits.pdf": "410f7e66eeca34d965250d449997edd54c585d9d84e4052101e00e788e564b0d",
+    "figures_phase2/fig_si_relernn_mechanisms.pdf": "641c6db0191434d3cebd30abd15adf15cb03077199e9f9d88ddc0a445531bc3a",
+    "figures_phase2/fig_si_resolution.pdf": "a922ecbe20d42f751b91a3b6f44f39341a948e95b1296dfd56a548b9310c4079",
+    "figures_phase2/fig_treeoflife_panel.pdf": "09ccbebf5b969ea52cc5a2010ece4ff894c55000e07a3e6c0dd30eb48f9d725a",
+    "generated_phase2/data_sources_table.tex": "622f41d85c076fed6537f074a98b34c57a3a66e1e46fd3a4c9549173714f282e",
+    "generated_phase2/phase2_cohorts.tex": "a0e4c39ee13619d4de7cb4896c0a937e1452fbc0c7175af45e934e7925d263aa",
+    "generated_phase2/phase2_numbers.tex": "47e3bcb0a12871f3dc3e0a16d613284e01031582f3bed35f6c58428eaf8ca5b9",
+    "generated_phase2/transect_sources.bib": "dbbf4405a92db1612db6d240f4dd4bd8e497d04da9b83fa30a6b892022cd7010",
+    "tables_phase2/main_results.tex": "4c29cc327a9a9fc55154efc8fab9a717e56628a4a702a494bf3d0b9c682b9f04",
+    "tables_phase2/prior_envelope.tex": "3055989198bfaaeea18f93b0a48c62665ebbc9c07034a62a637a5d70155d053f",
+    "tables_phase2/transect_data.tex": "ffd4452c8d6998d000b24c0ced0381f52fd2348cf97f08e6acaa1a1a4fd89efb"
+  }
+}

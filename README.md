@@ -1,16 +1,15 @@
 <h1 align="center">fastrho</h1>
 
 <p align="center">
-  <strong>Fine-scale recombination maps from population genotypes, without per-dataset training.</strong>
+  <strong>Fine-scale recombination maps from population genotypes—without per-dataset training.</strong>
 </p>
 
 <p align="center">
   <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="API tests" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml/badge.svg"></a>
-  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="31 tests passing" src="https://img.shields.io/badge/tests-31%20passing-brightgreen?logo=pytest&logoColor=white"></a>
-  <a href="https://pypi.org/project/fastrho/"><img alt="PyPI" src="https://img.shields.io/pypi/v/fastrho?logo=pypi&logoColor=white"></a>
-  <a href="https://fastrho.readthedocs.io/"><img alt="Documentation" src="https://img.shields.io/badge/docs-Read%20the%20Docs-8CA1AF?logo=readthedocs&logoColor=white"></a>
-  <img alt="Tested on Python 3.10 and 3.12" src="https://img.shields.io/badge/Python-3.10%20%7C%203.12-3776AB?logo=python&logoColor=white">
-  <img alt="Research alpha" src="https://img.shields.io/badge/status-research%20alpha-f59e0b">
+  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/paper-numbers.yml"><img alt="Paper reproducibility" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/paper-numbers.yml/badge.svg"></a>
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/License-MIT-2ea44f.svg"></a>
+  <img alt="Release status: research alpha" src="https://img.shields.io/badge/status-research%20alpha-f59e0b">
 </p>
 
 <p align="center">
@@ -18,22 +17,30 @@
 </p>
 
 `fastrho` is a research package for amortized, fine-scale recombination-map inference. A
-bidirectional Mamba-2 encoder-decoder reads one order-invariant feature token per SNP and estimates
-the population-scaled recombination rate for every adjacent-SNP interval.
+bidirectional Mamba2 encoder-decoder reads one order-invariant feature token per SNP and estimates
+the population-scaled recombination rate for every adjacent SNP interval.
 
-## What it does
+## At a glance
 
 | | |
 |---|---|
 | **Input** | Phased or compatible unphased population genotypes, including single-contig VCFs |
-| **Output** | Adjacent-SNP interval estimates and optional 0-based, half-open BED maps |
-| **Inference** | One pretrained model with overlapping-context inference; no per-dataset retraining |
-| **Backbone** | Bidirectional Mamba-2 state-space encoder-decoder |
-| **Rates** | Population-scaled rho and absolute rate conditional on the recorded `Ne_used` |
-| **Stage** | Public research alpha |
-| **Open empirical release** | Ag1000G Phase 2 AR1: 9 populations × 5 chromosome arms |
+| **Output** | Dense adjacent-SNP interval estimates and optional 0-based BED maps |
+| **Inference** | One pretrained model with overlapping context inference and no per-dataset retraining |
+| **Backbone** | Bidirectional Mamba2 state-space encoder-decoder |
+| **Scientific contract** | Exact simulation targets, coordinate checks, provenance ledgers, and paper-number tests |
+| **Current stage** | Alpha source release; the primary paper checkpoint is public and checksummed |
+| **Active empirical release** | Open Ag1000G Phase 2 AR1: 9 populations × 5 chromosome arms, with 2La, resistance, pedigree, and pyrho result tables |
+| **Active comparative SI** | A fixed, provenance-audited panel of 10 species |
 
-## Installation
+The model uses amortized training across diverse simulated demographic histories, enabling
+compatible new cohorts to be analyzed in one inference call. Population-scaled rates are reported
+directly; absolute-rate point estimates and intervals are conditional on either the supplied
+effective population size or the model's auxiliary point estimate, recorded as `Ne_used` with the
+result. See
+[how to interpret the output](docs/interpretation.md) for practical reporting guidance.
+
+## Install
 
 Install the CPU package and common VCF/DataFrame helpers from PyPI:
 
@@ -41,131 +48,142 @@ Install the CPU package and common VCF/DataFrame helpers from PyPI:
 python -m pip install "fastrho[io]"
 ```
 
-GPU inference requires Linux, an NVIDIA GPU, and compatible PyTorch, CUDA, and Mamba-SSM builds.
-For the fully locked inference environment, clone the public source repository:
+For the complete paper workflow and locked source environment, clone the public repository:
 
 ```bash
 git clone https://github.com/kevinkorfmann/fastrho.git
 cd fastrho
-uv sync --frozen --extra inference --extra io
-source .venv/bin/activate
+uv sync --frozen --extra figures --extra dev
 ```
 
-Inference is tested on Python 3.10 and 3.12. `uv` is recommended for inference because the lockfile
-also records the extension build requirements. CPU-only VCF inspection, simulation, and data
-conversion do not load the model. Record the environment used for a run with its checkpoint IDs.
+Training and inference require a CUDA environment supported by Mamba. The exact manuscript
+environment is recorded in [`requirements/cuda121-paper.txt`](requirements/cuda121-paper.txt).
 
-## Download a verified model bundle
+## Reproducible source workflow
 
-The model registry includes a general checkpoint plus qualified specialists for ordinary phased
-data, folded composite LD, mosquito-scale effective population size, predominant selfing, and severe
-canine bottlenecks. Keep each checkpoint with its own `feat_stats.npz`; the companion is part of the
-trained model and must not be recomputed from a prediction cohort.
-
-| Model | Primary use | Input mode |
-|---|---|---|
-| `domain-randomized-v1` | General default across input views | matching view |
-| `base-v1` | Ordinary phased/polarized data | `phased` |
-| `composite-ld-v1` | Unphased/unpolarized diploid data | `unpolarized` |
-| `high-ne-v1` | Mosquito and other high-$N_e$ dipteran data | `phased` |
-| `selfing-v1` | Predominantly selfing haplotype panels | `phased` |
-| `dog-bottleneck-v1` | Severe canine bottleneck histories | `unpolarized` |
+The training command creates a deterministic validation split when the shard directory does not
+already contain `train/`, `val/`, or `test/` subdirectories.
 
 ```bash
-fastrho-fetch-model \
-  --model-id domain-randomized-v1 \
+fastrho simulate --data-dir sims --num-ts 2000 --sequence-length 1000000
+fastrho preprocess --sim-dir sims --out-dir shards --with-features
+fastrho train --model base --dataset-path shards --devices 1 --epochs 40 --seed 0
+```
+
+For domain-randomized training, create aligned `hap`, `gt`, and `gtf` shard trees with
+`--sfs-shape --r2-debias`, then train with `--dr-base`. These feature flags live in this repository;
+no alternate checkout is required.
+
+The exact primary paper model has a numbered portable Slurm workflow, explicit seed schedule,
+metric-based checkpoint selection, and byte-level release verification under
+[`models/domain-randomized-v1/reproduce/`](models/domain-randomized-v1/reproduce/).
+
+## Prediction with an archived model
+
+Checkpoint statistics are authoritative: `fastrho` reconstructs the exact phased, genotype,
+folded, or domain-randomized featurizer from metadata and rejects incompatible inputs.
+`feat_stats.npz` is the checkpoint's model companion file—not statistics to compute from the
+prediction cohort. Download it with the checkpoint, keep the pair together, and do not modify it
+for a new species or VCF.
+
+```bash
+python3 scripts/fetch_model_release.py --model-id domain-randomized-v1 \
   --output-dir downloaded-models
 ```
 
-Change the model ID to download a specialist. All public, checksummed artifacts and model cards are
-available from the [fastrho-models releases](https://github.com/kevinkorfmann/fastrho-models/releases).
-
-## Make a map
-
 ```bash
-fastrho predict \
-  --vcf cohort.vcf.gz \
-  --chrom chr1 \
+fastrho predict --vcf cohort.vcf.gz --chrom 2L \
   --checkpoint downloaded-models/domain-randomized-v1/model.ckpt \
   --stats downloaded-models/domain-randomized-v1/feat_stats.npz \
-  --mutation-rate 1.5e-8 \
-  --ne 10000 \
-  --input-mode auto \
-  --missing drop-site \
-  --window-size 50000 \
-  --out chr1.50kb.bed
+  --input-mode auto --missing drop-site --out map.bed
 ```
 
-VCF input is restricted to one contig per prediction call. Missing sites are dropped rather than
-imputed as reference, and positions are converted to 0-based, half-open BED coordinates.
-`input_mode="auto"` distinguishes phased from unphased genotype separators; it cannot establish
-ancestral polarization.
+VCF input is restricted to one contig, missing sites are dropped rather than imputed as reference,
+and positions are converted to 0-based BED coordinates. Unphased input is detected from genotype
+separators and requires a checkpoint that declares a compatible genotype-token view.
 
-## Python API
+## Phase 2 paper and reproducibility
 
-```python
-from pathlib import Path
-import fastrho
+The current manuscript is:
 
-bundle = Path("downloaded-models/domain-randomized-v1")
+> **Scalable inference of recombination maps across evolutionary contexts**
 
-pred = fastrho.quick_map_from_vcf(
-    "cohort.vcf.gz",
-    bundle / "model.ckpt",
-    bundle / "feat_stats.npz",
-    contig="chr1",
-    mutation_rate=1.5e-8,
-    Ne=10_000,
-    input_mode="auto",
-    missing="drop-site",
-    device="cuda:0",
-)
+The mosquito analysis in the current manuscript is exclusively the open Ag1000G Phase 2 AR1
+analysis. Its 45 population-by-arm maps and compact result tables can be
+[downloaded directly](docs/data.md); the committed BED release is under
+[`paper/anopheles_variants/phase2/release/`](paper/anopheles_variants/phase2/release/). The
+comparative SI uses the fixed 10-species panel recorded in
+[`paper/figdata/transect.json`](paper/figdata/transect.json).
 
-df = fastrho.to_dataframe(pred, chrom="chr1")
-fastrho.write_bed(pred, "chr1.50kb.bed", chrom="chr1", window_size=50_000)
+The authoritative article and SI are `main_phase2.tex` and `si_phase2.tex` in
+[`kevinkorfmann/fastrho-manuscript-2026-07-21`](https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21).
+This package repository owns the analysis code and generated artifacts, not a second editable copy
+of the paper. [`reproduce/manuscript.lock.json`](reproduce/manuscript.lock.json) pins the exact
+manuscript commit and files used by the workflow. Superseded Phase 3 material is legacy and is never
+an active input.
+
+The complete ordered reproduction hub is [`reproduce/`](reproduce/). From a fresh clone, one command
+recomputes generated results, public downloads, all figures, the numeric audit, both PDFs, and every
+paper-specific verification gate:
+
+```bash
+./reproduce/run.sh
 ```
 
-## Before interpreting a map
+The build writes disposable intermediates to `tmp/` and PDFs to `output/pdf/`. Those directories are
+ignored because their tracked sources, figures, tables, snapshots, and generator scripts reproduce
+them.
 
-An LD-based estimate is a population recombination map, not a direct observation of contemporary
-crossovers. Demographic history, structure, inversions, selection, relatedness, selfing, and gene
-conversion can change the signal. For a new cohort, record the checkpoint and statistics hashes,
-input view, filtering, mutation rate, effective population size, coordinates, and reporting window;
-then evaluate split-sample repeatability, realistic simulations, or an independent map.
+## Repository map
 
-## Phase 2 maps and results
+| Path | Purpose |
+|---|---|
+| [`fastrho/`](fastrho/) | Importable package, CLI, inference, simulation, and training code |
+| [`reproduce/`](reproduce/) | One ordered command, machine-readable workflow, and live inventory for the complete paper and SI |
+| [`docs/`](docs/) | Minimal user guide: quickstart, Python API, dataset preparation, and interpretation |
+| [`examples/manuscript_species/`](examples/manuscript_species/) | Download and inference presets for every empirical manuscript species |
+| [`paper/manuscript/`](paper/manuscript/) | Generated figures and TeX inputs staged into the authoritative Phase 2 manuscript |
+| [`paper/anopheles_variants/phase2/`](paper/anopheles_variants/phase2/) | Active open-data mosquito maps, results, provenance, figures, and release files |
+| [`legacy/`](legacy/) | Superseded analyses, inactive outputs, and historical utilities excluded from Phase 2 |
+| [`paper/results_snapshot/`](paper/results_snapshot/) | Frozen numerical inputs used by the paper audit |
+| [`research/`](research/) | Frozen Phase 2 supporting workflows for Arabis and demography-matched benchmarks |
+| [`research/demography_matched/`](research/demography_matched/) | Ordered Slurm workflow and frozen outputs for the paired ReLERNN/pyrho demographic benchmark |
+| [`scripts/`](scripts/) | [Ordered manuscript analysis, figure-generation, and release utilities](scripts/README.md) |
+| [`tests/`](tests/) | Software contracts and independent manuscript-number checks |
 
-The manuscript's active mosquito analysis uses the freely available Ag1000G Phase 2 AR1 release.
-The repository now includes the frozen nine-population design, 45 population-by-arm maps, the
-public BED atlas, compact 2La, resistance-region, pedigree, and pyrho results, and checksummed
-provenance under [`paper/anopheles_variants/phase2/`](paper/anopheles_variants/phase2/).
-
-Ready-to-use tables and a compact result bundle are listed in the
-[data documentation](https://fastrho.readthedocs.io/en/latest/data.html). Restricted MalariaGEN
-Phase 3 analyses and results are not distributed in this repository.
-
-## Documentation
-
-The public documentation contains the software guide, method schematic, and synthetic example.
-
-- [Quickstart](https://fastrho.readthedocs.io/en/latest/quickstart.html)
-- [Python API](https://fastrho.readthedocs.io/en/latest/python-api.html)
-- [Use fastrho with your dataset](https://fastrho.readthedocs.io/en/latest/your-data.html)
-- [Interpret the output](https://fastrho.readthedocs.io/en/latest/interpretation.html)
-- [Checkpoints](https://fastrho.readthedocs.io/en/latest/checkpoints.html)
-- [Known-answer simulation](https://fastrho.readthedocs.io/en/latest/simulation.html)
-- [Phase 2 maps and results](https://fastrho.readthedocs.io/en/latest/data.html)
+See [`research/README.md`](research/README.md) and [`paper/README.md`](paper/README.md) for the two
+largest project-specific layouts.
 
 ## Verification
 
 ```bash
 python -m pytest tests/test_io_api.py tests/test_phase1_target.py \
   tests/test_phase2_features.py tests/test_stitching.py
+python -m pytest tests/paper
 python scripts/release_check.py
 python -m build
 ```
 
+The manuscript suite distinguishes snapshot consistency from raw-array rederivation; a passing
+snapshot check alone is not described as end-to-end reproducibility. Every external manuscript
+dataset is registered in [`paper/data_provenance.yaml`](paper/data_provenance.yaml) with its version,
+access route, terms, citation, local derivatives, and producing scripts.
+
+## Documentation
+
+- [Start here](docs/index.md)
+- [Quickstart](docs/quickstart.md)
+- [Python API](docs/python-api.md)
+- [Use fastrho with your dataset](docs/your-data.md)
+- [Run every manuscript species example](examples/manuscript_species/README.md)
+- [Interpret the output](docs/interpretation.md)
+- [Download, verify, or retrain checkpoints](docs/checkpoints.md)
+- [Machine-readable model registry](fastrho/model_registry.json)
+- [Contributing](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
+
 ## Citation and license
 
-Citation metadata are provided in `CITATION.cff`. Code is licensed under the MIT License; external
-datasets and pretrained weights retain their own licenses and terms.
+Citation metadata are provided in [`CITATION.cff`](CITATION.cff). Code is released under the
+[MIT License](LICENSE); external datasets and pretrained weights retain their own licenses and
+terms.

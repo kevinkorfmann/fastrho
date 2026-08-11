@@ -1,0 +1,95 @@
+diff --git a/ReLERNN/ReLERNN_PREDICT b/ReLERNN/ReLERNN_PREDICT
+index d5c098c..6cea667 100755
+--- a/ReLERNN/ReLERNN_PREDICT
++++ b/ReLERNN/ReLERNN_PREDICT
+@@ -6,6 +6,7 @@ using a GRU network trained in ReLERNN_TRAIN.py
+ 
+ from ReLERNN.imports import *
+ from ReLERNN.helpers import *
++from ReLERNN.networks import GRU_TUNED84
+ from ReLERNN.sequenceBatchGenerator import *
+ 
+ 
+@@ -40,7 +41,7 @@ def main():
+     testDir = os.path.join(projectDir,"test")
+     networkDir = os.path.join(projectDir,"networks")
+     vcfDir = os.path.join(projectDir,"splitVCFs")
+-    modelSave = os.path.join(networkDir,"model.keras")
++    modelSave = os.path.join(networkDir,"model.weights.h5")
+ 
+ 
+     ## Read in the window sizes
+@@ -121,6 +122,7 @@ def main():
+         load_and_predictVCF(VCFGenerator=vcf_gen,
+                 resultsFile=pred_resultFile,
+                 network=modelSave,
++                ModelFuncPointer=GRU_TUNED84,
+                 chromStr=wins[i][0],
+                 minS=args.minS,
+                 numWins=numWins,
+diff --git a/ReLERNN/ReLERNN_TRAIN b/ReLERNN/ReLERNN_TRAIN
+index e346631..db0af4a 100755
+--- a/ReLERNN/ReLERNN_TRAIN
++++ b/ReLERNN/ReLERNN_TRAIN
+@@ -44,7 +44,7 @@ def main():
+     ## Define output files
+     test_resultFile = os.path.join(networkDir,"testResults.p")
+     test_resultFig = os.path.join(networkDir,"testResults.pdf")
+-    modelSave = os.path.join(networkDir,"model.keras")
++    modelSave = os.path.join(networkDir,"model.weights.h5")
+ 
+ 
+     ## Identify padding required
+diff --git a/ReLERNN/helpers.py b/ReLERNN/helpers.py
+index 0fc89c6..b60c520 100644
+--- a/ReLERNN/helpers.py
++++ b/ReLERNN/helpers.py
+@@ -258,6 +258,7 @@ def zscoreTargets(self):
+ def load_and_predictVCF(VCFGenerator,
+             resultsFile=None,
+             network=None,
++            ModelFuncPointer=None,
+             chromStr=None,
+             minS = 50,
+             numWins = None,
+@@ -274,9 +275,11 @@ def load_and_predictVCF(VCFGenerator,
+     for gpu in gpus:
+         tf.config.experimental.set_memory_growth(gpu, True)
+ 
+-    # load trained model
+-    if(network != None):
+-        model = keras.saving.load_model(network)
++    # Rebuild the fixed ReLERNN architecture and load trained weights.
++    if(network != None and ModelFuncPointer != None):
++        x = VCFGenerator.__getitem__(0)[0]
++        model = ModelFuncPointer(x, None)
++        model.load_weights(network)
+     else:
+         print("Error: no pretrained network found!")
+         sys.exit(1)
+@@ -339,7 +342,8 @@ def runModels(ModelFuncPointer,
+             ModelCheckpoint(
+                 filepath=network,
+                 monitor='val_loss',
+-                save_best_only=True),
++                save_best_only=True,
++                save_weights_only=True),
+             TerminateOnNaN()
+             ]
+ 
+@@ -351,14 +355,7 @@ def runModels(ModelFuncPointer,
+ 
+     # Save the trained model
+     if(network != None):
+-        model.save(network)
+-
+-    # Reload best weights for test evaluation
+-    if(network != None):
+-        model = keras.saving.load_model(network)
+-    else:
+-        print("Error: model and weights not loaded")
+-        sys.exit(1)
++        model.save_weights(network)
+ 
+     x,y = TestGenerator.__getitem__(0)
+     predictions = model.predict(x)

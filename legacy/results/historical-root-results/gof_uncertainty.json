@@ -1,0 +1,38 @@
+{
+  "athal": {
+    "key": "athal",
+    "model": "self",
+    "truth": 0.2387055934699959,
+    "mean_sigma": 0.6711340958631211,
+    "med_sigma": 0.642936835298572,
+    "within_sigma_vs_error": 0.36302857571439284,
+    "n_win": 200
+  },
+  "dmel": {
+    "key": "dmel",
+    "model": "model2",
+    "truth": 0.5450226839964886,
+    "mean_sigma": 0.48501353998580043,
+    "med_sigma": 0.4556876868173883,
+    "within_sigma_vs_error": 0.1632158872517617,
+    "n_win": 224
+  },
+  "dog": {
+    "key": "dog",
+    "model": "dogmodel",
+    "truth": 0.16218528548061914,
+    "mean_sigma": 0.7292849651942279,
+    "med_sigma": 0.7095627545645737,
+    "within_sigma_vs_error": -0.07368911368409738,
+    "n_win": 358
+  },
+  "human": {
+    "key": "human",
+    "model": "base",
+    "truth": 0.825343300572287,
+    "mean_sigma": 0.9767995023158506,
+    "med_sigma": 1.0069561581380377,
+    "within_sigma_vs_error": -0.02723543888433142,
+    "n_win": 160
+  }
+}

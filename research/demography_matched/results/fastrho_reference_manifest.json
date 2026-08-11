@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "role": "Auxiliary fixed-model reference; not a demographic arm",
+  "source": "Original six-setting benchmark predictions on the byte-identical frozen regions",
+  "scenarios": {
+    "bottleneck": {
+      "file": "reference/bottleneck_pred_fastrho.npz",
+      "sha256": "7989cbe0e03eb1735ebfb6fc124c9e6099aad7d5f3a12e27edf40b8885c07296"
+    },
+    "expansion": {
+      "file": "reference/expansion_pred_fastrho.npz",
+      "sha256": "f6a66b1aebe0a6d94b934b44f8fc6f522f0ceefc157123981f9f9af0b1c0ef26"
+    }
+  }
+}

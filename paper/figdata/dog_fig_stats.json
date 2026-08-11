@@ -1,0 +1,19 @@
+{
+  "own_median": 0.333,
+  "trn_median": 0.7815,
+  "n_regions": 120,
+  "n_improved": 95,
+  "fraction_improved": 0.7916666666666666,
+  "paired_median_gain": 0.22394989983626917,
+  "paired_median_gain_ci95": [
+    0.1632988336248008,
+    0.38919931441510297
+  ],
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260807,
+  "own_ne_spearman": 0.5466143482186262,
+  "own_ne_p": 1.0578315096108175e-10,
+  "gain_ne_spearman": -0.4950760469477047,
+  "gain_ne_p": 9.023069567043285e-09,
+  "b_seed": -1
+}

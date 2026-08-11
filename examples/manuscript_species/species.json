@@ -708,7 +708,7 @@
       "inference": {
         "contig": "I",
         "mutation_rate": 2.7E-9,
-        "input_mode": "unpolarized",
+        "input_mode": "phased",
         "model_id": "selfing-v1",
         "model_profile": "selfing specialist",
         "window_size_bp": 100000
@@ -741,7 +741,7 @@
       "inference": {
         "contig": "1",
         "mutation_rate": 7.0E-9,
-        "input_mode": "unpolarized",
+        "input_mode": "phased",
         "model_id": "selfing-v1",
         "model_profile": "selfing specialist",
         "window_size_bp": 100000

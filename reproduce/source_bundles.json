@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "policy": "Each Phase 2 prose number is assigned to the narrowest active source bundle. Numbers in generated includes inherit the exact producer and inputs of their artifact record.",
+  "bundles": {
+    "model-and-benchmarks": [
+      "paper/results_snapshot/summary.json",
+      "paper/results_snapshot/gene_conversion.json",
+      "paper/figdata/selection_dr.json",
+      "paper/figdata/selection_dr_figdata.npz",
+      "paper/figdata/gene_conversion.npz",
+      "scripts/fig_manuscript.py",
+      "scripts/fig_gene_conversion.py",
+      "scripts/fig_unphased.py",
+      "scripts/build_manuscript_derived.py",
+      "fastrho/model_registry.json",
+      "models/*/manifest.json"
+    ],
+    "canid-and-selfing": [
+      "paper/analysis/canid/*.json",
+      "paper/figdata/canid_*.json",
+      "paper/figdata/dog_fig.npz",
+      "paper/figdata/selfer_*.json",
+      "paper/figdata/selfer_*.npz",
+      "paper/results_snapshot/arabis_*.json",
+      "paper/figdata/arabis_*.npz",
+      "scripts/fig_manuscript_history.py",
+      "scripts/fig_arabis_cross.py",
+      "scripts/fig_si_unique.py",
+      "research/demography_matched/**/*",
+      "research/arabis/**/*",
+      "reproduce/checkpoints.json"
+    ],
+    "anopheles-phase2": [
+      "paper/anopheles_variants/phase2/config.json",
+      "paper/anopheles_variants/phase2/cohorts/*",
+      "paper/anopheles_variants/phase2/results/**/*",
+      "paper/anopheles_variants/phase2/provenance/*",
+      "paper/anopheles_variants/common/*.py",
+      "paper/anopheles_variants/phase2/*.sh",
+      "models/high-ne-v1/manifest.json"
+    ],
+    "redpoll": [
+      "paper/figdata/redpoll_*.json",
+      "paper/figdata/redpoll_*.npz",
+      "paper/figdata/fieldguide_redpoll.npz",
+      "scripts/fig_redpoll_karyotype.py"
+    ],
+    "cross-species": [
+      "paper/figdata/transect*.json",
+      "paper/tables/transect_data.tex",
+      "scripts/fig_treeoflife_panel.py",
+      "examples/manuscript_species/*",
+      "paper/data_provenance.yaml"
+    ],
+    "sources-and-context": [
+      "paper/data_provenance.yaml",
+      "paper/manuscript_metadata.json",
+      "refs.bib",
+      "reproduce/manuscript.lock.json"
+    ]
+  },
+  "rules": [
+    {"file": "main.tex|si.tex", "section_regex": "Phase 2|2La|Anopheles|Resistance|pyrho", "bundle": "anopheles-phase2"},
+    {"file": "main.tex|si.tex", "section_regex": "canid|Canid|selfing|Selfing|Arabidopsis|Arabis|bottleneck", "bundle": "canid-and-selfing"},
+    {"file": "main.tex|si.tex", "section_regex": "redpoll|Redpoll|arrangement", "bundle": "redpoll"},
+    {"file": "main.tex|si.tex", "section_regex": "Cross-species", "bundle": "cross-species"},
+    {"file": "main.tex|si.tex", "section_regex": "Simulation|Benchmark|Mamba|Token|feature|Training|Unphased|gene-conversion|Variable simulated", "bundle": "model-and-benchmarks"},
+    {"file": "main.tex|si.tex", "section_regex": ".*", "bundle": "sources-and-context"}
+  ]
+}

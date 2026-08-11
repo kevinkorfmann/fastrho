@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-phase2_root="${1:-/home/kkor/agam_phase2}"
-repo="${2:-/home/kkor/fastrho}"
+phase2_root="${1:-data/ag1000g-phase2-ar1}"
+repo="${2:-$(git rev-parse --show-toplevel)}"
 extract_python="${FASTRHO_PHASE2_EXTRACT_PYTHON:-python3}"
-inference_python="${FASTRHO_PHASE2_INFERENCE_PYTHON:-/home/kkor/venvs/fastrho/bin/python}"
-source_dir="$phase2_root/source"
+inference_python="${FASTRHO_PHASE2_INFERENCE_PYTHON:-python3}"
+source_dir="${FASTRHO_PHASE2_SOURCE_DIR:-$repo/paper/anopheles_variants/common}"
 raw="$phase2_root/raw/haplotypes_main_hdf5"
-selected="$phase2_root/cohorts/selected_samples.tsv"
+selected="${FASTRHO_PHASE2_SELECTED_SAMPLES:-$repo/paper/anopheles_variants/phase2/cohorts/selected_samples.tsv}"
 normalized="$phase2_root/normalized"
 maps="$phase2_root/maps"
 logs="$phase2_root/logs"
-checkpoint="/home/kkor/fastrho_data/campaign_hidip/train15k/fastrho/version_0/checkpoints/epoch=37-val_loss=-0.178.ckpt"
-stats="/home/kkor/fastrho_data/campaign_hidip/shards15k/feat_stats.npz"
+checkpoint="${FASTRHO_PHASE2_CHECKPOINT:-$repo/downloaded-models/high-ne-v1/model.ckpt}"
+stats="${FASTRHO_PHASE2_STATS:-$repo/downloaded-models/high-ne-v1/feat_stats.npz}"
 
 test -f "$phase2_root/provenance/raw_files.sha256"
 test -f "$selected"

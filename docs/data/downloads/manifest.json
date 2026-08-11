@@ -1,0 +1,315 @@
+{
+  "datasets": [
+    {
+      "bytes": 766474,
+      "columns": [
+        "cohort",
+        "release_population",
+        "species",
+        "country",
+        "chromosome_arm",
+        "start_bp",
+        "end_bp",
+        "rate_per_bp",
+        "cM_per_Mb",
+        "rho_per_bp",
+        "n_haplotypes",
+        "Ne_estimate",
+        "panel_twoLa_frequency",
+        "panel_expected_heterokaryotype_frequency",
+        "full_twoLa_frequency",
+        "full_expected_heterokaryotype_frequency",
+        "n_full_twoLa_samples"
+      ],
+      "description": "Nine open Ag1000G Phase 2 AR1 population maps across five chromosome arms at 50-kb resolution.",
+      "file": "anopheles_maps.tsv.gz",
+      "rows": 41463,
+      "sha256": "870365059d7c84d816ccaf821252949dcc8f89c07ffdde9dc0a46a1ee955a020",
+      "source_artifacts": [
+        "paper/anopheles_variants/phase2/release/atlas_anopheles/bed",
+        "paper/anopheles_variants/phase2/release/atlas_anopheles/manifest.tsv",
+        "paper/anopheles_variants/phase2/results/phase2_2la.json"
+      ],
+      "units": "rate_per_bp and cM_per_Mb; rho_per_bp is population scaled; 2La columns distinguish the 40-mosquito map panel from all eligible released samples"
+    },
+    {
+      "bytes": 775,
+      "columns": [
+        "cohort",
+        "release_population",
+        "species",
+        "country",
+        "n_full_samples",
+        "n_map_samples",
+        "full_twoLa_frequency",
+        "full_expected_heterokaryotype_frequency",
+        "full_observed_heterokaryotype_frequency",
+        "panel_twoLa_frequency",
+        "panel_expected_heterokaryotype_frequency",
+        "panel_observed_heterokaryotype_frequency",
+        "inside_outside_rate_ratio",
+        "suppression_depth"
+      ],
+      "description": "Population-level 2La arrangement frequencies and inferred suppression summaries for the nine Phase 2 cohorts.",
+      "file": "phase2_2la.tsv.gz",
+      "rows": 9,
+      "sha256": "75b463e73f921426688f96227ba087afb098219128eaa139f0902cfe994bc69b",
+      "source_artifacts": [
+        "paper/anopheles_variants/phase2/results/phase2_2la.json"
+      ],
+      "units": "frequencies, inside/outside rate ratio, and suppression depth"
+    },
+    {
+      "bytes": 5641,
+      "columns": [
+        "cohort",
+        "species",
+        "resistance_region",
+        "chromosome_arm",
+        "position_mb",
+        "focal_rate_per_bp",
+        "matched_control_median_rate_per_bp",
+        "focal_control_ratio",
+        "nucleotide_diversity",
+        "H12",
+        "n_snps",
+        "n_matched_controls",
+        "population_panel_median_ratio",
+        "population_permutation_p"
+      ],
+      "description": "Focal and diversity/H12-matched control rates for the prespecified 15 resistance regions in all nine Phase 2 populations.",
+      "file": "phase2_resistance.tsv.gz",
+      "rows": 135,
+      "sha256": "d6081aad4a56e22108639b176490494f7628216832ecdaa7df748c98b99ce25f",
+      "source_artifacts": [
+        "paper/anopheles_variants/phase2/results/phase2_resistance.json"
+      ],
+      "units": "rate per bp, focal/control ratio, nucleotide diversity, H12, and matching metadata"
+    },
+    {
+      "bytes": 1879,
+      "columns": [
+        "arm",
+        "start",
+        "end",
+        "events",
+        "exposure_bp",
+        "marker_span_fraction",
+        "direct_normalized",
+        "atlas_normalized",
+        "supported"
+      ],
+      "description": "Broad-scale Phase 2 laboratory-cross and inferred-atlas rates on common 5-Mb autosomal windows.",
+      "file": "phase2_pedigree_windows.tsv.gz",
+      "rows": 43,
+      "sha256": "7f3fa9392e6df8cd9721f994710a7471b6dff4895a4b26306649ba2a583cb49b",
+      "source_artifacts": [
+        "paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree_windows.tsv"
+      ],
+      "units": "within-arm normalized direct and inferred rates"
+    },
+    {
+      "bytes": 311,
+      "columns": [
+        "cohort",
+        "chromosome_arm",
+        "region_mb",
+        "n_haplotypes",
+        "n_snps",
+        "watterson_Ne",
+        "spearman_matched",
+        "spearman_matched_p",
+        "n_matched_windows",
+        "spearman_published",
+        "spearman_published_p",
+        "n_published_windows"
+      ],
+      "description": "Matched-window concordance between fastrho and pyrho for three frozen Phase 2 regions.",
+      "file": "phase2_pyrho.tsv.gz",
+      "rows": 3,
+      "sha256": "f6732fbe4f6ed4661429b278101ff7d69c662cda58501014ea9cada90ef81f60",
+      "source_artifacts": [
+        "paper/anopheles_variants/phase2/results/phase2_pyrho.json"
+      ],
+      "units": "Spearman correlation, two-sided p-value, and common-window count"
+    },
+    {
+      "bytes": 14887,
+      "columns": [
+        "campaign",
+        "panel_scope",
+        "chromosome",
+        "start_bp",
+        "end_bp",
+        "cross_relative_rate",
+        "nemorensis_relative_rate",
+        "sagittata_relative_rate",
+        "consensus_relative_rate"
+      ],
+      "description": "F2 cross and inferred recombination-map shapes for both Arabis panels and three campaigns.",
+      "file": "arabis_cross_maps.tsv.gz",
+      "rows": 612,
+      "sha256": "96c071f547c8510583f54074978881eb8a09b3716cf71d4f248def2608cd4474",
+      "source_artifacts": [
+        "paper/figdata/arabis_cross.npz",
+        "paper/figdata/arabis_cross_smalln.npz",
+        "paper/figdata/arabis_cross_structured.npz"
+      ],
+      "units": "chromosome-relative rate; each chromosome and series has mean 1"
+    },
+    {
+      "bytes": 25955,
+      "columns": [
+        "chromosome",
+        "center_mb",
+        "fastrho_selfing_rate_per_bp",
+        "pyrho_panmictic_rate_per_bp",
+        "salome_meiotic_rate_per_bp",
+        "rowan_meiotic_rate_per_bp",
+        "n_haplotypes",
+        "n_snps"
+      ],
+      "description": "Selfing-aware, panmictic, and two meiotic Arabidopsis thaliana maps.",
+      "file": "arabidopsis_maps.tsv.gz",
+      "rows": 1193,
+      "sha256": "f04ecbce5cc29ffd1d91706a89570f2a1a4fb9e351a82b5e3cf178a5b4233379",
+      "source_artifacts": [
+        "paper/figdata/selfer_chroms.npz",
+        "paper/figdata/rowan_map.npz"
+      ],
+      "units": "rate per bp at 100-kb resolution"
+    },
+    {
+      "bytes": 11652,
+      "columns": [
+        "chromosome",
+        "start_bp",
+        "end_bp",
+        "center_bp",
+        "pooled_rho_per_bp",
+        "arrangement_A_rho_per_bp",
+        "arrangement_B_rho_per_bp",
+        "arrangement_A_half1_rho_per_bp",
+        "arrangement_A_half2_rho_per_bp",
+        "arrangement_B_half1_rho_per_bp",
+        "arrangement_B_half2_rho_per_bp",
+        "inside_supergene"
+      ],
+      "description": "Pooled and arrangement-stratified redpoll chromosome-1 maps.",
+      "file": "redpoll_maps.tsv.gz",
+      "rows": 230,
+      "sha256": "f5a68ba03e783861324a667fb2a2d498127265917687354a54f6581f35d19faa",
+      "source_artifacts": [
+        "paper/figdata/fieldguide_redpoll.npz",
+        "paper/figdata/redpoll_karyotype_maps.npz"
+      ],
+      "units": "population-scaled rho per bp at 500-kb resolution"
+    },
+    {
+      "bytes": 70112,
+      "columns": [
+        "species_key",
+        "common_name",
+        "latin_name",
+        "clade",
+        "source",
+        "model",
+        "status",
+        "qualification_tier",
+        "qualification_note",
+        "validated",
+        "center_mb",
+        "predicted_rate_per_bp",
+        "reference_rate_per_bp",
+        "reference_map",
+        "n_diploids",
+        "n_haplotypes"
+      ],
+      "description": "Representative 100-kb tracks for the ten-species cross-species comparison.",
+      "file": "tree_of_life_maps.tsv.gz",
+      "rows": 6657,
+      "sha256": "c0783383b6adfec0cd2fcdc2f3c7d7d562307305fe22c8c1b9c158c0ff2f1d50",
+      "source_artifacts": [
+        "paper/figdata/transect.json"
+      ],
+      "units": "rate per bp; status distinguishes validation and repeatability-qualified tracks; qualification_tier distinguishes core and context-limited cohorts"
+    },
+    {
+      "bytes": 545,
+      "columns": [
+        "center_mb",
+        "generative_rate_per_bp",
+        "large_population_inferred_rate_per_bp",
+        "bottlenecked_population_inferred_rate_per_bp"
+      ],
+      "description": "One shared simulated canid landscape under large and bottlenecked populations.",
+      "file": "canid_example_map.tsv.gz",
+      "rows": 20,
+      "sha256": "0fe83b4561797458162ed91a4cae1bf15a9ee5be020ba62ad3f1625a4a2f140c",
+      "source_artifacts": [
+        "paper/figdata/dog_fig.npz"
+      ],
+      "units": "rate per bp at 50-kb resolution"
+    },
+    {
+      "bytes": 2649,
+      "columns": [
+        "region_id",
+        "bottlenecked_population_Ne",
+        "own_data_log_pearson",
+        "source_transfer_log_pearson"
+      ],
+      "description": "Paired canid own-data and source-transfer recovery over 120 regions.",
+      "file": "canid_recovery.tsv.gz",
+      "rows": 120,
+      "sha256": "09eef8aeae7a4d2ad6125f2c616973e7aeedfe99c496a20895c7f09cd35ae455",
+      "source_artifacts": [
+        "paper/figdata/dog_fig.npz"
+      ],
+      "units": "100-kb log-Pearson correlation"
+    },
+    {
+      "bytes": 213810,
+      "columns": [
+        "scenario",
+        "method",
+        "history",
+        "region_id",
+        "start_bp",
+        "end_bp",
+        "true_rate_per_bp",
+        "predicted_rate_per_bp"
+      ],
+      "description": "Every paired ReLERNN and pyrho prediction for the bottleneck and expansion benchmark.",
+      "file": "demography_matched_windows.tsv.gz",
+      "rows": 19200,
+      "sha256": "b0779f1e86d6e12c5040698eb9a07198ce3019c90125d46000076633628d65d4",
+      "source_artifacts": [
+        "paper/figdata/demography_matched_predictions.npz"
+      ],
+      "units": "rate per bp on the common 25-kb grid"
+    }
+  ],
+  "description": "Plot-ready empirical maps and map-recovery outputs from the fastrho paper.",
+  "resources": [
+    {
+      "bytes": 57718,
+      "description": "Compact source results, cohort manifest, and provenance for the active Phase 2 manuscript analysis.",
+      "file": "phase2_results.zip",
+      "sha256": "2153702182a5ea69b029e49985553d611035bf161fb98ad9fccdfe41e9afbf97"
+    },
+    {
+      "bytes": 7951041,
+      "description": "Frozen bottleneck and expansion inputs for the paired demographic benchmark.",
+      "file": "demography_matched_inputs.zip",
+      "sha256": "6c18b21b09cc9a9543c2ba9363c8a7920b26ae763f4510160efd8b6550f2c792"
+    },
+    {
+      "bytes": 8261,
+      "description": "Paired constant-history and demography-matched ReLERNN and pyrho results.",
+      "file": "demography_matched_results.json",
+      "sha256": "65bc711ba48d46b095beb1902445d077044441d0bd25a4e5960cef4551d95a61"
+    }
+  ],
+  "schema_version": 1
+}

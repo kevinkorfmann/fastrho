@@ -1,0 +1,70 @@
+{
+  "note": "Selfer recovery ceiling decomposition (A. thaliana, 100kb).",
+  "clean_sim_recovery": {
+    "outcrosser_base": 0.882,
+    "selfer_self2": 0.875,
+    "source": "scripts/selfer_ceiling_test.py, 12x2Mb chr1 slices, truth=exact input map"
+  },
+  "truth_map_ceiling_salome_vs_rowan": {
+    "pooled_100kb": 0.552,
+    "pooled_200kb": 0.66,
+    "selfer_windows_100kb": 0.605,
+    "source": "scripts/build_rowan_map.py; Rowan et al. 2019 FileS2 (17077 COs) vs stdpopsim SalomeAveraged_TAIR10"
+  },
+  "fastrho_real_recovery": {
+    "vs_salome_mean": 0.27,
+    "vs_rowan_mean": 0.321,
+    "per_chrom_vs_salome": [
+      0.342,
+      0.362,
+      0.403,
+      0.116,
+      0.125
+    ],
+    "per_chrom_vs_rowan": [
+      0.366,
+      0.376,
+      0.364,
+      0.21,
+      0.288
+    ]
+  },
+  "pyrho_real_recovery": {
+    "vs_salome_mean": -0.22,
+    "vs_rowan_mean": -0.174,
+    "per_chrom_vs_salome": [
+      -0.355,
+      -0.174,
+      -0.209,
+      -0.119,
+      -0.242
+    ]
+  },
+  "fastrho_fraction_of_ceiling": {
+    "vs_salome": 0.446,
+    "vs_rowan": 0.531
+  },
+  "gap_decomposition": {
+    "note": "self2 recovery vs the EXACT input map under one confound at a time (scripts/ascertain_decomp.py, demog_decomp.py). Attributes the drop from clean-sim; truth-noise (0.88 exact->0.55 real reference) is separate and dominant.",
+    "clean_sim": 0.875,
+    "missing_to_ref_10pct": 0.834,
+    "genotyping_error_0.2pct": 0.894,
+    "polarization_flip_10pct": 0.831,
+    "structure_split_Fst0.2": 0.883,
+    "demographic_expansion_SMA": 0.758,
+    "verdict": "ascertainment ~0.06, structure ~0.00, expansion ~0.12; NONE reproduces the drop to 0.34 -> the dominant limit is truth-map noise (Salome<->Rowan ceiling 0.55), not a fixable modelling gap."
+  },
+  "celegans_transfer": {
+    "note": "Frozen A. thaliana-trained self2 (NO retraining) recovering the C. elegans RockmanRIAIL_ce11 map (arm-centre domain structure) from clean sim. Generality of the amortized selfing model across selfers.",
+    "per_chrom_100kb": {
+      "I": 0.838,
+      "II": 0.857,
+      "III": 0.907,
+      "IV": 0.914,
+      "V": 0.753
+    },
+    "pooled_100kb": 0.88,
+    "pooled_500kb": 0.927,
+    "map_resolution": "RockmanRIAIL_ce11 is ~1 anchor/2Mb (very coarse); recovery is the broad domain structure"
+  }
+}

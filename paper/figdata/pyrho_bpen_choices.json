@@ -1,0 +1,38 @@
+{
+  "const_n20": {
+    "bpen": 25,
+    "w": 50
+  },
+  "real_decode": {
+    "bpen": 25,
+    "w": 50
+  },
+  "real_hapmap": {
+    "bpen": 25,
+    "w": 50
+  },
+  "bottleneck_n20_wd": {
+    "bpen": 25,
+    "w": 50
+  },
+  "const_n40": {
+    "bpen": 20,
+    "w": 50
+  },
+  "const_n100": {
+    "bpen": 20,
+    "w": 50
+  },
+  "bottleneck_n20": {
+    "bpen": 20,
+    "w": 50
+  },
+  "expansion_n20": {
+    "bpen": 20,
+    "w": 50
+  },
+  "real_dog": {
+    "bpen": 20,
+    "w": 50
+  }
+}

@@ -25,5 +25,5 @@
     "cross_samples": 234,
     "crosses": 11
   },
-  "local_space_policy": "The complete PASS VCFs total hundreds of gigabytes and are not duplicated on the local workstation. VCF-dependent pedigree work runs on Betty or Sesame and is checksum-bound there."
+  "local_space_policy": "The complete source files total hundreds of gigabytes and remain at the public release URL. The repository records exact paths, sizes, cohort selections, derived outputs, and checksums so they can be downloaded and recomputed on any compatible system."
 }

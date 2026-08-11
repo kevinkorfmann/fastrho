@@ -1,0 +1,225 @@
+{
+  "by_design": {
+    "rhine6_plus_disjoint_allopatric_pair": {
+      "spearman_subset_vs_cross": {
+        "median": -0.20645062792972615,
+        "range": [
+          -0.2642054610943676,
+          -0.1335983398454066
+        ]
+      },
+      "spearman_subset_vs_full": {
+        "median": 0.727997014435881,
+        "range": [
+          0.6728658588303148,
+          0.8353868510780261
+        ]
+      }
+    }
+  },
+  "cross_map_audit": {
+    "chromosomes": {
+      "chr1": {
+        "isotonic_rms_cm": 0.02925447427770738,
+        "map_span_cm": 184.86304940448198,
+        "orientation": 1,
+        "physical_span_mb": 31.285195,
+        "raw_markers": 304,
+        "unique_positions": 304
+      },
+      "chr2": {
+        "isotonic_rms_cm": 3.1138594524101095e-06,
+        "map_span_cm": 129.138307733054,
+        "orientation": 1,
+        "physical_span_mb": 25.367191,
+        "raw_markers": 232,
+        "unique_positions": 232
+      },
+      "chr3": {
+        "isotonic_rms_cm": 1.4372104128956152e-06,
+        "map_span_cm": 207.661198544656,
+        "orientation": 1,
+        "physical_span_mb": 29.785801,
+        "raw_markers": 244,
+        "unique_positions": 244
+      },
+      "chr4": {
+        "isotonic_rms_cm": 0.038176204601353965,
+        "map_span_cm": 185.585949457513,
+        "orientation": 1,
+        "physical_span_mb": 37.232015,
+        "raw_markers": 369,
+        "unique_positions": 369
+      },
+      "chr5": {
+        "isotonic_rms_cm": 0.5519179673686359,
+        "map_span_cm": 138.71593893343982,
+        "orientation": 1,
+        "physical_span_mb": 26.269114,
+        "raw_markers": 202,
+        "unique_positions": 202
+      },
+      "chr6": {
+        "isotonic_rms_cm": 0.14508507086780567,
+        "map_span_cm": 138.11646113300802,
+        "orientation": 1,
+        "physical_span_mb": 21.051823,
+        "raw_markers": 160,
+        "unique_positions": 160
+      },
+      "chr7": {
+        "isotonic_rms_cm": 0.22149732553330814,
+        "map_span_cm": 114.960445291307,
+        "orientation": 1,
+        "physical_span_mb": 20.298471,
+        "raw_markers": 220,
+        "unique_positions": 220
+      },
+      "chr8": {
+        "isotonic_rms_cm": 1.0247969028328092,
+        "map_span_cm": 239.709990966127,
+        "orientation": 1,
+        "physical_span_mb": 36.591633,
+        "raw_markers": 351,
+        "unique_positions": 351
+      }
+    },
+    "markers": 2082
+  },
+  "design_note": "Subsets and frozen models were selected without the F2 map.",
+  "panels": [
+    {
+      "accessions": "10,25,29,30,337,358,163,233",
+      "design": "rhine6_plus_disjoint_allopatric_pair",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "nemorensis_rhine6_pair0",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": 0.06813186813186813,
+          "subset_vs_full": 0.4813186813186813
+        },
+        "chr2": {
+          "subset_vs_cross": 0.27272727272727276,
+          "subset_vs_full": 0.8636363636363636
+        },
+        "chr3": {
+          "subset_vs_cross": -0.6868131868131868,
+          "subset_vs_full": 0.9230769230769231
+        },
+        "chr4": {
+          "subset_vs_cross": -0.41666666666666674,
+          "subset_vs_full": 0.9264705882352943
+        },
+        "chr5": {
+          "subset_vs_cross": 0.07692307692307693,
+          "subset_vs_full": 0.6783216783216784
+        },
+        "chr6": {
+          "subset_vs_cross": 0.31666666666666665,
+          "subset_vs_full": 0.8833333333333333
+        },
+        "chr7": {
+          "subset_vs_cross": -0.18333333333333335,
+          "subset_vs_full": 0.65
+        },
+        "chr8": {
+          "subset_vs_cross": -0.6176470588235294,
+          "subset_vs_full": 0.009803921568627453
+        }
+      },
+      "spearman_subset_vs_cross": -0.20645062792972615,
+      "spearman_subset_vs_full": 0.727997014435881,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,337,358,293,309",
+      "design": "rhine6_plus_disjoint_allopatric_pair",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "nemorensis_rhine6_pair1",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.12087912087912088,
+          "subset_vs_full": 0.7362637362637363
+        },
+        "chr2": {
+          "subset_vs_cross": 0.11818181818181818,
+          "subset_vs_full": 0.6727272727272727
+        },
+        "chr3": {
+          "subset_vs_cross": -0.6263736263736264,
+          "subset_vs_full": 0.901098901098901
+        },
+        "chr4": {
+          "subset_vs_cross": -0.48774509803921573,
+          "subset_vs_full": 0.877450980392157
+        },
+        "chr5": {
+          "subset_vs_cross": 0.1328671328671329,
+          "subset_vs_full": 0.8321678321678322
+        },
+        "chr6": {
+          "subset_vs_cross": 0.3,
+          "subset_vs_full": 0.8166666666666667
+        },
+        "chr7": {
+          "subset_vs_cross": 0.41666666666666663,
+          "subset_vs_full": 0.6166666666666666
+        },
+        "chr8": {
+          "subset_vs_cross": -0.8088235294117647,
+          "subset_vs_full": -0.2132352941176471
+        }
+      },
+      "spearman_subset_vs_cross": -0.2642054610943676,
+      "spearman_subset_vs_full": 0.6728658588303148,
+      "species": "nemorensis"
+    },
+    {
+      "accessions": "10,25,29,30,337,358,393,435",
+      "design": "rhine6_plus_disjoint_allopatric_pair",
+      "n_windows": 102,
+      "omitted": "",
+      "panel": "nemorensis_rhine6_pair2",
+      "per_chromosome": {
+        "chr1": {
+          "subset_vs_cross": -0.2087912087912088,
+          "subset_vs_full": 0.7714285714285714
+        },
+        "chr2": {
+          "subset_vs_cross": 0.11818181818181818,
+          "subset_vs_full": 0.6636363636363638
+        },
+        "chr3": {
+          "subset_vs_cross": -0.7417582417582418,
+          "subset_vs_full": 0.9340659340659341
+        },
+        "chr4": {
+          "subset_vs_cross": -0.44852941176470595,
+          "subset_vs_full": 0.9068627450980394
+        },
+        "chr5": {
+          "subset_vs_cross": 0.07692307692307693,
+          "subset_vs_full": 0.6783216783216784
+        },
+        "chr6": {
+          "subset_vs_cross": 0.049999999999999996,
+          "subset_vs_full": 0.9166666666666666
+        },
+        "chr7": {
+          "subset_vs_cross": 0.13333333333333333,
+          "subset_vs_full": 0.8499999999999999
+        },
+        "chr8": {
+          "subset_vs_cross": 0.20098039215686278,
+          "subset_vs_full": 0.8480392156862745
+        }
+      },
+      "spearman_subset_vs_cross": -0.1335983398454066,
+      "spearman_subset_vs_full": 0.8353868510780261,
+      "species": "nemorensis"
+    }
+  ],
+  "window_mb": 2.0
+}

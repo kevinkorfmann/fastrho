@@ -1,0 +1,32 @@
+{
+  "description": "Wolf-minus-dog Pearson differences from 5-Mb block bootstrap",
+  "seed": 20260807,
+  "replicates": 10000,
+  "block_size_bp": 5000000,
+  "comparisons": {
+    "all_dogs": {
+      "100kb": {
+        "difference": -0.02450487772734833,
+        "ci95": [-0.11665318871881977, 0.03710071787469738],
+        "bootstrap_fraction_le_zero": 0.8025
+      },
+      "1mb": {
+        "difference": -0.01503499870071423,
+        "ci95": [-0.15785102768832954, 0.11037567830659128],
+        "bootstrap_fraction_le_zero": 0.6157
+      }
+    },
+    "village_dogs": {
+      "100kb": {
+        "difference": -0.04652002742919903,
+        "ci95": [-0.142443727468669, 0.009661827772808882],
+        "bootstrap_fraction_le_zero": 0.9349
+      },
+      "1mb": {
+        "difference": -0.03370424831387464,
+        "ci95": [-0.20882646629652324, 0.05162003174785718],
+        "bootstrap_fraction_le_zero": 0.7377
+      }
+    }
+  }
+}

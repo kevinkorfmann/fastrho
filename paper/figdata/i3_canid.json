@@ -1,0 +1,14 @@
+{
+  "model": "gt(campaign gtf15k)",
+  "mu": 4e-09,
+  "grid_bp": 100000,
+  "NB": 58,
+  "n_windows": 400,
+  "clade": "canid (PRDM9-pseudogenized)",
+  "floor_dog": 0.7376500478127987,
+  "floor_wolf": 0.8002154388464926,
+  "floor_mean": 0.7689327433296457,
+  "between_dog_wolf": 0.6826797667485421,
+  "excess_drop": 0.08625297658110354,
+  "interpretation": "PRDM9- canids: between-population map sits at the noise floor (conserved collinear landscape), like Anopheles collinear arms, unlike PRDM9+ humans (hotspot turnover below the floor)."
+}

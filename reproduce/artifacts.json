@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "scope": "Only the Phase 2 main manuscript and SI at the commit in manuscript.lock.json.",
+  "policy": "manuscript_target is the public paper path; package_output is the reproducible artifact in this repository. Legacy Phase 3 artifacts are excluded.",
+  "artifacts": [
+    {
+      "manuscript_target": "figures_phase2/fastrho_header_mark.pdf",
+      "package_output": "paper/manuscript/figures/fastrho_header_mark.pdf",
+      "producer": "paper/manuscript/figures/fastrho_header_mark.svg",
+      "role": "decorative-static"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig1_complete.pdf",
+      "package_output": "paper/manuscript/figures/fig1_complete.pdf",
+      "producer": "paper/manuscript/figures/fig1_complete.tex",
+      "role": "main-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig1_method_validation.pdf",
+      "package_output": "paper/manuscript/figures/fig1_method_validation.pdf",
+      "producer": "scripts/fig_manuscript.py",
+      "role": "main-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig2_history_rescue.pdf",
+      "package_output": "paper/manuscript/figures/fig2_history_rescue.pdf",
+      "producer": "scripts/fig_manuscript_history.py",
+      "role": "main-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_phase2_pedigree.pdf",
+      "package_output": "paper/manuscript/figures/fig_phase2_pedigree.pdf",
+      "producer": "paper/anopheles_variants/common/plot_phase2.py",
+      "role": "main-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_phase2_anopheles.pdf",
+      "package_output": "paper/manuscript/figures/fig_phase2_anopheles.pdf",
+      "producer": "paper/anopheles_variants/common/plot_phase2.py",
+      "role": "main-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_redpoll_karyotype.pdf",
+      "package_output": "paper/figures/fig_redpoll_karyotype.pdf",
+      "producer": "scripts/fig_redpoll_karyotype.py",
+      "role": "main-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_gene_conversion.pdf",
+      "package_output": "paper/figures/fig_gene_conversion.pdf",
+      "producer": "scripts/fig_gene_conversion.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig5_unphased.pdf",
+      "package_output": "paper/figures/fig5_unphased.pdf",
+      "producer": "scripts/fig_unphased.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_si_resolution.pdf",
+      "package_output": "paper/figures/fig_si_resolution.pdf",
+      "producer": "scripts/fig_si_unique.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_si_relernn_mechanisms.pdf",
+      "package_output": "paper/figures/fig_si_relernn_mechanisms.pdf",
+      "producer": "scripts/fig_si_unique.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_si_demography_mating_limits.pdf",
+      "package_output": "paper/figures/fig_si_demography_mating_limits.pdf",
+      "producer": "scripts/fig_si_unique.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_treeoflife_panel.pdf",
+      "package_output": "paper/figures/fig_treeoflife_panel.pdf",
+      "producer": "scripts/fig_treeoflife_panel.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_si_arabis_cross.pdf",
+      "package_output": "paper/figures/fig_si_arabis_cross.pdf",
+      "producer": "scripts/fig_arabis_cross.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "figures_phase2/fig_phase2_pyrho.pdf",
+      "package_output": "paper/manuscript/figures/fig_phase2_pyrho.pdf",
+      "producer": "paper/anopheles_variants/common/plot_phase2.py",
+      "role": "si-figure"
+    },
+    {
+      "manuscript_target": "generated_phase2/data_sources_table.tex",
+      "package_output": "paper/manuscript/generated/data_sources_table.tex",
+      "producer": "scripts/make_manuscript_provenance_table.py",
+      "role": "si-table"
+    },
+    {
+      "manuscript_target": "generated_phase2/phase2_cohorts.tex",
+      "package_output": "paper/anopheles_variants/phase2/results/manuscript_generated/phase2_cohorts.tex",
+      "producer": "paper/anopheles_variants/common/phase2_manuscript_data.py",
+      "role": "si-table"
+    },
+    {
+      "manuscript_target": "generated_phase2/phase2_numbers.tex",
+      "package_output": "paper/anopheles_variants/phase2/results/manuscript_generated/phase2_numbers.tex",
+      "producer": "paper/anopheles_variants/common/phase2_manuscript_data.py",
+      "role": "shared-macros"
+    },
+    {
+      "manuscript_target": "generated_phase2/transect_sources.bib",
+      "package_output": "paper/manuscript/generated/transect_sources.bib",
+      "producer": "paper/data_provenance.yaml",
+      "role": "si-bibliography"
+    },
+    {
+      "manuscript_target": "tables_phase2/main_results.tex",
+      "package_output": "paper/tables/main_results.tex",
+      "producer": "scripts/build_manuscript_derived.py",
+      "role": "si-table"
+    },
+    {
+      "manuscript_target": "tables_phase2/prior_envelope.tex",
+      "package_output": "paper/tables/prior_envelope.tex",
+      "producer": "paper/tables/prior_envelope.tex",
+      "role": "si-table"
+    },
+    {
+      "manuscript_target": "tables_phase2/transect_data.tex",
+      "package_output": "paper/tables/transect_data.tex",
+      "producer": "paper/figdata/transect.json",
+      "role": "si-table"
+    }
+  ]
+}

@@ -25,5 +25,14 @@ the finite/positive-rate QC. The Phase 2 results are: 2La Pearson (r=0.452),
 (P=0.222); released-cross Spearman (r_s=0.671), (P=0.00186), across 32
 supported 5-Mb windows; matched-subsample mean pyrho concordance (r_s=0.837);
 and a 15-region resistance focal-to-control ratio of 0.705 across nine cohorts.
-The figures, 13-page main manuscript, and 18-page SI were visually checked. A
+The figures and both compiled manuscripts were visually checked. The committed
 `config.json` is therefore `complete` and `submission_eligible=true`.
+
+The complete paper can be verified from the committed derived artifacts with
+`./reproduce/run.sh`. To rebuild the atlas from the public Ag1000G source data,
+download the frozen model files described in
+[`docs/checkpoints.md`](../../../docs/checkpoints.md), then run
+`download_release.sh`, `run_atlas_sesame.sh`, and `run_postprocess_sesame.sh`
+from the repository root. All cohort selections, resistance targets, karyotype
+markers, analysis code, checksums, and downstream outputs are committed here;
+the historical script names do not imply a dependency on a particular host.

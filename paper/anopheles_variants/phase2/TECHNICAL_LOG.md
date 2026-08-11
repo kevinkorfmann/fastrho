@@ -13,7 +13,7 @@
   identifiers present in all five chromosome-arm HDF5 files. The all-arm
   intersection was introduced after the first extraction attempt identified a
   selected BFcol mosquito absent from the X release. The superseded extraction
-  remains recoverable on Sesame and is not eligible for promotion.
+  is excluded from the promoted release and is not an active input.
 - Model: unchanged broadened-
   \(N_e\) checkpoint and feature statistics used by the frozen mosquito atlas;
   mutation rate \(3.5\times10^{-9}\).
@@ -39,11 +39,7 @@
 
 ## Manuscript isolation
 
-Every mosquito-dependent passage in `main.tex` and `si.tex` is enclosed by an
-explicit `ANOPHELES_SLOT` comment pair. Phase 3 and Phase 2 provide exactly the
-same 13 fragment names. Switching replaces only slot contents and
-variant-owned generated assets. The common-text audit reconstructs all frozen
-Phase 3 fragments in the current manuscript, removes slot comments, normalizes
-whitespace, and requires equality with the pre-migration manuscript. Phase 2
-activation remains disabled until all result, figure, table, provenance,
-compilation, and restoration gates pass.
+Phase 2 is the sole active mosquito analysis. Its promoted figures and generated inputs are copied
+into the locked authoritative manuscript snapshot by `reproduce/stage_manuscript.py`. The package
+workflow never rewrites manuscript prose, and superseded Phase 3 material is excluded from every
+active ledger and gate.

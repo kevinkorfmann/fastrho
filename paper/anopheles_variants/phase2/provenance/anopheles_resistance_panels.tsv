@@ -1,0 +1,16 @@
+locus	arm	mb	tier	mechanism	gene_ids	evidence_source	coordinate_source	note
+Vgsc/kdr	2L	2.390000	1	target site	AGAP004707	Lucas2023; Hancock2024	original six-locus analysis	Original sentinel region; retained at the published analysis coordinate for direct comparability.
+Rdl	2L	25.400000	1	target site	AGAP006028	Lucas2023; Hancock2024	original six-locus analysis	Original sentinel region.
+Ace1	2R	3.500000	1	target site	AGAP001356	Lucas2023; Hancock2024	original six-locus analysis	Original sentinel region.
+Gste2	3R	28.600000	1	metabolic detoxification	AGAP009194	Lucas2023; Hancock2024	original six-locus analysis	Original sentinel region.
+Cyp6aa/Cyp6p	2R	28.500000	1	metabolic detoxification	AGAP002862;AGAP002865;AGAP002867	Lucas2023; Hancock2024	original six-locus analysis	Original sentinel cluster.
+Cyp9k1	X	15.240000	1	metabolic detoxification	AGAP000818	Lucas2023; Hancock2024	original six-locus analysis	Original sentinel region.
+Cyp4j5	2L	25.635160	2	metabolic detoxification	AGAP006048	Hancock2024 Table 1	MalariaGEN Ag3 genome_features	Distinct locus with a phenotype-associated surveillance marker omitted from the original panel.
+Coeae1d	2L	20.288317	2	metabolic detoxification	AGAP005756	Hancock2024 Table 1	MalariaGEN Ag3 genome_features	Distinct locus with a phenotype-associated surveillance marker omitted from the original panel.
+Cyp6m2	3R	6.929703	3	metabolic detoxification	AGAP008212	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	Named, uniquely mappable Anopheles gambiae mechanism locus.
+SAP2	3R	4.868972	3	insecticide sequestration	AGAP008052	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	Named, uniquely mappable Anopheles gambiae mechanism locus.
+Cyp4g16	X	22.942261	3	cuticular resistance	AGAP001076	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	Named, uniquely mappable Anopheles gambiae mechanism locus.
+Cyp4g17	X	16.620035	3	cuticular resistance	AGAP000877	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	Named, uniquely mappable Anopheles gambiae mechanism locus.
+Gstd1	2R	50.999331	3	metabolic detoxification	AGAP004164	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	Named, uniquely mappable Anopheles gambiae mechanism locus.
+Maf-S	3L	2.786284	3	metabolic regulation	AGAP010405	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	AgamP4 annotation is transcription factor MAFF/G/K; used for the Maf-S locus named in the review.
+D7r2/D7r4	3R	8.559353	3	insecticide sequestration	AGAP008281;AGAP008282	Hancock2024 Figure 2	MalariaGEN Ag3 genome_features	Adjacent named genes collapsed to one region because the analysis window covers both.

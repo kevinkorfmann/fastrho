@@ -1,0 +1,16 @@
+{
+ "cattle": {"latin": "Bos taurus", "common": "Cattle", "clade": "Mammals"},
+ "dog": {"latin": "Canis lupus familiaris", "common": "Dog / wolf", "clade": "Mammals"},
+ "wolf": {"latin": "Canis lupus", "common": "Wolf", "clade": "Mammals"},
+ "human": {"latin": "Homo sapiens", "common": "Human", "clade": "Mammals"},
+ "sheep": {"latin": "Ovis aries", "common": "Sheep", "clade": "Mammals"},
+ "mouse": {"latin": "Mus musculus", "common": "House mouse", "clade": "Mammals"},
+ "chicken": {"latin": "Gallus gallus", "common": "Chicken", "clade": "Birds"},
+ "dmel": {"latin": "Drosophila melanogaster", "common": "Fruit fly", "clade": "Insects"},
+ "honeybee": {"latin": "Apis mellifera", "common": "Honeybee", "clade": "Insects"},
+ "celegans": {"latin": "Caenorhabditis elegans", "common": "Roundworm", "clade": "Nematodes"},
+ "athal": {"latin": "Arabidopsis thaliana", "common": "Thale cress", "clade": "Plants"},
+ "tomato": {"latin": "Solanum lycopersicum", "common": "Tomato", "clade": "Plants"},
+ "rice": {"latin": "Oryza sativa", "common": "Rice", "clade": "Plants"},
+ "yeast": {"latin": "Saccharomyces cerevisiae", "common": "Budding yeast", "clade": "Fungi"}
+}

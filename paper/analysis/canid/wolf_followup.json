@@ -1,0 +1,103 @@
+{
+  "empirical_transfer_chr1_0_40mb": {
+    "wolf_n_individuals": 33,
+    "dog_n_individuals": 67,
+    "checkpoint": "campaign_dog_bottleneck",
+    "wolf_pearson_100kb": 0.22544354036889055,
+    "dog_pearson_100kb": 0.17437518170026198,
+    "wolf_pearson_1mb": 0.38974622261511765,
+    "dog_pearson_1mb": 0.3351709183395101,
+    "difference_100kb_block_bootstrap_ci95": [-0.038986, 0.178666],
+    "difference_1mb_block_bootstrap_ci95": [-0.124687, 0.268051],
+    "block_size_mb": 5,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260807
+  },
+  "china18_full_chr1": {
+    "n_individuals": 18,
+    "n_variants": 934415,
+    "last_position": 122678463,
+    "dog_bottleneck_checkpoint": {
+      "pearson_100kb": 0.5059622302452216,
+      "log_pearson_100kb": 0.3357452884542678,
+      "spearman_100kb": 0.2761210505291302,
+      "pearson_1mb": 0.7595006890486202,
+      "log_pearson_1mb": 0.4586834979232304,
+      "spearman_1mb": 0.4560992458401219
+    },
+    "small_panel_structure_checkpoint": {
+      "pearson_100kb": 0.44575932660560674,
+      "log_pearson_100kb": 0.31379380470457097,
+      "spearman_100kb": 0.2638584139762947,
+      "pearson_1mb": 0.7028246487558738,
+      "log_pearson_1mb": 0.4004934688859365,
+      "spearman_1mb": 0.4082852035796709
+    },
+    "pearson_100kb_by_interval": {
+      "0_40mb": 0.115697,
+      "40_80mb": 0.148040,
+      "80_123mb": 0.618258
+    },
+    "matched_full_chromosome_panels": {
+      "all_67_dogs": {"pearson_100kb": 0.53046710797, "pearson_1mb": 0.78739342773},
+      "village_42_dogs": {"pearson_100kb": 0.55248225767, "pearson_1mb": 0.80203605693}
+    }
+  },
+  "small_panel_structure_simulation_test": {
+    "n_regions": 240,
+    "pearson_100kb_all": 0.794,
+    "pearson_100kb_panmictic": 0.866,
+    "pearson_100kb_structured": 0.822,
+    "dog_bottleneck_checkpoint_pearson_100kb": 0.507,
+    "coverage95": 0.959
+  },
+  "dog_panel_sensitivity_chr1_0_40mb": {
+    "full_panel_composition": {
+      "chinese_village": 42,
+      "chinese_indigenous": 15,
+      "kunming": 7,
+      "genetically_classified_belgian_malinois": 3
+    },
+    "village_only_n_individuals": 42,
+    "village_only_pearson_100kb": 0.18205191839081014,
+    "village_only_pearson_1mb": 0.351568627806614,
+    "wolf_minus_village_100kb": 0.04339162197808036,
+    "wolf_minus_village_100kb_block_bootstrap_ci95": [
+      -0.04933154,
+      0.15993666
+    ],
+    "wolf_minus_village_1mb": 0.03815804253487787,
+    "wolf_minus_village_1mb_block_bootstrap_ci95": [
+      -0.15204522,
+      0.18642928
+    ],
+    "block_size_mb": 5,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260807
+  },
+  "empirical_ld_decay": {
+    "dog_n_total": 67,
+    "wolf_n_individuals": 33,
+    "dog_subsample_n_individuals": 33,
+    "dog_subsample_replicates": 20,
+    "maf_range": [0.05, 0.95],
+    "seed": 20260807,
+    "figure_data": "paper/figdata/canid_empirical_ld.json"
+  },
+  "full_chromosome_extraction_validation": {
+    "region": "chr1:1-30000000",
+    "biallelic_snp_positions_first_100kb": 9816,
+    "biallelic_snp_positions_first_15mb": 117556,
+    "dog67_positions_exactly_match_original_archive": true,
+    "missing_policy": "reference"
+  },
+  "wolf_pca": {
+    "n_core_wolves": 27,
+    "n_pruned_markers": 222,
+    "pc1_variance_fraction": 0.1192,
+    "pc2_variance_fraction": 0.1080,
+    "between_to_within_geographic_distance_ratio": 1.341,
+    "permutation_replicates": 20000,
+    "permutation_p": 0.0000499975
+  }
+}

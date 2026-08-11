@@ -1,0 +1,30 @@
+{
+  "athal": {
+    "key": "athal",
+    "model": "self",
+    "truth": 0.2387055934699959,
+    "repro": 0.9441928445088082,
+    "n_win": 200
+  },
+  "dmel": {
+    "key": "dmel",
+    "model": "model2",
+    "truth": 0.5450226839964886,
+    "repro": 0.9671587057334555,
+    "n_win": 232
+  },
+  "dog": {
+    "key": "dog",
+    "model": "dogmodel",
+    "truth": 0.16218528548061914,
+    "repro": 0.855602881387822,
+    "n_win": 400
+  },
+  "human": {
+    "key": "human",
+    "model": "base",
+    "truth": 0.825343300572287,
+    "repro": 0.9432661952862624,
+    "n_win": 160
+  }
+}

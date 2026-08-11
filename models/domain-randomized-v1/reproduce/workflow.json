@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "model_id": "domain-randomized-v1",
+  "historical_source_revision": "d60d3c6f69132d7ce9a438a7499102885a70f6c7",
+  "simulation": {
+    "training_regions": 15000,
+    "validation_regions": 400,
+    "sequence_length_bp": 1000000,
+    "window_size_bp": 2000,
+    "training_seed_range": [0, 14999],
+    "validation_seed_range": [0, 399],
+    "validation_seed_overlap_is_historical": true,
+    "priors": {
+      "diploid_sample_sizes": [10, 20, 50, 100],
+      "log10_mutation_rate": [-8.5, -7.7],
+      "log10_mean_recombination_rate": [-8.7, -7.7],
+      "log10_effective_population_size": [3.5, 4.8],
+      "demographies": ["constant", "sawtooth", "island", "bottleneck"],
+      "map_kinds": ["gp", "hotspot", "constant"],
+      "map_kind_weights": [0.5, 0.4, 0.1],
+      "max_total_rho": 2000.0,
+      "cap_mode": "scale_rate"
+    }
+  },
+  "preprocessing": {
+    "views": {
+      "hap": "--with-features",
+      "gt": "--gt",
+      "gtf": "--gt-fold"
+    },
+    "common_flags": ["--sfs-shape", "--r2-debias"],
+    "feature_count": 18,
+    "conditioning_dimensions": 4
+  },
+  "training": {
+    "seed": 0,
+    "model": "base",
+    "epochs": 55,
+    "batch_size": 48,
+    "gradient_accumulation": 2,
+    "learning_rate": 0.0004,
+    "selection_metric": "val_pearson",
+    "selection_mode": "max",
+    "selection_tie_breaker": "earliest_epoch",
+    "paper_selected_epoch": 53,
+    "paper_selected_value_exact": 0.8618586659431458,
+    "paper_global_step": 8424,
+    "embedded_lightning_version": "2.6.5"
+  },
+  "release_files": {
+    "checkpoint": {
+      "bytes": 196930253,
+      "sha256": "d1ef4caae0c16b8c0cb1e5cfc79d1982950bff2e3509ea08a9f244fc9bb3f79f"
+    },
+    "stats": {
+      "bytes": 4308,
+      "sha256": "6198b021f1df6bba48cb672a71386d188714f3e87c5cb166dbdee25c497e55ba"
+    }
+  }
+}

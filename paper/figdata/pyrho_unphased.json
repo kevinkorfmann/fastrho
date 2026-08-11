@@ -1,0 +1,32 @@
+[
+  {
+    "label": "wolf",
+    "chrom": "chr1",
+    "map_id": "Campbell2016_CanFam3_1",
+    "n_ind": 29,
+    "n_hap": 58,
+    "n_seg": 300000,
+    "Ne_watterson": 101264.08278523094,
+    "ploidy": 2,
+    "n_windows_pyrho": 358,
+    "n_windows_fastrho": 358,
+    "pyrho_pearson": 0.1801734067189632,
+    "fastrho_pearson": 0.24861183197846182,
+    "fastrho_stored": 0.24861183197846182
+  },
+  {
+    "label": "dog",
+    "chrom": "chr1",
+    "map_id": "Campbell2016_CanFam3_1",
+    "n_ind": 67,
+    "n_hap": 134,
+    "n_seg": 313422,
+    "Ne_watterson": 89507.60728521964,
+    "ploidy": 2,
+    "n_windows_pyrho": 358,
+    "n_windows_fastrho": 358,
+    "pyrho_pearson": 0.05632437387496213,
+    "fastrho_pearson": 0.19325170013860646,
+    "fastrho_stored": 0.19325170013860646
+  }
+]

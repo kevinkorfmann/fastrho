@@ -1,0 +1,818 @@
+{
+  "experiment": "gene_conversion_stress",
+  "estimand": "Recovery of the fixed crossover-rate map when gene conversion is present in the ancestry but absent from the checkpoint training model",
+  "design": {
+    "n_regions": 24,
+    "sequence_length": 1000000,
+    "window_size": 25000,
+    "n_diploid": 10,
+    "n_haplotypes": 20,
+    "effective_size": 10000.0,
+    "mutation_rate": 1.5e-08,
+    "mean_crossover_rate": 1e-08,
+    "gene_conversion_to_mean_crossover_ratios": [
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "gene_conversion_tract_lengths": [
+      100,
+      300,
+      1000
+    ],
+    "map_kinds": {
+      "gp": 12,
+      "hotspot": 12
+    },
+    "region_map_kind": [
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot",
+      "gp",
+      "hotspot"
+    ],
+    "paired_crossover_maps_across_conditions": true,
+    "checkpoint_retrained": false,
+    "n_bootstrap": 2000,
+    "seed": 9301,
+    "bootstrap_seed": 9302,
+    "msprime_version": "1.3.4"
+  },
+  "conditions": [
+    {
+      "id": "gc0",
+      "ratio": 0.0,
+      "tract_length": 0,
+      "gene_conversion_rate": 0.0,
+      "median_num_sites": 2079.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8733019294218799,
+          "ci95": [
+            0.8124136585502645,
+            0.9064278187093145
+          ]
+        },
+        "spearman": {
+          "estimate": 0.5806654557640247,
+          "ci95": [
+            0.39718116462523806,
+            0.7154490569943857
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.6484974761520136,
+          "ci95": [
+            0.61732159059464,
+            0.6888892517403103
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 9.44935572761806e-09,
+          "ci95": [
+            8.025656777916157e-09,
+            1.1041546110730968e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.6334286296589489,
+          "ci95": [
+            0.5630744939210915,
+            0.6974421441843901
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.7744339045741399,
+        "spearman": 0.49780472892332556,
+        "median_predicted_to_crossover": 0.6385428581369872,
+        "mean_predicted_rate": 7.74793584990331e-09,
+        "log_rmse": 0.5883205606843813
+      }
+    },
+    {
+      "id": "gc0.5_t100",
+      "ratio": 0.5,
+      "tract_length": 100,
+      "gene_conversion_rate": 5e-09,
+      "median_num_sites": 2143.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8753630893193718,
+          "ci95": [
+            0.7832067777952773,
+            0.9229187929519286
+          ]
+        },
+        "spearman": {
+          "estimate": 0.6301292899324772,
+          "ci95": [
+            0.44572640088057386,
+            0.7561521483029725
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.7182469405311727,
+          "ci95": [
+            0.6809659044250944,
+            0.7392545150293341
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.023971287339748e-08,
+          "ci95": [
+            8.606272529259986e-09,
+            1.2014196793646774e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.55678461242049,
+          "ci95": [
+            0.4984100321268866,
+            0.6126415392007938
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.0776874879105824,
+          "ci95": [
+            0.9927167516371703,
+            1.1457107048986974
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.42411053011304345,
+        "spearman": 0.4978852437891491,
+        "median_predicted_to_crossover": 0.6821068398800876,
+        "mean_predicted_rate": 8.062940757140922e-09,
+        "log_rmse": 0.517489242603255
+      }
+    },
+    {
+      "id": "gc1_t100",
+      "ratio": 1.0,
+      "tract_length": 100,
+      "gene_conversion_rate": 1e-08,
+      "median_num_sites": 2122.0,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8444507403980661,
+          "ci95": [
+            0.7849915463794699,
+            0.8918192092010353
+          ]
+        },
+        "spearman": {
+          "estimate": 0.6194585660380111,
+          "ci95": [
+            0.4575854117532451,
+            0.7464216302188633
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.6744054078152616,
+          "ci95": [
+            0.6234526082497034,
+            0.7148297549068342
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.0052925142498884e-08,
+          "ci95": [
+            8.506132263343793e-09,
+            1.1886782028059468e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.5817795290641351,
+          "ci95": [
+            0.5149721480675113,
+            0.6492693143939887
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.0893108848509678,
+          "ci95": [
+            1.02448184194846,
+            1.1510875038992492
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.7151316568947097,
+        "spearman": 0.48315959839694,
+        "median_predicted_to_crossover": 0.6699151801688136,
+        "mean_predicted_rate": 8.279758776395519e-09,
+        "log_rmse": 0.5057173451124032
+      }
+    },
+    {
+      "id": "gc2_t100",
+      "ratio": 2.0,
+      "tract_length": 100,
+      "gene_conversion_rate": 2e-08,
+      "median_num_sites": 2083.0,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8643829303224522,
+          "ci95": [
+            0.7852351266159733,
+            0.900662774436699
+          ]
+        },
+        "spearman": {
+          "estimate": 0.646720951143471,
+          "ci95": [
+            0.4667157798590067,
+            0.7727450893630935
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.71749371190636,
+          "ci95": [
+            0.6772355034892976,
+            0.775047435315442
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.0550598828793895e-08,
+          "ci95": [
+            9.057305627871978e-09,
+            1.2416177150605947e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.5322906552164733,
+          "ci95": [
+            0.46878634899390154,
+            0.5986269293827088
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.1593728450168772,
+          "ci95": [
+            1.0729167719619015,
+            1.2426900563751524
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.5898720808187943,
+        "spearman": 0.4654505994543824,
+        "median_predicted_to_crossover": 0.7029553584066389,
+        "mean_predicted_rate": 8.69781196591874e-09,
+        "log_rmse": 0.4959663241235542
+      }
+    },
+    {
+      "id": "gc4_t100",
+      "ratio": 4.0,
+      "tract_length": 100,
+      "gene_conversion_rate": 4e-08,
+      "median_num_sites": 2111.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8698154666451372,
+          "ci95": [
+            0.8113477117781774,
+            0.8968497651379032
+          ]
+        },
+        "spearman": {
+          "estimate": 0.5780128735666353,
+          "ci95": [
+            0.3982952182285679,
+            0.7085801078689432
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.7908439875979217,
+          "ci95": [
+            0.7459038999336799,
+            0.8250686058746048
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.1969210158473886e-08,
+          "ci95": [
+            9.986025584971476e-09,
+            1.4176345013283442e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.47939886389976155,
+          "ci95": [
+            0.4123282915772107,
+            0.5466905039466957
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.2512595538728415,
+          "ci95": [
+            1.110289536818406,
+            1.346535475582893
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.718061867852249,
+        "spearman": 0.45272045028142593,
+        "median_predicted_to_crossover": 0.7754146890322113,
+        "mean_predicted_rate": 9.503015785634415e-09,
+        "log_rmse": 0.3987127701617554
+      }
+    },
+    {
+      "id": "gc0.5_t300",
+      "ratio": 0.5,
+      "tract_length": 300,
+      "gene_conversion_rate": 5e-09,
+      "median_num_sites": 2127.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8676018924031066,
+          "ci95": [
+            0.8036139942771151,
+            0.8931849030854397
+          ]
+        },
+        "spearman": {
+          "estimate": 0.5893263431564002,
+          "ci95": [
+            0.40790185204681667,
+            0.7263586727389814
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.7106015438785949,
+          "ci95": [
+            0.6708208492344082,
+            0.7485188911050331
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.0425148594174984e-08,
+          "ci95": [
+            8.859055402412417e-09,
+            1.2180557077720793e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.5554116586588574,
+          "ci95": [
+            0.4924720863173521,
+            0.6165290832863751
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.0991600994518689,
+          "ci95": [
+            1.014254676976748,
+            1.1894307967550106
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.6662806472500382,
+        "spearman": 0.4240086502263681,
+        "median_predicted_to_crossover": 0.7015133428628938,
+        "mean_predicted_rate": 8.580789589923721e-09,
+        "log_rmse": 0.51059969251388
+      }
+    },
+    {
+      "id": "gc1_t300",
+      "ratio": 1.0,
+      "tract_length": 300,
+      "gene_conversion_rate": 1e-08,
+      "median_num_sites": 2103.0,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8490398095675523,
+          "ci95": [
+            0.7544772716492886,
+            0.8995200771515338
+          ]
+        },
+        "spearman": {
+          "estimate": 0.6019525966082212,
+          "ci95": [
+            0.3924277095857705,
+            0.7357878445603846
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.7533102180911244,
+          "ci95": [
+            0.7177342509096687,
+            0.805550939524904
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.1593131056227447e-08,
+          "ci95": [
+            9.458647520301934e-09,
+            1.3980304206438841e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.49697709923966465,
+          "ci95": [
+            0.4342572717787794,
+            0.5530435668283656
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.2292699887368561,
+          "ci95": [
+            1.080340806313069,
+            1.3031380471471077
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.5573161642943868,
+        "spearman": 0.31417195309637713,
+        "median_predicted_to_crossover": 0.7577726821152388,
+        "mean_predicted_rate": 9.590374297214734e-09,
+        "log_rmse": 0.42179729508193575
+      }
+    },
+    {
+      "id": "gc2_t300",
+      "ratio": 2.0,
+      "tract_length": 300,
+      "gene_conversion_rate": 2e-08,
+      "median_num_sites": 2090.0,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8463828725793248,
+          "ci95": [
+            0.7571194679124071,
+            0.8875893579648777
+          ]
+        },
+        "spearman": {
+          "estimate": 0.5269120401570726,
+          "ci95": [
+            0.3515698132955162,
+            0.6708150566737352
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.8526947177979949,
+          "ci95": [
+            0.8046201046116288,
+            0.8991346833476687
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.2810668043863477e-08,
+          "ci95": [
+            1.0705173719652114e-08,
+            1.5337316254996322e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.46874338102533897,
+          "ci95": [
+            0.4073750464978806,
+            0.5347449130037072
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.4041193788747637,
+          "ci95": [
+            1.2284660087453847,
+            1.4882654156184505
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.44217961175577186,
+        "spearman": 0.38741855771821154,
+        "median_predicted_to_crossover": 0.839310019971881,
+        "mean_predicted_rate": 9.750941404340568e-09,
+        "log_rmse": 0.42701422577926645
+      }
+    },
+    {
+      "id": "gc4_t300",
+      "ratio": 4.0,
+      "tract_length": 300,
+      "gene_conversion_rate": 4e-08,
+      "median_num_sites": 2157.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.7989538442989277,
+          "ci95": [
+            0.755938732588619,
+            0.8230012370839045
+          ]
+        },
+        "spearman": {
+          "estimate": 0.5312082657521077,
+          "ci95": [
+            0.36149155595101695,
+            0.6576954568939264
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 1.1162635030445303,
+          "ci95": [
+            1.0561838838752682,
+            1.1814317441326432
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.628890230882575e-08,
+          "ci95": [
+            1.36663296165649e-08,
+            1.9268064161989193e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.5088724436014939,
+          "ci95": [
+            0.3801200117399175,
+            0.6348352197559051
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.6902869006643848,
+          "ci95": [
+            1.6062512217470832,
+            1.8540322771784905
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.583736991405061,
+        "spearman": 0.49429844176712967,
+        "median_predicted_to_crossover": 1.1174275506087614,
+        "mean_predicted_rate": 1.2626708033701093e-08,
+        "log_rmse": 0.34736671283096365
+      }
+    },
+    {
+      "id": "gc0.5_t1000",
+      "ratio": 0.5,
+      "tract_length": 1000,
+      "gene_conversion_rate": 5e-09,
+      "median_num_sites": 2158.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8989896622217741,
+          "ci95": [
+            0.8430916645580855,
+            0.9235772843288204
+          ]
+        },
+        "spearman": {
+          "estimate": 0.596187560671821,
+          "ci95": [
+            0.4196977566579662,
+            0.716643060044255
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.8173085623004424,
+          "ci95": [
+            0.7615425813742155,
+            0.8578636143428207
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.2029531605644845e-08,
+          "ci95": [
+            1.0213244148389863e-08,
+            1.40102843812403e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.4533779069914968,
+          "ci95": [
+            0.3925743844290678,
+            0.5113671970299477
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.2350194445572704,
+          "ci95": [
+            1.119459763008802,
+            1.4198302575215611
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.7044307659076205,
+        "spearman": 0.42691958168947675,
+        "median_predicted_to_crossover": 0.7917782860776479,
+        "mean_predicted_rate": 9.612052350246491e-09,
+        "log_rmse": 0.397110900447049
+      }
+    },
+    {
+      "id": "gc1_t1000",
+      "ratio": 1.0,
+      "tract_length": 1000,
+      "gene_conversion_rate": 1e-08,
+      "median_num_sites": 2078.5,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.8149257366675624,
+          "ci95": [
+            0.7139251137423013,
+            0.8778042157092122
+          ]
+        },
+        "spearman": {
+          "estimate": 0.5059760666156168,
+          "ci95": [
+            0.315088982167508,
+            0.6513077588968741
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 0.9307518727904842,
+          "ci95": [
+            0.8916812116793406,
+            0.9829413384110901
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.3721193442696616e-08,
+          "ci95": [
+            1.1440894912066943e-08,
+            1.6280028310338783e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.46751820319025483,
+          "ci95": [
+            0.3796791293513188,
+            0.5580861095117817
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.438024028854001,
+          "ci95": [
+            1.2762506849739679,
+            1.5991373284988668
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.606207469836511,
+        "spearman": 0.42091984139384553,
+        "median_predicted_to_crossover": 0.9409204421743572,
+        "mean_predicted_rate": 1.0778062677652542e-08,
+        "log_rmse": 0.37783538937544603
+      }
+    },
+    {
+      "id": "gc2_t1000",
+      "ratio": 2.0,
+      "tract_length": 1000,
+      "gene_conversion_rate": 2e-08,
+      "median_num_sites": 2101.0,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.7814146452410027,
+          "ci95": [
+            0.6959095274371978,
+            0.8263101878697096
+          ]
+        },
+        "spearman": {
+          "estimate": 0.4161228705155059,
+          "ci95": [
+            0.2252467220387119,
+            0.5629044197514907
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 1.2656934107818474,
+          "ci95": [
+            1.2102731509268843,
+            1.3468545809188885
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 1.822623465573162e-08,
+          "ci95": [
+            1.5190012847083018e-08,
+            2.144666976363084e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.5805841810990291,
+          "ci95": [
+            0.43575960086532434,
+            0.7182270423438365
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 1.9315173128526468,
+          "ci95": [
+            1.7338251393363848,
+            2.0223518926469826
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.5831862238528498,
+        "spearman": 0.27669802358708573,
+        "median_predicted_to_crossover": 1.2580291795094827,
+        "mean_predicted_rate": 1.4076779969250001e-08,
+        "log_rmse": 0.37574021719258494
+      }
+    },
+    {
+      "id": "gc4_t1000",
+      "ratio": 4.0,
+      "tract_length": 1000,
+      "gene_conversion_rate": 4e-08,
+      "median_num_sites": 2131.0,
+      "pooled": {
+        "pearson": {
+          "estimate": 0.6780115529530557,
+          "ci95": [
+            0.6318606308786883,
+            0.7101213883456472
+          ]
+        },
+        "spearman": {
+          "estimate": 0.3810771548768863,
+          "ci95": [
+            0.24451378666820525,
+            0.5055298300211429
+          ]
+        },
+        "median_predicted_to_crossover": {
+          "estimate": 1.8377897910462924,
+          "ci95": [
+            1.6952714302068732,
+            1.9449372172613235
+          ]
+        },
+        "mean_predicted_rate": {
+          "estimate": 2.7685098572655835e-08,
+          "ci95": [
+            2.2518375614825903e-08,
+            3.430250616050175e-08
+          ]
+        },
+        "log_rmse": {
+          "estimate": 0.8751853631656759,
+          "ci95": [
+            0.724593933934821,
+            1.041363198986972
+          ]
+        },
+        "paired_mean_rate_vs_no_conversion": {
+          "estimate": 2.8932970668979427,
+          "ci95": [
+            2.4523663058637837,
+            3.1514527333148132
+          ]
+        }
+      },
+      "region_median": {
+        "pearson": 0.465983460832717,
+        "spearman": 0.3872838417571677,
+        "median_predicted_to_crossover": 1.8511281629019622,
+        "mean_predicted_rate": 2.1490249288107867e-08,
+        "log_rmse": 0.7414213424749425
+      }
+    }
+  ]
+}

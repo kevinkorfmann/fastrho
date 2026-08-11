@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "name": "fastrho manuscript reproduction",
+  "policy": "The portable workflow rebuilds the canonical Phase 2 paper from committed, checksummed analysis products. It never edits the manuscript repository and never includes legacy manuscript variants.",
+  "default_profile": "paper",
+  "canonical_ledgers": [
+    "reproduce/manuscript.lock.json",
+    "reproduce/artifacts.json",
+    "reproduce/checkpoints.json",
+    "reproduce/source_bundles.json",
+    "paper/data_provenance.yaml",
+    "paper/figure_provenance.json"
+  ],
+  "profiles": {
+    "paper": [
+      "manuscript",
+      "preflight",
+      "derived",
+      "downloads",
+      "figures",
+      "stage",
+      "audit",
+      "pdfs",
+      "paper-tests",
+      "release-gate"
+    ],
+    "render": [
+      "manuscript",
+      "preflight",
+      "derived",
+      "downloads",
+      "figures",
+      "stage",
+      "audit",
+      "pdfs"
+    ],
+    "verify": [
+      "manuscript",
+      "preflight",
+      "paper-tests",
+      "release-gate"
+    ]
+  },
+  "stages": [
+    {
+      "id": "manuscript",
+      "description": "Fetch and checksum the pinned canonical Phase 2 manuscript into a private build tree.",
+      "commands": [["uv", "run", "python", "reproduce/fetch_manuscript.py"]],
+      "outputs": [
+        "tmp/reproduce/manuscript/main_phase2.tex",
+        "tmp/reproduce/manuscript/si_phase2.tex"
+      ]
+    },
+    {
+      "id": "preflight",
+      "description": "Validate the workflow, source ledgers, active producer paths, and required executables.",
+      "internal": "preflight"
+    },
+    {
+      "id": "derived",
+      "description": "Recompute compact manuscript quantities, benchmark summaries, generated tables, and source metadata.",
+      "commands": [
+        ["uv", "run", "python", "scripts/build_manuscript_derived.py"],
+        ["uv", "run", "python", "scripts/make_manuscript_provenance_table.py"]
+      ],
+      "outputs": [
+        "paper/results_snapshot/manuscript_derived.json",
+        "paper/tables/main_results.tex",
+        "paper/manuscript/generated/data_sources_table.tex"
+      ]
+    },
+    {
+      "id": "downloads",
+      "description": "Rebuild deterministic, plot-ready public data downloads and their checksum manifest.",
+      "commands": [
+        ["uv", "run", "python", "scripts/export_paper_data.py"]
+      ],
+      "outputs": [
+        "docs/data/downloads/manifest.json"
+      ]
+    },
+    {
+      "id": "figures",
+      "description": "Render every active main-text and SI figure and rewrite the checksummed figure manifest.",
+      "commands": [
+        ["uv", "run", "--extra", "figures", "python", "scripts/build_manuscript_figures.py", "--run", "--write-manifest"]
+      ],
+      "outputs": [
+        "paper/figure_provenance.json"
+      ]
+    },
+    {
+      "id": "stage",
+      "description": "Copy regenerated artifacts into the private Phase 2 build tree.",
+      "commands": [["uv", "run", "python", "reproduce/stage_manuscript.py"]],
+      "outputs": ["tmp/reproduce/manuscript/figures_phase2/fig1_complete.pdf"]
+    },
+    {
+      "id": "audit",
+      "description": "Audit every Phase 2 include, producer, artifact hash, and reader-facing numeric occurrence.",
+      "commands": [
+        ["uv", "run", "python", "reproduce/audit_phase2.py"]
+      ],
+      "outputs": [
+        "reproduce/audit.json"
+      ]
+    },
+    {
+      "id": "pdfs",
+      "description": "Compile the article and SI with fixed source-date metadata.",
+      "commands": [
+        ["uv", "run", "python", "reproduce/build_manuscript.py"]
+      ],
+      "outputs": [
+        "output/pdf/fastrho_manuscript_phase2.pdf",
+        "output/pdf/fastrho_manuscript_phase2_si.pdf"
+      ]
+    },
+    {
+      "id": "paper-tests",
+      "description": "Re-derive paper metrics, verify every printed number and legend, and validate all figure bindings.",
+      "commands": [
+        [
+          "uv",
+          "run",
+          "python",
+          "-m",
+          "pytest",
+          "tests/paper",
+          "tests/verification",
+          "tests/test_demography_matched_benchmark.py",
+          "tests/test_paper_data_release.py",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "-rxs"
+        ]
+      ]
+    },
+    {
+      "id": "release-gate",
+      "description": "Require complete dataset, citation, manuscript, and public model-release metadata.",
+      "commands": [
+        ["uv", "run", "python", "scripts/release_check.py", "--strict-models"]
+      ]
+    }
+  ],
+  "betty_slurm_workflows": [
+    {
+      "id": "primary-model",
+      "description": "Simulate, preprocess, train, select, and package the primary domain-randomized checkpoint.",
+      "submit": "models/domain-randomized-v1/reproduce/submit.sh",
+      "guide": "models/domain-randomized-v1/reproduce/README.md"
+    },
+    {
+      "id": "demography-matched",
+      "description": "Run the paired constant-history and matched-history ReLERNN and pyrho benchmark.",
+      "submit": "research/demography_matched/slurm/submit.sh",
+      "guide": "research/demography_matched/README.md"
+    },
+    {
+      "id": "arabis-wgs",
+      "description": "Download, align, call, infer, and evaluate the species-separated Arabis population panels.",
+      "submit": "research/arabis/slurm/submit.sh",
+      "guide": "research/arabis/README.md"
+    },
+    {
+      "id": "arabis-small-n",
+      "description": "Train and evaluate the frozen small-panel selfing ensemble.",
+      "submit": "research/arabis/slurm_smalln/submit.sh",
+      "guide": "research/arabis/README.md"
+    },
+    {
+      "id": "arabis-structured",
+      "description": "Run the preregistered structured-selfing campaign and cross-map-blind adoption gate.",
+      "submit": "research/arabis/slurm_structured/submit.sh",
+      "guide": "research/arabis/README.md"
+    }
+  ]
+}

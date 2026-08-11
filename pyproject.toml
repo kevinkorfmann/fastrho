@@ -84,6 +84,14 @@ ignore = ["E501"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "consistency: prose/table number must match the canonical results JSON",
+    "rederive: snapshot metric recomputed from committed raw arrays",
+    "derived: a quantity computed from raw metrics (median/speedup/count/etc.)",
+    "calibration: held-out coverage / CI calibration checks",
+    "integrity: structural sanity of the results JSON itself",
+    "online: live URL and DOI metadata verification; requires --run-online",
+]
 
 [tool.uv.extra-build-dependencies]
 # Both extension packages import torch from setup.py but omit it from their

@@ -1,0 +1,137 @@
+{
+  "benchmark_summary_sha256": "65bc711ba48d46b095beb1902445d077044441d0bd25a4e5960cef4551d95a61",
+  "bootstrap_unit": "independent 2-Mb simulated region",
+  "float_rounding_digits": 12,
+  "prediction_archive_sha256": "20c16f1215536becf6875509ad99f3cf0ae41723e48e6db91d4b66c9a9a69056",
+  "scenarios": {
+    "bottleneck": {
+      "pyrho": {
+        "constant": {
+          "median_estimated_to_true": 0.282607760309,
+          "pearson": 0.562746401916,
+          "spearman": 0.453277872781
+        },
+        "joint_support_rule": "finite, strictly positive truth and predictions in both arms",
+        "matched": {
+          "median_estimated_to_true": 0.787966872879,
+          "pearson": 0.61911495954,
+          "spearman": 0.467400217197
+        },
+        "matched_minus_constant": {
+          "pearson": 0.056368557624,
+          "spearman": 0.014122344416
+        },
+        "n_regions": 24,
+        "n_windows": 1920,
+        "pearson_delta_region_bootstrap": {
+          "lower_95": 0.01824390876,
+          "median": 0.056229108758,
+          "replicates": 10000,
+          "seed": 20260723,
+          "upper_95": 0.105561776257
+        },
+        "prediction_agreement": {
+          "median_matched_to_constant": 2.809572614412,
+          "pearson": 0.882715103986,
+          "spearman": 0.954217850333
+        }
+      },
+      "relernn": {
+        "constant": {
+          "median_estimated_to_true": 0.839347254755,
+          "pearson": 0.270950960195,
+          "spearman": 0.176635988386
+        },
+        "joint_support_rule": "finite, strictly positive truth and predictions in both arms",
+        "matched": {
+          "median_estimated_to_true": 1.221161554498,
+          "pearson": 0.301958689099,
+          "spearman": 0.225021649351
+        },
+        "matched_minus_constant": {
+          "pearson": 0.031007728904,
+          "spearman": 0.048385660965
+        },
+        "n_regions": 24,
+        "n_windows": 1744,
+        "pearson_delta_region_bootstrap": {
+          "lower_95": -0.038155755382,
+          "median": 0.031193815001,
+          "replicates": 10000,
+          "seed": 20260722,
+          "upper_95": 0.12446555885
+        },
+        "prediction_agreement": {
+          "median_matched_to_constant": 1.459872545412,
+          "pearson": 0.563957630236,
+          "spearman": 0.497154425388
+        }
+      }
+    },
+    "expansion": {
+      "pyrho": {
+        "constant": {
+          "median_estimated_to_true": 0.364490539201,
+          "pearson": 0.446954487665,
+          "spearman": 0.425895577665
+        },
+        "joint_support_rule": "finite, strictly positive truth and predictions in both arms",
+        "matched": {
+          "median_estimated_to_true": 0.828906532038,
+          "pearson": 0.444374533221,
+          "spearman": 0.435809642086
+        },
+        "matched_minus_constant": {
+          "pearson": -0.002579954444,
+          "spearman": 0.009914064421
+        },
+        "n_regions": 24,
+        "n_windows": 1920,
+        "pearson_delta_region_bootstrap": {
+          "lower_95": -0.047108465869,
+          "median": -0.001231520525,
+          "replicates": 10000,
+          "seed": 20260733,
+          "upper_95": 0.035642504471
+        },
+        "prediction_agreement": {
+          "median_matched_to_constant": 2.246957262405,
+          "pearson": 0.953162827417,
+          "spearman": 0.909400337465
+        }
+      },
+      "relernn": {
+        "constant": {
+          "median_estimated_to_true": 3.160470879959,
+          "pearson": 0.219706579989,
+          "spearman": 0.158513334741
+        },
+        "joint_support_rule": "finite, strictly positive truth and predictions in both arms",
+        "matched": {
+          "median_estimated_to_true": 1.72242088768,
+          "pearson": 0.175922451733,
+          "spearman": 0.115465318403
+        },
+        "matched_minus_constant": {
+          "pearson": -0.043784128256,
+          "spearman": -0.043048016338
+        },
+        "n_regions": 24,
+        "n_windows": 1828,
+        "pearson_delta_region_bootstrap": {
+          "lower_95": -0.137729886427,
+          "median": -0.039916342158,
+          "replicates": 10000,
+          "seed": 20260732,
+          "upper_95": 0.042287425909
+        },
+        "prediction_agreement": {
+          "median_matched_to_constant": 0.713316549831,
+          "pearson": 0.601223710855,
+          "spearman": 0.504542461943
+        }
+      }
+    }
+  },
+  "schema_version": 1
+}
