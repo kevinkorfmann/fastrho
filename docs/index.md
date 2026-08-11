@@ -33,7 +33,8 @@ The active mosquito analysis uses the freely available Ag1000G Phase 2 AR1 relea
 produced 45 maps for nine *Anopheles gambiae* and *Anopheles coluzzii* populations across five
 chromosome arms. The inferred maps retained the broad expected 2La inversion signal, although the
 cross-population relationship between expected arrangement mixing and suppression depth was not
-statistically resolved. Independently called Phase 2 laboratory crossovers agreed with the atlas at
+statistically resolved. Independently called Phase 2 laboratory crossovers agreed with the
+inferred recombination landscape at
 broad scale (Spearman $r_s=0.67$ across 32 supported 5-Mb windows), providing a more direct, though
 coarse, connection to crossover variation.
 
@@ -124,7 +125,8 @@ Understand $\rho$, absolute $r$, uncertainty, and the biological limits of LD ma
 :link-type: doc
 :class-card: quick-card
 
-Get the mosquito atlas, *Arabis*, *Arabidopsis*, redpoll, canid, and tree-of-life maps as plot-ready tables.
+Get the mosquito, *Arabis*, *Arabidopsis*, redpoll, canid, and tree-of-life maps as plot-ready
+tables with explicit scales.
 :::
 ::::
 

@@ -64,6 +64,27 @@ def test_documentation_links_every_download() -> None:
     assert "data" in (ROOT / "docs" / "index.md").read_text()
 
 
+def test_inferred_map_downloads_are_easy_to_find_and_scaled() -> None:
+    page = (ROOT / "docs" / "data.md").read_text()
+    map_files = {
+        "anopheles_maps.tsv.gz",
+        "arabis_cross_maps.tsv.gz",
+        "arabidopsis_maps.tsv.gz",
+        "redpoll_maps.tsv.gz",
+        "tree_of_life_maps.tsv.gz",
+        "canid_example_map.tsv.gz",
+    }
+    assert "## Inferred-map downloads" in page
+    for filename in map_files:
+        assert filename in page
+    for scale in ("rho_per_bp", "rate_per_bp", "cM_per_Mb", "_relative_rate"):
+        assert scale in page
+    assert "mean 1" in page
+    assert "10^8" in page
+    readme = (ROOT / "README.md").read_text()
+    assert "data.html#inferred-map-downloads" in readme
+
+
 def test_complete_bundle_is_readable_and_contains_every_declared_artifact() -> None:
     manifest = json.loads((DOWNLOADS / "manifest.json").read_text())
     result_files = {
@@ -85,6 +106,10 @@ def test_complete_bundle_is_readable_and_contains_every_declared_artifact() -> N
             assert archive.read(f"tables/{row['file']}") == (DOWNLOADS / row["file"]).read_bytes()
         for row in manifest["resources"]:
             assert archive.read(f"resources/{row['file']}") == (DOWNLOADS / row["file"]).read_bytes()
+        readme = archive.read("README.txt").decode("utf-8")
+    for scale in ("rho_per_bp", "rate_per_bp", "cM_per_Mb", "_relative_rate"):
+        assert scale in readme
+    assert "mean 1" in readme
 
 
 def test_active_phase2_release_has_expected_public_scope() -> None:
@@ -95,6 +120,11 @@ def test_active_phase2_release_has_expected_public_scope() -> None:
     assert rows["phase2_resistance.tsv.gz"] == 135
     assert rows["phase2_pedigree_windows.tsv.gz"] == 43
     assert rows["phase2_pyrho.tsv.gz"] == 3
+    pedigree = next(
+        row for row in manifest["datasets"] if row["file"] == "phase2_pedigree_windows.tsv.gz"
+    )
+    assert "inferred_normalized" in pedigree["columns"]
+    assert "atlas_normalized" not in pedigree["columns"]
     with zipfile.ZipFile(DOWNLOADS / "phase2_results.zip") as archive:
         assert archive.testzip() is None
         assert "results/phase2_resistance.json" in archive.namelist()

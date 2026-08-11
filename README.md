@@ -110,7 +110,7 @@ The current manuscript is:
 
 The mosquito analysis in the current manuscript is exclusively the open Ag1000G Phase 2 AR1
 analysis. Its 45 population-by-arm maps and compact result tables can be
-[downloaded directly](docs/data.md); the committed BED release is under
+[downloaded with explicit scale definitions][paper-maps]; the committed BED release is under
 [`paper/anopheles_variants/phase2/release/`](paper/anopheles_variants/phase2/release/). The
 comparative SI uses the fixed 10-species panel recorded in
 [`paper/figdata/transect.json`](paper/figdata/transect.json).
@@ -178,10 +178,13 @@ access route, terms, citation, local derivatives, and producing scripts.
 - [Use fastrho with your dataset](docs/your-data.md)
 - [Run every manuscript species example](examples/manuscript_species/README.md)
 - [Interpret the output](docs/interpretation.md)
+- [Download the inferred maps and paper data][paper-maps]
 - [Download, verify, or retrain checkpoints](docs/checkpoints.md)
 - [Machine-readable model registry](fastrho/model_registry.json)
 - [Contributing](CONTRIBUTING.md)
 - [Changelog](CHANGELOG.md)
+
+[paper-maps]: https://fastrho.readthedocs.io/en/latest/data.html#inferred-map-downloads
 
 ## Citation and license
 

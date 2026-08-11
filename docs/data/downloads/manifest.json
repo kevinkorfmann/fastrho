@@ -88,7 +88,7 @@
       "units": "rate per bp, focal/control ratio, nucleotide diversity, H12, and matching metadata"
     },
     {
-      "bytes": 1879,
+      "bytes": 1882,
       "columns": [
         "arm",
         "start",
@@ -97,13 +97,13 @@
         "exposure_bp",
         "marker_span_fraction",
         "direct_normalized",
-        "atlas_normalized",
+        "inferred_normalized",
         "supported"
       ],
-      "description": "Broad-scale Phase 2 laboratory-cross and inferred-atlas rates on common 5-Mb autosomal windows.",
+      "description": "Broad-scale Phase 2 laboratory-cross and inferred-map rates on common 5-Mb autosomal windows.",
       "file": "phase2_pedigree_windows.tsv.gz",
       "rows": 43,
-      "sha256": "7f3fa9392e6df8cd9721f994710a7471b6dff4895a4b26306649ba2a583cb49b",
+      "sha256": "728444b7af1b99bfae62d5e251b1ddf34b04ad4991c10c6d15c76d34b99d471c",
       "source_artifacts": [
         "paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree_windows.tsv"
       ],

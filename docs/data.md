@@ -1,7 +1,8 @@
-# Paper data
+# Inferred maps and paper data
 
-Download the inference products behind the paper without rebuilding the analysis. Every table is
-UTF-8, tab-delimited, gzip-compressed, and ready for pandas, R, Polars, or the command line.
+Download the recombination landscapes and compact results behind the paper without rebuilding the
+analysis. Every table is UTF-8, tab-delimited, gzip-compressed, and ready for pandas, R, Polars, or
+the command line.
 
 ::::{grid} 1 2 2 2
 :gutter: 2
@@ -25,6 +26,29 @@ Column definitions, units, row counts, source artifacts, sizes, and SHA-256 chec
 
 ::::
 
+## Inferred-map downloads
+
+The complete ZIP contains every table below. For one analysis, download its TSV.gz directly; for
+the Phase 2 mosquito release, use the self-documented ZIP. The scale is part of each column name and
+is summarized here before the detailed descriptions.
+
+| Analysis | Download | Native scale | Use directly for |
+|---|---|---|---|
+| Phase 2 mosquitoes | {download}`ZIP <data/downloads/anopheles_maps.zip>` · {download}`TSV.gz <data/downloads/anopheles_maps.tsv.gz>` | `rho_per_bp`; also $N_e$-conditional `rate_per_bp` and `cM_per_Mb` | Population-scaled or conditional absolute plots; retain `Ne_used` with absolute values |
+| *Arabis* | {download}`TSV.gz <data/downloads/arabis_cross_maps.tsv.gz>` | Chromosome-relative rate, mean 1 within each map series | Comparing spatial shape among population and $F_2$ maps |
+| *Arabidopsis thaliana* | {download}`TSV.gz <data/downloads/arabidopsis_maps.tsv.gz>` | Per-generation rate per bp | Comparing inferred and meiotic-reference map shape at 100 kb |
+| Redpoll | {download}`TSV.gz <data/downloads/redpoll_maps.tsv.gz>` | `rho_per_bp` | Comparing pooled and arrangement-specific population-scaled maps |
+| Ten-species comparison | {download}`TSV.gz <data/downloads/tree_of_life_maps.tsv.gz>` | Per-generation rate per bp | Plotting 100-kb tracks within a species; normalize within species for cross-species shape comparisons |
+| Canid simulation example | {download}`TSV.gz <data/downloads/canid_example_map.tsv.gz>` | Per-generation rate per bp | Comparing the known simulation input with large- and bottlenecked-population inference |
+
+`rho_per_bp` means the diploid population-scaled rate $\rho=4N_e r$ per bp. A `rate_per_bp`
+column means the per-generation recombination probability $r$ per bp; multiply it by $10^8$ to
+obtain cM/Mb. Columns ending in `_relative_rate` are dimensionless and must not be converted to
+cM/Mb. Only the mosquito table records the $N_e$ used for its absolute conversion. Treat inferred
+per-bp values in the *Arabidopsis* and ten-species tables as the archived paper scale for
+within-track comparisons, not as independently calibrated cross-species absolute rates. The
+[interpretation guide](interpretation.md) explains which scale to report.
+
 ## Reproduce the demographic comparison
 
 The paired competitor benchmark uses exactly the same validated bottleneck and expansion VCFs in
@@ -45,7 +69,7 @@ The ordered Slurm workflow, design, environment pins, and analysis scripts are i
 ::::{grid} 1 2 2 3
 :gutter: 2
 
-:::{grid-item-card} Mosquito atlas
+:::{grid-item-card} Mosquito recombination landscapes
 :class-card: sd-border-0 sd-shadow-sm
 
 **41,463 windows · 9 populations · open Phase 2 AR1 data**
@@ -182,7 +206,7 @@ plt.show()
 
 ## Mosquito-map scale and $N_e$: read before analysis
 
-The mosquito table is an atlas of **LD-based population recombination maps**, not a direct record
+The mosquito table contains **LD-based population recombination maps**, not a direct record
 of contemporary crossovers. Each row is one 0-based, half-open 50-kb AgamP4 window (the terminal
 window of an arm can be shorter). The fixed inference panel contains 40 diploid mosquitoes, or 80
 haplotypes, per cohort. The table includes both *An. gambiae* and *An. coluzzii*, nine release

@@ -235,8 +235,12 @@ def _phase2_pedigree() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
     path = PHASE2_RESULTS / "pedigree" / "phase2_pedigree_windows.tsv"
     with path.open(encoding="utf-8", newline="") as handle:
         records = list(csv.DictReader(handle, delimiter="\t"))
-    columns = tuple(records[0])
-    rows = [tuple(record[column] for column in columns) for record in records]
+    source_columns = tuple(records[0])
+    columns = tuple(
+        "inferred_normalized" if column == "atlas_normalized" else column
+        for column in source_columns
+    )
+    rows = [tuple(record[column] for column in source_columns) for record in records]
     return columns, rows
 
 
@@ -578,7 +582,7 @@ DATASETS = {
     ),
     "phase2_pedigree_windows.tsv.gz": (
         _phase2_pedigree,
-        "Broad-scale Phase 2 laboratory-cross and inferred-atlas rates on common 5-Mb autosomal windows.",
+        "Broad-scale Phase 2 laboratory-cross and inferred-map rates on common 5-Mb autosomal windows.",
         "within-arm normalized direct and inferred rates",
         ["paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree_windows.tsv"],
     ),
@@ -797,6 +801,23 @@ def build(output: Path) -> None:
         "rho_per_bp column is population-scaled; rate_per_bp and cM_per_Mb are already "
         "converted with the arm-specific auxiliary estimate in Ne_used and must not be divided "
         "by Ne again. See resources/anopheles_maps.zip for the complete rescaling contract.\n\n"
+        "Map scales\n"
+        "----------\n"
+        "anopheles_maps.tsv.gz: rho_per_bp is population scaled; rate_per_bp and cM_per_Mb "
+        "use the recorded Ne_used.\n"
+        "arabis_cross_maps.tsv.gz: dimensionless chromosome-relative rates with mean 1 within "
+        "each map series.\n"
+        "arabidopsis_maps.tsv.gz: per-generation rates per bp at 100-kb resolution.\n"
+        "redpoll_maps.tsv.gz: population-scaled rho per bp at 500-kb resolution.\n"
+        "tree_of_life_maps.tsv.gz: per-generation rates per bp at 100-kb resolution; normalize "
+        "within species for cross-species shape comparisons.\n"
+        "canid_example_map.tsv.gz: per-generation rates per bp for the simulated landscape and "
+        "both inferred maps.\n\n"
+        "A column ending in _relative_rate is dimensionless and cannot be converted to cM/Mb. "
+        "For a per-generation rate_per_bp column, cM/Mb = rate_per_bp * 1e8. Only the mosquito "
+        "table records the Ne used for its absolute conversion. Treat inferred per-bp values in "
+        "the Arabidopsis and tree-of-life tables as the archived paper scale for within-track "
+        "comparisons, not as independently calibrated cross-species absolute rates.\n\n"
         "The tables are plot-ready exports of the compact manuscript artifacts. See manifest.json "
         "for schemas, units, row counts, source artifacts, and SHA-256 checksums. The results/ "
         "directory contains the committed JSON snapshots behind reported paper metrics.\n"
