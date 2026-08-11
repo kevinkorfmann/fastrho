@@ -34,12 +34,20 @@ is summarized here before the detailed descriptions.
 
 | Analysis | Download | Native scale | Use directly for |
 |---|---|---|---|
-| Phase 2 mosquitoes | {download}`ZIP <data/downloads/anopheles_maps.zip>` · {download}`TSV.gz <data/downloads/anopheles_maps.tsv.gz>` | `rho_per_bp`; also $N_e$-conditional `rate_per_bp` and `cM_per_Mb` | Population-scaled or conditional absolute plots; retain `Ne_used` with absolute values |
-| *Arabis* | {download}`TSV.gz <data/downloads/arabis_cross_maps.tsv.gz>` | Chromosome-relative rate, mean 1 within each map series | Comparing spatial shape among population and $F_2$ maps |
-| *Arabidopsis thaliana* | {download}`TSV.gz <data/downloads/arabidopsis_maps.tsv.gz>` | Per-generation rate per bp | Comparing inferred and meiotic-reference map shape at 100 kb |
-| Redpoll | {download}`TSV.gz <data/downloads/redpoll_maps.tsv.gz>` | `rho_per_bp` | Comparing pooled and arrangement-specific population-scaled maps |
-| Ten-species comparison | {download}`TSV.gz <data/downloads/tree_of_life_maps.tsv.gz>` | Per-generation rate per bp | Plotting 100-kb tracks within a species; normalize within species for cross-species shape comparisons |
-| Canid simulation example | {download}`TSV.gz <data/downloads/canid_example_map.tsv.gz>` | Per-generation rate per bp | Comparing the known simulation input with large- and bottlenecked-population inference |
+| Phase 2 mosquitoes | [ZIP][anopheles-zip] · [TSV.gz][anopheles-tsv] | `rho_per_bp`; also $N_e$-conditional `rate_per_bp` and `cM_per_Mb` | Population-scaled or conditional absolute plots; retain `Ne_used` with absolute values |
+| *Arabis* | [TSV.gz][arabis-tsv] | Chromosome-relative rate, mean 1 within each map series | Comparing spatial shape among population and $F_2$ maps |
+| *Arabidopsis thaliana* | [TSV.gz][arabidopsis-tsv] | Per-generation rate per bp | Comparing inferred and meiotic-reference map shape at 100 kb |
+| Redpoll | [TSV.gz][redpoll-tsv] | `rho_per_bp` | Comparing pooled and arrangement-specific population-scaled maps |
+| Ten-species comparison | [TSV.gz][tree-of-life-tsv] | Per-generation rate per bp | Plotting 100-kb tracks within a species; normalize within species for cross-species shape comparisons |
+| Canid simulation example | [TSV.gz][canid-example-tsv] | Per-generation rate per bp | Comparing the known simulation input with large- and bottlenecked-population inference |
+
+[anopheles-zip]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/anopheles_maps.zip
+[anopheles-tsv]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/anopheles_maps.tsv.gz
+[arabis-tsv]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/arabis_cross_maps.tsv.gz
+[arabidopsis-tsv]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/arabidopsis_maps.tsv.gz
+[redpoll-tsv]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/redpoll_maps.tsv.gz
+[tree-of-life-tsv]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/tree_of_life_maps.tsv.gz
+[canid-example-tsv]: https://github.com/kevinkorfmann/fastrho/raw/refs/heads/main/docs/data/downloads/canid_example_map.tsv.gz
 
 `rho_per_bp` means the diploid population-scaled rate $\rho=4N_e r$ per bp. A `rate_per_bp`
 column means the per-generation recombination probability $r$ per bp; multiply it by $10^8$ to

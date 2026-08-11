@@ -70,7 +70,7 @@ def test_gene_conversion_claims_match_committed_results() -> None:
     assert "2.89-fold higher" in MAIN
     assert "fixed model" in SI
     assert "2,000 bootstrap resamples" in SI
-    assert "crossover map" in SI
+    assert "exact recombination map" in SI
 
 
 def test_gene_conversion_display_replicate_is_deterministic() -> None:
@@ -112,4 +112,4 @@ def test_gene_conversion_display_replicate_is_deterministic() -> None:
 
     assert int(np.argmin(score)) == 22
     assert np.allclose(metrics[22], [0.88247808, 0.66212324, 2.34870777])
-    assert "Each curve is divided by its regional mean" in SI
+    assert "Each curve is divided by its mean" in SI

@@ -44,7 +44,7 @@ dev = ["pytest>=8", "ruff>=0.9", "build>=1.2"]
 
 [project.urls]
 Repository = "https://github.com/kevinkorfmann/fastrho"
-Documentation = "https://fastrho.readthedocs.io/"
+Documentation = "https://kevinkorfmann.github.io/fastrho/"
 Issues = "https://github.com/kevinkorfmann/fastrho/issues"
 Changelog = "https://github.com/kevinkorfmann/fastrho/blob/main/CHANGELOG.md"
 
