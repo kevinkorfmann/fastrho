@@ -26,6 +26,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  examples:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Create a fresh example environment
+        run: |
+          python -m venv "$RUNNER_TEMP/fastrho-example-env"
+          "$RUNNER_TEMP/fastrho-example-env/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/fastrho-example-env/bin/python" -m pip install ".[io]"
+      - name: Run installed-package and manuscript examples
+        working-directory: ${{ runner.temp }}
+        run: >-
+          "$RUNNER_TEMP/fastrho-example-env/bin/python"
+          "$GITHUB_WORKSPACE/scripts/smoke_fresh_examples.py"
+          --repo-root "$GITHUB_WORKSPACE"
+
   build:
     runs-on: ubuntu-24.04
     steps:
@@ -46,7 +65,7 @@ jobs:
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
+    needs: [examples, build]
     runs-on: ubuntu-24.04
     environment:
       name: github-pages

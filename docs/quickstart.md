@@ -28,6 +28,11 @@ source .venv/bin/activate
 `uv` is recommended for inference because the project lockfile records the extension packages'
 build-time Torch and NumPy needs.
 
+The documentation workflow recreates a blank Python 3.12 environment on every change, installs
+`fastrho[io]`, reads a compressed example VCF, runs the `msprime` setup, converts output to a tidy
+table, and executes the manuscript-species dry runs. The CUDA inference blocks require a compatible
+NVIDIA runner and the released model bundle; the CPU smoke test does not present them as executed.
+
 You also need two files from the **same trained model release**:
 
 - `model.ckpt` — network weights and architecture configuration

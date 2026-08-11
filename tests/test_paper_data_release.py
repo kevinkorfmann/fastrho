@@ -91,6 +91,9 @@ def test_documentation_workflow_publishes_the_built_site() -> None:
     assert "actions/upload-pages-artifact@v4" in workflow
     assert "actions/deploy-pages@v4" in workflow
     assert "pages: write" in workflow
+    assert "scripts/smoke_fresh_examples.py" in workflow
+    assert 'pip install ".[io]"' in workflow
+    assert "needs: [examples, build]" in workflow
 
 
 def test_complete_bundle_is_readable_and_contains_every_declared_artifact() -> None:
