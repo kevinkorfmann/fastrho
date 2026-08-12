@@ -229,6 +229,24 @@ populations, and arms 2R, 2L, 3R, 3L, and X.
 | `panel_*` | 2La summaries for the exact fixed 40-mosquito panel used to infer the maps. |
 | `full_*` | 2La summaries from all eligible released Phase 2 samples, provided as population context rather than map inputs. |
 
+Choose the scale that matches the analysis:
+
+- For hotspots, cold regions, or other spatial comparisons within a population, use
+  `rho_per_bp`, a within-population ratio, or a map normalized to mean 1 within each chromosome
+  arm. These analyses do not require an absolute $N_e$.
+- For comparisons of map shape among populations, normalize each population separately. Raw
+  differences in $\rho$ can reflect differences in $N_e$ as well as differences in recombination.
+- For absolute rates, use `rate_per_bp` or `cM_per_Mb` only as values conditional on `Ne_used`, and
+  retain that value in tables and figure metadata.
+
+`Ne_used` comes from the checkpoint's auxiliary region-level $N_e$ head. The head was trained on
+simulations with known $N_e$ and uses diversity-informative features including SNP spacing, allele
+frequencies, local nucleotide diversity, and haplotype richness. For these maps it also assumes a
+mutation rate of $3.5\times10^{-9}$ per bp per generation. This makes `Ne_used` a model-based,
+diversity-informed estimate, not an external validation of demographic history. The cross-based
+comparison evaluated normalized spatial shape and therefore did not validate $N_e$ or the absolute
+cM/Mb scale.
+
 **No additional $N_e$ rescaling is needed to plot or use the released `rate_per_bp` or
 `cM_per_Mb` values. Do not divide them by $N_e$ again.** Absolute values are conditional on the
 reported `Ne_used`. If you have an independently justified value $N_{e,\mathrm{target}}$, replace
@@ -242,6 +260,23 @@ maps["cM_per_Mb_external_Ne"] = maps["rate_per_bp_external_Ne"] * 1e8
 Keep `rho_per_bp` unchanged. Record the external $N_e$, its source, and the diploid convention
 $\rho=4N_e r$ with any rescaled result. For comparisons focused on spatial shape, state whether
 tracks were normalized within each arm; for absolute comparisons, propagate uncertainty in $N_e$.
+
+A Watterson estimate can provide a useful sensitivity value when no external demographic estimate
+is available,
+
+$$
+\widehat N_{e,W}=\frac{S}{4\mu L_{\mathrm{callable}}a_{n-1}},\qquad
+a_{n-1}=\sum_{i=1}^{n-1}\frac{1}{i},
+$$
+
+where $S$ is the number of segregating sites, $n$ is the number of sampled haplotypes, and
+$L_{\mathrm{callable}}$ is the callable rather than the physical sequence length. Use variant and
+missing-data filters consistent with the map input and report the assumed mutation rate. Because
+selection, structure, bottlenecks, inversions, and errors in callable length can shift this estimate,
+do not substitute it as uniquely correct. Instead, recompute the absolute columns under the
+Watterson estimate and other defensible $N_e$ values and report the resulting sensitivity range.
+Where a direct pedigree or linkage map exists, chromosome-wide calibration against that map is
+preferable to relying on a diversity estimate alone.
 
 For *Arabis*, switch among `baseline_selfing`, `small_panel_selfing`, and `structured_selfing` with
 the `campaign` column. For the tree-of-life table, group by `species_key`; blank reference values
