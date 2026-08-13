@@ -9,7 +9,7 @@
     "declared_artifacts": 21,
     "numeric_occurrences_inventoried": 949,
     "numeric_occurrences_bound": 949,
-    "artifacts_matching_published_bytes": 21
+    "artifacts_matching_published_bytes": 20
   },
   "numeric_policy": "Each Phase 2 prose number is assigned to the narrowest active source bundle. Numbers in generated includes inherit the exact producer and inputs of their artifact record.",
   "source_bundles": {
@@ -89,6 +89,10 @@
         "sha256": "4b922a876196c3929d941c8fc60ba3e6e8bf4e5e9acf4a72c0725e0eeff5d4bd"
       },
       {
+        "path": "paper/analysis/canid/wolf33_full_chromosome.json",
+        "sha256": "862cdd89da0ac750d0f6fb4afd721b0eaec30080fc28de32d68eabf4a7867860"
+      },
+      {
         "path": "paper/analysis/canid/wolf_followup.json",
         "sha256": "50528ceca3a18c64f5d6f1e85624ed347e6503a541eba8735386d579440e9f1a"
       },
@@ -110,7 +114,7 @@
       },
       {
         "path": "paper/figdata/canid_empirical_scale.json",
-        "sha256": "9337b95475356723f0d53fc66bcfa107a071112a88dd1bae2ccaa1c8fc2b426e"
+        "sha256": "53fa9db3de63c96a60f5efd03a3c503503a70293a244b7976b58afa500d4fa50"
       },
       {
         "path": "paper/figdata/dog_fig.npz",
@@ -178,11 +182,11 @@
       },
       {
         "path": "paper/results_snapshot/arabis_structured_simulation_gate.json",
-        "sha256": "6da088f2e03c14c190ebf3a0710e3338a3d034e8930a338e56e0b03a6f61ea74"
+        "sha256": "c795f578d051fe81963e0bc3844643cf8884501b24458fe257ed3301f3eb7777"
       },
       {
         "path": "paper/results_snapshot/arabis_window_diagnostics.json",
-        "sha256": "cd5ecdbd3d9ad5341015e982261a6bdab85ffab5f69331e36cc64484d7b298b0"
+        "sha256": "8e9bb93aef7f6ca0ea7c1fbe7a1ed5807fe1ff7ca7723541b8b248497c71561e"
       },
       {
         "path": "reproduce/checkpoints.json",
@@ -190,7 +194,7 @@
       },
       {
         "path": "research/arabis/README.md",
-        "sha256": "3b4953855a3ab4e3a0320129cd6d4c0931db59dce6a0fc3e349e67d02c06ba4c"
+        "sha256": "61b792037ca8f1db7ab4f6a01fc3f9036156dfdb30419463bc5c07aec2c16509"
       },
       {
         "path": "research/arabis/cuda/pixi.toml",
@@ -684,7 +688,7 @@
       },
       {
         "path": "paper/anopheles_variants/common/variant_audit.py",
-        "sha256": "fe8deead765e140f9a249dabe0d8438d18b842b14c3a90fd73cdc3a5dc4244c4"
+        "sha256": "b4c2b14f9d5abefc7f9d4b4c33d5ff642fd221a3f28a6ac756d4a86822270daa"
       },
       {
         "path": "paper/anopheles_variants/phase2/cohorts/cohort_audit.tsv",
@@ -712,7 +716,7 @@
       },
       {
         "path": "paper/anopheles_variants/phase2/promote_results.sh",
-        "sha256": "1917523ad46f4a38a1d3713cff2e6c54a9617afb4b8dcd68e48acfb6dd401f80"
+        "sha256": "c99aded2f89dcfa4d97f57baf4f908a6b68f33ffbfcb97c7963ea24e9e8c6112"
       },
       {
         "path": "paper/anopheles_variants/phase2/provenance/anopheles_resistance_panels.tsv",
@@ -13749,9 +13753,9 @@
       "producer": "paper/manuscript/figures/fig1_complete.tex",
       "role": "main-figure",
       "published_sha256": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
-      "package_sha256": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
+      "package_sha256": "105a2662ae5a656f084e54fc0e77a00bc3772694847c2e130e9308a0baf197b4",
       "staged_sha256": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
-      "matches_published": true
+      "matches_published": false
     },
     {
       "manuscript_target": "figures_phase2/fig1_method_validation.pdf",

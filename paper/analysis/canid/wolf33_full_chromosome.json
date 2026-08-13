@@ -1,0 +1,43 @@
+{
+  "analysis": "exploratory full-chromosome wolf transfer",
+  "region": "CanFam3.1 chr1:1-123000000",
+  "wolf_n_individuals": 33,
+  "wolf_n_variants": 1325082,
+  "missing_policy": "reference",
+  "checkpoint": "dog-bottleneck-v1",
+  "window_construction": "aligned 100-kb rates, averaged within 5-Mb bootstrap blocks for 1-Mb results",
+  "bootstrap": {
+    "block_size_bp": 5000000,
+    "replicates": 10000,
+    "seed": 20260807
+  },
+  "correlations": {
+    "wolf33": {
+      "100kb": {"pearson": 0.5336048325305816, "log_pearson": 0.375880057161001, "spearman": 0.3525245408677265},
+      "1mb": {"pearson": 0.832823776012657, "log_pearson": 0.5641708402867965}
+    },
+    "all_dogs67": {
+      "100kb": {"pearson": 0.5304671079725699, "log_pearson": 0.287749020879095, "spearman": 0.23656421233985792},
+      "1mb": {"pearson": 0.8046317783597768, "log_pearson": 0.42464707780431954}
+    },
+    "village_dogs42": {
+      "100kb": {"pearson": 0.5524822576744204, "log_pearson": 0.3120392721517226, "spearman": 0.25940805617750307},
+      "1mb": {"pearson": 0.823301027972937, "log_pearson": 0.46854645085015567}
+    }
+  },
+  "wolf_minus_dog_block_bootstrap": {
+    "all_dogs67": {
+      "100kb_pearson": {"difference": 0.0031377245580118673, "ci95": [-0.04539323757644158, 0.13136413601422947]},
+      "1mb_pearson": {"difference": 0.028191997652880052, "ci95": [-0.01277926613354014, 0.33857225985661343]},
+      "100kb_log_pearson": {"difference": 0.088131036281838, "ci95": [0.026615630098279074, 0.16049411386095103]},
+      "1mb_log_pearson": {"difference": 0.13952376248254117, "ci95": [0.02719627502546854, 0.29629640643325017]}
+    },
+    "village_dogs42": {
+      "100kb_pearson": {"difference": -0.018877425143838944, "ci95": [-0.051684305689896855, 0.09126653643690366]},
+      "1mb_pearson": {"difference": 0.00952274803971942, "ci95": [-0.028326503090892394, 0.2652572887299643]},
+      "100kb_log_pearson": {"difference": 0.06384078500925155, "ci95": [0.01116424386312244, 0.12740585082278488]},
+      "1mb_log_pearson": {"difference": 0.09562438943687096, "ci95": [0.0018032020722837277, 0.21535848925213502]}
+    }
+  },
+  "interpretation": "Log-rate correlation, the metric used for the paired rescue simulations, supports chromosome-wide recovery from wolf LD against both dog panels. Raw-rate Pearson correlation is near parity. This follow-up is exploratory rather than independent confirmation."
+}

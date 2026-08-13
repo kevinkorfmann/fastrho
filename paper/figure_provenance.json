@@ -181,7 +181,7 @@
         },
         {
           "path": "paper/results_snapshot/arabis_window_diagnostics.json",
-          "sha256": "cd5ecdbd3d9ad5341015e982261a6bdab85ffab5f69331e36cc64484d7b298b0"
+          "sha256": "8e9bb93aef7f6ca0ea7c1fbe7a1ed5807fe1ff7ca7723541b8b248497c71561e"
         }
       ]
     },
@@ -426,7 +426,7 @@
     {
       "output": "paper/manuscript/figures/fig1_complete.pdf",
       "manuscript_target": "figures_phase2/fig1_complete.pdf",
-      "output_sha256": "b7aea035168d0b875abf5bfbcd2a5c11a3cf7a86f989a2d4337d4e1cec386bec",
+      "output_sha256": "105a2662ae5a656f084e54fc0e77a00bc3772694847c2e130e9308a0baf197b4",
       "producer": "paper/manuscript/figures/fig1_complete.tex",
       "command": [
         "latexmk",
@@ -440,7 +440,7 @@
       "inputs": [
         {
           "path": "paper/manuscript/figures/fig1_architecture.tex",
-          "sha256": "45eae567621807e8a1b89228a378a90860659a1f134572b88267226f693217d2"
+          "sha256": "deb73123a2e2a1a240a7daf82a70a9239f1702a67cc306430e657eb77a8ef9de"
         },
         {
           "path": "paper/manuscript/figures/fig1_complete.tex",
@@ -503,7 +503,7 @@
         },
         {
           "path": "paper/figdata/canid_empirical_scale.json",
-          "sha256": "9337b95475356723f0d53fc66bcfa107a071112a88dd1bae2ccaa1c8fc2b426e"
+          "sha256": "53fa9db3de63c96a60f5efd03a3c503503a70293a244b7976b58afa500d4fa50"
         },
         {
           "path": "paper/figdata/dog_fig.npz",
