@@ -438,7 +438,7 @@ def test_panel_e_legend_names_only_the_methods_that_were_run(rendered) -> None:
         for text in axis.texts + list(axis.get_xticklabels()) + list(axis.get_yticklabels())
     )
     assert "ReLERNN" not in visible_text
-    assert "ReLERNN was not run in this campaign" in _caption()
+    assert r"\relernn was not run in this campaign" in _caption()
 
 
 def test_no_unaccounted_data_artists_can_be_added_to_figure2(rendered) -> None:
@@ -499,7 +499,7 @@ def test_figure2_caption_panel_descriptions_match_the_rendered_encodings(rendere
     assert "(c) Median estimated-to-true rate on a log axis" in caption
     assert "(d) Correlation versus relative wall-clock cost" in caption
     assert "(e) A separate 40-region SLiM comparison" in caption
-    assert "ReLERNN was not run in this campaign" in caption
+    assert r"\relernn was not run in this campaign" in caption
     assert figure.axes[2].get_yscale() == "log"
     assert figure.axes[3].get_xscale() == "log"
 
@@ -509,7 +509,7 @@ def test_figure2_surrounding_matched_history_numbers_are_exact(sources) -> None:
         "We assessed prediction-interval coverage", 1
     )[0]
     demography = sources["demography"]["scenarios"]
-    for method, display in (("relernn", "ReLERNN"), ("pyrho", "pyrho")):
+    for method, display in (("relernn", r"\relernn"), ("pyrho", r"\pyrho")):
         pairs = []
         for scenario in ("bottleneck", "expansion"):
             arms = demography[scenario][method]["arms"]
