@@ -3,9 +3,10 @@
 Usage:
   python scripts/wolf_subset_infer.py KEY CHECKPOINT STATS OUT_NPZ [DEVICE]
 
-The genotype input is ``/home/kkor/realdata/hap/KEY.npz``. Correlations are
-reported against its stdpopsim reference at several window sizes so a coarse
-pedigree map is not judged only at 100-kb resolution.
+The genotype input is ``$FASTRHO_REALDATA_ROOT/hap/KEY.npz`` (defaulting to
+``/home/kkor/realdata``). Correlations are reported against its stdpopsim
+reference at several window sizes so a coarse pedigree map is not judged only
+at 100-kb resolution.
 """
 
 import json
@@ -15,6 +16,9 @@ import sys
 import numpy as np
 from scipy.stats import pearsonr, spearmanr
 import stdpopsim
+
+if "STDPOPSIM_CACHE" in os.environ:
+    stdpopsim.set_cache_dir(os.environ["STDPOPSIM_CACHE"])
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -69,7 +73,8 @@ def main():
     key, checkpoint, stats_path, output = sys.argv[1:5]
     device = sys.argv[5] if len(sys.argv) > 5 else "cuda:0"
 
-    z = np.load(f"/home/kkor/realdata/hap/{key}.npz", allow_pickle=True)
+    realdata_root = os.environ.get("FASTRHO_REALDATA_ROOT", "/home/kkor/realdata")
+    z = np.load(os.path.join(realdata_root, "hap", f"{key}.npz"), allow_pickle=True)
     gm = z["gm"]
     pos = z["pos"].astype(np.float64)
     mu = float(z["mu"])
