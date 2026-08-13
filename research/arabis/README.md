@@ -56,7 +56,7 @@ After the final job, copy `arabis_cross_results.json` and
 paper snapshot and figure-data paths, then render the SI figure with
 `scripts/fig_arabis_cross.py`.
 
-The structured-map window audit is a separate post-rendering technical check.
+The structured-map window verification is a separate post-rendering technical check.
 It reads no F2 rates and applies the same genome-wide WGS-support and
 seven-model-stability criteria to every 2-Mb window. Submit it from the Betty
 repository root with `sbatch research/arabis/slurm_structured/21_window_diagnostics.sbatch`;

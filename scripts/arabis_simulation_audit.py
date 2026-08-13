@@ -31,7 +31,7 @@ def main() -> None:
     payload = {
         "checkpoint": str(Path(args.checkpoint).resolve()),
         "stats": str(Path(args.stats).resolve()),
-        "selection_data": "held-out simulated audit only",
+        "selection_data": "held-out simulated verification only",
         "arabis_cross_map_used": False,
         "strata": results,
     }

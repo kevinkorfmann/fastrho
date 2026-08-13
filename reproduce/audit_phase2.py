@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit canonical Phase 2 includes, producers, hashes, and numeric inventory."""
+"""Verify canonical Phase 2 includes, producers, hashes, and numeric inventory."""
 
 from __future__ import annotations
 
@@ -157,7 +157,7 @@ def main() -> int:
     }
     OUTPUT.write_text(json.dumps(audit, indent=2) + "\n", encoding="utf-8")
     if errors:
-        raise SystemExit("Phase 2 audit failed:\n- " + "\n- ".join(errors))
+        raise SystemExit("Phase 2 verification failed:\n- " + "\n- ".join(errors))
     print(OUTPUT)
     return 0
 

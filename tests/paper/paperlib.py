@@ -2,7 +2,7 @@
 
 Philosophy
 ----------
-The active prose-wide audit is ``reproduce/audit_phase2.py``. This module keeps
+The active prose-wide verification is ``reproduce/audit_phase2.py``. This module keeps
 the lower-level result re-derivations used by focused tests: wherever raw paired
 (prediction, truth) arrays are committed, snapshot metrics are recomputed with
 the same estimator used by the analysis pipeline.

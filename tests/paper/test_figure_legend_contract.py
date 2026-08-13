@@ -3,7 +3,7 @@
 The detailed Figure 2 contract verifies every plotted number.  This companion
 test guards the information a reader needs to interpret all 14 active figures:
 panel coverage, visual encodings, denominators, uncertainty, scale, and the two
-live legends whose omissions prompted this audit.
+live legends whose omissions prompted this verification.
 """
 
 from __future__ import annotations

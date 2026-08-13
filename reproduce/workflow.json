@@ -98,7 +98,7 @@
     },
     {
       "id": "audit",
-      "description": "Audit every Phase 2 include, producer, artifact hash, and reader-facing numeric occurrence.",
+      "description": "Verify every Phase 2 include, producer, artifact hash, and reader-facing numeric occurrence.",
       "commands": [
         ["uv", "run", "python", "reproduce/audit_phase2.py"]
       ],

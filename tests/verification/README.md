@@ -1,15 +1,15 @@
 # Cross-domain manuscript verification
 
-This directory audits the active manuscript, its bibliography, its declared
+This directory verifies the active manuscript, its bibliography, its declared
 data and code, and the torch-free implementation primitives. It complements the
 claim re-derivation suite in `tests/paper/` and the package unit tests in
 `tests/test_*.py`.
 
-## Audit domains
+## Verification domains
 
 | Domain | Contract |
 |---|---|
-| Quantitative claims | Every occurrence of every reader-facing numeric literal in the active main text, SI, and included tables resolves to an exact scoped source value, with explicit rounding and percent/kb/Mb conversions. Repeated values are retained as separate audit records. Central results are also independently re-derived by `tests/paper/`. |
+| Quantitative claims | Every occurrence of every reader-facing numeric literal in the active main text, SI, and included tables resolves to an exact scoped source value, with explicit rounding and percent/kb/Mb conversions. Repeated values are retained as separate verification records. Central results are also independently re-derived by `tests/paper/`. |
 | References | Every BibTeX record has complete type-appropriate metadata; every active citation resolves; DOI/URL syntax, duplicate active works, placeholder text, and implausible years are rejected. |
 | Live citation accuracy | DOI-backed references are compared with Crossref titles and publication years. Temporary Crossref rate limits are reported as skips, not false citation failures. |
 | Resources | Every provenance-ledger record has a stable source, terms route, citations, derivatives, and producing scripts. Every declared local artifact must exist and be nonempty. Live endpoints are checked separately. |
@@ -27,12 +27,12 @@ uv run --extra dev python -m pytest -q
 # Only the cross-domain layer
 uv run --extra dev python -m pytest tests/verification -q
 
-# Live resource and DOI audit
+# Live resource and DOI verification
 uv run --extra dev python -m pytest tests/verification/test_online_resources.py \
   --run-online -m online -q
 ```
 
-The live audit is intentionally opt-in because repository availability, publisher
+The live verification is intentionally opt-in because repository availability, publisher
 rate limits, and institutional firewalls are external state. A deterministic pass
 proves internal consistency and reproducibility contracts; it does not by itself
 prove that an observational interpretation is biologically true. That stronger

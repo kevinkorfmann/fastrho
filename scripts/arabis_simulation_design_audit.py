@@ -1,4 +1,4 @@
-"""Audit realized structured-selfing simulation priors without model or map data."""
+"""Verify realized structured-selfing simulation priors without model or map data."""
 
 from __future__ import annotations
 

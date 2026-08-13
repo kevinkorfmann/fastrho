@@ -16,7 +16,7 @@ missing.
 | 2 | `uv run python scripts/export_paper_data.py` | Plot-ready public data downloads and checksums |
 | 3 | `uv run --extra figures python scripts/build_manuscript_figures.py --run --write-manifest` | Every included figure and its input/output hashes |
 | 4 | `uv run python reproduce/stage_manuscript.py` | Generated inputs staged into the locked Phase 2 snapshot |
-| 5 | `uv run python reproduce/audit_phase2.py` | Number-to-source and artifact-to-producer audit |
+| 5 | `uv run python reproduce/audit_phase2.py` | Number-to-source and artifact-to-producer verification |
 | 6 | `uv run python reproduce/build_manuscript.py` | Authoritative Phase 2 main and SI PDFs |
 | 7 | `uv run python -m pytest tests/paper tests/verification -q` | Analysis, manuscript, and release contracts |
 | 8 | `uv run python scripts/release_check.py --strict-models` | Public model, data, and provenance release gate |
@@ -41,7 +41,7 @@ scoring, prediction archiving, and collation modules are:
 
 All cluster computation is submitted through the numbered Slurm files in that analysis directory.
 
-## Model-release audit
+## Model-release verification
 
 Model publication is a separate release gate from rebuilding figures from committed arrays.
 `fetch_model_release.py` downloads the registry archive, verifies its SHA-256, verifies every

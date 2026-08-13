@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit the active Phase 2 Anopheles analysis and promoted artifacts."""
+"""Verify the active Phase 2 Anopheles analysis and promoted artifacts."""
 
 from __future__ import annotations
 

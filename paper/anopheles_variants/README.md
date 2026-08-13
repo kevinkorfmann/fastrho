@@ -5,7 +5,7 @@ the freely available Ag1000G Phase 2 AR1 release; no Ag3/Phase 3 result is a cur
 
 - `phase2/` contains the frozen nine-population design, 45 inferred maps, compact result files,
   figures, manuscript fragments, provenance manifests, and the public BED release.
-- `common/` contains the Phase 2 extraction, inference, statistics, plotting, and audit utilities.
+- `common/` contains the Phase 2 extraction, inference, statistics, plotting, and verification utilities.
 
 Restricted Phase 3 analyses, results, maps, and manuscript text are not distributed in the public
 repository. Their private preservation is separate from this Phase 2 release.

@@ -10,7 +10,7 @@ legacy and are not part of this workflow.
 ```
 
 The command fetches the locked manuscript into `tmp/reproduce/manuscript`, regenerates analysis
-artifacts, stages them there, audits the result, and compiles both PDFs. It never writes to the
+artifacts, stages them there, verifies the result, and compiles both PDFs. It never writes to the
 manuscript checkout.
 
 ## Find the code behind a result

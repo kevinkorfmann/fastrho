@@ -218,7 +218,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "schema_version": 1,
-        "design": "cross-map-blind population-WGS support and model-stability audit",
+        "design": "cross-map-blind population-WGS support and model-stability verification",
         "f2_rate_arrays_read": False,
         "decision_rule": "generic species-wise 3-IQR outer fences; no threshold uses the F2 map",
         "context_len_snps": args.context_len,

@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install audit dependencies
+      - name: Install verification dependencies
         run: python -m pip install --quiet -e ".[dev,figures]" scikit-learn
 
       - name: Fetch the locked Phase 2 manuscript
@@ -71,5 +71,5 @@ jobs:
       - name: Validate data and citation provenance
         run: python scripts/release_check.py
 
-      - name: Write the number-by-number Phase 2 audit
+      - name: Write the number-by-number Phase 2 verification
         run: python reproduce/audit_phase2.py --check-published

@@ -107,4 +107,4 @@ rsync -a "$script_dir/results/manuscript_generated/phase2_cohorts.tex" "$script_
     -type f -print0 | sort -z | xargs -0 shasum -a 256
 ) > "$script_dir/provenance/promoted_files.sha256"
 
-echo "Phase 2 artifacts promoted. Inspect figures and run the submission audit before setting config.json complete."
+echo "Phase 2 artifacts promoted. Inspect figures and run the submission verification before setting config.json complete."

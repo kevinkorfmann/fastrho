@@ -14,7 +14,7 @@ This directory contains the paper's analysis products and provenance:
 - `anopheles_variants/phase2/` — the active open-data mosquito analysis;
 - `legacy/` — superseded public material, never an active input.
 
-Rebuild and audit the Phase 2 article and SI from the repository root:
+Rebuild and verify the Phase 2 article and SI from the repository root:
 
 ```bash
 ./reproduce/run.sh

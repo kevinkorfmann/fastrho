@@ -64,7 +64,7 @@ def main() -> None:
         "schema_version": 1,
         "passed": not failures,
         "failures": failures,
-        "decision_data": "simulated validation and held-out simulated audit only",
+        "decision_data": "simulated validation and held-out simulated verification only",
         "arabis_cross_map_used": False,
         "member_validation_pearson": validation,
         "minimum_member_validation_pearson": minimum_validation,

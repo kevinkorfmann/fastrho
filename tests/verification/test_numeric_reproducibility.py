@@ -1,4 +1,4 @@
-"""Number-level contracts for the canonical Phase 2 audit."""
+"""Number-level contracts for the canonical Phase 2 verification."""
 
 from __future__ import annotations
 

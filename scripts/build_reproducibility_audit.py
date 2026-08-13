@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the deterministic manuscript number-and-figure audit artifact."""
+"""Build the deterministic manuscript number-and-figure verification artifact."""
 
 from __future__ import annotations
 
@@ -75,7 +75,7 @@ def main() -> None:
     serialized = json.dumps(build_audit(), indent=2) + "\n"
     if args.check:
         if not OUTPUT.is_file() or OUTPUT.read_text(encoding="utf-8") != serialized:
-            raise SystemExit(f"stale reproducibility audit: run {Path(__file__).name}")
+            raise SystemExit(f"stale reproducibility verification: run {Path(__file__).name}")
     else:
         OUTPUT.write_text(serialized, encoding="utf-8")
         print(OUTPUT)

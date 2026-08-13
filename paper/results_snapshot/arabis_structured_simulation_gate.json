@@ -1,6 +1,6 @@
 {
   "arabis_cross_map_used": false,
-  "decision_data": "simulated validation and held-out simulated audit only",
+  "decision_data": "simulated validation and held-out simulated verification only",
   "failures": [],
   "member_validation_pearson": [
     0.8628542423248291,

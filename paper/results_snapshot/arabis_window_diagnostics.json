@@ -1,7 +1,7 @@
 {
   "context_len_snps": 1024,
   "decision_rule": "generic species-wise 3-IQR outer fences; no threshold uses the F2 map",
-  "design": "cross-map-blind population-WGS support and model-stability audit",
+  "design": "cross-map-blind population-WGS support and model-stability verification",
   "ensemble_members": 7,
   "f2_rate_arrays_read": false,
   "overlap_snps": 256,

@@ -1,4 +1,4 @@
-"""Audit every stdpopsim genetic map the paper validates against.
+"""Verify every stdpopsim genetic map the paper validates against.
 
 Every accuracy claim in the paper is scored against a stdpopsim reference map through one loader
 (realdata_infer.truth_windows) with no orientation or resolution guard. This script fetches each
@@ -87,7 +87,7 @@ def audit_chrom(species_id, map_id, chrom):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--all-chroms", action="store_true",
-                    help="also audit every C. elegans chromosome")
+                    help="also verify every C. elegans chromosome")
     a = ap.parse_args()
     report = []
     for species_id, map_id, chrom, expect in MAPS:

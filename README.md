@@ -31,7 +31,7 @@ the population-scaled recombination rate for every adjacent SNP interval.
 | **Scientific contract** | Exact simulation targets, coordinate checks, provenance ledgers, and paper-number tests |
 | **Current stage** | Alpha source release; the primary paper checkpoint is public and checksummed |
 | **Active empirical release** | Open Ag1000G Phase 2 AR1: 9 populations × 5 chromosome arms, with 2La, resistance, pedigree, and pyrho result tables |
-| **Active comparative SI** | A fixed, provenance-audited panel of 10 species |
+| **Active comparative SI** | A fixed, provenance-verified panel of 10 species |
 
 The model uses amortized training across diverse simulated demographic histories, enabling
 compatible new cohorts to be analyzed in one inference call. Population-scaled rates are reported
@@ -123,7 +123,7 @@ manuscript commit and files used by the workflow. Superseded Phase 3 material is
 an active input.
 
 The complete ordered reproduction hub is [`reproduce/`](reproduce/). From a fresh clone, one command
-recomputes generated results, public downloads, all figures, the numeric audit, both PDFs, and every
+recomputes generated results, public downloads, all figures, the numeric verification, both PDFs, and every
 paper-specific verification gate:
 
 ```bash
@@ -145,7 +145,7 @@ them.
 | [`paper/manuscript/`](paper/manuscript/) | Generated figures and TeX inputs staged into the authoritative Phase 2 manuscript |
 | [`paper/anopheles_variants/phase2/`](paper/anopheles_variants/phase2/) | Active open-data mosquito maps, results, provenance, figures, and release files |
 | [`legacy/`](legacy/) | Superseded analyses, inactive outputs, and historical utilities excluded from Phase 2 |
-| [`paper/results_snapshot/`](paper/results_snapshot/) | Frozen numerical inputs used by the paper audit |
+| [`paper/results_snapshot/`](paper/results_snapshot/) | Frozen numerical inputs used by the paper verification |
 | [`research/`](research/) | Frozen Phase 2 supporting workflows for Arabis and demography-matched benchmarks |
 | [`research/demography_matched/`](research/demography_matched/) | Ordered Slurm workflow and frozen outputs for the paired ReLERNN/pyrho demographic benchmark |
 | [`scripts/`](scripts/) | [Ordered manuscript analysis, figure-generation, and release utilities](scripts/README.md) |

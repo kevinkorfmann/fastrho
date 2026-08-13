@@ -34,16 +34,16 @@ python3 scripts/fetch_model_release.py \
   --output-dir downloaded-models
 ```
 
-To audit availability without downloading roughly 200 MB per checkpoint, compare every declared
+To check availability without downloading roughly 200 MB per checkpoint, compare every declared
 asset name and SHA-256 against GitHub's live release metadata:
 
 ```bash
 python3 scripts/audit_public_releases.py
 ```
 
-This online audit covers the archive, checkpoint, and companion statistics for all six user models,
+This online verification covers the archive, checkpoint, and companion statistics for all six user models,
 plus every frozen paper-support asset. The normal fetcher still verifies the bytes after download;
-the metadata audit is an availability and registry-consistency check, not a substitute for that
+the metadata verification is an availability and registry-consistency check, not a substitute for that
 local byte check.
 
 Replace the model ID with any row above. The fetcher reads the machine registry, downloads the versioned archive, checks the archive digest,

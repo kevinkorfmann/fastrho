@@ -1,7 +1,7 @@
 {
   "arabis_cross_map_used": false,
   "checkpoint": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed6/logs/fastrho/version_0/checkpoints/epoch=37-val_pearson=0.861.ckpt",
-  "selection_data": "held-out simulated audit only",
+  "selection_data": "held-out simulated verification only",
   "stats": "/vast/projects/smathi/cohort/korfmann/fastrho-arabis/structured_selfing_v1/seeds/seed6/shards/feat_stats.npz",
   "strata": {
     "diffuse_island": {

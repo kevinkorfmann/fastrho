@@ -1,7 +1,7 @@
-"""Guard: every stdpopsim reference map the paper validates against is audited for resolution
+"""Guard: every stdpopsim reference map the paper validates against is verified for resolution
 and orientation, so a coarse or flipped map can never silently drive an accuracy claim.
 
-The audit itself (scripts/audit_reference_maps.py) fetches each map from stdpopsim and writes
+The verification itself (scripts/audit_reference_maps.py) fetches each map from stdpopsim and writes
 paper/figdata/reference_map_audit.json; that JSON is the committed source of truth. These tests
 lock in its findings:
 
@@ -12,7 +12,7 @@ lock in its findings:
     dog Campbell, Drosophila Comeron) is fine-scale enough and correctly oriented.
 
 If someone re-points a validated claim at a coarse/flipped reference, or stdpopsim ships a changed
-map that re-runs the audit into a different verdict, these tests fail.
+map that re-runs the verification into a different verdict, these tests fail.
 """
 import functools
 import json
@@ -42,7 +42,7 @@ def _rows(species=None, mapid=None, chrom=None):
 
 
 def test_audit_covers_every_validated_reference():
-    """Each map behind a validated Pearson claim must appear in the audit."""
+    """Each map behind a validated Pearson claim must appear in the verification."""
     needed = {
         ("HomSap", "HapMapII_GRCh38"),
         ("HomSap", "DeCodeSexAveraged_GRCh38"),
@@ -53,14 +53,14 @@ def test_audit_covers_every_validated_reference():
     }
     have = {(r["species"], r["map"]) for r in _audit() if "error" not in r}
     missing = needed - have
-    assert not missing, f"reference-map audit missing: {missing}"
+    assert not missing, f"reference-map verification missing: {missing}"
 
 
 def test_celegans_reference_is_coarse_and_inverted():
     """The stdpopsim C. elegans map must be flagged both COARSE and MIS-ORIENTED on its
     representative chromosome -- the guarantee that it cannot be used as a fine-scale validation."""
     rep = [r for r in _rows("CaeEle", "RockmanRIAIL_ce11") if "flags" in r]
-    assert rep, "no flagged C. elegans representative row in the audit"
+    assert rep, "no flagged C. elegans representative row in the verification"
     flags = rep[0]["flags"]
     assert "COARSE" in flags and "MIS-ORIENTED" in flags, flags
     # coarse: a handful of segments over the whole chromosome, resolution far above fine-scale
@@ -82,7 +82,7 @@ def test_validated_anchors_are_not_misoriented():
     for sp, mp in [("HomSap", "HapMapII_GRCh38"), ("HomSap", "DeCodeSexAveraged_GRCh38"),
                    ("CanFam", "Campbell2016_CanFam3_1"), ("DroMel", "ComeronCrossover_dm6")]:
         rows = [r for r in _rows(sp, mp) if "flags" in r]
-        assert rows, f"{sp}/{mp} not in audit"
+        assert rows, f"{sp}/{mp} not in verification"
         assert "MIS-ORIENTED" not in rows[0]["flags"], (sp, mp, rows[0]["flags"])
 
 

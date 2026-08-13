@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify that every declared public checkpoint asset exists and matches GitHub.
 
-This online audit compares the local user-model and paper-support registries with
+This online verification compares the local user-model and paper-support registries with
 GitHub's release metadata.  It checks tag availability, exact asset names, byte
 sizes, and GitHub's SHA-256 digest without downloading multi-hundred-MB weights.
 The ordinary offline release checks remain network-independent.

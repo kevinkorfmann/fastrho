@@ -18,7 +18,7 @@ def main() -> None:
     args = parser.parse_args()
     paths = sorted(args.input_dir.glob("ts_*.npz"))
     if len(paths) != args.expected:
-        raise RuntimeError(f"audit shards={len(paths)}, expected {args.expected}")
+        raise RuntimeError(f"verification shards={len(paths)}, expected {args.expected}")
     counts = Counter()
     for path in paths:
         with np.load(path, allow_pickle=True) as archive:
