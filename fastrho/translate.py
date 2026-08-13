@@ -275,6 +275,9 @@ def predict_map_from_vcf(vcf_path, model, cfg, stats, contig=None,
                          input_mode="auto", missing="drop-site"):
     """Predict a recombination map directly from a phased VCF.
 
+    All sample columns are used. No automatic sample cap or training-range subsampling is applied;
+    subset a large VCF to a deliberate biological cohort before calling this function.
+
     Reads genotypes with :func:`fastrho.io.read_vcf`, which works on both real ACGT VCFs and
     **tskit/msprime numeric-allele (0/1) VCFs** (the kind ``tskit.TreeSequence.write_vcf``
     emits) and needs no extra packages when cyvcf2 is absent. Pass ``contig`` to restrict to

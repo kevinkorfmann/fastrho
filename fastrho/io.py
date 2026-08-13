@@ -116,6 +116,11 @@ def vcf_contigs(vcf_path):
 def read_vcf(vcf_path, contig=None, *, missing="drop-site", return_metadata=False):
     """Phased VCF -> ``(gm[n_hap, n_sites], positions[n_sites])``.
 
+    Every VCF sample column is read; this function does not select, cap, or randomly subsample
+    individuals. Each diploid sample expands to two adjacent allele rows, so callers must subset
+    large VCFs to a deliberate cohort before reading when required by the checkpoint's training
+    domain.
+
     Works on both real ACGT VCFs and **tskit/msprime numeric-allele (0/1) VCFs** — the kind
     ``tskit.TreeSequence.write_vcf`` emits. cyvcf2 is used when installed (fast, indexed),
     otherwise a dependency-free reader is used so the common case needs no extra packages.
