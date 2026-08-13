@@ -184,7 +184,7 @@ access route, terms, citation, local derivatives, and producing scripts.
 - [Contributing](CONTRIBUTING.md)
 - [Changelog](CHANGELOG.md)
 
-[paper-maps]: https://kevinkorfmann.github.io/fastrho/data.html#inferred-map-downloads
+[paper-maps]: https://fastrho.readthedocs.io/en/latest/data.html
 
 ## Citation and license
 
