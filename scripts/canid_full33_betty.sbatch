@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
-#SBATCH --gres=gpu:45gb:1
+#SBATCH --gpus=1
 #SBATCH --mem=48G
 #SBATCH --time=04:00:00
 #SBATCH --output=/vast/projects/smathi/cohort/korfmann/fastrho-canid-full33/logs/run-%j.out
