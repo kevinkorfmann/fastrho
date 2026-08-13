@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "manuscript_repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "manuscript_commit": "ea0419799c36466e916be06ff9d6a618be49a211",
+  "manuscript_commit": "912764cb94556c3ce07736d8e561534c4ef34d8e",
   "scope": "Phase 2 only",
   "summary": {
     "figures": 15,
@@ -1242,7 +1242,7 @@
       },
       {
         "path": "reproduce/manuscript.lock.json",
-        "sha256": "d003e50e35dd9a55647e873f537991014f96b6cf5a187592e734131770d65868"
+        "sha256": "3bb2d2804639c14fe7edf012b37c22ee371255227f590d142c97bf5f71a91dc1"
       }
     ]
   },
@@ -6012,7 +6012,7 @@
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "15",
       "unit": null,
-      "context": "The 15 AgamP4 resistance regions were defined from phenotype markers and named, uniquely mappable mechanism genes in the literature. Candidate con",
+      "context": "The 15 AgamP4 insecticide-resistance regions were selected from phenotype-associated markers in Hancock et al. and from other known, uniquely ma",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -6021,11 +6021,11 @@
     {
       "file": "main.tex",
       "line": 276,
-      "column": 195,
+      "column": 284,
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "0.50",
       "unit": "Mb",
-      "context": "notype markers and named, uniquely mappable mechanism genes in the literature. Candidate controls were on the same chromosome arm, at least 0.50 Mb from any focal region, and matched by empirical-percentile distance in telomere position, log SNP density, nucleotide diversity, and H12",
+      "context": "mappable \\textit{A. gambiae} resistance loci summarized in the same review . Candidate controls were on the same chromosome arm, at least 0.50 Mb from any focal region, and matched by empirical-percentile distance in telomere position, log SNP density, nucleotide diversity, and H12",
       "binding": {
         "kind": "source-bundle",
         "bundle": "anopheles-phase2"
@@ -6034,7 +6034,7 @@
     {
       "file": "main.tex",
       "line": 276,
-      "column": 360,
+      "column": 449,
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "128",
       "unit": null,
@@ -6047,7 +6047,7 @@
     {
       "file": "main.tex",
       "line": 276,
-      "column": 422,
+      "column": 511,
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "75",
       "unit": null,
@@ -6060,7 +6060,7 @@
     {
       "file": "main.tex",
       "line": 276,
-      "column": 545,
+      "column": 634,
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "5000",
       "unit": null,
@@ -6073,7 +6073,7 @@
     {
       "file": "main.tex",
       "line": 276,
-      "column": 645,
+      "column": 734,
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "15",
       "unit": null,
@@ -6086,7 +6086,7 @@
     {
       "file": "main.tex",
       "line": 276,
-      "column": 740,
+      "column": 829,
       "section": "Materials and Methods > Resistance-region controls",
       "printed": "4000",
       "unit": null,
