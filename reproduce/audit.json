@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "manuscript_repository": "kevinkorfmann/fastrho-manuscript-2026-07-21",
-  "manuscript_commit": "f72685e35f34aa24b687c1f051843f6bfc449b0e",
+  "manuscript_commit": "88c81dd7c4e222600ea57cb1f013acf1bdd9a170",
   "scope": "Phase 2 only",
   "summary": {
     "figures": 15,
@@ -1242,7 +1242,7 @@
       },
       {
         "path": "reproduce/manuscript.lock.json",
-        "sha256": "15dbaad2477d3449f53dc6a42aa352a479ceea72e3ff9e73a7177772665c03b3"
+        "sha256": "804b9b4d3a5beca9f3aa8c64faf4621ed3393e0bf12515e0703cf5736a80d0a1"
       }
     ]
   },
