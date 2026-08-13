@@ -635,10 +635,13 @@ def pedigree_figure(pedigree: dict, out: Path) -> None:
         edgecolor=INK,
         fontsize=7.0,
     )
-    for start in ((0.235, 0.69), (0.765, 0.69)):
+    for start, end in (
+        ((0.235, 0.69), (0.34, 0.57)),
+        ((0.765, 0.69), (0.66, 0.57)),
+    ):
         ax_a.annotate(
             "",
-            xy=(0.50, 0.58),
+            xy=end,
             xytext=start,
             xycoords=ax_a.transAxes,
             textcoords=ax_a.transAxes,
@@ -646,7 +649,7 @@ def pedigree_figure(pedigree: dict, out: Path) -> None:
         )
     ax_a.annotate(
         "",
-        xy=(0.50, 0.32),
+        xy=(0.50, 0.31),
         xytext=(0.50, 0.40),
         xycoords=ax_a.transAxes,
         textcoords=ax_a.transAxes,

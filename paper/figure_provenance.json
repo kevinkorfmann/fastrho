@@ -544,7 +544,7 @@
       "inputs": [
         {
           "path": "paper/anopheles_variants/common/plot_phase2.py",
-          "sha256": "64bb1a8b3611dda52cf02519e76f551ccd7e44870e67e0c8fc470af2e471b617"
+          "sha256": "03afe6363b2d1eaad274b3536dc7764689ef0fec2f06959f92ff6ae9bdae8050"
         },
         {
           "path": "paper/anopheles_variants/phase2/cohorts/selection.tsv",
@@ -751,7 +751,7 @@
     {
       "output": "paper/manuscript/figures/fig_phase2_pedigree.pdf",
       "manuscript_target": "figures_phase2/fig_phase2_pedigree.pdf",
-      "output_sha256": "1f2dfe9ec601b903aa7f66e976be05615a383ffc622690c04873c2c211916301",
+      "output_sha256": "a052eb3d77c8ea9fad791258b14a499bbb23a93512b50116ac436006dcdbc78b",
       "producer": "paper/anopheles_variants/common/plot_phase2.py",
       "command": [
         "uv",
@@ -773,7 +773,7 @@
       "inputs": [
         {
           "path": "paper/anopheles_variants/common/plot_phase2.py",
-          "sha256": "64bb1a8b3611dda52cf02519e76f551ccd7e44870e67e0c8fc470af2e471b617"
+          "sha256": "03afe6363b2d1eaad274b3536dc7764689ef0fec2f06959f92ff6ae9bdae8050"
         },
         {
           "path": "paper/anopheles_variants/phase2/cohorts/selection.tsv",
@@ -1002,7 +1002,7 @@
       "inputs": [
         {
           "path": "paper/anopheles_variants/common/plot_phase2.py",
-          "sha256": "64bb1a8b3611dda52cf02519e76f551ccd7e44870e67e0c8fc470af2e471b617"
+          "sha256": "03afe6363b2d1eaad274b3536dc7764689ef0fec2f06959f92ff6ae9bdae8050"
         },
         {
           "path": "paper/anopheles_variants/phase2/cohorts/selection.tsv",
