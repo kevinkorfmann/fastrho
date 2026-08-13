@@ -16,7 +16,9 @@ module load python/3.11.11 bcftools/1.21
 PROJECT=/vast/projects/smathi/cohort/korfmann/fastrho-canid-full33
 CODE=$PROJECT/repo
 PY=/vast/projects/smathi/cohort/korfmann/fastrho-arabis/python/bin/python
-VCF=https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g.990.SNP.INDEL.chrAll.vcf.gz
+VCF_URL=https://research.nhgri.nih.gov/dog_genome/downloads/datasets/WGS/722g.990.SNP.INDEL.chrAll.vcf.gz
+VCF_INDEX=$PROJECT/inputs/722g.990.SNP.INDEL.chrAll.vcf.gz.tbi
+VCF=${VCF_URL}##idx##${VCF_INDEX}
 IDS=$PROJECT/inputs/wolf33_ids.txt
 mkdir -p "$PROJECT"/{hap,logs}
 
