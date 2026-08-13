@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="820" viewBox="0 0 1800 820" role="img" aria-labelledby="title desc">
+  <title id="title">fastrho method overview</title>
+  <desc id="desc">Population genotypes are summarized by seventeen explicitly named features per SNP interval, processed by a multiscale stem with six bidirectional Mamba encoder blocks and four decoder blocks, and converted into an interval recombination map and a regional effective population size estimate.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 5L0 10Z" fill="#2737E7"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="145%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#151515" flood-opacity=".09"/>
+    </filter>
+    <style>
+      text{font-family:Inter,"Helvetica Neue",Arial,sans-serif;fill:#151515}
+      .title{font-size:34px;font-weight:750;letter-spacing:-.5px}
+      .subtitle{font-size:17px;fill:#5B5E6B}
+      .step{font-size:14px;font-weight:750;letter-spacing:1.5px;fill:#2737E7}
+      .heading{font-size:23px;font-weight:750}
+      .group{font-size:16px;font-weight:700}
+      .label{font-size:15px}
+      .small{font-size:13px;fill:#5B5E6B}
+      .tiny{font-size:12px;fill:#5B5E6B}
+      .card{fill:#FFF;stroke:#D8DBE8;stroke-width:2}
+      .soft{fill:#F5F6FB}
+      .pill{fill:#FFF;stroke:#D8DBE8;stroke-width:1.5}
+      .wire{fill:none;stroke:#2737E7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .flow{fill:none;stroke:#2737E7;stroke-width:4;marker-end:url(#arrow)}
+      .num{font-size:11px;font-weight:750;fill:#FFF;text-anchor:middle;dominant-baseline:central}
+    </style>
+  </defs>
+
+  <rect width="1800" height="780" fill="#FFF"/>
+  <text x="60" y="60" class="title">fastrho turns population genotypes into a fine-scale recombination map</text>
+  <text x="60" y="91" class="subtitle">One feature token per adjacent-SNP interval · bidirectional sequence inference · calibrated interval uncertainty</text>
+  <line x1="60" y1="116" x2="1740" y2="116" stroke="#D8DBE8" stroke-width="2"/>
+
+  <!-- Input -->
+  <g>
+    <text x="60" y="151" class="step">01  INPUT</text>
+    <text x="60" y="181" class="heading">Population genotypes</text>
+  <rect x="60" y="207" width="250" height="440" rx="22" class="soft"/>
+    <rect x="82" y="231" width="206" height="64" rx="12" class="card"/>
+    <text x="101" y="258" class="group">single-contig VCF</text>
+    <text x="101" y="280" class="small">phased or unphased</text>
+
+    <text x="82" y="333" class="small">samples</text>
+    <text x="274" y="333" class="small" text-anchor="end">segregating sites →</text>
+    <g transform="translate(82 347)">
+      <rect width="206" height="120" rx="10" fill="#FFF" stroke="#D8DBE8" stroke-width="2"/>
+      <g fill="#2737E7">
+        <rect x="12" y="12" width="13" height="13" rx="3"/><rect x="60" y="12" width="13" height="13" rx="3"/><rect x="108" y="12" width="13" height="13" rx="3"/><rect x="156" y="12" width="13" height="13" rx="3"/>
+        <rect x="36" y="36" width="13" height="13" rx="3"/><rect x="84" y="36" width="13" height="13" rx="3"/><rect x="132" y="36" width="13" height="13" rx="3"/><rect x="180" y="36" width="13" height="13" rx="3"/>
+        <rect x="12" y="60" width="13" height="13" rx="3"/><rect x="84" y="60" width="13" height="13" rx="3"/><rect x="108" y="60" width="13" height="13" rx="3"/><rect x="180" y="60" width="13" height="13" rx="3"/>
+        <rect x="36" y="84" width="13" height="13" rx="3"/><rect x="60" y="84" width="13" height="13" rx="3"/><rect x="132" y="84" width="13" height="13" rx="3"/><rect x="156" y="84" width="13" height="13" rx="3"/>
+      </g>
+      <g fill="#D8DBE8">
+        <rect x="36" y="12" width="13" height="13" rx="3"/><rect x="84" y="12" width="13" height="13" rx="3"/><rect x="132" y="12" width="13" height="13" rx="3"/><rect x="180" y="12" width="13" height="13" rx="3"/>
+        <rect x="12" y="36" width="13" height="13" rx="3"/><rect x="60" y="36" width="13" height="13" rx="3"/><rect x="108" y="36" width="13" height="13" rx="3"/><rect x="156" y="36" width="13" height="13" rx="3"/>
+        <rect x="36" y="60" width="13" height="13" rx="3"/><rect x="60" y="60" width="13" height="13" rx="3"/><rect x="132" y="60" width="13" height="13" rx="3"/><rect x="156" y="60" width="13" height="13" rx="3"/>
+        <rect x="12" y="84" width="13" height="13" rx="3"/><rect x="84" y="84" width="13" height="13" rx="3"/><rect x="108" y="84" width="13" height="13" rx="3"/><rect x="180" y="84" width="13" height="13" rx="3"/>
+      </g>
+    </g>
+    <line x1="222" y1="483" x2="264" y2="483" class="wire"/>
+    <line x1="222" y1="474" x2="222" y2="492" class="wire"/>
+    <line x1="264" y1="474" x2="264" y2="492" class="wire"/>
+    <text x="243" y="516" class="small" text-anchor="middle">interval i</text>
+    <text x="82" y="563" class="group">one token per SNP</text>
+    <text x="82" y="585" class="small">represents the interval to its right</text>
+  </g>
+
+  <path d="M320 407H361" class="flow"/>
+
+  <!-- Features -->
+  <g>
+    <text x="385" y="151" class="step">02  FEATURE TOKEN</text>
+    <text x="385" y="181" class="heading">17 measured signals at every SNP</text>
+    <rect x="385" y="207" width="650" height="440" rx="22" fill="#F5F6FB" stroke="#2737E7" stroke-width="2.5" filter="url(#shadow)"/>
+    <rect x="407" y="227" width="606" height="48" rx="13" fill="#2737E7"/>
+    <text x="430" y="258" style="font-size:21px;font-weight:750;fill:#FFF">x<tspan baseline-shift="sub" font-size="14">i</tspan> ∈ ℝ¹⁷</text>
+    <text x="988" y="257" text-anchor="end" style="font-size:15px;fill:#FFF">features 1–17 in model order</text>
+
+    <text x="407" y="307" class="group">Geometry + allele frequency</text>
+    <text x="993" y="307" class="small" text-anchor="end">4 channels</text>
+    <g transform="translate(407 318)">
+      <rect width="142" height="42" rx="10" class="pill"/><circle cx="19" cy="21" r="11" fill="#2737E7"/><text x="19" y="21" class="num">1</text><text x="38" y="26" class="label">log Δpos next</text>
+      <rect x="149" width="151" height="42" rx="10" class="pill"/><circle cx="168" cy="21" r="11" fill="#2737E7"/><text x="168" y="21" class="num">2</text><text x="187" y="26" class="label">log Δpos prev</text>
+      <rect x="307" width="154" height="42" rx="10" class="pill"/><circle cx="326" cy="21" r="11" fill="#2737E7"/><text x="326" y="21" class="num">3</text><text x="345" y="26" class="label">derived AF</text>
+      <rect x="468" width="138" height="42" rx="10" class="pill"/><circle cx="487" cy="21" r="11" fill="#2737E7"/><text x="487" y="21" class="num">4</text><text x="506" y="26" class="label">minor AF</text>
+    </g>
+
+    <text x="407" y="392" class="group">Multiscale neighborhood LD</text>
+    <text x="993" y="392" class="small" text-anchor="end">6 channels · 5 / 25 / 50 kb</text>
+    <g transform="translate(407 403)">
+      <rect width="194" height="42" rx="10" class="pill"/><circle cx="19" cy="21" r="11" fill="#2737E7"/><text x="19" y="21" class="num">5</text><text x="38" y="26" class="label">mean r² · 5 kb</text>
+      <rect x="206" width="194" height="42" rx="10" class="pill"/><circle cx="225" cy="21" r="11" fill="#2737E7"/><text x="225" y="21" class="num">6</text><text x="244" y="26" class="label">mean r² · 25 kb</text>
+      <rect x="412" width="194" height="42" rx="10" class="pill"/><circle cx="431" cy="21" r="11" fill="#2737E7"/><text x="431" y="21" class="num">7</text><text x="450" y="26" class="label">mean r² · 50 kb</text>
+      <rect y="48" width="194" height="42" rx="10" class="pill"/><circle cx="19" cy="69" r="11" fill="#6F7CF0"/><text x="19" y="69" class="num">8</text><text x="38" y="74" class="label">log pairs · 5 kb</text>
+      <rect x="206" y="48" width="194" height="42" rx="10" class="pill"/><circle cx="225" cy="69" r="11" fill="#6F7CF0"/><text x="225" y="69" class="num">9</text><text x="244" y="74" class="label">log pairs · 25 kb</text>
+      <rect x="412" y="48" width="194" height="42" rx="10" class="pill"/><circle cx="431" cy="69" r="11" fill="#6F7CF0"/><text x="431" y="69" class="num">10</text><text x="450" y="74" class="label">log pairs · 50 kb</text>
+    </g>
+
+    <text x="407" y="526" class="group">Adjacent two-locus state</text>
+    <text x="993" y="526" class="small" text-anchor="end">5 channels</text>
+    <g transform="translate(407 537)">
+      <rect width="154" height="42" rx="10" class="pill"/><circle cx="19" cy="21" r="11" fill="#6F7CF0"/><text x="19" y="21" class="num">11</text><text x="38" y="26" class="label">adjacent r²</text>
+      <rect x="161" width="105" height="42" rx="10" class="pill"/><circle cx="180" cy="21" r="11" fill="#6F7CF0"/><text x="180" y="21" class="num">12</text><text x="199" y="26" class="label">pAB</text>
+      <rect x="273" width="105" height="42" rx="10" class="pill"/><circle cx="292" cy="21" r="11" fill="#6F7CF0"/><text x="292" y="21" class="num">13</text><text x="311" y="26" class="label">pAb</text>
+      <rect x="385" width="105" height="42" rx="10" class="pill"/><circle cx="404" cy="21" r="11" fill="#6F7CF0"/><text x="404" y="21" class="num">14</text><text x="423" y="26" class="label">paB</text>
+      <rect x="497" width="109" height="42" rx="10" class="pill"/><circle cx="516" cy="21" r="11" fill="#6F7CF0"/><text x="516" y="21" class="num">15</text><text x="535" y="26" class="label">pab</text>
+    </g>
+
+    <text x="407" y="606" class="group">Local polymorphism</text>
+    <text x="993" y="606" class="small" text-anchor="end">2 channels</text>
+    <g transform="translate(407 616)">
+      <rect width="292" height="42" rx="10" class="pill"/><circle cx="19" cy="21" r="11" fill="#6F7CF0"/><text x="19" y="21" class="num">16</text><text x="38" y="26" class="label">local nucleotide diversity</text>
+      <rect x="306" width="300" height="42" rx="10" class="pill"/><circle cx="325" cy="21" r="11" fill="#6F7CF0"/><text x="325" y="21" class="num">17</text><text x="344" y="26" class="label">local sample-pattern richness</text>
+    </g>
+  </g>
+
+  <path d="M1045 407H1081" class="flow"/>
+
+  <!-- Model -->
+  <g>
+    <text x="1105" y="151" class="step">03  SEQUENCE MODEL</text>
+    <text x="1105" y="181" class="heading">Multiscale BiMamba</text>
+    <rect x="1105" y="207" width="390" height="440" rx="22" class="soft"/>
+    <rect x="1127" y="227" width="346" height="65" rx="13" class="card"/>
+    <text x="1148" y="254" class="group">multiscale convolutional stem</text>
+    <text x="1148" y="276" class="small">256 channels · kernels 3, 7, 15</text>
+    <path d="M1300 292V322" class="flow"/>
+
+    <text x="1127" y="345" class="group">6 bidirectional encoder blocks</text>
+    <g transform="translate(1127 361)">
+      <rect width="48" height="76" rx="9" fill="#2737E7"/><rect x="57" width="48" height="76" rx="9" fill="#3343E9"/>
+      <rect x="114" width="48" height="76" rx="9" fill="#4050EB"/><rect x="171" width="48" height="76" rx="9" fill="#4F5FEB"/>
+      <rect x="228" width="48" height="76" rx="9" fill="#6070EE"/><rect x="285" width="48" height="76" rx="9" fill="#6F7CF0"/>
+      <path d="M12 25H36M36 25L29 18M36 25L29 32M36 51H12M12 51L19 44M12 51L19 58" stroke="#FFF" stroke-width="2" fill="none"/>
+    </g>
+    <path d="M1300 437V472" class="flow"/>
+    <text x="1127" y="493" class="group">4 decoder blocks</text>
+    <g transform="translate(1184 510)">
+      <rect width="62" height="62" rx="10" fill="#6F7CF0"/><rect x="72" width="62" height="62" rx="10" fill="#6070EE"/>
+      <rect x="144" width="62" height="62" rx="10" fill="#4F5FEB"/><rect x="216" width="62" height="62" rx="10" fill="#2737E7"/>
+    </g>
+    <text x="1300" y="594" class="small" text-anchor="middle">context flows in both genomic directions</text>
+  </g>
+
+  <path d="M1505 407H1541" class="flow"/>
+
+  <!-- Output -->
+  <g>
+    <text x="1565" y="151" class="step">04  OUTPUT</text>
+    <text x="1565" y="181" class="heading">Map + scale</text>
+    <rect x="1565" y="207" width="175" height="440" rx="22" class="soft"/>
+    <rect x="1587" y="227" width="131" height="231" rx="14" fill="#FFF" stroke="#2737E7" stroke-width="2.5"/>
+    <text x="1605" y="258" class="group">each interval</text>
+    <text x="1605" y="283" class="label">mean log ρ</text>
+    <text x="1605" y="305" class="small">+ variance</text>
+    <line x1="1605" y1="382" x2="1700" y2="382" stroke="#B8BBC7" stroke-width="2"/>
+    <polyline points="1605 397,1620 390,1635 409,1650 348,1665 368,1680 326,1695 379,1702 352" class="wire"/>
+    <text x="1605" y="433" class="small">recombination map</text>
+    <rect x="1587" y="480" width="131" height="102" rx="14" class="card"/>
+    <text x="1605" y="512" class="group">whole region</text>
+    <text x="1605" y="542" style="font-size:24px;font-weight:750;fill:#2737E7">N<tspan baseline-shift="sub" font-size="15">e</tspan></text>
+    <text x="1643" y="542" class="small">point estimate</text>
+  </g>
+
+  <!-- Notes -->
+  <rect x="60" y="687" width="1680" height="84" rx="16" fill="#F5F6FB"/>
+  <rect x="60" y="687" width="8" height="84" rx="4" fill="#2737E7"/>
+  <text x="88" y="720" class="label"><tspan font-weight="700">Input-aware:</tspan> phased data use haplotype LD; unphased data use composite dosage LD.</text>
+  <text x="88" y="750" class="small"><tspan font-weight="700">Domain-randomized checkpoint:</tspan> adds an 18th feature (local rare-allele fraction) and conditions on the input view.</text>
+</svg>
