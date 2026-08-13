@@ -82,18 +82,18 @@ def test_inferred_map_downloads_are_easy_to_find_and_scaled() -> None:
     assert "mean 1" in page
     assert "10^8" in page
     readme = (ROOT / "README.md").read_text()
-    assert "kevinkorfmann.github.io/fastrho/data.html#inferred-map-downloads" in readme
+    assert "fastrho.readthedocs.io/en/latest/data.html" in readme
 
 
-def test_documentation_workflow_publishes_the_built_site() -> None:
+def test_documentation_workflow_validates_without_deploying_a_second_site() -> None:
     workflow = (ROOT / ".github" / "workflows" / "docs.yml").read_text()
     assert "sphinx-build -W --keep-going -b html" in workflow
-    assert "actions/upload-pages-artifact@v4" in workflow
-    assert "actions/deploy-pages@v4" in workflow
-    assert "pages: write" in workflow
+    assert "actions/upload-pages-artifact" not in workflow
+    assert "actions/deploy-pages" not in workflow
+    assert "pages: write" not in workflow
+    assert "github-pages" not in workflow
     assert "scripts/smoke_fresh_examples.py" in workflow
     assert 'pip install ".[io]"' in workflow
-    assert "needs: [examples, build]" in workflow
 
 
 def test_complete_bundle_is_readable_and_contains_every_declared_artifact() -> None:

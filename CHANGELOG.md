@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Retired the duplicate GitHub Pages deployment; Read the Docs is now the sole canonical
+  documentation site, while GitHub Actions continues to build the docs as a validation check.
 - Added a deterministic, self-documented mosquito-map ZIP and explicit AgamP4 coordinate,
   population-scale, absolute-scale, and effective-population-size rescaling guidance.
 - Replaced the misleading cohort-mean mosquito `Ne_estimate` export with the exact arm-specific
