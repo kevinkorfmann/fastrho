@@ -13,9 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kevinkorfmann/fastrho/main/docs/_static_public/fastrho_schematic.png" width="960" alt="fastrho schematic showing all 17 input features, six bidirectional Mamba encoder blocks, four decoder blocks, interval recombination-rate output, and a regional effective-population-size estimate">
-  <br>
-  <sub><a href="https://raw.githubusercontent.com/kevinkorfmann/fastrho/main/docs/_static_public/fastrho_schematic.svg">Download the full-resolution SVG</a></sub>
+  <img src="https://raw.githubusercontent.com/kevinkorfmann/fastrho/main/docs/_static_public/fastrho_schematic.png" width="960" alt="Paper schematic showing the mapping from population genotypes to interval tokens, bidirectional state-space inference, interval recombination-rate output, and a regional effective-population-size estimate">
 </p>
 
 `fastrho` infers fine-scale recombination maps from population genotypes using pretrained neural
