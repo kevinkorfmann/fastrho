@@ -712,7 +712,7 @@ def pedigree_figure(pedigree: dict, out: Path) -> None:
     ax_c.axvline(-statistic, color=BLUE, lw=1.0, ls=(0, (3, 2)))
     ax_c.set_xlim(-0.8, 0.8)
     ax_c.text(
-        0.96,
+        0.82,
         0.96,
         f"observed $r_s={statistic:.2f}$\n{len(null):,} spatial shifts\ntwo-sided $P={pvalue:.4f}$",
         transform=ax_c.transAxes,
