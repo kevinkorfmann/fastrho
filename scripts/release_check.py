@@ -137,6 +137,7 @@ def main() -> int:
     generated_sources = (
         ROOT / "paper" / "manuscript" / "generated" / "data_sources_table.tex"
     ).read_text(encoding="utf-8")
+    generated_sources_plain = re.sub(r"\\textit\{([^{}]*)\}", r"\1", generated_sources)
     manuscript_text = main_text + si_text + generated_sources
     for source in provenance["datasets"]:
         missing = sorted(required - source.keys())
@@ -160,7 +161,7 @@ def main() -> int:
         for derivative in source.get("local_derivatives", []):
             if not (ROOT / derivative).exists():
                 errors.append(f"dataset {source.get('id')} derivative is missing: {derivative}")
-        if source.get("name") not in generated_sources:
+        if source.get("name") not in generated_sources_plain:
             errors.append(f"dataset {source.get('id')} is absent from generated SI table")
 
     for path in (ROOT / "README.md", ROOT / "docs"):
