@@ -75,6 +75,18 @@ print(gm.shape)   # (2 × diploid samples, retained SNPs)
 print(meta)       # contig, phase status, number of dropped missing sites
 ```
 
+:::{warning}
+`read_vcf` and the VCF inference functions read **every sample column** in the selected VCF. They do
+not cap, randomly choose, or otherwise subsample individuals. A VCF containing 1,000 diploid
+samples therefore becomes 2,000 haplotype rows and is passed to the model as a 2,000-haplotype
+cohort.
+
+The general `domain-randomized-v1` model was trained with 20--200 haplotypes, corresponding to
+10--100 ordinary diploid VCF samples. Subset a larger VCF to a biologically coherent cohort before
+calling fastrho; do not assume that extra samples are harmless or that fastrho will choose 100 for
+you. See {ref}`sample-count-contract` for checkpoint-specific guidance.
+:::
+
 A usable call must resolve to one contig, at least two segregating SNPs, strictly increasing
 positions, and binary genotypes. Multiallelic records and indels are skipped; sites with any missing
 genotype are dropped by default and are never filled in as reference.

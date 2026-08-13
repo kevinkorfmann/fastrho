@@ -53,6 +53,18 @@ def test_user_api_surface_is_documented() -> None:
     assert not sorted(name for name in expected if name not in api)
 
 
+def test_vcf_sample_contract_is_prominent_and_explicit() -> None:
+    quickstart = (DOCS / "quickstart.md").read_text(encoding="utf-8")
+    guide = (DOCS / "your-data.md").read_text(encoding="utf-8")
+    api = (DOCS / "python-api.md").read_text(encoding="utf-8")
+    for text in (quickstart, guide, api):
+        assert "every sample" in text.lower() or "all vcf sample" in text.lower()
+        assert "1,000" in text
+        assert "10--100" in text
+    assert "will not subsample" in guide
+    assert "gm.shape[0] // 2" in guide
+
+
 def test_msprime_example_reaches_the_public_tree_sequence_api() -> None:
     api = (DOCS / "simulation.md").read_text(encoding="utf-8")
     expected = {

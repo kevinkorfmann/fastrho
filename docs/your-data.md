@@ -77,6 +77,62 @@ phase separators but cannot establish ancestral polarization. For a specialist m
 bundle and `input_mode` together. The model ID is a provenance label—the current API deliberately
 loads explicit local paths so checkpoint/statistics pairing remains visible and reproducible.
 
+(sample-count-contract)=
+## Samples: what is read and how many to use
+
+For an ordinary diploid VCF, a **sample** means one column after `FORMAT`. fastrho reads every such
+column in the selected VCF; neither `read_vcf`, `predict_map_from_vcf`, nor `quick_map_from_vcf` has
+an internal sample limit or sampling step. Each diploid GT call is expanded into two adjacent allele
+rows, so $N$ VCF samples produce a matrix with $2N$ rows. The two rows remain haplotypes in `phased`
+mode and are paired back into $N$ dosages in `unphased` or `unpolarized` mode.
+
+This has two practical consequences:
+
+1. A 1,000-sample VCF is **not** automatically reduced to the model's training range. All 1,000
+   samples are used and the model is conditioned on 2,000 haplotypes.
+2. Sample selection must happen before inference. Create a population-specific VCF with a tool such
+   as `bcftools view -S cohort.samples ...`, or construct and subset the genotype matrix yourself.
+   Choose samples using population membership, relatedness, geography, sequencing quality, and the
+   scientific question—not merely the first rows in the file.
+
+The current released checkpoint envelopes are:
+
+| Checkpoint | Training sample envelope | VCF interpretation |
+|---|---:|---|
+| `domain-randomized-v1` | 20--200 haplotypes | 10--100 diploid samples |
+| `base-v1` | 20--200 haplotypes | 10--100 diploid samples; phased |
+| `composite-ld-v1` | 20--200 haplotypes | 10--100 diploid samples; unpolarized |
+| `high-ne-v1` | 20--200 haplotypes | 10--100 diploid samples; phased |
+| `dog-bottleneck-v1` | 60--134 haplotypes | 30--67 diploid samples |
+| `selfing-v1` | 50--200 inbred lines | one retained haplotype per near-homozygous line; not the ordinary two-rows-per-diploid interpretation |
+
+These are qualification envelopes, not promises of accuracy and not targets that justify padding a
+small cohort or arbitrarily discarding population structure. The code's technical lower bound is
+only two allele rows, but that is not a scientifically useful minimum for LD inference. For the
+general model, treat 10 diploids as the edge of its training domain and prefer at least 20 unrelated
+diploids when available. Validate a new design with regime-matched simulations and maps from
+disjoint or repeated subsets. If a cohort is larger than the checkpoint range, analyze documented,
+coherent subsets within the range and assess agreement rather than sending the full panel through
+out of distribution.
+
+You can make the count explicit before loading the GPU model:
+
+```python
+gm, positions, meta = fastrho.read_vcf(
+    "cohort.vcf.gz",
+    contig="chr1",
+    return_metadata=True,
+)
+n_diploid = gm.shape[0] // 2
+print(f"{n_diploid} diploid samples -> {gm.shape[0]} allele rows")
+
+if not 10 <= n_diploid <= 100:
+    raise ValueError(
+        "cohort is outside the 10--100 diploid training envelope of "
+        "domain-randomized-v1; define and validate a suitable cohort first"
+    )
+```
+
 ## VCF checklist
 
 Before inference, make sure the selected cohort has:
@@ -86,7 +142,7 @@ Before inference, make sure the selected cohort has:
 - one contig per prediction call;
 - single-base, biallelic SNPs in increasing physical order;
 - at least two segregating, complete SNPs after filtering;
-- a sample size compatible with the checkpoint's training metadata;
+- a deliberately selected sample count within the checkpoint envelope—fastrho will not subsample;
 - a justified per-generation mutation rate;
 - a justified diploid $N_e$ if absolute $r$ matters.
 

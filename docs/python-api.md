@@ -93,6 +93,19 @@ def quick_map_from_vcf(
 | `missing` | `drop-site` drops any site with a missing genotype; `error` stops instead. |
 | `as_dataframe` | Return a pandas table instead of the prediction dictionary. |
 
+### Sample handling
+
+All VCF sample columns are read. The VCF entry points do not expose `samples`, `max_samples`, or an
+automatic subsampling option, and they never silently select a training-sized subset. Each diploid
+sample becomes two adjacent allele rows; unphased featurizers then pair those same rows into one
+dosage vector. Consequently, a VCF with 1,000 samples is evaluated as 2,000 haplotypes, even though
+the general released checkpoint was trained with 20--200 haplotypes (10--100 diploids).
+
+Subset the VCF to one documented biological cohort before calling this API. Use
+`fastrho.read_vcf(...)` first and inspect `gm.shape[0] // 2` when working with ordinary diploid VCFs.
+See {ref}`sample-count-contract` for the checkpoint ranges, large-cohort guidance, and the special
+one-haplotype-per-line contract of `selfing-v1`.
+
 ## Many chromosomes: load once
 
 ```python
