@@ -1,0 +1,646 @@
+{
+  "species": "Drosophila melanogaster",
+  "description": "Frozen-model full-panel recovery and disjoint-sample reproducibility across chromosomes; uncertainty resamples chromosomes.",
+  "chromosomes": [
+    {
+      "chrom": "2L",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/dmel__2L.npz",
+      "mode": "haploid",
+      "n_hap": 205,
+      "n_snp_input": 110485,
+      "n_snp_used_full": 110485,
+      "n_snp_used_half_a": 108071,
+      "n_snp_used_half_b": 108611,
+      "scales": {
+        "100000": {
+          "n_windows": 231,
+          "split_reproducibility": {
+            "pearson": 0.9208250441341406,
+            "log_pearson": 0.969335740730997,
+            "spearman": 0.9297085223621956
+          },
+          "external_map": {
+            "pearson": 0.5883093779081181,
+            "log_pearson": 0.63445130119038,
+            "spearman": 0.6496289225815599
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "200000": {
+          "n_windows": 116,
+          "split_reproducibility": {
+            "pearson": 0.9317893141338158,
+            "log_pearson": 0.9740914934311998,
+            "spearman": 0.9320801137892591
+          },
+          "external_map": {
+            "pearson": 0.6750700855746403,
+            "log_pearson": 0.699323554752114,
+            "spearman": 0.6868026163909197
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "500000": {
+          "n_windows": 47,
+          "split_reproducibility": {
+            "pearson": 0.9540436273947259,
+            "log_pearson": 0.9900346590316594,
+            "spearman": 0.9500462534690103
+          },
+          "external_map": {
+            "pearson": 0.7995323279598874,
+            "log_pearson": 0.7344538820977413,
+            "spearman": 0.7595975948196114
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "1000000": {
+          "n_windows": 24,
+          "split_reproducibility": {
+            "pearson": 0.9698743379287661,
+            "log_pearson": 0.9929893123716079,
+            "spearman": 0.9704347826086955
+          },
+          "external_map": {
+            "pearson": 0.8701001144184038,
+            "log_pearson": 0.8261115141025548,
+            "spearman": 0.8643478260869566
+          },
+          "map_id": "ComeronCrossover_dm6"
+        }
+      }
+    },
+    {
+      "chrom": "2R",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/dmel__2R.npz",
+      "mode": "haploid",
+      "n_hap": 205,
+      "n_snp_input": 96047,
+      "n_snp_used_full": 96047,
+      "n_snp_used_half_a": 94796,
+      "n_snp_used_half_b": 94155,
+      "scales": {
+        "100000": {
+          "n_windows": 212,
+          "split_reproducibility": {
+            "pearson": 0.9385175710584088,
+            "log_pearson": 0.9830807951899726,
+            "spearman": 0.9555965858641071
+          },
+          "external_map": {
+            "pearson": 0.6428706431391095,
+            "log_pearson": 0.7525932042593504,
+            "spearman": 0.6541362742958711
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "200000": {
+          "n_windows": 106,
+          "split_reproducibility": {
+            "pearson": 0.9511597752180877,
+            "log_pearson": 0.9887053936813395,
+            "spearman": 0.9583847645917828
+          },
+          "external_map": {
+            "pearson": 0.7063499089064461,
+            "log_pearson": 0.8228763333700948,
+            "spearman": 0.6895691853594269
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "500000": {
+          "n_windows": 43,
+          "split_reproducibility": {
+            "pearson": 0.9716875675514797,
+            "log_pearson": 0.9936333272705713,
+            "spearman": 0.9761401389308366
+          },
+          "external_map": {
+            "pearson": 0.8276137435564582,
+            "log_pearson": 0.8851584822738161,
+            "spearman": 0.7912648893930802
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "1000000": {
+          "n_windows": 22,
+          "split_reproducibility": {
+            "pearson": 0.9773805696062232,
+            "log_pearson": 0.9960301992417442,
+            "spearman": 0.9424054206662904
+          },
+          "external_map": {
+            "pearson": 0.8947219995555623,
+            "log_pearson": 0.9444711881083387,
+            "spearman": 0.8407679277244495
+          },
+          "map_id": "ComeronCrossover_dm6"
+        }
+      }
+    },
+    {
+      "chrom": "3L",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/dmel__3L.npz",
+      "mode": "haploid",
+      "n_hap": 205,
+      "n_snp_input": 114357,
+      "n_snp_used_full": 114357,
+      "n_snp_used_half_a": 112466,
+      "n_snp_used_half_b": 112651,
+      "scales": {
+        "100000": {
+          "n_windows": 245,
+          "split_reproducibility": {
+            "pearson": 0.9636050030843165,
+            "log_pearson": 0.9875231959822106,
+            "spearman": 0.9639899142383866
+          },
+          "external_map": {
+            "pearson": 0.659560170231945,
+            "log_pearson": 0.8453519898560464,
+            "spearman": 0.712380815034046
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "200000": {
+          "n_windows": 123,
+          "split_reproducibility": {
+            "pearson": 0.973840545369048,
+            "log_pearson": 0.9905499397903502,
+            "spearman": 0.9710244934284351
+          },
+          "external_map": {
+            "pearson": 0.7573630578825811,
+            "log_pearson": 0.8802896740931043,
+            "spearman": 0.7784734303589901
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "500000": {
+          "n_windows": 49,
+          "split_reproducibility": {
+            "pearson": 0.9828498060210906,
+            "log_pearson": 0.992513735622054,
+            "spearman": 0.9794897959183673
+          },
+          "external_map": {
+            "pearson": 0.873281713354388,
+            "log_pearson": 0.9537289011812554,
+            "spearman": 0.8739795918367346
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "1000000": {
+          "n_windows": 25,
+          "split_reproducibility": {
+            "pearson": 0.9918131894455076,
+            "log_pearson": 0.9961505214035278,
+            "spearman": 0.9961538461538462
+          },
+          "external_map": {
+            "pearson": 0.9266539085860624,
+            "log_pearson": 0.97065373230561,
+            "spearman": 0.8923076923076924
+          },
+          "map_id": "ComeronCrossover_dm6"
+        }
+      }
+    },
+    {
+      "chrom": "3R",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/dmel__3R.npz",
+      "mode": "haploid",
+      "n_hap": 205,
+      "n_snp_input": 102757,
+      "n_snp_used_full": 102757,
+      "n_snp_used_half_a": 101129,
+      "n_snp_used_half_b": 99019,
+      "scales": {
+        "100000": {
+          "n_windows": 282,
+          "split_reproducibility": {
+            "pearson": 0.9190955741270346,
+            "log_pearson": 0.9694291979353507,
+            "spearman": 0.9484184953900654
+          },
+          "external_map": {
+            "pearson": 0.5317001168295751,
+            "log_pearson": 0.6890402321148024,
+            "spearman": 0.6356039698808614
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "200000": {
+          "n_windows": 141,
+          "split_reproducibility": {
+            "pearson": 0.9356415949125862,
+            "log_pearson": 0.9762298108665953,
+            "spearman": 0.9512093839633545
+          },
+          "external_map": {
+            "pearson": 0.6472084695100113,
+            "log_pearson": 0.7707934260136451,
+            "spearman": 0.7053428651577461
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "500000": {
+          "n_windows": 57,
+          "split_reproducibility": {
+            "pearson": 0.959042595657474,
+            "log_pearson": 0.9871573016298467,
+            "spearman": 0.9607855846512834
+          },
+          "external_map": {
+            "pearson": 0.7636324722590466,
+            "log_pearson": 0.8607858369369467,
+            "spearman": 0.7682631833575231
+          },
+          "map_id": "ComeronCrossover_dm6"
+        },
+        "1000000": {
+          "n_windows": 29,
+          "split_reproducibility": {
+            "pearson": 0.9743867405865045,
+            "log_pearson": 0.9935296087345589,
+            "spearman": 0.9783251231527093
+          },
+          "external_map": {
+            "pearson": 0.8319297470688892,
+            "log_pearson": 0.9102845719358524,
+            "spearman": 0.8327228327228328
+          },
+          "map_id": "ComeronCrossover_dm6"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "n_chromosomes": 4,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260814,
+    "unit": "chromosome",
+    "scales": {
+      "100000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.9355107981009751,
+            "median": 0.9296713075962747,
+            "ci95_chromosome_bootstrap": [
+              0.9199603091305875,
+              0.9529100133467726
+            ],
+            "per_chromosome": [
+              0.9208250441341406,
+              0.9385175710584088,
+              0.9636050030843165,
+              0.9190955741270346
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.9773422324596328,
+            "median": 0.9762549965626617,
+            "ci95_chromosome_bootstrap": [
+              0.9693824693331738,
+              0.9853019955860916
+            ],
+            "per_chromosome": [
+              0.969335740730997,
+              0.9830807951899726,
+              0.9875231959822106,
+              0.9694291979353507
+            ]
+          },
+          "spearman": {
+            "mean": 0.9494283794636886,
+            "median": 0.9520075406270863,
+            "ci95_chromosome_bootstrap": [
+              0.9361805382376734,
+              0.9600970595263063
+            ],
+            "per_chromosome": [
+              0.9297085223621956,
+              0.9555965858641071,
+              0.9639899142383866,
+              0.9484184953900654
+            ]
+          }
+        },
+        "external_map": {
+          "pearson": {
+            "mean": 0.6056100770271869,
+            "median": 0.6155900105236138,
+            "ci95_chromosome_bootstrap": [
+              0.5594927484069587,
+              0.6512154066855272
+            ],
+            "per_chromosome": [
+              0.5883093779081181,
+              0.6428706431391095,
+              0.659560170231945,
+              0.5317001168295751
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.7303591818551448,
+            "median": 0.7208167181870764,
+            "ci95_chromosome_bootstrap": [
+              0.6617457666525912,
+              0.8062740504207354
+            ],
+            "per_chromosome": [
+              0.63445130119038,
+              0.7525932042593504,
+              0.8453519898560464,
+              0.6890402321148024
+            ]
+          },
+          "spearman": {
+            "mean": 0.6629374954480847,
+            "median": 0.6518825984387155,
+            "ci95_chromosome_bootstrap": [
+              0.6402370459846138,
+              0.6966928419209245
+            ],
+            "per_chromosome": [
+              0.6496289225815599,
+              0.6541362742958711,
+              0.712380815034046,
+              0.6356039698808614
+            ]
+          }
+        }
+      },
+      "200000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.9481078074083844,
+            "median": 0.9434006850653369,
+            "ci95_chromosome_bootstrap": [
+              0.933715454523201,
+              0.9642908077549326
+            ],
+            "per_chromosome": [
+              0.9317893141338158,
+              0.9511597752180877,
+              0.973840545369048,
+              0.9356415949125862
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.9823941594423712,
+            "median": 0.9824676022739673,
+            "ci95_chromosome_bootstrap": [
+              0.9751606521488976,
+              0.9896276667358448
+            ],
+            "per_chromosome": [
+              0.9740914934311998,
+              0.9887053936813395,
+              0.9905499397903502,
+              0.9762298108665953
+            ]
+          },
+          "spearman": {
+            "mean": 0.9531746889432079,
+            "median": 0.9547970742775687,
+            "ci95_chromosome_bootstrap": [
+              0.93865627648989,
+              0.966070716062165
+            ],
+            "per_chromosome": [
+              0.9320801137892591,
+              0.9583847645917828,
+              0.9710244934284351,
+              0.9512093839633545
+            ]
+          }
+        },
+        "external_map": {
+          "pearson": {
+            "mean": 0.6964978804684198,
+            "median": 0.6907099972405433,
+            "ci95_chromosome_bootstrap": [
+              0.6611392775423258,
+              0.7367898148055959
+            ],
+            "per_chromosome": [
+              0.6750700855746403,
+              0.7063499089064461,
+              0.7573630578825811,
+              0.6472084695100113
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.7933207470572395,
+            "median": 0.79683487969187,
+            "ci95_chromosome_bootstrap": [
+              0.7302117494066093,
+              0.8529156120732395
+            ],
+            "per_chromosome": [
+              0.699323554752114,
+              0.8228763333700948,
+              0.8802896740931043,
+              0.7707934260136451
+            ]
+          },
+          "spearman": {
+            "mean": 0.7150470243167707,
+            "median": 0.6974560252585865,
+            "ci95_chromosome_bootstrap": [
+              0.6881859008751733,
+              0.7562473691090993
+            ],
+            "per_chromosome": [
+              0.6868026163909197,
+              0.6895691853594269,
+              0.7784734303589901,
+              0.7053428651577461
+            ]
+          }
+        }
+      },
+      "500000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.9669058991561925,
+            "median": 0.9653650816044768,
+            "ci95_chromosome_bootstrap": [
+              0.9565431115260998,
+              0.9772686867862852
+            ],
+            "per_chromosome": [
+              0.9540436273947259,
+              0.9716875675514797,
+              0.9828498060210906,
+              0.959042595657474
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.9908347558885329,
+            "median": 0.9912741973268567,
+            "ci95_chromosome_bootstrap": [
+              0.9884964101278986,
+              0.9930735314463127
+            ],
+            "per_chromosome": [
+              0.9900346590316594,
+              0.9936333272705713,
+              0.992513735622054,
+              0.9871573016298467
+            ]
+          },
+          "spearman": {
+            "mean": 0.9666154432423744,
+            "median": 0.96846286179106,
+            "ci95_chromosome_bootstrap": [
+              0.9554159190601468,
+              0.9778149674246019
+            ],
+            "per_chromosome": [
+              0.9500462534690103,
+              0.9761401389308366,
+              0.9794897959183673,
+              0.9607855846512834
+            ]
+          }
+        },
+        "external_map": {
+          "pearson": {
+            "mean": 0.8160150642824451,
+            "median": 0.8135730357581727,
+            "ci95_chromosome_bootstrap": [
+              0.7796277900833994,
+              0.8548443670057628
+            ],
+            "per_chromosome": [
+              0.7995323279598874,
+              0.8276137435564582,
+              0.873281713354388,
+              0.7636324722590466
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.8585317756224399,
+            "median": 0.8729721596053814,
+            "ci95_chromosome_bootstrap": [
+              0.77213003214176,
+              0.9304931351201782
+            ],
+            "per_chromosome": [
+              0.7344538820977413,
+              0.8851584822738161,
+              0.9537289011812554,
+              0.8607858369369467
+            ]
+          },
+          "spearman": {
+            "mean": 0.7982763148517373,
+            "median": 0.7797640363753016,
+            "ci95_chromosome_bootstrap": [
+              0.7639303890885673,
+              0.8475504897169317
+            ],
+            "per_chromosome": [
+              0.7595975948196114,
+              0.7912648893930802,
+              0.8739795918367346,
+              0.7682631833575231
+            ]
+          }
+        }
+      },
+      "1000000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.9783637093917504,
+            "median": 0.9758836550963639,
+            "ci95_chromosome_bootstrap": [
+              0.9717508958481303,
+              0.9874565772307569
+            ],
+            "per_chromosome": [
+              0.9698743379287661,
+              0.9773805696062232,
+              0.9918131894455076,
+              0.9743867405865045
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.9946749104378597,
+            "median": 0.9947799039881515,
+            "ci95_chromosome_bootstrap": [
+              0.9932594605530833,
+              0.996090360322636
+            ],
+            "per_chromosome": [
+              0.9929893123716079,
+              0.9960301992417442,
+              0.9961505214035278,
+              0.9935296087345589
+            ]
+          },
+          "spearman": {
+            "mean": 0.9718297931453853,
+            "median": 0.9743799528807024,
+            "ci95_chromosome_bootstrap": [
+              0.9513853462878952,
+              0.9897240802675585
+            ],
+            "per_chromosome": [
+              0.9704347826086955,
+              0.9424054206662904,
+              0.9961538461538462,
+              0.9783251231527093
+            ]
+          }
+        },
+        "external_map": {
+          "pearson": {
+            "mean": 0.8808514424072295,
+            "median": 0.8824110569869831,
+            "ci95_chromosome_bootstrap": [
+              0.8476278101905574,
+              0.9125154600441479
+            ],
+            "per_chromosome": [
+              0.8701001144184038,
+              0.8947219995555623,
+              0.9266539085860624,
+              0.8319297470688892
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.9128802516130889,
+            "median": 0.9273778800220955,
+            "ci95_chromosome_bootstrap": [
+              0.8557014326040008,
+              0.9575624602069743
+            ],
+            "per_chromosome": [
+              0.8261115141025548,
+              0.9444711881083387,
+              0.97065373230561,
+              0.9102845719358524
+            ]
+          },
+          "spearman": {
+            "mean": 0.8575365697104829,
+            "median": 0.8525578769057031,
+            "ci95_chromosome_bootstrap": [
+              0.8367453802236411,
+              0.8794227511618816
+            ],
+            "per_chromosome": [
+              0.8643478260869566,
+              0.8407679277244495,
+              0.8923076923076924,
+              0.8327228327228328
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "description": "Matched sample-size, local marker-density and MAF sensitivity. Confidence intervals jointly resample one of 20 deterministic matched panels and paired 5-Mb genomic blocks.",
+  "replicates": 20,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260814,
+  "block_size_bp": 5000000,
+  "scales": {
+    "100000": {
+      "pearson": {
+        "wolf_median": 0.5778610800676822,
+        "dog_median": 0.5520303124827088,
+        "wolf_minus_dog_median_across_replicates": 0.02613621752766343,
+        "wolf_minus_dog_seed_range95": [
+          0.013491056720655417,
+          0.05430576106429945
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -0.01327959523682473,
+          0.1661221778221859
+        ],
+        "bootstrap_fraction_le_zero": 0.1218
+      },
+      "log_pearson": {
+        "wolf_median": 0.38933716942810026,
+        "dog_median": 0.3384086250449955,
+        "wolf_minus_dog_median_across_replicates": 0.0508851619915624,
+        "wolf_minus_dog_seed_range95": [
+          0.04388425583225678,
+          0.06537661924022518
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -0.0006104655625635906,
+          0.12554157253811724
+        ],
+        "bootstrap_fraction_le_zero": 0.0265
+      },
+      "spearman": {
+        "wolf_median": 0.34261549401837377,
+        "dog_median": 0.27163020897857565,
+        "wolf_minus_dog_median_across_replicates": 0.06799826200790762,
+        "wolf_minus_dog_seed_range95": [
+          0.06086424404346496,
+          0.08918528687543413
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          0.00509477981790123,
+          0.14289274315867337
+        ],
+        "bootstrap_fraction_le_zero": 0.0181
+      }
+    },
+    "200000": {
+      "pearson": {
+        "wolf_median": 0.6561034492177094,
+        "dog_median": 0.6177344639189901,
+        "wolf_minus_dog_median_across_replicates": 0.03839323615581747,
+        "wolf_minus_dog_seed_range95": [
+          0.025391847850618474,
+          0.06269118400603771
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -0.007582210284960669,
+          0.21497262421661176
+        ],
+        "bootstrap_fraction_le_zero": 0.059
+      },
+      "log_pearson": {
+        "wolf_median": 0.44015285980131447,
+        "dog_median": 0.3654373193115961,
+        "wolf_minus_dog_median_across_replicates": 0.07369963428706991,
+        "wolf_minus_dog_seed_range95": [
+          0.06445770414441035,
+          0.09193807552384838
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          0.012151765724930099,
+          0.16579525798536587
+        ],
+        "bootstrap_fraction_le_zero": 0.0075
+      },
+      "spearman": {
+        "wolf_median": 0.4055617735812041,
+        "dog_median": 0.3145291557410317,
+        "wolf_minus_dog_median_across_replicates": 0.08998972723824525,
+        "wolf_minus_dog_seed_range95": [
+          0.07791447104550481,
+          0.11470467234015402
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          0.021835986135423164,
+          0.17348044618040093
+        ],
+        "bootstrap_fraction_le_zero": 0.0047
+      }
+    },
+    "500000": {
+      "pearson": {
+        "wolf_median": 0.7611518540380733,
+        "dog_median": 0.7374698765595891,
+        "wolf_minus_dog_median_across_replicates": 0.023139147211949596,
+        "wolf_minus_dog_seed_range95": [
+          0.010697042812231633,
+          0.04275669795591592
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -0.023853393216612683,
+          0.264619535613988
+        ],
+        "bootstrap_fraction_le_zero": 0.2383
+      },
+      "log_pearson": {
+        "wolf_median": 0.48463806108670904,
+        "dog_median": 0.40016418609039284,
+        "wolf_minus_dog_median_across_replicates": 0.08450043013049494,
+        "wolf_minus_dog_seed_range95": [
+          0.06809509299489531,
+          0.10949531950614608
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -0.0014768751646498626,
+          0.2073167389481606
+        ],
+        "bootstrap_fraction_le_zero": 0.0272
+      },
+      "spearman": {
+        "wolf_median": 0.4699852723139309,
+        "dog_median": 0.33572620606210946,
+        "wolf_minus_dog_median_across_replicates": 0.13102459770650152,
+        "wolf_minus_dog_seed_range95": [
+          0.11509232933951054,
+          0.15944080281649237
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          0.03988919462430181,
+          0.24872932305042625
+        ],
+        "bootstrap_fraction_le_zero": 0.001
+      }
+    },
+    "1000000": {
+      "pearson": {
+        "wolf_median": 0.8588005073869385,
+        "dog_median": 0.8202427837934138,
+        "wolf_minus_dog_median_across_replicates": 0.03768485929580384,
+        "wolf_minus_dog_seed_range95": [
+          0.02901853799237026,
+          0.05442562614692538
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -6.876993575382029e-05,
+          0.34322195126157856
+        ],
+        "bootstrap_fraction_le_zero": 0.0254
+      },
+      "log_pearson": {
+        "wolf_median": 0.5256580495776209,
+        "dog_median": 0.4012303205359262,
+        "wolf_minus_dog_median_across_replicates": 0.11922402747353181,
+        "wolf_minus_dog_seed_range95": [
+          0.09660097613513904,
+          0.14236821428164662
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          -0.0036224149911143573,
+          0.29489309504032674
+        ],
+        "bootstrap_fraction_le_zero": 0.03
+      },
+      "spearman": {
+        "wolf_median": 0.5679121457183013,
+        "dog_median": 0.4049712034057709,
+        "wolf_minus_dog_median_across_replicates": 0.16229452517990264,
+        "wolf_minus_dog_seed_range95": [
+          0.14348798650576133,
+          0.18761855546357753
+        ],
+        "wolf_minus_dog_block_seed_ci95": [
+          0.02666631436503125,
+          0.30188259260936506
+        ],
+        "bootstrap_fraction_le_zero": 0.0094
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "description": "CanFam3 chr1 biological validation in aligned 100-kb windows.",
+  "chromosome": "chr1",
+  "window_bp": 100000,
+  "n_windows": 1227,
+  "n_unique_tss": 3483,
+  "block_size_bp": 5000000,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260814,
+  "sources": {
+    "gc": "/home/kkor/fastrho_iain_20260814/annotations/canFam3.gc5Base.wig.gz",
+    "tss": "/home/kkor/fastrho_iain_20260814/annotations/ncbiRefSeq.txt.gz",
+    "wolf_map": "/home/kkor/realdata/maps/wolf33_full_reference_dogbn.npz",
+    "dog_map": "/home/kkor/realdata/maps/dog_village42_full_reference_dogbn.npz",
+    "wolf_genotypes": "/home/kkor/realdata/hap/wolf33_full_reference.npz",
+    "dog_genotypes": "/home/kkor/realdata/hap/dog_village42_full_reference.npz"
+  },
+  "prdm9_analysis": {
+    "performed": false,
+    "reason": "Canids lack functional PRDM9; applying a human or mouse PRDM9 motif to canFam3 would not be a defensible biological validation.",
+    "primary_references": [
+      "Axelsson et al. 2012, Genome Research, doi:10.1101/gr.124123.111",
+      "Auton et al. 2013, PLoS Genetics, doi:10.1371/journal.pgen.1003984"
+    ]
+  },
+  "maps": {
+    "Campbell pedigree": {
+      "gc_spearman": {
+        "estimate": 0.11944042072825198,
+        "ci95_5mb_block_bootstrap": [
+          -0.030269528912275405,
+          0.2834808805550966
+        ]
+      },
+      "gc_log_pearson": {
+        "estimate": 0.13588511826838112,
+        "ci95_5mb_block_bootstrap": [
+          -0.027984495840407957,
+          0.3240912436012641
+        ]
+      },
+      "tss_spearman": {
+        "estimate": -0.010210837020970191,
+        "ci95_5mb_block_bootstrap": [
+          -0.12068207588891139,
+          0.1128514286589363
+        ]
+      },
+      "tss_log_pearson": {
+        "estimate": -0.030926106277694418,
+        "ci95_5mb_block_bootstrap": [
+          -0.12763830694639372,
+          0.0841357907818466
+        ]
+      },
+      "promoter_density_q4_vs_q1_rate_ratio": {
+        "estimate": 0.920795595124291,
+        "ci95_5mb_block_bootstrap": [
+          0.6314796678231185,
+          1.481250814856524
+        ]
+      },
+      "partial_beta_gc": {
+        "estimate": 0.16477389366923845,
+        "ci95_5mb_block_bootstrap": [
+          -3.32724658946226e-05,
+          0.3217606997309269
+        ]
+      },
+      "partial_beta_log1p_tss": {
+        "estimate": -0.10109545137147645,
+        "ci95_5mb_block_bootstrap": [
+          -0.2191121592313608,
+          0.02682084315876808
+        ]
+      },
+      "partial_beta_log1p_snp_density": {
+        "estimate": 0.13152729950622444,
+        "ci95_5mb_block_bootstrap": [
+          0.03896799824256555,
+          0.2524547026295567
+        ]
+      }
+    },
+    "wolf LD": {
+      "gc_spearman": {
+        "estimate": 0.214887825494982,
+        "ci95_5mb_block_bootstrap": [
+          0.026604347931500464,
+          0.41436179561800046
+        ]
+      },
+      "gc_log_pearson": {
+        "estimate": 0.19965858274952508,
+        "ci95_5mb_block_bootstrap": [
+          -0.016032983346799118,
+          0.4337095341017247
+        ]
+      },
+      "tss_spearman": {
+        "estimate": -0.005748133621412677,
+        "ci95_5mb_block_bootstrap": [
+          -0.11107802459664619,
+          0.09420529080424339
+        ]
+      },
+      "tss_log_pearson": {
+        "estimate": -0.013785719713333184,
+        "ci95_5mb_block_bootstrap": [
+          -0.11587605484725871,
+          0.0825898896178488
+        ]
+      },
+      "promoter_density_q4_vs_q1_rate_ratio": {
+        "estimate": 0.9711550557649913,
+        "ci95_5mb_block_bootstrap": [
+          0.8083317753062499,
+          1.1773239730823204
+        ]
+      },
+      "partial_beta_gc": {
+        "estimate": 0.1852600479288648,
+        "ci95_5mb_block_bootstrap": [
+          -0.0730892163949915,
+          0.39750029820923694
+        ]
+      },
+      "partial_beta_log1p_tss": {
+        "estimate": -0.028876854632148657,
+        "ci95_5mb_block_bootstrap": [
+          -0.19558787240242945,
+          0.1386192882353825
+        ]
+      },
+      "partial_beta_log1p_snp_density": {
+        "estimate": 0.4504056023392627,
+        "ci95_5mb_block_bootstrap": [
+          0.3165035640516554,
+          0.7216347585368398
+        ]
+      }
+    },
+    "dog LD": {
+      "gc_spearman": {
+        "estimate": 0.3608611414515287,
+        "ci95_5mb_block_bootstrap": [
+          0.1999629517932161,
+          0.5087161888353408
+        ]
+      },
+      "gc_log_pearson": {
+        "estimate": 0.36005348695114553,
+        "ci95_5mb_block_bootstrap": [
+          0.16416234823729897,
+          0.5480071531059829
+        ]
+      },
+      "tss_spearman": {
+        "estimate": 0.13429352093235997,
+        "ci95_5mb_block_bootstrap": [
+          0.03867635894321823,
+          0.22149477269438173
+        ]
+      },
+      "tss_log_pearson": {
+        "estimate": 0.11821428004809963,
+        "ci95_5mb_block_bootstrap": [
+          0.025831732132833317,
+          0.20876057591389505
+        ]
+      },
+      "promoter_density_q4_vs_q1_rate_ratio": {
+        "estimate": 1.268915509805731,
+        "ci95_5mb_block_bootstrap": [
+          1.0701458799544525,
+          1.4983867583648762
+        ]
+      },
+      "partial_beta_gc": {
+        "estimate": 0.3029531162136627,
+        "ci95_5mb_block_bootstrap": [
+          0.13044869891297625,
+          0.4771162748415496
+        ]
+      },
+      "partial_beta_log1p_tss": {
+        "estimate": 0.011402219356486474,
+        "ci95_5mb_block_bootstrap": [
+          -0.12168344824002515,
+          0.11633019342975569
+        ]
+      },
+      "partial_beta_log1p_snp_density": {
+        "estimate": 0.4522768450800846,
+        "ci95_5mb_block_bootstrap": [
+          0.30345474209905865,
+          0.6421802380210322
+        ]
+      }
+    }
+  }
+}

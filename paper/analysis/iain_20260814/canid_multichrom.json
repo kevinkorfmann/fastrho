@@ -1,0 +1,318 @@
+{
+  "description": "Empirical wolf and village-dog recovery against the Campbell CanFam3.1 pedigree map across chromosomes; uncertainty resamples chromosomes as paired blocks.",
+  "n_chromosomes": 5,
+  "wolf_sources": [
+    "paper/analysis/iain_20260814/canid_maps/wolf33_full_reference_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/wolf33_chr2_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/wolf33_chr3_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/wolf33_chr4_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/wolf33_chr5_dogbn.npz"
+  ],
+  "dog_sources": [
+    "paper/analysis/iain_20260814/canid_maps/dog_village42_full_reference_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/dog42_chr2_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/dog42_chr3_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/dog42_chr4_dogbn.npz",
+    "paper/analysis/iain_20260814/canid_maps/dog42_chr5_dogbn.npz"
+  ],
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260814,
+  "scales": {
+    "100000": {
+      "pearson": {
+        "wolf_mean": 0.3842809079531483,
+        "dog_mean": 0.3287211050836086,
+        "wolf_per_chromosome": [
+          0.5336048325305816,
+          0.35859146171286854,
+          0.3651781047631135,
+          0.2604977802955171,
+          0.4035323604636609
+        ],
+        "dog_per_chromosome": [
+          0.5524822576744204,
+          0.32980218845681797,
+          0.283700002794565,
+          0.1619318061500735,
+          0.31568927034216604
+        ],
+        "wolf_minus_dog_mean": 0.055559802869539765,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.012000017589205792,
+          0.09085924610048511
+        ],
+        "bootstrap_fraction_le_zero": 0.0022
+      },
+      "log_pearson": {
+        "wolf_mean": 0.31794070827325394,
+        "dog_mean": 0.27141414363472116,
+        "wolf_per_chromosome": [
+          0.3758800571610011,
+          0.3493178594833774,
+          0.3192149275030875,
+          0.21021257881499147,
+          0.3350781184038122
+        ],
+        "dog_per_chromosome": [
+          0.3120392721517227,
+          0.3270026512713638,
+          0.27665613868991223,
+          0.18363616248700718,
+          0.2577364935735998
+        ],
+        "wolf_minus_dog_mean": 0.04652656463853279,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.028068407578634214,
+          0.06498472169843136
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      },
+      "spearman": {
+        "wolf_mean": 0.32373276149932406,
+        "dog_mean": 0.2658879179008832,
+        "wolf_per_chromosome": [
+          0.3525245408677265,
+          0.3749009887348118,
+          0.3236123833467088,
+          0.22109057426554513,
+          0.3465353202818283
+        ],
+        "dog_per_chromosome": [
+          0.25940805617750307,
+          0.3441695201444776,
+          0.27703090332586827,
+          0.18689626327805334,
+          0.2619348465785137
+        ],
+        "wolf_minus_dog_mean": 0.05784484359844091,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.0352866078352985,
+          0.08040307936158334
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      }
+    },
+    "200000": {
+      "pearson": {
+        "wolf_mean": 0.4547521817639682,
+        "dog_mean": 0.3867590913062351,
+        "wolf_per_chromosome": [
+          0.6248071764847213,
+          0.44409100328976553,
+          0.43163253809370594,
+          0.3110272453849294,
+          0.4622029455667189
+        ],
+        "dog_per_chromosome": [
+          0.6221768228088612,
+          0.39792870307142414,
+          0.33067721793448784,
+          0.19259480843868987,
+          0.3904179042777123
+        ],
+        "wolf_minus_dog_mean": 0.06799309045773314,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.031001736281027936,
+          0.10211211109998437
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      },
+      "log_pearson": {
+        "wolf_mean": 0.3778446898139544,
+        "dog_mean": 0.3129266027377534,
+        "wolf_per_chromosome": [
+          0.4354352764691224,
+          0.4315913275482465,
+          0.38299557299754833,
+          0.24787282797288904,
+          0.391328444081966
+        ],
+        "dog_per_chromosome": [
+          0.3553887116224203,
+          0.3719285374363314,
+          0.33540644748192816,
+          0.19794002657201645,
+          0.30396929057607064
+        ],
+        "wolf_minus_dog_mean": 0.06491808707620104,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.05094132878898011,
+          0.07889484536342198
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      },
+      "spearman": {
+        "wolf_mean": 0.3986086909713325,
+        "dog_mean": 0.3225023754637331,
+        "wolf_per_chromosome": [
+          0.40747106560885166,
+          0.490675840758075,
+          0.4038964735733138,
+          0.27315575192633296,
+          0.41784432299008906
+        ],
+        "dog_per_chromosome": [
+          0.307477218878908,
+          0.4088564694766882,
+          0.3530919877499908,
+          0.21948531150852604,
+          0.3236008897045526
+        ],
+        "wolf_minus_dog_mean": 0.07610631550759937,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.05815384475272935,
+          0.09290870357358798
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      }
+    },
+    "500000": {
+      "pearson": {
+        "wolf_mean": 0.5915871975952376,
+        "dog_mean": 0.49605701886771464,
+        "wolf_per_chromosome": [
+          0.7352231805600228,
+          0.6248193016260953,
+          0.5299570876350488,
+          0.47680256236372887,
+          0.5911338557912922
+        ],
+        "dog_per_chromosome": [
+          0.7435341361327329,
+          0.5337215741827114,
+          0.3832044999335203,
+          0.3487349467190093,
+          0.47108993737059934
+        ],
+        "wolf_minus_dog_mean": 0.09553017872752295,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.04258348968535643,
+          0.1339368650226378
+        ],
+        "bootstrap_fraction_le_zero": 0.0006
+      },
+      "log_pearson": {
+        "wolf_mean": 0.4679387964751359,
+        "dog_mean": 0.37725694384721276,
+        "wolf_per_chromosome": [
+          0.5014042838777546,
+          0.5975830213248556,
+          0.4156210709029338,
+          0.3628008925254701,
+          0.4622847137446656
+        ],
+        "dog_per_chromosome": [
+          0.41927089526960776,
+          0.488269846484626,
+          0.3132527621454575,
+          0.2863786725522021,
+          0.37911254278417034
+        ],
+        "wolf_minus_dog_mean": 0.0906818526279232,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.08005667762466498,
+          0.10248824437726241
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      },
+      "spearman": {
+        "wolf_mean": 0.5096065507133107,
+        "dog_mean": 0.407356694291723,
+        "wolf_per_chromosome": [
+          0.4699288406869097,
+          0.6901080155830602,
+          0.43704692170591786,
+          0.41612836017005134,
+          0.5348206154206149
+        ],
+        "dog_per_chromosome": [
+          0.354664944304052,
+          0.5563988734000702,
+          0.3487625975530277,
+          0.3415652894528386,
+          0.4353917667486267
+        ],
+        "wolf_minus_dog_mean": 0.10224985642158776,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.08502472768243881,
+          0.12093512941694358
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      }
+    },
+    "1000000": {
+      "pearson": {
+        "wolf_mean": 0.6953705145190172,
+        "dog_mean": 0.576959026394397,
+        "wolf_per_chromosome": [
+          0.79749993555598,
+          0.7705896258896797,
+          0.6420217421501416,
+          0.5931229672314458,
+          0.673618301767839
+        ],
+        "dog_per_chromosome": [
+          0.802036056934849,
+          0.6245245034137381,
+          0.46344031838834415,
+          0.44637923368035787,
+          0.5484150195546957
+        ],
+        "wolf_minus_dog_mean": 0.11841148812462024,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.055704376163055215,
+          0.16140253519489547
+        ],
+        "bootstrap_fraction_le_zero": 0.0007
+      },
+      "log_pearson": {
+        "wolf_mean": 0.5729282895731103,
+        "dog_mean": 0.46997864152137253,
+        "wolf_per_chromosome": [
+          0.567943105823956,
+          0.7244099094824287,
+          0.5535630100427414,
+          0.463865853499713,
+          0.5548595690167124
+        ],
+        "dog_per_chromosome": [
+          0.4755258695459844,
+          0.5997966274757285,
+          0.4458785201307033,
+          0.3841006999309909,
+          0.4445914905234555
+        ],
+        "wolf_minus_dog_mean": 0.10294964805173779,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.08873477925631772,
+          0.11548944218239048
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      },
+      "spearman": {
+        "wolf_mean": 0.6213981157825057,
+        "dog_mean": 0.5029793975268931,
+        "wolf_per_chromosome": [
+          0.575760489109508,
+          0.798805669408113,
+          0.5739345972876031,
+          0.5298398988355285,
+          0.6286499242717764
+        ],
+        "dog_per_chromosome": [
+          0.4372200343369262,
+          0.6862363368358662,
+          0.4727640553926352,
+          0.4053272602342666,
+          0.5133493008347716
+        ],
+        "wolf_minus_dog_mean": 0.11841871825561263,
+        "wolf_minus_dog_ci95_chromosome_bootstrap": [
+          0.10811871937168249,
+          0.13012376506978987
+        ],
+        "bootstrap_fraction_le_zero": 0.0
+      }
+    }
+  }
+}

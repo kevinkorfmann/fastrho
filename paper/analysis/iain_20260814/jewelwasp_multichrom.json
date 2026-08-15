@@ -1,0 +1,430 @@
+{
+  "species": "Nasonia vitripennis",
+  "description": "Frozen-model full-panel recovery and disjoint-sample reproducibility across chromosomes; uncertainty resamples chromosomes.",
+  "chromosomes": [
+    {
+      "chrom": "NC_015867.2",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/jewelwasp__NC_015867.2.npz",
+      "mode": "dosage",
+      "n_hap": 68,
+      "n_snp_input": 34100,
+      "n_snp_used_full": 34100,
+      "n_snp_used_half_a": 28921,
+      "n_snp_used_half_b": 30656,
+      "scales": {
+        "100000": {
+          "n_windows": 336,
+          "split_reproducibility": {
+            "pearson": 0.8116249612595337,
+            "log_pearson": 0.7518254772805849,
+            "spearman": 0.7931259310661218
+          }
+        },
+        "200000": {
+          "n_windows": 168,
+          "split_reproducibility": {
+            "pearson": 0.8319092824757172,
+            "log_pearson": 0.7602345417137623,
+            "spearman": 0.8098931657056259
+          }
+        },
+        "500000": {
+          "n_windows": 68,
+          "split_reproducibility": {
+            "pearson": 0.8654236962936004,
+            "log_pearson": 0.830401453837936,
+            "spearman": 0.8576172844218802
+          }
+        },
+        "1000000": {
+          "n_windows": 34,
+          "split_reproducibility": {
+            "pearson": 0.9239463796745089,
+            "log_pearson": 0.8673011836266674,
+            "spearman": 0.8906035141329259
+          }
+        }
+      }
+    },
+    {
+      "chrom": "NC_015868.2",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/jewelwasp__NC_015868.2.npz",
+      "mode": "dosage",
+      "n_hap": 68,
+      "n_snp_input": 42667,
+      "n_snp_used_full": 42667,
+      "n_snp_used_half_a": 39362,
+      "n_snp_used_half_b": 37661,
+      "scales": {
+        "100000": {
+          "n_windows": 303,
+          "split_reproducibility": {
+            "pearson": 0.5949484869348675,
+            "log_pearson": 0.5478659357622757,
+            "spearman": 0.6103073278097555
+          }
+        },
+        "200000": {
+          "n_windows": 152,
+          "split_reproducibility": {
+            "pearson": 0.6265459979791305,
+            "log_pearson": 0.5854905939951186,
+            "spearman": 0.646307041464198
+          }
+        },
+        "500000": {
+          "n_windows": 61,
+          "split_reproducibility": {
+            "pearson": 0.7023757675375399,
+            "log_pearson": 0.6552314898525471,
+            "spearman": 0.6769434161819142
+          }
+        },
+        "1000000": {
+          "n_windows": 31,
+          "split_reproducibility": {
+            "pearson": 0.6526724888147827,
+            "log_pearson": 0.6459056411608108,
+            "spearman": 0.6951612903225808
+          }
+        }
+      }
+    },
+    {
+      "chrom": "NC_015869.2",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/jewelwasp__NC_015869.2.npz",
+      "mode": "dosage",
+      "n_hap": 68,
+      "n_snp_input": 32337,
+      "n_snp_used_full": 32337,
+      "n_snp_used_half_a": 27181,
+      "n_snp_used_half_b": 28469,
+      "scales": {
+        "100000": {
+          "n_windows": 271,
+          "split_reproducibility": {
+            "pearson": 0.6870844337407555,
+            "log_pearson": 0.6715459391125714,
+            "spearman": 0.6890886924355546
+          }
+        },
+        "200000": {
+          "n_windows": 136,
+          "split_reproducibility": {
+            "pearson": 0.721336303868088,
+            "log_pearson": 0.7012256358407165,
+            "spearman": 0.7298268212394448
+          }
+        },
+        "500000": {
+          "n_windows": 55,
+          "split_reproducibility": {
+            "pearson": 0.7581649264853867,
+            "log_pearson": 0.7661769867258972,
+            "spearman": 0.747763347763348
+          }
+        },
+        "1000000": {
+          "n_windows": 28,
+          "split_reproducibility": {
+            "pearson": 0.7960482443742289,
+            "log_pearson": 0.8044541175409292,
+            "spearman": 0.7651888341543513
+          }
+        }
+      }
+    },
+    {
+      "chrom": "NC_015870.2",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/jewelwasp__NC_015870.2.npz",
+      "mode": "dosage",
+      "n_hap": 68,
+      "n_snp_input": 17098,
+      "n_snp_used_full": 17098,
+      "n_snp_used_half_a": 14089,
+      "n_snp_used_half_b": 15750,
+      "scales": {
+        "100000": {
+          "n_windows": 148,
+          "split_reproducibility": {
+            "pearson": 0.5974476000109727,
+            "log_pearson": 0.5727738158715163,
+            "spearman": 0.6443619348700845
+          }
+        },
+        "200000": {
+          "n_windows": 74,
+          "split_reproducibility": {
+            "pearson": 0.6271842441771592,
+            "log_pearson": 0.6162055261861448,
+            "spearman": 0.6954313217326915
+          }
+        },
+        "500000": {
+          "n_windows": 30,
+          "split_reproducibility": {
+            "pearson": 0.654906598176709,
+            "log_pearson": 0.6683068036130786,
+            "spearman": 0.7365962180200223
+          }
+        },
+        "1000000": {
+          "n_windows": 15,
+          "split_reproducibility": {
+            "pearson": 0.6681946603844383,
+            "log_pearson": 0.6775274355790795,
+            "spearman": 0.7214285714285712
+          }
+        }
+      }
+    },
+    {
+      "chrom": "NC_015871.2",
+      "source": "/home/kkor/fastrho_iain_20260814/multichrom_hap/jewelwasp__NC_015871.2.npz",
+      "mode": "dosage",
+      "n_hap": 68,
+      "n_snp_input": 11935,
+      "n_snp_used_full": 11935,
+      "n_snp_used_half_a": 10375,
+      "n_snp_used_half_b": 10268,
+      "scales": {
+        "100000": {
+          "n_windows": 104,
+          "split_reproducibility": {
+            "pearson": 0.8426435966359322,
+            "log_pearson": 0.9221731753914707,
+            "spearman": 0.8269839618720387
+          }
+        },
+        "200000": {
+          "n_windows": 52,
+          "split_reproducibility": {
+            "pearson": 0.858915716642067,
+            "log_pearson": 0.9335213457054493,
+            "spearman": 0.8443609664475369
+          }
+        },
+        "500000": {
+          "n_windows": 21,
+          "split_reproducibility": {
+            "pearson": 0.8923435190077758,
+            "log_pearson": 0.9443017687687003,
+            "spearman": 0.8493506493506494
+          }
+        },
+        "1000000": {
+          "n_windows": 11,
+          "split_reproducibility": {
+            "pearson": 0.9126436520367031,
+            "log_pearson": 0.958757658823542,
+            "spearman": 0.9181818181818183
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "n_chromosomes": 5,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260814,
+    "unit": "chromosome",
+    "scales": {
+      "100000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.7067498157164123,
+            "median": 0.6870844337407555,
+            "ci95_chromosome_bootstrap": [
+              0.6143753215264872,
+              0.7991243099063374
+            ],
+            "per_chromosome": [
+              0.8116249612595337,
+              0.5949484869348675,
+              0.6870844337407555,
+              0.5974476000109727,
+              0.8426435966359322
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.6932368686836837,
+            "median": 0.6715459391125714,
+            "ci95_chromosome_bootstrap": [
+              0.5825650884760311,
+              0.8182237638653026
+            ],
+            "per_chromosome": [
+              0.7518254772805849,
+              0.5478659357622757,
+              0.6715459391125714,
+              0.5727738158715163,
+              0.9221731753914707
+            ]
+          },
+          "spearman": {
+            "mean": 0.712773569610711,
+            "median": 0.6890886924355546,
+            "ci95_chromosome_bootstrap": [
+              0.6396854435590469,
+              0.7858616956623752
+            ],
+            "per_chromosome": [
+              0.7931259310661218,
+              0.6103073278097555,
+              0.6890886924355546,
+              0.6443619348700845,
+              0.8269839618720387
+            ]
+          }
+        }
+      },
+      "200000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.7331783090284324,
+            "median": 0.721336303868088,
+            "ci95_chromosome_bootstrap": [
+              0.6457593576361335,
+              0.8151959735874612
+            ],
+            "per_chromosome": [
+              0.8319092824757172,
+              0.6265459979791305,
+              0.721336303868088,
+              0.6271842441771592,
+              0.858915716642067
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.7193355286882384,
+            "median": 0.7012256358407165,
+            "ci95_chromosome_bootstrap": [
+              0.6209235752406486,
+              0.8354008210032509
+            ],
+            "per_chromosome": [
+              0.7602345417137623,
+              0.5854905939951186,
+              0.7012256358407165,
+              0.6162055261861448,
+              0.9335213457054493
+            ]
+          },
+          "spearman": {
+            "mean": 0.7451638633178994,
+            "median": 0.7298268212394448,
+            "ci95_chromosome_bootstrap": [
+              0.6826607095266447,
+              0.8076670171091541
+            ],
+            "per_chromosome": [
+              0.8098931657056259,
+              0.646307041464198,
+              0.7298268212394448,
+              0.6954313217326915,
+              0.8443609664475369
+            ]
+          }
+        }
+      },
+      "500000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.7746429015002023,
+            "median": 0.7581649264853867,
+            "ci95_chromosome_bootstrap": [
+              0.694545931582777,
+              0.8547398714176279
+            ],
+            "per_chromosome": [
+              0.8654236962936004,
+              0.7023757675375399,
+              0.7581649264853867,
+              0.654906598176709,
+              0.8923435190077758
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.7728837005596318,
+            "median": 0.7661769867258972,
+            "ci95_chromosome_bootstrap": [
+              0.6826507147314297,
+              0.8663227127514231
+            ],
+            "per_chromosome": [
+              0.830401453837936,
+              0.6552314898525471,
+              0.7661769867258972,
+              0.6683068036130786,
+              0.9443017687687003
+            ]
+          },
+          "spearman": {
+            "mean": 0.7736541831475627,
+            "median": 0.747763347763348,
+            "ci95_chromosome_bootstrap": [
+              0.7149685232334442,
+              0.8323398430616814
+            ],
+            "per_chromosome": [
+              0.8576172844218802,
+              0.6769434161819142,
+              0.747763347763348,
+              0.7365962180200223,
+              0.8493506493506494
+            ]
+          }
+        }
+      },
+      "1000000": {
+        "split_reproducibility": {
+          "pearson": {
+            "mean": 0.7907010850569323,
+            "median": 0.7960482443742289,
+            "ci95_chromosome_bootstrap": [
+              0.6875565085545342,
+              0.8938456615593304
+            ],
+            "per_chromosome": [
+              0.9239463796745089,
+              0.6526724888147827,
+              0.7960482443742289,
+              0.6681946603844383,
+              0.9126436520367031
+            ]
+          },
+          "log_pearson": {
+            "mean": 0.7907892073462058,
+            "median": 0.8044541175409292,
+            "ci95_chromosome_bootstrap": [
+              0.6902640542041419,
+              0.8913143604882696
+            ],
+            "per_chromosome": [
+              0.8673011836266674,
+              0.6459056411608108,
+              0.8044541175409292,
+              0.6775274355790795,
+              0.958757658823542
+            ]
+          },
+          "spearman": {
+            "mean": 0.7981128056440495,
+            "median": 0.7651888341543513,
+            "ci95_chromosome_bootstrap": [
+              0.723172307855289,
+              0.8765518997567681
+            ],
+            "per_chromosome": [
+              0.8906035141329259,
+              0.6951612903225808,
+              0.7651888341543513,
+              0.7214285714285712,
+              0.9181818181818183
+            ]
+          }
+        }
+      }
+    }
+  }
+}
