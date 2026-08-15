@@ -83,12 +83,12 @@ def _literal_assignments(path: Path) -> dict[str, object]:
 def _expected(summary: dict, demography: dict, method: str, metric: str) -> np.ndarray:
     values = []
     for _label, key in SCENARIOS:
-        if key in {"bottleneck_n20", "expansion_n20"} and method in {
-            "pyrho",
-            "relernn",
-        }:
+        if key in {"bottleneck_n20", "expansion_n20"}:
             scenario = key.removesuffix("_n20")
-            record = demography["scenarios"][scenario][method]["arms"]["matched"]["25kb"]
+            if method == "fastrho":
+                record = demography["scenarios"][scenario]["fastrho_reference"]["25kb"]
+            else:
+                record = demography["scenarios"][scenario][method]["arms"]["matched"]["25kb"]
         else:
             record = summary[key]["scales"]["25kb"][method]
         values.append(record[metric])
@@ -235,8 +235,8 @@ def test_panel_a_open_symbols_and_connectors_encode_constant_history(
     legend = axis.get_legend()
     assert legend is not None
     assert [text.get_text() for text in legend.get_texts()] == [
-        "constant history",
-        "exact history",
+        "constant",
+        "matched",
     ]
     assert to_rgba(legend.legend_handles[0].get_markerfacecolor()) == to_rgba("white")
     assert to_rgba(legend.legend_handles[1].get_markerfacecolor()) == to_rgba("black")
@@ -438,7 +438,7 @@ def test_panel_e_legend_names_only_the_methods_that_were_run(rendered) -> None:
         for text in axis.texts + list(axis.get_xticklabels()) + list(axis.get_yticklabels())
     )
     assert "ReLERNN" not in visible_text
-    assert r"\relernn was not run in this campaign" in _caption()
+    assert r"\relernn\rev{ was omitted from panel e" in _caption()
 
 
 def test_no_unaccounted_data_artists_can_be_added_to_figure2(rendered) -> None:
@@ -481,12 +481,12 @@ def test_figure2_caption_parameters_match_the_executable_simulation_design(sourc
 
     design_text = MAIN + SI
     for phrase in (
-        "separate 40-region SLiM comparison",
-        "20 haplotypes",
-        r"$N_e = 10,000$",
-        r"mutation rate of $1.5\times10^{-8}$",
-        r"background selection over 22\% exonic sequence",
-        r"hard sweep with $s=0.05$",
+        "Independent 40-region SLiM experiments",
+        "20 sampled haplotypes",
+        r"$N_e=10{,}000$",
+        r"mutation rate }$1.5\times10^{-8}$",
+        r"background selection affecting 22\% exonic sequence",
+        r"hard sweep with }$s=0.05$",
     ):
         assert phrase in design_text
 
@@ -494,19 +494,19 @@ def test_figure2_caption_parameters_match_the_executable_simulation_design(sourc
 def test_figure2_caption_panel_descriptions_match_the_rendered_encodings(rendered) -> None:
     _module, figure, _stem = rendered
     caption = _caption()
-    assert "(a) Pearson correlation with the map at 25-kb resolution" in caption
-    assert "(b) Coverage across 365,280 held-out intervals" in caption
-    assert "(c) Median estimated-to-true rate on a log axis" in caption
-    assert "(d) Correlation versus relative wall-clock cost" in caption
-    assert "(e) A separate 40-region SLiM comparison" in caption
-    assert r"\relernn was not run in this campaign" in caption
+    assert "(a) Pearson correlation with the true map at 25 kb" in caption
+    assert "(b) Empirical versus nominal interval coverage across 365,280 held-out intervals" in caption
+    assert "(c) Median estimated-to-true rate ratio" in caption
+    assert "(d) Pearson correlation versus relative wall-clock cost" in caption
+    assert "(e) Independent 40-region SLiM experiments" in caption
+    assert r"\relernn\rev{ was omitted from panel e" in caption
     assert figure.axes[2].get_yscale() == "log"
     assert figure.axes[3].get_xscale() == "log"
 
 
 def test_figure2_surrounding_matched_history_numbers_are_exact(sources) -> None:
-    block = MAIN.split("For the bottleneck and expansion scenarios", 1)[1].split(
-        "We assessed prediction-interval coverage", 1
+    block = MAIN.split(r"\rev{In the bottleneck scenario", 1)[1].split(
+        r"\rev{Across 365,280 held-out SNP intervals", 1
     )[0]
     demography = sources["demography"]["scenarios"]
     for method, display in (("relernn", r"\relernn"), ("pyrho", r"\pyrho")):
@@ -520,13 +520,15 @@ def test_figure2_surrounding_matched_history_numbers_are_exact(sources) -> None:
 
 
 def test_figure2_surrounding_coverage_and_runtime_numbers_are_exact(sources) -> None:
-    block = MAIN.split("We assessed prediction-interval coverage", 1)[1].split(
+    coverage_start = r"\rev{Across 365,280 held-out SNP intervals"
+    assert coverage_start in MAIN
+    block = MAIN.split(coverage_start, 1)[1].split(
         r"\begin{figure*}", 1
     )[0]
     heldout = sources["summary"]["heldout"]
     index = heldout["coverage_curve"]["nominal"].index(0.95)
     empirical = heldout["coverage_curve"]["empirical"][index]
-    assert f"{heldout['n_intervals']:,} withheld SNP intervals" in block
+    assert f"{heldout['n_intervals']:,} held-out SNP intervals" in coverage_start
     assert f"{100 * empirical:.1f}\\% of the time" in block
     timings = sources["summary"]["timings"]
     expected_costs = (

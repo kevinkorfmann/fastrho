@@ -87,13 +87,14 @@ def test_main_results_cell_matches_snapshot(config, scale, method, written):
         paired_path = P.REPO_ROOT / "paper" / "results_snapshot" / "demography_matched.json"
         if (
             paired_path.is_file()
-            and method in {"pyrho", "relernn"}
             and config in {"bottleneck_n20", "expansion_n20"}
         ):
             paired = json.loads(paired_path.read_text(encoding="utf-8"))
-            actual = paired["scenarios"][config.removesuffix("_n20")][method]["arms"]["matched"][
-                scale
-            ]["pearson"]
+            paired_scenario = paired["scenarios"][config.removesuffix("_n20")]
+            if method == "fastrho":
+                actual = paired_scenario["fastrho_reference"][scale]["pearson"]
+            else:
+                actual = paired_scenario[method]["arms"]["matched"][scale]["pearson"]
         else:
             actual = P.metric(config, scale, method, "pearson")
     except KeyError:

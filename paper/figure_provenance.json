@@ -451,7 +451,7 @@
     {
       "output": "paper/manuscript/figures/fig1_method_validation.pdf",
       "manuscript_target": "figures_phase2/fig1_method_validation.pdf",
-      "output_sha256": "3c44a3830e59b06ae0eafbb4d9326b5a4e9503795bf0eebcac09de059e4391a0",
+      "output_sha256": "96afd3b9ce7cb899c250b19da8902b0d0a8ff6648b60a364ac06635dc5771f7c",
       "producer": "scripts/fig_manuscript.py",
       "command": [
         "uv",

@@ -14,6 +14,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "paper" / "results_snapshot" / "manuscript_derived.json"
 BENCHMARK_TABLE = ROOT / "paper" / "tables" / "main_results.tex"
+DEMOGRAPHY_SPECIFICATION_TABLE = (
+    ROOT / "paper" / "tables" / "demography_specification.tex"
+)
 BENCHMARK_SUMMARY = ROOT / "paper" / "results_snapshot" / "summary.json"
 PAIRED_DEMOGRAPHY = ROOT / "paper" / "results_snapshot" / "demography_matched.json"
 DISPLAYED_SCENARIOS = (
@@ -82,11 +85,13 @@ def _displayed_benchmark_summary() -> dict[str, object]:
         for method in values:
             if (
                 paired is not None
-                and method != "fastrho"
                 and scenario in {"bottleneck_n20", "expansion_n20"}
             ):
                 paired_scenario = scenario.removesuffix("_n20")
-                record = paired["scenarios"][paired_scenario][method]["arms"]["matched"]["25kb"]
+                if method == "fastrho":
+                    record = paired["scenarios"][paired_scenario]["fastrho_reference"]["25kb"]
+                else:
+                    record = paired["scenarios"][paired_scenario][method]["arms"]["matched"]["25kb"]
             else:
                 record = summary[scenario]["scales"]["25kb"][method]
             value = float(record["pearson"])
@@ -121,10 +126,12 @@ def _benchmark_record(
 
     if (
         paired is not None
-        and method in {"pyrho", "relernn"}
         and scenario in {"bottleneck_n20", "expansion_n20"}
     ):
-        return paired["scenarios"][scenario.removesuffix("_n20")][method]["arms"]["matched"][scale]
+        paired_scenario = paired["scenarios"][scenario.removesuffix("_n20")]
+        if method == "fastrho":
+            return paired_scenario["fastrho_reference"][scale]
+        return paired_scenario[method]["arms"]["matched"][scale]
     return summary[scenario]["scales"][scale][method]
 
 
@@ -155,8 +162,38 @@ def build_benchmark_table() -> str:
         "\\toprule\n"
         "config & \\multicolumn{3}{c}{Pearson @100kb} & "
         "\\multicolumn{3}{c}{Pearson @25kb} \\\\\n"
-        " & fastrho & pyrho & ReLERNN & fastrho & pyrho & ReLERNN \\\\\n"
+        " & \\fastrho & \\pyrho & \\relernn & \\fastrho & \\pyrho & \\relernn \\\\\n"
         "\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n"
+    )
+
+
+def build_demography_specification_table() -> str:
+    """Render the paired demographic-specification comparison at 25 kb."""
+
+    paired = json.loads(PAIRED_DEMOGRAPHY.read_text(encoding="utf-8"))
+    rows = []
+    for scenario in ("bottleneck", "expansion"):
+        fixed = paired["scenarios"][scenario]["fastrho_reference"]["25kb"]
+        rows.append(
+            f"{scenario.capitalize()} & \\fastrho & fixed broad prior & "
+            f"{fixed['pearson']:.3f} & {fixed['spearman']:.3f} & "
+            f"{fixed['bias_ratio']:.3f} \\\\"
+        )
+        for method, display in (("pyrho", r"\pyrho"), ("relernn", r"\relernn")):
+            for history in ("constant", "matched"):
+                record = paired["scenarios"][scenario][method]["arms"][history]["25kb"]
+                rows.append(
+                    f" & {display} & {history} & {record['pearson']:.3f} & "
+                    f"{record['spearman']:.3f} & {record['bias_ratio']:.3f} \\\\"
+                )
+        rows.append(r"\addlinespace")
+    rows.pop()
+    return (
+        "\\begin{tabular}{lllccc}\n"
+        "\\toprule\n"
+        "Scenario & Method & Demographic specification & Pearson $r$ & Spearman $\\rho$ & "
+        "Median estimated/true \\\\\n"
+        "\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\n"
     )
 
 
@@ -342,8 +379,12 @@ def main() -> None:
     summary = build_summary()
     OUTPUT.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     BENCHMARK_TABLE.write_text(build_benchmark_table(), encoding="utf-8")
+    DEMOGRAPHY_SPECIFICATION_TABLE.write_text(
+        build_demography_specification_table(), encoding="utf-8"
+    )
     print(OUTPUT)
     print(BENCHMARK_TABLE)
+    print(DEMOGRAPHY_SPECIFICATION_TABLE)
 
 
 if __name__ == "__main__":

@@ -105,6 +105,8 @@ def smooth_rows(matrix: np.ndarray, sigma_bins: float = 1.5) -> np.ndarray:
 
 def paired_record(demography: dict, key: str, method: str, history: str) -> dict:
     scenario = key.removesuffix("_n20")
+    if method == "fastrho":
+        return demography["scenarios"][scenario]["fastrho_reference"]["25kb"]
     return demography["scenarios"][scenario][method]["arms"][history]["25kb"]
 
 
@@ -133,10 +135,7 @@ def figure1(
         values = []
         for _label, key in scenarios:
             method_key = method.lower()
-            if key in {"bottleneck_n20", "expansion_n20"} and method_key in {
-                "pyrho",
-                "relernn",
-            }:
+            if key in {"bottleneck_n20", "expansion_n20"}:
                 record = paired_record(demography, key, method_key, "matched")
             else:
                 record = summary[key]["scales"]["25kb"].get(method_key)
@@ -206,7 +205,7 @@ def figure1(
                 markerfacecolor="white",
                 linestyle="none",
                 markersize=4.4,
-                label="constant history",
+                label="constant",
             ),
             Line2D(
                 [],
@@ -216,7 +215,7 @@ def figure1(
                 markerfacecolor="black",
                 linestyle="none",
                 markersize=4.4,
-                label="exact history",
+                label="matched",
             ),
         ],
         loc="upper left",
@@ -253,10 +252,7 @@ def figure1(
         values = []
         for _label, key in scenarios:
             method_key = method.lower()
-            if key in {"bottleneck_n20", "expansion_n20"} and method_key in {
-                "pyrho",
-                "relernn",
-            }:
+            if key in {"bottleneck_n20", "expansion_n20"}:
                 record = paired_record(demography, key, method_key, "matched")
             else:
                 record = summary[key]["scales"]["25kb"].get(method_key)
@@ -1468,41 +1464,44 @@ def main() -> None:
     )
     selection = json.loads((ROOT / "paper" / "figdata" / "selection_dr.json").read_text())
     selection_windows = np.load(ROOT / "paper" / "figdata" / "selection_dr_figdata.npz")
-    validation = json.loads((ROOT / "paper" / "results_snapshot" / "agam_validation.json").read_text())
-    panel_data = json.loads(
-        (ROOT / "paper" / "figdata" / "agam_resistance_panel_sensitivity.json").read_text()
-    )
-    hap = json.loads(
-        (
-            ROOT
-            / "paper"
-            / "figdata"
-            / "agam_haplotype_matched_controls_hancock_mechanisms.json"
-        ).read_text()
-    )
-    nsl = json.loads(
-        (
-            ROOT
-            / "paper"
-            / "figdata"
-            / "agam_nsl_matched_controls_hancock_mechanisms.json"
-        ).read_text()
-    )
     if "fig1" in requested:
         figure1(summary, selection, selection_windows, demography)
-    if "fig2" in requested:
-        figure2(validation, panel_data["panels"]["hancock_mechanisms"])
-    if "fig3" in requested:
-        figure3(validation)
-    if "fig4" in requested:
-        figure4(hap, panel_data["panels"]["hancock_mechanisms"], nsl)
-    if "fig_anopheles" in requested:
-        figure_anopheles(
-            validation,
-            panel_data["panels"]["hancock_mechanisms"],
-            hap,
-            nsl,
+    if requested & {"fig2", "fig3", "fig4", "fig_anopheles"}:
+        validation = json.loads(
+            (ROOT / "paper" / "results_snapshot" / "agam_validation.json").read_text()
         )
+        panel_data = json.loads(
+            (ROOT / "paper" / "figdata" / "agam_resistance_panel_sensitivity.json").read_text()
+        )
+        hap = json.loads(
+            (
+                ROOT
+                / "paper"
+                / "figdata"
+                / "agam_haplotype_matched_controls_hancock_mechanisms.json"
+            ).read_text()
+        )
+        nsl = json.loads(
+            (
+                ROOT
+                / "paper"
+                / "figdata"
+                / "agam_nsl_matched_controls_hancock_mechanisms.json"
+            ).read_text()
+        )
+        if "fig2" in requested:
+            figure2(validation, panel_data["panels"]["hancock_mechanisms"])
+        if "fig3" in requested:
+            figure3(validation)
+        if "fig4" in requested:
+            figure4(hap, panel_data["panels"]["hancock_mechanisms"], nsl)
+        if "fig_anopheles" in requested:
+            figure_anopheles(
+                validation,
+                panel_data["panels"]["hancock_mechanisms"],
+                hap,
+                nsl,
+            )
 
 
 if __name__ == "__main__":
