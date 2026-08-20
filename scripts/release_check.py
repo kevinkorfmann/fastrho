@@ -120,17 +120,17 @@ def main() -> int:
     ids = set()
     bibliography_paths = (
         MANUSCRIPT / "refs.bib",
-        MANUSCRIPT / "generated_phase2" / "transect_sources.bib",
+        MANUSCRIPT / "generated" / "transect_sources.bib",
     )
     bibliography = "\n".join(
         path.read_text(encoding="utf-8") for path in bibliography_paths if path.is_file()
     )
     bibkeys = set(re.findall(r"@\w+\{([^,]+),", bibliography))
-    main_path = MANUSCRIPT / "main_phase2.tex"
-    si_path = MANUSCRIPT / "si_phase2.tex"
+    main_path = MANUSCRIPT / "main.tex"
+    si_path = MANUSCRIPT / "si.tex"
     if not main_path.is_file() or not si_path.is_file():
         errors.append(
-            "locked Phase 2 manuscript is not staged; run reproduce/fetch_manuscript.py"
+            "locked manuscript is not staged; run reproduce/fetch_manuscript.py"
         )
     main_text = main_path.read_text(encoding="utf-8") if main_path.is_file() else ""
     si_text = si_path.read_text(encoding="utf-8") if si_path.is_file() else ""

@@ -1,12 +1,13 @@
 {
   "datasets": [
     {
-      "bytes": 765749,
+      "bytes": 1223844,
       "columns": [
         "cohort",
-        "release_population",
         "species",
         "country",
+        "latitude",
+        "longitude",
         "chromosome_arm",
         "start_bp",
         "end_bp",
@@ -14,125 +15,21 @@
         "cM_per_Mb",
         "rho_per_bp",
         "n_haplotypes",
+        "n_snps",
         "Ne_used",
         "panel_twoLa_frequency",
-        "panel_expected_heterokaryotype_frequency",
-        "full_twoLa_frequency",
-        "full_expected_heterokaryotype_frequency",
-        "n_full_twoLa_samples"
+        "panel_expected_heterokaryotype_frequency"
       ],
-      "description": "Nine open Ag1000G Phase 2 AR1 population maps across five chromosome arms at 50-kb resolution.",
+      "description": "Thirteen MalariaGEN Ag3.0 population maps across five chromosome arms at 50-kb resolution.",
       "file": "anopheles_maps.tsv.gz",
-      "rows": 41463,
-      "sha256": "228d44c7b0306586aa3a8dc2a6fff10d58b4c9dde1e8c556ea1a618aa9ac5b79",
+      "rows": 59940,
+      "sha256": "117373e140932a654100a191e2a289ce96c4fd906201e2563fc4e10c0a649ddc",
       "source_artifacts": [
-        "paper/anopheles_variants/phase2/release/atlas_anopheles/bed",
-        "paper/anopheles_variants/phase2/release/atlas_anopheles/manifest.tsv",
-        "paper/anopheles_variants/phase2/maps/*__*.json",
-        "paper/anopheles_variants/phase2/results/phase2_2la.json"
+        "paper/anopheles_variants/ag3/release/atlas_anopheles/bed",
+        "paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv",
+        "paper/anopheles_variants/ag3/maps/*__*.npz"
       ],
-      "units": "50-kb, 0-based half-open AgamP4 windows; rho_per_bp is population scaled; rate_per_bp = rho_per_bp / (4 * Ne_used); cM_per_Mb = rate_per_bp * 1e8; Ne_used is the arm-specific auxiliary model estimate; 2La columns distinguish the 40-mosquito map panel from all eligible released samples"
-    },
-    {
-      "bytes": 775,
-      "columns": [
-        "cohort",
-        "release_population",
-        "species",
-        "country",
-        "n_full_samples",
-        "n_map_samples",
-        "full_twoLa_frequency",
-        "full_expected_heterokaryotype_frequency",
-        "full_observed_heterokaryotype_frequency",
-        "panel_twoLa_frequency",
-        "panel_expected_heterokaryotype_frequency",
-        "panel_observed_heterokaryotype_frequency",
-        "inside_outside_rate_ratio",
-        "suppression_depth"
-      ],
-      "description": "Population-level 2La arrangement frequencies and inferred suppression summaries for the nine Phase 2 cohorts.",
-      "file": "phase2_2la.tsv.gz",
-      "rows": 9,
-      "sha256": "75b463e73f921426688f96227ba087afb098219128eaa139f0902cfe994bc69b",
-      "source_artifacts": [
-        "paper/anopheles_variants/phase2/results/phase2_2la.json"
-      ],
-      "units": "frequencies, inside/outside rate ratio, and suppression depth"
-    },
-    {
-      "bytes": 5641,
-      "columns": [
-        "cohort",
-        "species",
-        "resistance_region",
-        "chromosome_arm",
-        "position_mb",
-        "focal_rate_per_bp",
-        "matched_control_median_rate_per_bp",
-        "focal_control_ratio",
-        "nucleotide_diversity",
-        "H12",
-        "n_snps",
-        "n_matched_controls",
-        "population_panel_median_ratio",
-        "population_permutation_p"
-      ],
-      "description": "Focal and diversity/H12-matched control rates for the prespecified 15 resistance regions in all nine Phase 2 populations.",
-      "file": "phase2_resistance.tsv.gz",
-      "rows": 135,
-      "sha256": "d6081aad4a56e22108639b176490494f7628216832ecdaa7df748c98b99ce25f",
-      "source_artifacts": [
-        "paper/anopheles_variants/phase2/results/phase2_resistance.json"
-      ],
-      "units": "rate per bp, focal/control ratio, nucleotide diversity, H12, and matching metadata"
-    },
-    {
-      "bytes": 1882,
-      "columns": [
-        "arm",
-        "start",
-        "end",
-        "events",
-        "exposure_bp",
-        "marker_span_fraction",
-        "direct_normalized",
-        "inferred_normalized",
-        "supported"
-      ],
-      "description": "Broad-scale Phase 2 laboratory-cross and inferred-map rates on common 5-Mb autosomal windows.",
-      "file": "phase2_pedigree_windows.tsv.gz",
-      "rows": 43,
-      "sha256": "728444b7af1b99bfae62d5e251b1ddf34b04ad4991c10c6d15c76d34b99d471c",
-      "source_artifacts": [
-        "paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree_windows.tsv"
-      ],
-      "units": "within-arm normalized direct and inferred rates"
-    },
-    {
-      "bytes": 311,
-      "columns": [
-        "cohort",
-        "chromosome_arm",
-        "region_mb",
-        "n_haplotypes",
-        "n_snps",
-        "watterson_Ne",
-        "spearman_matched",
-        "spearman_matched_p",
-        "n_matched_windows",
-        "spearman_published",
-        "spearman_published_p",
-        "n_published_windows"
-      ],
-      "description": "Matched-window concordance between fastrho and pyrho for three frozen Phase 2 regions.",
-      "file": "phase2_pyrho.tsv.gz",
-      "rows": 3,
-      "sha256": "f6732fbe4f6ed4661429b278101ff7d69c662cda58501014ea9cada90ef81f60",
-      "source_artifacts": [
-        "paper/anopheles_variants/phase2/results/phase2_pyrho.json"
-      ],
-      "units": "Spearman correlation, two-sided p-value, and common-window count"
+      "units": "50-kb, 0-based half-open AgamP4 windows; rho_per_bp is population scaled; rate_per_bp = rho_per_bp / (4 * Ne_used); cM_per_Mb = rate_per_bp * 1e8; Ne_used is the arm-specific auxiliary model estimate; 2La columns describe the fixed 40-mosquito inference panel"
     },
     {
       "bytes": 14887,
@@ -294,16 +191,10 @@
   "description": "Plot-ready empirical maps and map-recovery outputs from the fastrho paper.",
   "resources": [
     {
-      "bytes": 57718,
-      "description": "Compact source results, cohort manifest, and provenance for the active Phase 2 manuscript analysis.",
-      "file": "phase2_results.zip",
-      "sha256": "2153702182a5ea69b029e49985553d611035bf161fb98ad9fccdfe41e9afbf97"
-    },
-    {
-      "bytes": 765385,
+      "bytes": 1222971,
       "description": "Self-documenting mosquito-map download containing the complete table and an explicit coordinate, scale, and Ne-rescaling contract.",
       "file": "anopheles_maps.zip",
-      "sha256": "d60eb21f03cea39aef4e83d8cc97d6135c91c69232a60cf189f980226680ef19"
+      "sha256": "57c05ebad46ecf427a6ee2a3bd8211fdc090528f6ff44fabb054e79422c16e02"
     },
     {
       "bytes": 7951041,

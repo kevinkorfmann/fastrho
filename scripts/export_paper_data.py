@@ -21,10 +21,9 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "docs" / "data" / "downloads"
-PHASE2 = ROOT / "paper" / "anopheles_variants" / "phase2"
-PHASE2_RELEASE = PHASE2 / "release" / "atlas_anopheles"
-PHASE2_RESULTS = PHASE2 / "results"
-PHASE2_MAPS = PHASE2 / "maps"
+AG3 = ROOT / "paper" / "anopheles_variants" / "ag3"
+AG3_RELEASE = AG3 / "release" / "atlas_anopheles"
+AG3_MAPS = AG3 / "maps"
 DEMOGRAPHY_PREDICTIONS = ROOT / "paper" / "figdata" / "demography_matched_predictions.npz"
 SUPPLEMENTAL_RESOURCES = {
     "demography_matched_inputs.zip": (
@@ -66,18 +65,16 @@ def _tsv_bytes(columns: tuple[str, ...], rows: list[tuple[object, ...]]) -> byte
 
 
 def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
-    manifest_path = PHASE2_RELEASE / "manifest.tsv"
+    manifest_path = AG3_RELEASE / "manifest.tsv"
     with manifest_path.open(encoding="utf-8", newline="") as handle:
         metadata = {row["cohort"]: row for row in csv.DictReader(handle, delimiter="\t")}
-    validation = json.loads((PHASE2_RESULTS / "phase2_2la.json").read_text())
-    two_la = {row["pop"]: row for row in validation["rows"]}
-    ne_by_map: dict[tuple[str, str], float] = {}
 
     columns = (
         "cohort",
-        "release_population",
         "species",
         "country",
+        "latitude",
+        "longitude",
         "chromosome_arm",
         "start_bp",
         "end_bp",
@@ -85,18 +82,16 @@ def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
         "cM_per_Mb",
         "rho_per_bp",
         "n_haplotypes",
+        "n_snps",
         "Ne_used",
         "panel_twoLa_frequency",
         "panel_expected_heterokaryotype_frequency",
-        "full_twoLa_frequency",
-        "full_expected_heterokaryotype_frequency",
-        "n_full_twoLa_samples",
     )
     rows: list[tuple[object, ...]] = []
-    for path in sorted((PHASE2_RELEASE / "bed").glob("*.bed")):
+    map_metadata: dict[tuple[str, str], tuple[float, int]] = {}
+    for path in sorted((AG3_RELEASE / "bed").glob("*.bed")):
         cohort = path.stem
         meta = metadata[cohort]
-        arrangement = two_la[cohort]
         with path.open(encoding="utf-8", newline="") as handle:
             records = csv.DictReader(
                 (line for line in handle if not line.startswith("#")),
@@ -106,29 +101,23 @@ def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
             for record in records:
                 arm = record["chrom"]
                 map_key = (cohort, arm)
-                if map_key not in ne_by_map:
-                    sidecar = PHASE2_MAPS / f"{cohort}__{arm}.json"
-                    if not sidecar.is_file():
-                        raise FileNotFoundError(
-                            f"Missing arm-specific scale metadata for {cohort}/{arm}: {sidecar}"
+                if map_key not in map_metadata:
+                    with np.load(AG3_MAPS / f"{cohort}__{arm}.npz") as map_data:
+                        map_metadata[map_key] = (
+                            float(map_data["Ne_est"]),
+                            int(map_data["n_snp"]),
                         )
-                    ne_by_map[map_key] = float(json.loads(sidecar.read_text())["Ne_est"])
-                ne_used = ne_by_map[map_key]
-                rate = float(record["rate"])
-                cm_per_mb = float(record["cm"])
+                ne_used, n_snps = map_metadata[map_key]
                 rho = float(record["rho"])
-                # The committed BED is rounded for distribution.  Check that its three rate
-                # representations still obey the declared diploid scaling contract.
-                if not np.isclose(rate, rho / (4.0 * ne_used), rtol=2e-5, atol=0.0):
-                    raise ValueError(f"Inconsistent rho/r/Ne scale for {cohort}/{arm}")
-                if not np.isclose(cm_per_mb, rate * 1e8, rtol=5e-4, atol=5e-5):
-                    raise ValueError(f"Inconsistent r/cM scale for {cohort}/{arm}")
+                rate = rho / (4.0 * ne_used)
+                cm_per_mb = rate * 1e8
                 rows.append(
                     (
                         cohort,
-                        meta["release_population"],
                         meta["species"],
                         meta["country"],
+                        float(meta["lat"]),
+                        float(meta["lon"]),
                         arm,
                         int(record["start"]),
                         int(record["end"]),
@@ -136,150 +125,12 @@ def _anopheles() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
                         cm_per_mb,
                         rho,
                         int(meta["n_hap"]),
+                        n_snps,
                         ne_used,
-                        float(arrangement["panel_la_freq"]),
-                        float(arrangement["panel_het_expected"]),
-                        float(arrangement["la_freq"]),
-                        float(arrangement["het_expected"]),
-                        int(arrangement["n_samples"]),
+                        float(meta["twoLa_p"]),
+                        float(meta["twoLa_H"]),
                     )
                 )
-    return columns, rows
-
-
-def _phase2_2la() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
-    data = json.loads((PHASE2_RESULTS / "phase2_2la.json").read_text())
-    columns = (
-        "cohort",
-        "release_population",
-        "species",
-        "country",
-        "n_full_samples",
-        "n_map_samples",
-        "full_twoLa_frequency",
-        "full_expected_heterokaryotype_frequency",
-        "full_observed_heterokaryotype_frequency",
-        "panel_twoLa_frequency",
-        "panel_expected_heterokaryotype_frequency",
-        "panel_observed_heterokaryotype_frequency",
-        "inside_outside_rate_ratio",
-        "suppression_depth",
-    )
-    rows = [
-        (
-            row["pop"],
-            row["release_population"],
-            row["taxon"],
-            row["country"],
-            row["n_samples"],
-            row["n_panel"],
-            row["la_freq"],
-            row["het_expected"],
-            row["het_observed"],
-            row["panel_la_freq"],
-            row["panel_het_expected"],
-            row["panel_het_observed"],
-            row["suppression_ratio"],
-            row["suppression_depth"],
-        )
-        for row in data["rows"]
-    ]
-    return columns, rows
-
-
-def _phase2_resistance() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
-    data = json.loads((PHASE2_RESULTS / "phase2_resistance.json").read_text())
-    panel = data["panels"]["hancock_mechanisms"]
-    columns = (
-        "cohort",
-        "species",
-        "resistance_region",
-        "chromosome_arm",
-        "position_mb",
-        "focal_rate_per_bp",
-        "matched_control_median_rate_per_bp",
-        "focal_control_ratio",
-        "nucleotide_diversity",
-        "H12",
-        "n_snps",
-        "n_matched_controls",
-        "population_panel_median_ratio",
-        "population_permutation_p",
-    )
-    rows: list[tuple[object, ...]] = []
-    for population in panel["rows"]:
-        for locus, record in population["loci"].items():
-            target = record["target"]
-            rows.append(
-                (
-                    population["cohort"],
-                    population["species"],
-                    locus,
-                    target["arm"],
-                    target["mb"],
-                    target["rate"],
-                    record["matched_control_median_rate"],
-                    record["ratio"],
-                    target["pi"],
-                    target["h12"],
-                    target["n_snp"],
-                    record["matching"]["n_matched"],
-                    population["ratio"],
-                    population["perm_p"],
-                )
-            )
-    return columns, rows
-
-
-def _phase2_pedigree() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
-    path = PHASE2_RESULTS / "pedigree" / "phase2_pedigree_windows.tsv"
-    with path.open(encoding="utf-8", newline="") as handle:
-        records = list(csv.DictReader(handle, delimiter="\t"))
-    source_columns = tuple(records[0])
-    columns = tuple(
-        "inferred_normalized" if column == "atlas_normalized" else column
-        for column in source_columns
-    )
-    rows = [tuple(record[column] for column in source_columns) for record in records]
-    return columns, rows
-
-
-def _phase2_pyrho() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
-    data = json.loads((PHASE2_RESULTS / "phase2_pyrho.json").read_text())
-    columns = (
-        "cohort",
-        "chromosome_arm",
-        "region_mb",
-        "n_haplotypes",
-        "n_snps",
-        "watterson_Ne",
-        "spearman_matched",
-        "spearman_matched_p",
-        "n_matched_windows",
-        "spearman_published",
-        "spearman_published_p",
-        "n_published_windows",
-    )
-    rows = []
-    for row in data["rows"]:
-        matched = row["spearman_matched"]
-        published = row["spearman_published"]
-        rows.append(
-            (
-                row["cohort"],
-                row["arm"],
-                row["region_mb"],
-                row["n_hap"],
-                row["n_snp"],
-                row["watterson_ne"],
-                matched[0],
-                matched[1],
-                matched[2] if len(matched) > 2 else None,
-                published[0],
-                published[1],
-                published[2] if len(published) > 2 else None,
-            )
-        )
     return columns, rows
 
 
@@ -559,38 +410,13 @@ def _demography_matched() -> tuple[tuple[str, ...], list[tuple[object, ...]]]:
 DATASETS = {
     "anopheles_maps.tsv.gz": (
         _anopheles,
-        "Nine open Ag1000G Phase 2 AR1 population maps across five chromosome arms at 50-kb resolution.",
-        "50-kb, 0-based half-open AgamP4 windows; rho_per_bp is population scaled; rate_per_bp = rho_per_bp / (4 * Ne_used); cM_per_Mb = rate_per_bp * 1e8; Ne_used is the arm-specific auxiliary model estimate; 2La columns distinguish the 40-mosquito map panel from all eligible released samples",
+        "Thirteen MalariaGEN Ag3.0 population maps across five chromosome arms at 50-kb resolution.",
+        "50-kb, 0-based half-open AgamP4 windows; rho_per_bp is population scaled; rate_per_bp = rho_per_bp / (4 * Ne_used); cM_per_Mb = rate_per_bp * 1e8; Ne_used is the arm-specific auxiliary model estimate; 2La columns describe the fixed 40-mosquito inference panel",
         [
-            "paper/anopheles_variants/phase2/release/atlas_anopheles/bed",
-            "paper/anopheles_variants/phase2/release/atlas_anopheles/manifest.tsv",
-            "paper/anopheles_variants/phase2/maps/*__*.json",
-            "paper/anopheles_variants/phase2/results/phase2_2la.json",
+            "paper/anopheles_variants/ag3/release/atlas_anopheles/bed",
+            "paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv",
+            "paper/anopheles_variants/ag3/maps/*__*.npz",
         ],
-    ),
-    "phase2_2la.tsv.gz": (
-        _phase2_2la,
-        "Population-level 2La arrangement frequencies and inferred suppression summaries for the nine Phase 2 cohorts.",
-        "frequencies, inside/outside rate ratio, and suppression depth",
-        ["paper/anopheles_variants/phase2/results/phase2_2la.json"],
-    ),
-    "phase2_resistance.tsv.gz": (
-        _phase2_resistance,
-        "Focal and diversity/H12-matched control rates for the prespecified 15 resistance regions in all nine Phase 2 populations.",
-        "rate per bp, focal/control ratio, nucleotide diversity, H12, and matching metadata",
-        ["paper/anopheles_variants/phase2/results/phase2_resistance.json"],
-    ),
-    "phase2_pedigree_windows.tsv.gz": (
-        _phase2_pedigree,
-        "Broad-scale Phase 2 laboratory-cross and inferred-map rates on common 5-Mb autosomal windows.",
-        "within-arm normalized direct and inferred rates",
-        ["paper/anopheles_variants/phase2/results/pedigree/phase2_pedigree_windows.tsv"],
-    ),
-    "phase2_pyrho.tsv.gz": (
-        _phase2_pyrho,
-        "Matched-window concordance between fastrho and pyrho for three frozen Phase 2 regions.",
-        "Spearman correlation, two-sided p-value, and common-window count",
-        ["paper/anopheles_variants/phase2/results/phase2_pyrho.json"],
     ),
     "arabis_cross_maps.tsv.gz": (
         _arabis,
@@ -661,37 +487,15 @@ def _assert_public_anopheles_payload(name: str, payload: bytes) -> None:
         raise ValueError(f"restricted Anopheles result text cannot be bundled: {name}")
 
 
-def _phase2_result_bundle() -> bytes:
-    sources = (
-        PHASE2 / "config.json",
-        PHASE2_RELEASE / "manifest.tsv",
-        PHASE2_RELEASE / "provenance.json",
-        PHASE2_RESULTS / "phase2_2la.json",
-        PHASE2_RESULTS / "phase2_map_qc.json",
-        PHASE2_RESULTS / "phase2_pyrho.json",
-        PHASE2_RESULTS / "phase2_resistance.json",
-        PHASE2_RESULTS / "pedigree" / "phase2_pedigree.json",
-        PHASE2_RESULTS / "pedigree" / "phase2_pedigree_windows.tsv",
-    )
-    bundle = io.BytesIO()
-    with zipfile.ZipFile(bundle, mode="w") as archive:
-        for source in sources:
-            name = source.relative_to(PHASE2).as_posix()
-            payload = source.read_bytes()
-            _assert_public_anopheles_payload(name, payload)
-            _zip_entry(archive, name, payload)
-    return bundle.getvalue()
-
-
-ANOPHELES_README = """fastrho Phase 2 mosquito maps
-================================
+ANOPHELES_README = """fastrho Ag3.0 mosquito maps
+============================
 
 Contents
 --------
 anopheles_maps.tsv.gz contains 50-kb population recombination-map windows for
-nine open Ag1000G Phase 2 AR1 cohorts, five AgamP4 chromosome arms, and the
-fixed 40-diploid inference panels.  It also carries cohort/species metadata and
-panel-versus-full-release 2La summaries.
+13 MalariaGEN Ag3.0 cohorts from Anopheles gambiae, An. coluzzii, and
+An. arabiensis, across five AgamP4 chromosome arms. Every cohort uses a fixed
+40-diploid inference panel, retained across all five arms.
 
 Coordinates and scale
 ---------------------
@@ -750,17 +554,8 @@ def build(output: Path) -> None:
 
     resources = []
     resource_payloads = {
-        "phase2_results.zip": _phase2_result_bundle(),
         "anopheles_maps.zip": _anopheles_download_bundle(generated["anopheles_maps.tsv.gz"]),
     }
-    resources.append(
-        {
-            "file": "phase2_results.zip",
-            "description": "Compact source results, cohort manifest, and provenance for the active Phase 2 manuscript analysis.",
-            "sha256": hashlib.sha256(resource_payloads["phase2_results.zip"]).hexdigest(),
-            "bytes": len(resource_payloads["phase2_results.zip"]),
-        }
-    )
     resources.append(
         {
             "file": "anopheles_maps.zip",

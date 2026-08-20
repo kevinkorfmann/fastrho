@@ -92,37 +92,28 @@ def test_model_guide_covers_every_registered_model_and_view() -> None:
             assert f"`{input_mode}`" in guide
 
 
-def test_hero_animation_is_small_and_reproducible() -> None:
-    animation = DOCS / "_static" / "anim_inference.gif"
+def test_checkpoint_page_covers_user_and_paper_support_registries() -> None:
+    page = (DOCS / "checkpoints.md").read_text(encoding="utf-8")
+    registry = json.loads((P.REPO_ROOT / "fastrho" / "model_registry.json").read_text())
+    support = json.loads((P.REPO_ROOT / "reproduce" / "checkpoints.json").read_text())
+    for model in registry["models"]:
+        assert f"`{model['id']}`" in page
+    for group in support["groups"]:
+        assert f"`{group['id']}`" in page
+
+
+def test_hero_uses_the_static_paper_schematic() -> None:
+    schematic = DOCS / "_static_public" / "fastrho_schematic.png"
     evaluation = DOCS / "_static" / "msprime_evaluation.png"
-    generator = DOCS / "_scripts" / "make_hero_animation.py"
-    requirements = DOCS / "_scripts" / "requirements.txt"
-    source = generator.read_text(encoding="utf-8")
-    animation_bytes = animation.read_bytes()
-    assert animation_bytes[:6] in {b"GIF87a", b"GIF89a"}
-    assert b"NETSCAPE2.0" not in animation_bytes
-    assert animation.stat().st_size < 1_200_000
+    index = (DOCS / "index.md").read_text(encoding="utf-8")
+    assert schematic.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+    assert "_static_public/fastrho_schematic.png" in index
+    assert "anim_inference.gif" not in index
     assert evaluation.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
     assert evaluation.stat().st_size < 1_000_000
-    assert "relernn_showdown.npz" in source
-    assert "repro_showdown.npz" in source
-    assert "ANIMATION_LENGTH_MB = 10.0" in source
-    assert "BIN_MB = 0.025" in source
-    assert "Generative map" not in source
-    assert "generative profile" not in source
-    assert "ONE FROZEN MODEL" not in source
-    assert "reading simulated genotypes" not in source
-    assert "bidirectional context" in source
-    assert "bidirectional Mamba context" in source
-    assert "project every interval in this context at once" in source
-    assert "Hann-weighted overlap" in source
-    assert "truth_alpha" not in source
-    assert "PlayOncePillowWriter" in source
-    assert 'fontweight="bold"' not in source
     assert "generative map" not in _public_text().lower()
     assert "generative profile" not in _public_text().lower()
     assert "one forward pass" not in _public_text().lower()
-    assert requirements.exists()
 
 
 @pytest.mark.parametrize("page", sorted(PAGES))

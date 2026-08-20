@@ -209,8 +209,8 @@ See {doc}`interpretation` before treating a population map as a meiotic crossove
 
 The repository includes a machine-readable preset and source route for every active empirical
 analysis. The comparative SI panel is a fixed set of ten species (seven core and three
-context-limited cohorts). Dedicated presets cover dog, wolf, the two Phase 2 *Anopheles* species,
-and redpoll. Restricted Phase 3 analyses and presets are not distributed in this repository.
+context-limited cohorts). Dedicated presets cover dog, wolf, the three Ag3.0 *Anopheles* species,
+and redpoll.
 
 ```bash
 python3 examples/manuscript_species/data.py list
@@ -230,6 +230,5 @@ python3 examples/manuscript_species/infer.py \
 ```
 
 See the [complete manuscript-species guide](https://github.com/kevinkorfmann/fastrho/tree/main/examples/manuscript_species)
-for direct download commands, deterministic Phase 2 cohort extraction, the fixed 10-species SI
-panel, and its dedicated Phase 2 presets. Source data and generated maps stay outside Git; the
-manifest and utilities that reproduce them are tracked.
+for direct download commands, the fixed 10-species SI panel, and the Ag3.0 cohort presets. Raw
+source data stay outside Git; the fixed cohort manifest and released inferred maps are tracked.

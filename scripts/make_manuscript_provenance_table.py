@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "paper" / "data_provenance.yaml"
 OUTPUT = ROOT / "paper" / "manuscript" / "generated" / "data_sources_table.tex"
-PHASE2_OUTPUT = ROOT / "paper" / "anopheles_variants" / "phase2" / "manuscript" / "generated" / "data_sources_table.tex"
 COHORT_OUTPUT = ROOT / "paper" / "manuscript" / "generated" / "cohort_table.tex"
+AG3_ROOT = ROOT / "paper" / "anopheles_variants" / "ag3"
 
 
 def escape(value: str) -> str:
@@ -51,30 +51,26 @@ def main() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     payload = "\n".join(rows)
     OUTPUT.write_text(payload, encoding="utf-8")
-    PHASE2_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    PHASE2_OUTPUT.write_text(payload, encoding="utf-8")
 
-    validation = json.loads(
-        (ROOT / "paper" / "anopheles_variants" / "phase2" / "results" / "phase2_2la.json").read_text(encoding="utf-8")
-    )
-    full_cohort = {row["pop"]: row for row in validation["rows"]}
+    validation = json.loads((AG3_ROOT / "results" / "twoLa_full.json").read_text())
+    full_cohort = validation["cohorts"]
     cohort_rows = [
         r"\begin{longtable}{@{}lllrrrrr@{}}",
-        r"\caption{Ag1000G Phase 2 AR1 populations included in the active atlas. Map panels contained 80 haplotypes from 40 diploid mosquitoes. $H_{40}$ is the expected 2La heterokaryotype frequency in that map panel; $n_{\mathrm{full}}$ and $H_{\mathrm{full}}$ use all eligible released Phase 2 tag-SNP calls.}\label{tab:cohorts}\\",
-        r"\toprule Cohort & Species & Country & Haplotypes & SNPs & $H_{40}$ & $n_{\mathrm{full}}$ & $H_{\mathrm{full}}$ \\",
+        r"\caption{Ag3.0 populations included in the atlas. Map panels contained 80 haplotypes from 40 diploid mosquitoes. $H_{40}$ is expected 2La heterokaryotype frequency in that map panel; $n_{\mathrm{full}}$ and $H_{\mathrm{full}}$ use all eligible Ag3 tag-SNP calls and were used in the primary 2La analysis.}\label{tab:cohorts}\\",
+        r"\toprule Population & Species & Country & Haplotypes & SNPs & $H_{40}$ & $n_{\mathrm{full}}$ & $H_{\mathrm{full}}$ \\",
         r"\midrule\endfirsthead",
-        r"\toprule Cohort & Species & Country & Haplotypes & SNPs & $H_{40}$ & $n_{\mathrm{full}}$ & $H_{\mathrm{full}}$ \\",
+        r"\toprule Population & Species & Country & Haplotypes & SNPs & $H_{40}$ & $n_{\mathrm{full}}$ & $H_{\mathrm{full}}$ \\",
         r"\midrule\endhead",
     ]
-    with (ROOT / "paper" / "anopheles_variants" / "phase2" / "release" / "atlas_anopheles" / "manifest.tsv").open() as handle:
+    with (AG3_ROOT / "release" / "atlas_anopheles" / "manifest.tsv").open() as handle:
         for row in csv.DictReader(handle, delimiter="\t"):
             species = r"\textit{A. " + row["species"].split()[-1] + "}"
             full = full_cohort[row["cohort"]]
             cohort_rows.append(
                 f"{escape(row['cohort'])} & {species} & {escape(row['country'])} & "
                 f"{int(row['n_hap']):,} & {int(row['n_snp']):,} & "
-                f"{float(full['panel_het_expected']):.3f} & {int(full['n_samples']):,} & "
-                f"{float(full['het_expected']):.3f} \\\\"
+                f"{float(row['twoLa_H']):.3f} & {int(full['n_samples']):,} & "
+                f"{float(full['expected_heterokaryotype_frequency']):.3f} \\\\"
             )
     cohort_rows.extend([r"\bottomrule", r"\end{longtable}", ""])
     COHORT_OUTPUT.write_text("\n".join(cohort_rows), encoding="utf-8")

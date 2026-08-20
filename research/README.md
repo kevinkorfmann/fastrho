@@ -12,5 +12,5 @@ not part of the public API.
 
 Executable analysis and figure-generation code lives under [`scripts/`](../scripts/).
 
-Only workflows used by the authoritative Phase 2 manuscript are published here. Superseded Phase 3
-investigations are intentionally excluded from the active reproduction surface.
+Only workflows supporting current package or manuscript results belong in this active tree.
+Superseded investigations are preserved under [`../legacy/research/`](../legacy/research/).

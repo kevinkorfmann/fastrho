@@ -1,0 +1,14 @@
+cohort	species	country	lat	lon	n_hap	n_snp	Ne_est	win_bp	twoLa_p	twoLa_H
+arab_MW	Anopheles arabiensis	Malawi	-13.3	34.3	80	7014160	307500	50000	0.9981	0.0038
+arab_TZ	Anopheles arabiensis	Tanzania	-6.4	34.9	80	7873436	339252	50000	0.9988	0.0025
+arab_UG	Anopheles arabiensis	Uganda	0.9	34.2	80	7939204	349308	50000	0.998	0.004
+colu_BF	Anopheles coluzzii	Burkina Faso	12.2	-1.6	80	8580694	454560	50000	0.9868	0.0261
+colu_CI	Anopheles coluzzii	Cote d'Ivoire	7.5	-5.5	80	6930629	297710	50000	0.3996	0.4799
+colu_GM	Anopheles coluzzii	Gambia	13.4	-15.3	80	8879083	452418	50000	0.7122	0.41
+colu_ML	Anopheles coluzzii	Mali	13.9	-6.9	80	9065121	469423	50000	0.9849	0.0298
+gamb_BF	Anopheles gambiae	Burkina Faso	12.2	-1.6	80	9700565	516673	50000	0.8983	0.1828
+gamb_CM	Anopheles gambiae	Cameroon	4.0	9.9	80	9775041	521619	50000	0.3251	0.4388
+gamb_GA	Anopheles gambiae	Gabon	-0.7	11.6	80	4953910	202933	50000	0.0253	0.0493
+gamb_GN	Anopheles gambiae	Guinea	10.4	-9.3	80	9526350	487498	50000	0.4007	0.4803
+gamb_ML	Anopheles gambiae	Mali	13.9	-6.9	80	9441137	472875	50000	0.8867	0.2009
+gamb_UG	Anopheles gambiae	Uganda	0.9	34.2	80	8587341	429888	50000	0.5123	0.4997

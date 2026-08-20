@@ -3,8 +3,7 @@
 This directory turns the empirical datasets in **Scalable inference of recombination maps across
 evolutionary contexts** into small, inspectable presets. The active comparative SI panel is the
 fixed set of ten species listed below. Dedicated presets additionally cover the dog-wolf analysis,
-the two Phase 2 *Anopheles* species, and redpoll. Restricted Phase 3 analyses and presets are not
-distributed in this repository.
+the three Ag3.0 *Anopheles* species, and redpoll.
 
 The raw data are deliberately not committed: several sources are many gigabytes, have their own
 terms, and change independently of fastrho. [`species.json`](species.json) records the source route,
@@ -70,35 +69,33 @@ resolved settings, sample IDs, and checkpoint/statistics hashes.
 The manifest also retains rejected candidate cohorts with the role `excluded: cohort-design
 review` so that earlier source evaluation remains reproducible; those entries are not part of the
 cross-species figure or downloadable map set. The ten rows above—and only those ten rows—define the
-active comparative SI panel. Dog, wolf, the two Phase 2 *Anopheles* species, and redpoll remain
+active comparative SI panel. Dog, wolf, the three Ag3.0 *Anopheles* species, and redpoll remain
 available under dedicated manuscript roles.
 
 `data.py show KEY` is authoritative if this compact table and the manifest ever diverge.
 
-## MalariaGEN Phase 2 AR1
+## MalariaGEN Ag3.0
 
-The active atlas uses the freely available Phase 2 AR1 HDF5 release. Download and verify the release,
-then extract the frozen 40-mosquito panels defined in the Phase 2 selection manifest:
+The active atlas uses MalariaGEN Ag3.0 phased haplotypes. Obtain the source data under the
+MalariaGEN terms, then reproduce the frozen 40-mosquito panels listed in the atlas manifest:
 
 ```bash
-bash paper/anopheles_variants/phase2/download_release.sh
-python3 paper/anopheles_variants/common/extract_phase2_hdf5.py --help
+cat paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv
 python3 examples/manuscript_species/infer.py \
   --species anopheles_gambiae \
-  --npz /path/to/phase2/extracted/gamb_BF__2R.npz \
+  --npz /path/to/ag3/extracted/gamb_BF__2R.npz \
   --checkpoint /path/to/high-ne.ckpt \
   --stats /path/to/high-ne-stats.npz \
   --out examples/manuscript_species/maps/gamb_BF.2R.50kb.bed
 ```
 
-The active panel contains five *A. gambiae* populations (`gamb_BF`, `gamb_CM`, `gamb_GA`,
-`gamb_GN`, and `gamb_UG`) and four *A. coluzzii* populations (`colu_AO`, `colu_BF`, `colu_CI`, and
-`colu_GH`). Repeat for arms `2R`, `2L`, `3R`, `3L`, and `X`. Every population has exactly 40
-diploid mosquitoes, with the same individuals retained across all five arms. Ready-to-use BED maps,
-plot-ready result tables, and the compact source-result bundle are linked from
+The active panel contains six *A. gambiae* populations (`gamb_BF`, `gamb_CM`, `gamb_GA`,
+`gamb_GN`, `gamb_ML`, and `gamb_UG`), four *A. coluzzii* populations (`colu_BF`, `colu_CI`,
+`colu_GM`, and `colu_ML`), and three *A. arabiensis* populations (`arab_MW`, `arab_TZ`, and
+`arab_UG`). Repeat for arms `2R`, `2L`, `3R`, `3L`, and `X`. Every population has exactly 40
+diploid mosquitoes, with the same individuals retained across all five arms. Ready-to-use BED maps
+and the plot-ready combined table are linked from
 [`docs/data.md`](../../docs/data.md).
-
-Restricted Phase 3 utilities and presets are not distributed in this repository.
 
 ## Redpoll and canids
 

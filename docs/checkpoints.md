@@ -3,6 +3,8 @@
 Six versioned checkpoints are public. `domain-randomized-v1` is the general default; the other
 releases are single-view or biological-regime specialists. Every checkpoint must stay paired with
 the `feat_stats.npz` from the same release. Each row below has a public, checksummed download.
+The machine-readable source of truth is
+[`fastrho/model_registry.json`](https://github.com/kevinkorfmann/fastrho/blob/main/fastrho/model_registry.json).
 
 | Model | Use when | Supported `input_mode` | Release |
 |---|---|---|---|
@@ -16,9 +18,19 @@ the `feat_stats.npz` from the same release. Each row below has a public, checksu
 These models are alternatives, not an ensemble. Read the model card on the release page before
 using a specialist outside the system for which it was qualified.
 
-Frozen Arabis ensembles and the canid structure checkpoint used only for paper analyses are in the
-[Phase 2 paper-support release](https://github.com/kevinkorfmann/fastrho-models/releases/tag/paper-phase2-checkpoints-v1).
-Their exact filenames and hashes are recorded in
+Three additional checkpoint groups reproduce paper-only analyses and are not recommended for new
+inference:
+
+| Group | Contents |
+|---|---|
+| `arabis-smalln-ensemble` | five small-panel *Arabis* models and their feature statistics |
+| `arabis-structured-ensemble` | seven structured-selfing *Arabis* models, feature statistics, and preregistration record |
+| `canid-structure-paper-analysis` | canid structure checkpoint, feature statistics, and three frozen map outputs |
+
+They are in the
+[paper-support release](https://github.com/kevinkorfmann/fastrho-models/releases/tag/paper-phase2-checkpoints-v1).
+The release tag contains its historical name and is retained so published hashes and URLs remain
+stable. Exact filenames and hashes are recorded in
 [`reproduce/checkpoints.json`](https://github.com/kevinkorfmann/fastrho/blob/main/reproduce/checkpoints.json);
 they are separated from the six releases intended for new inference. The paper-support checkpoints
 retain the exact trained `state_dict` and loading metadata but omit optimizer and trainer state.

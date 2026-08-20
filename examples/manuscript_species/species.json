@@ -897,13 +897,13 @@
       ],
       "cohort": {
         "n_individuals": 40,
-        "selection": "five Phase 2 populations; exactly 40 individuals each, sampled with seed 2026"
+        "selection": "six Ag3.0 populations; exactly 40 individuals each, sampled with seed 2026"
       },
       "source": {
-        "label": "MalariaGEN Ag1000G Phase 2 AR1 phased haplotypes",
-        "landing_page": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/",
+        "label": "MalariaGEN Ag3.0 phased haplotypes",
+        "landing_page": "https://www.malariagen.net/data_package/ag3/",
         "download_kind": "manual",
-        "instructions": "Run paper/anopheles_variants/phase2/download_release.sh, then use extract_phase2_hdf5.py for gamb_BF, gamb_CM, gamb_GA, gamb_GN, or gamb_UG on each chromosome arm.",
+        "instructions": "Obtain MalariaGEN Ag3.0 phased haplotypes under the source terms and reproduce the fixed panels listed in paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv: gamb_BF, gamb_CM, gamb_GA, gamb_GN, gamb_ML, or gamb_UG.",
         "files": []
       },
       "inference": {
@@ -914,7 +914,7 @@
         "model_profile": "high-Ne dipteran",
         "window_size_bp": 50000
       },
-      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all five Phase 2 populations."
+      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all six Ag3.0 populations."
     },
     {
       "key": "anopheles_coluzzii",
@@ -925,13 +925,13 @@
       ],
       "cohort": {
         "n_individuals": 40,
-        "selection": "four Phase 2 populations; exactly 40 individuals each, sampled with seed 2026"
+        "selection": "four Ag3.0 populations; exactly 40 individuals each, sampled with seed 2026"
       },
       "source": {
-        "label": "MalariaGEN Ag1000G Phase 2 AR1 phased haplotypes",
-        "landing_page": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/",
+        "label": "MalariaGEN Ag3.0 phased haplotypes",
+        "landing_page": "https://www.malariagen.net/data_package/ag3/",
         "download_kind": "manual",
-        "instructions": "Run paper/anopheles_variants/phase2/download_release.sh, then use extract_phase2_hdf5.py for colu_AO, colu_BF, colu_CI, or colu_GH on each chromosome arm.",
+        "instructions": "Obtain MalariaGEN Ag3.0 phased haplotypes under the source terms and reproduce the fixed panels listed in paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv: colu_BF, colu_CI, colu_GM, or colu_ML.",
         "files": []
       },
       "inference": {
@@ -942,7 +942,35 @@
         "model_profile": "high-Ne dipteran",
         "window_size_bp": 50000
       },
-      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all four Phase 2 populations."
+      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all four Ag3.0 populations."
+    },
+    {
+      "key": "anopheles_arabiensis",
+      "common_name": "African malaria mosquito",
+      "scientific_name": "Anopheles arabiensis",
+      "paper_roles": [
+        "primary_anopheles"
+      ],
+      "cohort": {
+        "n_individuals": 40,
+        "selection": "three Ag3.0 populations; exactly 40 individuals each, sampled with seed 2026"
+      },
+      "source": {
+        "label": "MalariaGEN Ag3.0 phased haplotypes",
+        "landing_page": "https://www.malariagen.net/data_package/ag3/",
+        "download_kind": "manual",
+        "instructions": "Obtain MalariaGEN Ag3.0 phased haplotypes under the source terms and reproduce the fixed panels listed in paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv: arab_MW, arab_TZ, or arab_UG.",
+        "files": []
+      },
+      "inference": {
+        "contig": "2R",
+        "mutation_rate": 3.5E-9,
+        "input_mode": "phased",
+        "model_id": "high-ne-v1",
+        "model_profile": "high-Ne dipteran",
+        "window_size_bp": 50000
+      },
+      "notes": "The active manuscript maps 2R, 2L, 3R, 3L, and X for all three Ag3.0 populations."
     },
     {
       "key": "redpoll",

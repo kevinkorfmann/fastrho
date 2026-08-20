@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
-  "access_date": "2026-08-09",
+  "access_date": "2026-08-20",
   "policy": "Only sources with a stable accession or URL, a citation, documented terms, and a producing script may support the current manuscript.",
   "datasets": [
     {
-      "id": "malariagen-phase2-ar1",
-      "name": "Ag1000G Phase 2 AR1 phased haplotypes and laboratory crosses",
-      "version": "AR1 (6 November 2017)",
-      "organisms": ["Anopheles gambiae", "Anopheles coluzzii"],
+      "id": "malariagen-ag3",
+      "name": "MalariaGEN Ag3.0 phased haplotypes and colony pedigrees",
+      "version": "Ag3.0 (4 November 2021)",
+      "organisms": ["Anopheles gambiae", "Anopheles coluzzii", "Anopheles arabiensis"],
       "repository": "MalariaGEN",
-      "accession_or_url": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/",
+      "accession_or_url": "https://malariagen.github.io/vector-data/ag3/ag3.0.html",
       "terms_url": "https://www.malariagen.net/data/our-approach-sharing-data/",
-      "citation_keys": ["malariagen_phase2_ar1_2017", "ag1000g2020"],
-      "local_derivatives": ["paper/anopheles_variants/phase2/maps", "paper/anopheles_variants/phase2/release/atlas_anopheles", "paper/anopheles_variants/phase2/results"],
-      "producing_scripts": ["paper/anopheles_variants/phase2/download_release.sh", "paper/anopheles_variants/common/extract_phase2_hdf5.py", "paper/anopheles_variants/common/infer_phase2.py", "paper/anopheles_variants/common/phase2_2la.py", "paper/anopheles_variants/common/phase2_resistance.py", "paper/anopheles_variants/common/phase2_pedigree.py", "paper/anopheles_variants/common/phase2_pyrho.py", "paper/anopheles_variants/common/export_phase2_atlas.py"],
-      "map_panel_scope": "9 populations x 40 diploid mosquitoes x 5 chromosome arms; the same panel is retained across arms within each population",
-      "primary_2La_validation_scope": "all eligible released Phase 2 tag-SNP arrangement calls in each of the nine populations; map-panel summaries are reported separately",
+      "citation_keys": ["malariagen_ag3_2021", "ag1000g2020"],
+      "local_derivatives": ["paper/anopheles_variants/ag3/maps", "paper/anopheles_variants/ag3/release/atlas_anopheles", "paper/anopheles_variants/ag3/results/twoLa_full.json", "docs/data/downloads/anopheles_maps.tsv.gz", "docs/data/downloads/anopheles_maps.zip"],
+      "producing_scripts": ["scripts/export_paper_data.py", "scripts/fig_ag3_anopheles_full.py", "scripts/fig_ag3_pedigree_mild.py"],
+      "map_panel_scope": "13 populations x 40 diploid mosquitoes x 5 chromosome arms; the same panel is retained across arms within each population",
+      "primary_2La_validation_scope": "all eligible Ag3 2La tag-SNP calls in each of the 13 populations; fixed 40-mosquito map-panel summaries are reported separately",
       "manuscript_scope": "primary"
     },
     {

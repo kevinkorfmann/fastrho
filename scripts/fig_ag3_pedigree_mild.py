@@ -214,20 +214,6 @@ def main() -> None:
             textcoords=ax_a.transAxes,
             arrowprops={"arrowstyle": "->", "lw": 0.9, "color": "#888888"},
         )
-    qc = result["caller_simulation_heldout"]
-    ax_a.text(
-        0.5,
-        -0.03,
-        f"Caller checks: {100 * qc['count_bias_fraction']:.2f}% bias; "
-        f"{100 * qc['truth_interval_coverage']:.1f}% coverage;\n"
-        f"{100 * qc['observed_background_spike_in_recovery_fraction']:.1f}% spike-in recovery",
-        transform=ax_a.transAxes,
-        ha="center",
-        va="top",
-        fontsize=6.3,
-        color="#666666",
-    )
-
     for arm, marker in ARM_MARKERS.items():
         arm_rows = [row for row in supported if row["arm"] == arm]
         ax_b.scatter(

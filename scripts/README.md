@@ -1,12 +1,15 @@
 # Analysis scripts
 
-The single public entry point is [`../reproduce/`](../reproduce/). Run
-`./reproduce/run.sh` from the repository root to execute the complete ordered paper workflow, or
-`uv run python reproduce/paper.py inventory` to list every active dataset and figure producer.
+User-facing checkpoint and map workflows are documented in
+[`../docs/checkpoints.md`](../docs/checkpoints.md) and [`../docs/data.md`](../docs/data.md).
+The data guide gives the command that regenerates the current public map tables and bundles.
 
-The manuscript is rebuilt through a small set of ordered entry points. Run these commands from the
-repository root; they use repository-relative paths and fail if a required committed input is
-missing.
+[`../reproduce/`](../reproduce/) preserves the last fully pinned manuscript workflow. Run
+`./reproduce/run.sh` only to reproduce that historical snapshot, or use
+`uv run python reproduce/paper.py inventory` to list its registered dataset and figure producers.
+
+The frozen snapshot is rebuilt through these ordered entry points. Run them from the repository
+root; they use repository-relative paths and fail if a required committed input is missing.
 
 ## Component commands
 
@@ -15,9 +18,9 @@ missing.
 | 1 | `uv run python scripts/build_manuscript_derived.py` | Compact derived quantities and the benchmark table |
 | 2 | `uv run python scripts/export_paper_data.py` | Plot-ready public data downloads and checksums |
 | 3 | `uv run --extra figures python scripts/build_manuscript_figures.py --run --write-manifest` | Every included figure and its input/output hashes |
-| 4 | `uv run python reproduce/stage_manuscript.py` | Generated inputs staged into the locked Phase 2 snapshot |
+| 4 | `uv run python reproduce/stage_manuscript.py` | Generated inputs staged into the locked historical snapshot |
 | 5 | `uv run python reproduce/audit_phase2.py` | Number-to-source and artifact-to-producer verification |
-| 6 | `uv run python reproduce/build_manuscript.py` | Authoritative Phase 2 main and SI PDFs |
+| 6 | `uv run python reproduce/build_manuscript.py` | PDFs from the locked historical snapshot |
 | 7 | `uv run python -m pytest tests/paper tests/verification -q` | Analysis, manuscript, and release contracts |
 | 8 | `uv run python scripts/release_check.py --strict-models` | Public model, data, and provenance release gate |
 
@@ -55,7 +58,8 @@ Run `audit_public_releases.py` when online to compare all six user-model archive
 statistics files—plus every paper-support asset—against the live GitHub asset names, byte sizes, and
 SHA-256 digests without downloading the large weight files.
 
-The frozen Arabis ensemble members are published in the Phase 2 paper-support model release. Submit
+The frozen Arabis ensemble members are published in the paper-support model release. Its tag retains
+the historical Phase 2 name. Submit
 `slurm/audit_model_artifacts.sbatch` with their frozen JSON manifests to verify every checkpoint,
 statistics archive, and preregistration file on a compute node before building a new deposit.
 

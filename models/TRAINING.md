@@ -24,5 +24,6 @@ The corresponding generators are `fastrho.simulate`, `scripts/selfing_gen.py`,
 `scripts/dog_gen.py`, `scripts/arabis_smalln_selfing_gen.py`,
 `scripts/arabis_structured_selfing_gen.py`, and `scripts/wolf_structure_gen.py`. The common
 preprocessor and trainer are `fastrho.preprocess` and `fastrho.train`. Model manifests record the
-released region counts, selected epochs, input views, and checkpoint hashes; the Phase 2
-paper-support ensembles are recorded in `reproduce/checkpoints.json`.
+released region counts, selected epochs, input views, and checkpoint hashes. Paper-only ensembles
+are recorded in `reproduce/checkpoints.json`; their release URL retains a historical tag so existing
+citations and checksums remain stable.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compile the staged canonical Phase 2 manuscript without touching its repository."""
+"""Compile the staged canonical manuscript without touching its repository."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ def main() -> int:
     manuscript = args.manuscript.expanduser().resolve()
     environment = dict(os.environ)
     environment.setdefault("SOURCE_DATE_EPOCH", "1420070400")
-    for source in ("si_phase2.tex", "main_phase2.tex"):
+    for source in ("si.tex", "main.tex"):
         subprocess.run(
             ["latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error", source],
             cwd=manuscript,
@@ -29,10 +29,10 @@ def main() -> int:
             check=True,
         )
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(manuscript / "main_phase2.pdf", OUTPUT / "fastrho_manuscript_phase2.pdf")
-    shutil.copy2(manuscript / "si_phase2.pdf", OUTPUT / "fastrho_manuscript_phase2_si.pdf")
-    print(OUTPUT / "fastrho_manuscript_phase2.pdf")
-    print(OUTPUT / "fastrho_manuscript_phase2_si.pdf")
+    shutil.copy2(manuscript / "main.pdf", OUTPUT / "fastrho_manuscript.pdf")
+    shutil.copy2(manuscript / "si.pdf", OUTPUT / "fastrho_manuscript_si.pdf")
+    print(OUTPUT / "fastrho_manuscript.pdf")
+    print(OUTPUT / "fastrho_manuscript_si.pdf")
     return 0
 
 

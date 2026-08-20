@@ -32,7 +32,7 @@ def test_paper_data_exports_are_current_and_deterministic(tmp_path: Path) -> Non
 def test_manifest_matches_downloads() -> None:
     manifest = json.loads((DOWNLOADS / "manifest.json").read_text())
     assert manifest["schema_version"] == 1
-    expected_dataset_count = 11 + int(
+    expected_dataset_count = 7 + int(
         (ROOT / "paper" / "figdata" / "demography_matched_predictions.npz").is_file()
     )
     assert len(manifest["datasets"]) == expected_dataset_count
@@ -73,6 +73,8 @@ def test_inferred_map_downloads_are_easy_to_find_and_scaled() -> None:
         "redpoll_maps.tsv.gz",
         "tree_of_life_maps.tsv.gz",
         "canid_example_map.tsv.gz",
+        "canid_recovery.tsv.gz",
+        "demography_matched_windows.tsv.gz",
     }
     assert "## Inferred-map downloads" in page
     for filename in map_files:
@@ -123,23 +125,16 @@ def test_complete_bundle_is_readable_and_contains_every_declared_artifact() -> N
     assert "mean 1" in readme
 
 
-def test_active_phase2_release_has_expected_public_scope() -> None:
+def test_active_ag3_release_has_expected_scope() -> None:
     manifest = json.loads((DOWNLOADS / "manifest.json").read_text())
     rows = {row["file"]: row["rows"] for row in manifest["datasets"]}
-    assert rows["anopheles_maps.tsv.gz"] == 41_463
-    assert rows["phase2_2la.tsv.gz"] == 9
-    assert rows["phase2_resistance.tsv.gz"] == 135
-    assert rows["phase2_pedigree_windows.tsv.gz"] == 43
-    assert rows["phase2_pyrho.tsv.gz"] == 3
-    pedigree = next(
-        row for row in manifest["datasets"] if row["file"] == "phase2_pedigree_windows.tsv.gz"
-    )
-    assert "inferred_normalized" in pedigree["columns"]
-    assert "atlas_normalized" not in pedigree["columns"]
-    with zipfile.ZipFile(DOWNLOADS / "phase2_results.zip") as archive:
-        assert archive.testzip() is None
-        assert "results/phase2_resistance.json" in archive.namelist()
-        assert "release/atlas_anopheles/manifest.tsv" in archive.namelist()
+    assert rows["anopheles_maps.tsv.gz"] == 59_940
+    mosquito = next(row for row in manifest["datasets"] if row["file"] == "anopheles_maps.tsv.gz")
+    assert "Anopheles arabiensis" in gzip.open(
+        DOWNLOADS / "anopheles_maps.tsv.gz", mode="rt", encoding="utf-8"
+    ).read()
+    assert "panel_twoLa_frequency" in mosquito["columns"]
+    assert "full_twoLa_frequency" not in mosquito["columns"]
 
 
 def test_mosquito_map_scale_is_arm_specific_and_reproducible() -> None:
@@ -157,8 +152,8 @@ def test_mosquito_map_scale_is_arm_specific_and_reproducible() -> None:
         assert math.isclose(rate, rho / (4 * ne_used), rel_tol=2e-5)
         assert math.isclose(cm_per_mb, rate * 1e8, rel_tol=5e-4, abs_tol=5e-5)
     assert all(len(values) == 1 for values in scales.values())
-    assert len(scales) == 45
-    assert len({next(iter(values)) for values in scales.values()}) > 9
+    assert len(scales) == 65
+    assert len({next(iter(values)) for values in scales.values()}) == 65
 
 
 def test_mosquito_download_is_self_documenting() -> None:
@@ -173,16 +168,10 @@ def test_mosquito_download_is_self_documenting() -> None:
         assert required in readme
 
 
-def test_public_bundles_exclude_restricted_anopheles_material() -> None:
-    forbidden_names = ("ag3", "agam", "arabiensis")
-    forbidden_text = (b"Ag3", b"Ag1000G phase 3", b"Aarabiensis")
-    for filename in ("fastrho_paper_data.zip", "phase2_results.zip"):
-        with zipfile.ZipFile(DOWNLOADS / filename) as archive:
-            for name in archive.namelist():
-                assert not any(marker in name.lower() for marker in forbidden_names), name
-                if Path(name).suffix.lower() in {".json", ".txt", ".tsv", ".md"}:
-                    payload = archive.read(name)
-                    assert not any(marker in payload for marker in forbidden_text), name
+def test_public_bundles_exclude_superseded_phase2_outputs() -> None:
+    assert not list(DOWNLOADS.glob("phase2_*"))
+    with zipfile.ZipFile(DOWNLOADS / "fastrho_paper_data.zip") as archive:
+        assert not [name for name in archive.namelist() if "phase2" in name.lower()]
 
 
 def test_nested_demography_input_bundle_is_readable() -> None:

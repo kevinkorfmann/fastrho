@@ -138,7 +138,7 @@ def rendered(sources: dict[str, object]):
 
 def test_figure2_is_bound_to_one_reproducible_output_and_producer() -> None:
     assert (
-        r"\includegraphics[width=\textwidth]{figures_phase2/fig1_method_validation.pdf}"
+        r"\includegraphics[width=\textwidth]{figures/fig1_method_validation.pdf}"
         in MAIN
     )
     assert MAIN.count(r"\label{fig:qualification}") == 1

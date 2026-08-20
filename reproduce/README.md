@@ -1,15 +1,16 @@
-# Reproduce the Phase 2 paper
+# Frozen manuscript reproduction snapshot
 
-This is the entry point for the active main manuscript and SI. The manuscript itself remains in
+This directory preserves the last fully pinned end-to-end manuscript workflow. It targets the
+historical Phase 2 snapshot and is not the authority for the current paper. The active manuscript
+sources are `main.tex` and `si.tex` in
 [`kevinkorfmann/fastrho-manuscript-2026-07-21`](https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21);
-`manuscript.lock.json` pins its exact Phase 2 commit and files. Phase 3 and earlier variants are
-legacy and are not part of this workflow.
+`manuscript.lock.json` pins the exact historical commit and files reproduced here.
 
 ```bash
 ./reproduce/run.sh
 ```
 
-The command fetches the locked manuscript into `tmp/reproduce/manuscript`, regenerates analysis
+The command fetches that locked snapshot into `tmp/reproduce/manuscript`, regenerates analysis
 artifacts, stages them there, verifies the result, and compiles both PDFs. It never writes to the
 manuscript checkout.
 
@@ -19,7 +20,8 @@ manuscript checkout.
 |---|---|---|
 | Simulation qualification | `scripts/fig_manuscript.py` | `paper/results_snapshot/summary.json` |
 | Canid and selfing history | `scripts/fig_manuscript_history.py` | `paper/analysis/canid/`, `research/demography_matched/`, `research/arabis/` |
-| Phase 2 atlas, 2La, crosses, resistance, pyrho | `paper/anopheles_variants/common/` | `paper/anopheles_variants/phase2/` |
+| Historical Phase 2 atlas, 2La, crosses, resistance, pyrho | `paper/anopheles_variants/common/` | `paper/anopheles_variants/phase2/` |
+| Current Ag3 atlas and released maps | `scripts/export_paper_data.py` | `paper/anopheles_variants/ag3/` |
 | Redpoll arrangements | `scripts/fig_redpoll_karyotype.py` | `paper/figdata/redpoll_*` |
 | Gene conversion | `scripts/fig_gene_conversion.py` | `paper/results_snapshot/gene_conversion.json` |
 | Unphased inputs and method limits | `scripts/fig_unphased.py`, `scripts/fig_si_unique.py` | `paper/figdata/`, `paper/results_snapshot/` |
@@ -49,7 +51,8 @@ uv run python reproduce/paper.py inventory
 
 Large checkpoints are GitHub release assets, not Git objects. User-facing model selection and
 verified downloads are documented in [`docs/checkpoints.md`](../docs/checkpoints.md). Frozen
-paper-only ensembles are kept in the `paper-phase2-checkpoints-v1` support release and are clearly
+paper-only ensembles are kept in a support release whose historical tag is
+`paper-phase2-checkpoints-v1`; they are clearly
 separated from checkpoints intended for new analyses. These inference-only copies preserve the
 exact trained weights and loading metadata; `checkpoints.json` also records each original training
 checkpoint hash.

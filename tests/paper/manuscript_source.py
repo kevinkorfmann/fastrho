@@ -1,4 +1,4 @@
-"""Load the locked authoritative Phase 2 manuscript staged by ``reproduce/``."""
+"""Load the locked authoritative manuscript staged by ``reproduce/``."""
 
 from __future__ import annotations
 
@@ -11,12 +11,12 @@ ROOT = Path(__file__).resolve().parents[2]
 MANUSCRIPT_ROOT = Path(
     os.environ.get("FASTRHO_MANUSCRIPT_ROOT", ROOT / "tmp" / "reproduce" / "manuscript")
 ).resolve()
-MAIN_PATH = MANUSCRIPT_ROOT / "main_phase2.tex"
-SI_PATH = MANUSCRIPT_ROOT / "si_phase2.tex"
+MAIN_PATH = MANUSCRIPT_ROOT / "main.tex"
+SI_PATH = MANUSCRIPT_ROOT / "si.tex"
 
 if not MAIN_PATH.is_file() or not SI_PATH.is_file():
     pytest.skip(
-        "locked Phase 2 manuscript is not staged; run reproduce/fetch_manuscript.py",
+        "locked manuscript is not staged; run reproduce/fetch_manuscript.py",
         allow_module_level=True,
     )
 

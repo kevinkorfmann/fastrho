@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "source": "MalariaGEN Ag3.0 eligible 2La tag-SNP calls",
+  "cohorts": {
+    "arab_MW": {"n_samples": 41, "frequency": 0.998, "expected_heterokaryotype_frequency": 0.004},
+    "arab_TZ": {"n_samples": 225, "frequency": 0.9983, "expected_heterokaryotype_frequency": 0.0033},
+    "arab_UG": {"n_samples": 82, "frequency": 0.9978, "expected_heterokaryotype_frequency": 0.0045},
+    "colu_BF": {"n_samples": 135, "frequency": 0.9844, "expected_heterokaryotype_frequency": 0.0307},
+    "colu_CI": {"n_samples": 80, "frequency": 0.3626, "expected_heterokaryotype_frequency": 0.4622},
+    "colu_GM": {"n_samples": 200, "frequency": 0.6593, "expected_heterokaryotype_frequency": 0.4492},
+    "colu_ML": {"n_samples": 90, "frequency": 0.9815, "expected_heterokaryotype_frequency": 0.0364},
+    "gamb_BF": {"n_samples": 158, "frequency": 0.9065, "expected_heterokaryotype_frequency": 0.1695},
+    "gamb_CM": {"n_samples": 416, "frequency": 0.3953, "expected_heterokaryotype_frequency": 0.4781},
+    "gamb_GA": {"n_samples": 69, "frequency": 0.0365, "expected_heterokaryotype_frequency": 0.0703},
+    "gamb_GN": {"n_samples": 125, "frequency": 0.4042, "expected_heterokaryotype_frequency": 0.4817},
+    "gamb_ML": {"n_samples": 131, "frequency": 0.8768, "expected_heterokaryotype_frequency": 0.2161},
+    "gamb_UG": {"n_samples": 207, "frequency": 0.5627, "expected_heterokaryotype_frequency": 0.4921}
+  }
+}

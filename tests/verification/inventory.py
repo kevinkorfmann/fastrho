@@ -20,10 +20,10 @@ MANUSCRIPT_DIR = (
     if _external_manuscript
     else ROOT / "tmp" / "reproduce" / "manuscript"
 )
-MAIN_PATH = MANUSCRIPT_DIR / "main_phase2.tex"
-SI_PATH = MANUSCRIPT_DIR / "si_phase2.tex"
+MAIN_PATH = MANUSCRIPT_DIR / "main.tex"
+SI_PATH = MANUSCRIPT_DIR / "si.tex"
 BIB_PATH = MANUSCRIPT_DIR / "refs.bib"
-EXTRA_BIB_PATH = MANUSCRIPT_DIR / "generated_phase2/transect_sources.bib"
+EXTRA_BIB_PATH = MANUSCRIPT_DIR / "generated/transect_sources.bib"
 PROVENANCE_PATH = ROOT / "paper" / "data_provenance.yaml"
 
 MAIN = MAIN_PATH.read_text(encoding="utf-8")

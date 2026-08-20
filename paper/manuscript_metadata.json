@@ -2,12 +2,13 @@
   "schema_version": 1,
   "policy": "Reader-facing counts and accession identifiers transcribed from cited releases or source papers. Computed summaries belong in manuscript_derived.json instead.",
   "records": {
-    "phase2_release": {
-      "n_mosquitoes": 1142,
-      "n_countries": 13,
-      "n_cross_samples": 234,
-      "citation": "malariagen_phase2_ar1_2017",
-      "source_url": "https://www.malariagen.net/data_package/ag1000g-phase-2-ar1/"
+    "ag3_release": {
+      "n_atlas_mosquitoes": 520,
+      "n_atlas_populations": 13,
+      "n_cross_samples": 297,
+      "n_crosses": 15,
+      "citation": "malariagen_ag3_2021",
+      "source_url": "https://malariagen.github.io/vector-data/ag3/ag3.0.html"
     },
     "arabis_cross": {
       "n_f2_progeny": 742,

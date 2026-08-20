@@ -71,12 +71,14 @@ making biological claims.
 - [Download checkpoints](https://fastrho.readthedocs.io/en/latest/checkpoints.html)
 - [Download inferred maps and paper data](https://fastrho.readthedocs.io/en/latest/data.html)
 
-## Paper reproduction and development
+## Paper, data, and development
 
-The complete manuscript workflow, provenance registry, and verification gates are under
-[`reproduce/`](reproduce/). The authoritative manuscript is in the separate
+The authoritative manuscript is in the separate
 [`fastrho-manuscript-2026-07-21`](https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21)
-repository and is pinned here by [`reproduce/manuscript.lock.json`](reproduce/manuscript.lock.json).
+repository. Its active sources are `main.tex` and `si.tex`. This repository provides the analysis
+code, checkpoint registry, inferred-map downloads, and provenance records. The workflow under
+[`reproduce/`](reproduce/) preserves the last fully pinned manuscript snapshot and is explicitly
+separated from the current manuscript authority.
 
 Developers can start with [CONTRIBUTING.md](CONTRIBUTING.md). The exact paper environment is recorded
 in [`requirements/cuda121-paper.txt`](requirements/cuda121-paper.txt).

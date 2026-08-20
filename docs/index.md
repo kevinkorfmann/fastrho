@@ -2,17 +2,17 @@
 
 **Population genotypes in. A fine-scale recombination map out—without dataset-specific training.**
 
-:::{figure} _static/anim_inference.gif
-:alt: Dense SNP tokens pass through the multi-scale stem and an expanded bidirectional Mamba block. Forward and reverse Mamba-2 state scans meet at every token, pass through residual and MLP paths, repeat through the encoder-decoder stack, and produce a mean and variance for every adjacent-SNP interval.
+:::{figure} _static_public/fastrho_schematic.png
+:alt: Paper schematic showing construction of interval tokens from genotypes and the bidirectional state-space inference architecture.
 :class: hero-figure
-:width: 760px
+:width: 100%
 
 fastrho builds one feature token per SNP. After a multi-scale local stem, every BiMamba block runs
 independent Mamba-2 scans in forward and reverse genomic order. Their states are concatenated and
 projected at each token, followed by the scan residual, channel MLP, and second residual. Six
 encoder and four decoder blocks—with feature-wise conditioning and encoder skip states—produce a
-mean and log variance for every adjacent-SNP interval. The animation expands one schematic
-1,024-token context; horizontal spacing shows token order rather than physical distance.
+mean and log variance for every adjacent-SNP interval. Longer sequences are inferred in overlapping
+1,024-token contexts and stitched into a continuous map.
 :::
 
 ## What the study shows
@@ -29,33 +29,28 @@ broad agreement for *A. sagittata*; weaker recovery in *A. nemorensis* improved 
 structure was included, although it remained uncertain. Together, these results establish a
 scalable framework while defining when specialized simulations are necessary.
 
-The active mosquito analysis uses the freely available Ag1000G Phase 2 AR1 release. One fixed model
-produced 45 maps for nine *Anopheles gambiae* and *Anopheles coluzzii* populations across five
-chromosome arms. The inferred maps retained the broad expected 2La inversion signal, although the
-cross-population relationship between expected arrangement mixing and suppression depth was not
-statistically resolved. Independently called Phase 2 laboratory crossovers agreed with the
-inferred recombination landscape at
-broad scale (Spearman $r_s=0.67$ across 32 supported 5-Mb windows), providing a more direct, though
-coarse, connection to crossover variation.
+The active mosquito analysis uses MalariaGEN Ag3.0 phased haplotypes. One fixed large-$N_e$
+specialist produced 65 maps for 13 populations—six *Anopheles gambiae*, four *Anopheles coluzzii*,
+and three *Anopheles arabiensis* cohorts—across five chromosome arms. Each map used the same 40
+diploid mosquitoes per population on every arm and was summarized in nonoverlapping 50-kb windows.
+The inferred maps retained the broad expected 2La inversion signal. Across the 13 populations,
+suppression depth was positively but imprecisely associated with expected heterokaryotype frequency
+($r=0.510$, $P=0.075$; $r_s=0.379$, $P=0.201$).
 
-Across 15 predefined insecticide-resistance regions, the median focal-to-diversity/H12-matched-control
-ratio was 0.71 in *A. gambiae* and 0.72 in *A. coluzzii*. Every population-level median was below one,
-but individual regions and populations were heterogeneous. Cold regions also occurred in populations
-with weaker local selection signatures, which is compatible with some resistance loci occupying
-intrinsically low-recombination regions. The analysis remains observational: selection can distort an
-LD-based estimate without changing the underlying crossover rate, and a focal/control ratio below one
-does not show that low crossing over caused resistance. The redpoll result provides a complementary
-structural example: pooling inversion arrangements created a much stronger cold block than analyzing
-either homokaryotype separately.
+The atlas was compared with an independent crossover map from 15 Ag3 colony pedigrees. The primary
+analysis used five held-out crosses and autosomal 5-Mb windows; its correlation with the ten-population
+*A. gambiae*/*A. coluzzii* atlas was $r_s=0.470$, increasing to $r_s=0.692$ when all 15 crosses were
+used. These experiments support broad spatial variation, not the absolute rate scale. Analyses of 15
+insecticide-resistance regions and the redpoll supergene further show how selection, structural
+variation, and population composition can affect LD-based maps.
 
-:::{figure} _static/phase2_anopheles.png
-:alt: Phase 2 recombination maps for nine Anopheles populations, with 2La, resistance-region, population, and species-level summaries.
+:::{figure} _static_public/ag3_anopheles.png
+:alt: Ag3 recombination maps for 13 Anopheles populations, with 2La and resistance-region summaries.
 :width: 900px
 
-The open Phase 2 analysis connects population maps, the 2La inversion, 15 resistance regions, and
-species-stratified summaries. Population circles and species-median diamonds in panel f show that the
-aggregate resistance-region signal is present in both species, while the locus-by-population heatmap
-shows why it should not be interpreted as universal.
+The Ag3 analysis connects population maps, the 2La inversion, 15 resistance regions, and
+species-stratified summaries. Thin lines show population maps, thick lines show species medians,
+and every chromosome arm is normalized independently within each population.
 :::
 
 :::{important}
