@@ -46,6 +46,14 @@ a.reference.download code {
   font-weight: 700;
 }
 
+.landing-card {
+  border-width: 2px !important;
+}
+
+.landing-card .sd-card-title {
+  font-size: 1.15rem;
+}
+
 .api-card {
   border: 1px solid rgba(17, 106, 158, 0.16) !important;
   border-radius: 0.7rem !important;
