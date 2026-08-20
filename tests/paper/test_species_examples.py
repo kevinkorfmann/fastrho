@@ -42,11 +42,12 @@ def test_scope_matches_the_manuscript() -> None:
         "chicken", "tilapia", "trout", "oyster", "honeybee", "celegans", "beech",
     }
     assert set(SPECIES) == set(expected_transect) | excluded | {
-        "wolf", "anopheles_gambiae", "anopheles_coluzzii", "redpoll",
+        "wolf", "anopheles_gambiae", "anopheles_coluzzii", "anopheles_arabiensis", "redpoll",
     }
-    assert len(SPECIES) == 28
+    assert len(SPECIES) == 29
     assert SPECIES["anopheles_gambiae"]["paper_roles"] == ["primary_anopheles"]
     assert SPECIES["anopheles_coluzzii"]["paper_roles"] == ["primary_anopheles"]
+    assert SPECIES["anopheles_arabiensis"]["paper_roles"] == ["primary_anopheles"]
 
 
 def test_every_preset_has_a_complete_scientific_contract() -> None:
@@ -81,8 +82,8 @@ def test_user_guide_names_every_preset() -> None:
     assert MANIFEST["manuscript_title"] in normalized
     for key in (row["key"] for row in MANIFEST["species"] if "transect" in row["paper_roles"]):
         assert f"`{key}`" in guide
-    assert "Phase 2 AR1" in guide
-    assert "not distributed" in guide.lower()
+    assert "MalariaGEN Ag3.0" in guide
+    assert "raw data are deliberately not committed" in guide.lower()
 
 
 def test_source_utility_commands_are_executable() -> None:
@@ -93,9 +94,9 @@ def test_source_utility_commands_are_executable() -> None:
     assert "ScYwTfa_10461" in shown.stdout
     dry_download = run_example(script, "download", "human", "--dry-run")
     assert "human.chr2.vcf.gz" in dry_download.stdout
-    phase2_route = run_example(script, "download", "anopheles_gambiae", "--dry-run")
-    assert "download_release.sh" in phase2_route.stdout
-    assert "extract_phase2_hdf5.py" in phase2_route.stdout
+    ag3_route = run_example(script, "download", "anopheles_gambiae", "--dry-run")
+    assert "manual access route" in ag3_route.stdout
+    assert "paper/anopheles_variants/ag3/release/atlas_anopheles/manifest.tsv" in ag3_route.stdout
     prepared = run_example(
         script,
         "prepare",

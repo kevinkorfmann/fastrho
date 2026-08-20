@@ -5,8 +5,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="API tests" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml/badge.svg"></a>
-  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/paper-numbers.yml"><img alt="Paper reproducibility" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/paper-numbers.yml/badge.svg"></a>
+  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml"><img alt="API tests" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/api-tests.yml/badge.svg?branch=main&event=push"></a>
+  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/paper-numbers.yml"><img alt="Repository verification" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/paper-numbers.yml/badge.svg?branch=main&event=push"></a>
+  <a href="https://github.com/kevinkorfmann/fastrho/actions/workflows/docs.yml"><img alt="Documentation" src="https://github.com/kevinkorfmann/fastrho/actions/workflows/docs.yml/badge.svg?branch=main&event=push"></a>
   <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white">
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/License-MIT-2ea44f.svg"></a>
   <img alt="Release status: research alpha" src="https://img.shields.io/badge/status-research%20alpha-f59e0b">
@@ -76,9 +77,9 @@ making biological claims.
 The authoritative manuscript is in the separate
 [`fastrho-manuscript-2026-07-21`](https://github.com/kevinkorfmann/fastrho-manuscript-2026-07-21)
 repository. Its active sources are `main.tex` and `si.tex`. This repository provides the analysis
-code, checkpoint registry, inferred-map downloads, and provenance records. The workflow under
-[`reproduce/`](reproduce/) preserves the last fully pinned manuscript snapshot and is explicitly
-separated from the current manuscript authority.
+code, checkpoint registry, inferred-map downloads, and provenance records. Historical frozen
+reproduction material under [`reproduce/`](reproduce/) is retained for provenance but is not the
+authority for the current manuscript or the public repository checks.
 
 Developers can start with [CONTRIBUTING.md](CONTRIBUTING.md). The exact paper environment is recorded
 in [`requirements/cuda121-paper.txt`](requirements/cuda121-paper.txt).

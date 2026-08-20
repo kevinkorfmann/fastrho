@@ -25,6 +25,11 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--strict-models", action="store_true",
                         help="fail while any paper model artifact is pending")
+    parser.add_argument(
+        "--skip-manuscript",
+        action="store_true",
+        help="validate public repository metadata without the separate manuscript checkout",
+    )
     args = parser.parse_args()
     errors: list[str] = []
     warnings: list[str] = []
@@ -119,8 +124,9 @@ def main() -> int:
                 "citation_keys", "local_derivatives", "producing_scripts", "manuscript_scope"}
     ids = set()
     bibliography_paths = (
-        MANUSCRIPT / "refs.bib",
-        MANUSCRIPT / "generated" / "transect_sources.bib",
+        (ROOT / "refs.bib", ROOT / "paper" / "manuscript" / "generated" / "transect_sources.bib")
+        if args.skip_manuscript
+        else (MANUSCRIPT / "refs.bib", MANUSCRIPT / "generated" / "transect_sources.bib")
     )
     bibliography = "\n".join(
         path.read_text(encoding="utf-8") for path in bibliography_paths if path.is_file()
@@ -128,7 +134,7 @@ def main() -> int:
     bibkeys = set(re.findall(r"@\w+\{([^,]+),", bibliography))
     main_path = MANUSCRIPT / "main.tex"
     si_path = MANUSCRIPT / "si.tex"
-    if not main_path.is_file() or not si_path.is_file():
+    if not args.skip_manuscript and (not main_path.is_file() or not si_path.is_file()):
         errors.append(
             "locked manuscript is not staged; run reproduce/fetch_manuscript.py"
         )
@@ -151,9 +157,13 @@ def main() -> int:
                 errors.append(
                     f"dataset {source.get('id')} citation {key} is absent from manuscript bibliographies"
                 )
-            if key not in manuscript_text:
+            if not args.skip_manuscript and key not in manuscript_text:
                 errors.append(f"dataset {source.get('id')} citation {key} is absent from manuscript files")
-            if source.get("manuscript_scope") == "primary" and key not in main_text:
+            if (
+                not args.skip_manuscript
+                and source.get("manuscript_scope") == "primary"
+                and key not in main_text
+            ):
                 errors.append(f"primary dataset {source.get('id')} citation {key} is absent from main text")
         for script in source.get("producing_scripts", []):
             if not (ROOT / script).exists():

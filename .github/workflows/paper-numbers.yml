@@ -1,8 +1,7 @@
-name: paper-numbers
+name: repository-verification
 
-# Re-derive every number in the manuscript on each change. The suite needs only
-# numpy/scipy/scikit-learn/matplotlib (no torch, no GPU, no private packages), so it runs on a plain
-# runner in seconds.
+# Verify committed result snapshots, public data releases, examples, and provenance without
+# requiring access to the separate private manuscript repository.
 
 on:
   push:
@@ -22,8 +21,6 @@ on:
 jobs:
   rederive:
     runs-on: ubuntu-latest
-    env:
-      FASTRHO_MANUSCRIPT_ROOT: ${{ github.workspace }}/tmp/reproduce/manuscript
     steps:
       - uses: actions/checkout@v4
 
@@ -34,13 +31,9 @@ jobs:
       - name: Install verification dependencies
         run: python -m pip install --quiet -e ".[dev,figures]" scikit-learn
 
-      - name: Fetch the locked Phase 2 manuscript
-        run: python reproduce/fetch_manuscript.py
-
-      - name: Re-derive every paper number and bind every figure
+      - name: Re-derive committed results and verify public data
         run: >-
           pytest tests/paper
-          tests/verification
           tests/test_demography_matched_benchmark.py
           tests/test_paper_data_release.py
           -q -p no:cacheprovider -rxs
@@ -69,7 +62,4 @@ jobs:
             while IFS= read -r -d '' script; do bash -n "$script"; done
 
       - name: Validate data and citation provenance
-        run: python scripts/release_check.py
-
-      - name: Write the number-by-number Phase 2 verification
-        run: python reproduce/audit_phase2.py --check-published
+        run: python scripts/release_check.py --skip-manuscript
