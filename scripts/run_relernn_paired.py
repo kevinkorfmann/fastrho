@@ -77,6 +77,18 @@ def auto_uprtr(config_dir: Path, mu: float) -> int:
     return int(math.ceil(1.15 * quantile / mu))
 
 
+def resolve_uprtr(
+    config_dir: Path, mu: float, explicit: float | None
+) -> tuple[float | int, str]:
+    """Resolve the rate-prior bound while recording whether it was prespecified."""
+
+    if explicit is None:
+        return auto_uprtr(config_dir, mu), "analysis_specific_length_weighted_p99.9"
+    if not math.isfinite(explicit) or explicit <= 0:
+        raise ValueError("--upper-rho-theta-ratio must be finite and positive")
+    return explicit, "explicit_cli"
+
+
 def executable(name: str) -> str:
     path = Path(sys.executable).with_name(name)
     if not path.is_file():
@@ -101,7 +113,11 @@ def simulate(args: argparse.Namespace, config: dict, project: Path, env: dict[st
         raise FileExistsError(f"Refusing to overwrite ReLERNN project: {project}")
     project.mkdir(parents=True, exist_ok=True)
     combined = combine_vcfs(args.config_dir)
-    uprtr = auto_uprtr(args.config_dir, float(config["mu"]))
+    uprtr, uprtr_source = resolve_uprtr(
+        args.config_dir,
+        float(config["mu"]),
+        args.upper_rho_theta_ratio,
+    )
     command = [
         executable("ReLERNN_SIMULATE"),
         "--vcf",
@@ -146,6 +162,7 @@ def simulate(args: argparse.Namespace, config: dict, project: Path, env: dict[st
             else None,
             "combined_vcf_sha256": sha256(combined),
             "upper_rho_theta_ratio": uprtr,
+            "upper_rho_theta_ratio_source": uprtr_source,
             "n_train": args.n_train,
             "n_validation": args.n_validation,
             "n_test": args.n_test,
@@ -220,6 +237,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--n-validation", type=int, default=10000)
     parser.add_argument("--n-test", type=int, default=10000)
     parser.add_argument("--max-sites", type=int, default=256)
+    parser.add_argument(
+        "--upper-rho-theta-ratio",
+        type=float,
+        help=(
+            "explicit ReLERNN upperRhoThetaRatio; when omitted, retain the historical "
+            "analysis-specific length-weighted p99.9 rule"
+        ),
+    )
     parser.add_argument("--n-cpu", type=int, default=64)
     parser.add_argument("--train-cpu", type=int, default=8)
     parser.add_argument("--epochs", type=int, default=100)

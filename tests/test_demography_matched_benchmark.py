@@ -66,6 +66,21 @@ def test_auto_uprtr_uses_physical_length_weighting(tmp_path: Path) -> None:
     assert module.auto_uprtr(tmp_path, 1.0e-8) == 2
 
 
+def test_explicit_uprtr_bypasses_analysis_specific_rule(tmp_path: Path) -> None:
+    module = load_script("run_relernn_paired.py")
+    value, source = module.resolve_uprtr(tmp_path, 1.0e-8, 1.0)
+    assert value == 1.0
+    assert source == "explicit_cli"
+
+
+def test_native_window_scoring_averages_truth_on_prediction_intervals(tmp_path: Path) -> None:
+    module = load_script("score_relernn_native.py")
+    position = np.array([0, 25, 100], dtype=float)
+    rate = np.array([1.0, 3.0], dtype=float)
+    observed = module.mean_rate_between(position, rate, np.array([0, 50, 100]))
+    assert observed == pytest.approx([2.0, 3.0])
+
+
 def test_combine_vcfs_rejects_different_sample_panels(tmp_path: Path) -> None:
     module = load_script("run_relernn_paired.py")
     template = (

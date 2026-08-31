@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-31",
+  "objective": "Test the two configuration concerns raised about the submitted ReLERNN comparison without rerunning unrelated manuscript experiments.",
+  "evaluation_data": {
+    "source": "/vast/projects/smathi/cohort/korfmann/fastrho-demography-v1/validated_input/bottleneck_n20",
+    "reuse_rule": "Every sensitivity arm uses byte-identical phased VCFs and exact truth maps from the frozen paired bottleneck benchmark.",
+    "n_regions": 24,
+    "sequence_length_bp": 2000000,
+    "n_haplotypes": 20,
+    "mutation_rate": 1.5e-8
+  },
+  "software": {
+    "ReLERNN_version": "2.0.0",
+    "source_commit": "6655efd",
+    "runtime": "The same pinned Betty B200-compatible image and Keras serialization compatibility patch as the frozen paired benchmark."
+  },
+  "existing_reference_arms": [
+    {
+      "name": "bottleneck_constant_prior16_max256",
+      "history": "constant",
+      "upperRhoThetaRatio": 16,
+      "maxSites": 256
+    },
+    {
+      "name": "bottleneck_matched_prior16_max256",
+      "history": "matched",
+      "upperRhoThetaRatio": 16,
+      "maxSites": 256
+    }
+  ],
+  "new_training_arms": [
+    {
+      "name": "bottleneck_constant_prior1_max256",
+      "history": "constant",
+      "upperRhoThetaRatio": 1,
+      "maxSites": 256
+    },
+    {
+      "name": "bottleneck_matched_prior1_max256",
+      "history": "matched",
+      "upperRhoThetaRatio": 1,
+      "maxSites": 256
+    },
+    {
+      "name": "bottleneck_matched_prior1_max1750",
+      "history": "matched",
+      "upperRhoThetaRatio": 1,
+      "maxSites": 1750
+    }
+  ],
+  "shared_training_settings": {
+    "phased": true,
+    "assumedMu": 1.5e-8,
+    "nTrain": 100000,
+    "nVali": 10000,
+    "nTest": 10000,
+    "epochs": 100,
+    "simulation_seed": 1,
+    "training_seed": 1
+  },
+  "endpoints": {
+    "primary": "Pooled Pearson correlation after averaging the exact truth in each native ReLERNN output window.",
+    "secondary": [
+      "Pooled native-window Spearman correlation",
+      "Median estimated-to-true rate ratio",
+      "Native-window size range",
+      "Number of native windows and zero predictions"
+    ]
+  },
+  "analysis_rules": [
+    "Report all five existing and new arms.",
+    "Retain finite zero predictions as valid estimator outputs.",
+    "Do not change inputs, seeds, training sizes, epochs, phasing, mutation rate, or endpoints after viewing results.",
+    "Use Betty Slurm allocations for every simulation, training, prediction, and scoring stage."
+  ]
+}
