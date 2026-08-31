@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import argparse
+import errno
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 
 ARMS = {
@@ -49,6 +51,21 @@ def frozen_inputs(source: Path) -> list[Path]:
     return paths
 
 
+def link_or_copy(source: Path, destination: Path) -> str:
+    """Prefer an immutable hard link, with a checked copy across filesystems."""
+
+    try:
+        os.link(source, destination)
+        return "hardlink"
+    except OSError as error:
+        if error.errno != errno.EXDEV:
+            raise
+    shutil.copy2(source, destination)
+    if sha256(destination) != sha256(source):
+        raise RuntimeError(f"Copied input differs from source: {destination}")
+    return "copy2"
+
+
 def prepare(source_root: Path, target_root: Path, design: Path) -> dict:
     source = source_root / "validated_input" / "bottleneck_n20"
     files = frozen_inputs(source)
@@ -64,6 +81,7 @@ def prepare(source_root: Path, target_root: Path, design: Path) -> dict:
         "source_checksums": checksums,
         "design_sha256": sha256(design),
         "arms": {},
+        "transport": {},
     }
     for name, settings in ARMS.items():
         destination = arms_root / name
@@ -71,7 +89,10 @@ def prepare(source_root: Path, target_root: Path, design: Path) -> dict:
             raise FileExistsError(f"Refusing to reuse sensitivity arm: {destination}")
         destination.mkdir()
         for path in files:
-            os.link(path, destination / path.name)
+            method = link_or_copy(path, destination / path.name)
+            manifest["transport"].setdefault(method, []).append(
+                f"{name}/{path.name}"
+            )
         arm_config = dict(source_config)
         arm_config["name"] = name
         (destination / "config.json").write_text(
