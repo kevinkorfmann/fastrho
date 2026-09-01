@@ -1,0 +1,703 @@
+2026-09-01 02:08:48.688288: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-09-01 02:08:48.701999: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8473] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-09-01 02:08:48.706238: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1471] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+'+ptx85' is not a recognized feature for this target (ignoring feature)
+'+ptx85' is not a recognized feature for this target (ignoring feature)
+'+ptx85' is not a recognized feature for this target (ignoring feature)
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr1:0-10000000.hdf5"...
+Model: "functional_1"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer         │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional       │ (None, 168)       │     58,464 │ input_layer[0][0] │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense (Dense)       │ (None, 256)       │     43,264 │ bidirectional[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_1       │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout (Dropout)   │ (None, 256)       │          0 │ dense[0][0]       │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_1 (Dense)     │ (None, 256)       │    798,464 │ input_layer_1[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate         │ (None, 512)       │          0 │ dropout[0][0],    │
+│ (Concatenate)       │                   │            │ dense_1[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_2 (Dense)     │ (None, 64)        │     32,832 │ concatenate[0][0] │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_1 (Dropout) │ (None, 64)        │          0 │ dense_2[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_3 (Dense)     │ (None, 1)         │         65 │ dropout_1[0][0]   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+/usr/local/lib/python3.12/dist-packages/keras/src/saving/saving_lib.py:418: UserWarning: Skipping variable loading for optimizer 'adam', because it has 2 variables whereas the saved optimizer has 30 variables. 
+  trackable.load_own_variables(weights_store.get(inner_path))
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 325ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 325ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr2:0-10000000.hdf5"...
+Model: "functional_3"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_2       │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_1     │ (None, 168)       │     58,464 │ input_layer_2[0]… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_4 (Dense)     │ (None, 256)       │     43,264 │ bidirectional_1[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_3       │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_2 (Dropout) │ (None, 256)       │          0 │ dense_4[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_5 (Dense)     │ (None, 256)       │    798,464 │ input_layer_3[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_1       │ (None, 512)       │          0 │ dropout_2[0][0],  │
+│ (Concatenate)       │                   │            │ dense_5[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_6 (Dense)     │ (None, 64)        │     32,832 │ concatenate_1[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_3 (Dropout) │ (None, 64)        │          0 │ dense_6[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_7 (Dense)     │ (None, 1)         │         65 │ dropout_3[0][0]   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr3:0-10000000.hdf5"...
+Model: "functional_5"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_4       │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_2     │ (None, 168)       │     58,464 │ input_layer_4[0]… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_8 (Dense)     │ (None, 256)       │     43,264 │ bidirectional_2[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_5       │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_4 (Dropout) │ (None, 256)       │          0 │ dense_8[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_9 (Dense)     │ (None, 256)       │    798,464 │ input_layer_5[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_2       │ (None, 512)       │          0 │ dropout_4[0][0],  │
+│ (Concatenate)       │                   │            │ dense_9[0][0]     │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_10 (Dense)    │ (None, 64)        │     32,832 │ concatenate_2[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_5 (Dropout) │ (None, 64)        │          0 │ dense_10[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_11 (Dense)    │ (None, 1)         │         65 │ dropout_5[0][0]   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr4:0-10000000.hdf5"...
+Model: "functional_7"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_6       │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_3     │ (None, 168)       │     58,464 │ input_layer_6[0]… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_12 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_3[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_7       │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_6 (Dropout) │ (None, 256)       │          0 │ dense_12[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_13 (Dense)    │ (None, 256)       │    798,464 │ input_layer_7[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_3       │ (None, 512)       │          0 │ dropout_6[0][0],  │
+│ (Concatenate)       │                   │            │ dense_13[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_14 (Dense)    │ (None, 64)        │     32,832 │ concatenate_3[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_7 (Dropout) │ (None, 64)        │          0 │ dense_14[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_15 (Dense)    │ (None, 1)         │         65 │ dropout_7[0][0]   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr5:0-10000000.hdf5"...
+Model: "functional_9"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_8       │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_4     │ (None, 168)       │     58,464 │ input_layer_8[0]… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_16 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_4[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_9       │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_8 (Dropout) │ (None, 256)       │          0 │ dense_16[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_17 (Dense)    │ (None, 256)       │    798,464 │ input_layer_9[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_4       │ (None, 512)       │          0 │ dropout_8[0][0],  │
+│ (Concatenate)       │                   │            │ dense_17[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_18 (Dense)    │ (None, 64)        │     32,832 │ concatenate_4[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_9 (Dropout) │ (None, 64)        │          0 │ dense_18[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_19 (Dense)    │ (None, 1)         │         65 │ dropout_9[0][0]   │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+WARNING:tensorflow:5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7ffc3eaa2c00> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 319ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 319ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr6:0-10000000.hdf5"...
+Model: "functional_11"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_10      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_5     │ (None, 168)       │     58,464 │ input_layer_10[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_20 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_5[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_11      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_10          │ (None, 256)       │          0 │ dense_20[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_21 (Dense)    │ (None, 256)       │    798,464 │ input_layer_11[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_5       │ (None, 512)       │          0 │ dropout_10[0][0], │
+│ (Concatenate)       │                   │            │ dense_21[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_22 (Dense)    │ (None, 64)        │     32,832 │ concatenate_5[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_11          │ (None, 64)        │          0 │ dense_22[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_23 (Dense)    │ (None, 1)         │         65 │ dropout_11[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+WARNING:tensorflow:6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7ffc3ea55e40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 182ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 182ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr7:0-10000000.hdf5"...
+Model: "functional_13"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_12      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_6     │ (None, 168)       │     58,464 │ input_layer_12[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_24 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_6[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_13      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_12          │ (None, 256)       │          0 │ dense_24[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_25 (Dense)    │ (None, 256)       │    798,464 │ input_layer_13[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_6       │ (None, 512)       │          0 │ dropout_12[0][0], │
+│ (Concatenate)       │                   │            │ dense_25[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_26 (Dense)    │ (None, 64)        │     32,832 │ concatenate_6[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_13          │ (None, 64)        │          0 │ dense_26[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_27 (Dense)    │ (None, 1)         │         65 │ dropout_13[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr8:0-10000000.hdf5"...
+Model: "functional_15"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_14      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_7     │ (None, 168)       │     58,464 │ input_layer_14[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_28 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_7[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_15      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_14          │ (None, 256)       │          0 │ dense_28[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_29 (Dense)    │ (None, 256)       │    798,464 │ input_layer_15[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_7       │ (None, 512)       │          0 │ dropout_14[0][0], │
+│ (Concatenate)       │                   │            │ dense_29[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_30 (Dense)    │ (None, 64)        │     32,832 │ concatenate_7[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_15          │ (None, 64)        │          0 │ dense_30[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_31 (Dense)    │ (None, 1)         │         65 │ dropout_15[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr9:0-10000000.hdf5"...
+Model: "functional_17"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_16      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_8     │ (None, 168)       │     58,464 │ input_layer_16[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_32 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_8[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_17      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_16          │ (None, 256)       │          0 │ dense_32[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_33 (Dense)    │ (None, 256)       │    798,464 │ input_layer_17[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_8       │ (None, 512)       │          0 │ dropout_16[0][0], │
+│ (Concatenate)       │                   │            │ dense_33[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_34 (Dense)    │ (None, 64)        │     32,832 │ concatenate_8[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_17          │ (None, 64)        │          0 │ dense_34[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_35 (Dense)    │ (None, 1)         │         65 │ dropout_17[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr10:0-10000000.hdf5"...
+Model: "functional_19"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_18      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_9     │ (None, 168)       │     58,464 │ input_layer_18[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_36 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_9[… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_19      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_18          │ (None, 256)       │          0 │ dense_36[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_37 (Dense)    │ (None, 256)       │    798,464 │ input_layer_19[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_9       │ (None, 512)       │          0 │ dropout_18[0][0], │
+│ (Concatenate)       │                   │            │ dense_37[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_38 (Dense)    │ (None, 64)        │     32,832 │ concatenate_9[0]… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_19          │ (None, 64)        │          0 │ dense_38[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_39 (Dense)    │ (None, 1)         │         65 │ dropout_19[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 179ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 179ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr11:0-10000000.hdf5"...
+Model: "functional_21"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_20      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_10    │ (None, 168)       │     58,464 │ input_layer_20[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_40 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_10… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_21      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_20          │ (None, 256)       │          0 │ dense_40[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_41 (Dense)    │ (None, 256)       │    798,464 │ input_layer_21[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_10      │ (None, 512)       │          0 │ dropout_20[0][0], │
+│ (Concatenate)       │                   │            │ dense_41[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_42 (Dense)    │ (None, 64)        │     32,832 │ concatenate_10[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_21          │ (None, 64)        │          0 │ dense_42[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_43 (Dense)    │ (None, 1)         │         65 │ dropout_21[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr12:0-10000000.hdf5"...
+Model: "functional_23"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_22      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_11    │ (None, 168)       │     58,464 │ input_layer_22[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_44 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_11… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_23      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_22          │ (None, 256)       │          0 │ dense_44[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_45 (Dense)    │ (None, 256)       │    798,464 │ input_layer_23[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_11      │ (None, 512)       │          0 │ dropout_22[0][0], │
+│ (Concatenate)       │                   │            │ dense_45[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_46 (Dense)    │ (None, 64)        │     32,832 │ concatenate_11[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_23          │ (None, 64)        │          0 │ dense_46[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_47 (Dense)    │ (None, 1)         │         65 │ dropout_23[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr13:0-10000000.hdf5"...
+Model: "functional_25"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_24      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_12    │ (None, 168)       │     58,464 │ input_layer_24[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_48 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_12… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_25      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_24          │ (None, 256)       │          0 │ dense_48[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_49 (Dense)    │ (None, 256)       │    798,464 │ input_layer_25[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_12      │ (None, 512)       │          0 │ dropout_24[0][0], │
+│ (Concatenate)       │                   │            │ dense_49[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_50 (Dense)    │ (None, 64)        │     32,832 │ concatenate_12[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_25          │ (None, 64)        │          0 │ dense_50[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_51 (Dense)    │ (None, 1)         │         65 │ dropout_25[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 181ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr14:0-10000000.hdf5"...
+Model: "functional_27"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_26      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_13    │ (None, 168)       │     58,464 │ input_layer_26[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_52 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_13… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_27      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_26          │ (None, 256)       │          0 │ dense_52[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_53 (Dense)    │ (None, 256)       │    798,464 │ input_layer_27[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_13      │ (None, 512)       │          0 │ dropout_26[0][0], │
+│ (Concatenate)       │                   │            │ dense_53[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_54 (Dense)    │ (None, 64)        │     32,832 │ concatenate_13[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_27          │ (None, 64)        │          0 │ dense_54[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_55 (Dense)    │ (None, 1)         │         65 │ dropout_27[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr15:0-10000000.hdf5"...
+Model: "functional_29"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_28      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_14    │ (None, 168)       │     58,464 │ input_layer_28[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_56 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_14… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_29      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_28          │ (None, 256)       │          0 │ dense_56[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_57 (Dense)    │ (None, 256)       │    798,464 │ input_layer_29[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_14      │ (None, 512)       │          0 │ dropout_28[0][0], │
+│ (Concatenate)       │                   │            │ dense_57[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_58 (Dense)    │ (None, 64)        │     32,832 │ concatenate_14[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_29          │ (None, 64)        │          0 │ dense_58[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_59 (Dense)    │ (None, 1)         │         65 │ dropout_29[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 179ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr16:0-10000000.hdf5"...
+Model: "functional_31"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_30      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_15    │ (None, 168)       │     58,464 │ input_layer_30[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_60 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_15… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_31      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_30          │ (None, 256)       │          0 │ dense_60[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_61 (Dense)    │ (None, 256)       │    798,464 │ input_layer_31[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_15      │ (None, 512)       │          0 │ dropout_30[0][0], │
+│ (Concatenate)       │                   │            │ dense_61[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_62 (Dense)    │ (None, 64)        │     32,832 │ concatenate_15[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_31          │ (None, 64)        │          0 │ dense_62[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_63 (Dense)    │ (None, 1)         │         65 │ dropout_31[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 180ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr17:0-10000000.hdf5"...
+Model: "functional_33"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_32      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_16    │ (None, 168)       │     58,464 │ input_layer_32[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_64 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_16… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_33      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_32          │ (None, 256)       │          0 │ dense_64[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_65 (Dense)    │ (None, 256)       │    798,464 │ input_layer_33[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_16      │ (None, 512)       │          0 │ dropout_32[0][0], │
+│ (Concatenate)       │                   │            │ dense_65[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_66 (Dense)    │ (None, 64)        │     32,832 │ concatenate_16[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_33          │ (None, 64)        │          0 │ dense_66[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_67 (Dense)    │ (None, 1)         │         65 │ dropout_33[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 354ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 354ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr18:0-10000000.hdf5"...
+Model: "functional_35"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_34      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_17    │ (None, 168)       │     58,464 │ input_layer_34[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_68 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_17… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_35      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_34          │ (None, 256)       │          0 │ dense_68[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_69 (Dense)    │ (None, 256)       │    798,464 │ input_layer_35[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_17      │ (None, 512)       │          0 │ dropout_34[0][0], │
+│ (Concatenate)       │                   │            │ dense_69[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_70 (Dense)    │ (None, 64)        │     32,832 │ concatenate_17[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_35          │ (None, 64)        │          0 │ dense_70[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_71 (Dense)    │ (None, 1)         │         65 │ dropout_35[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 192ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 192ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr19:0-10000000.hdf5"...
+Model: "functional_37"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_36      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_18    │ (None, 168)       │     58,464 │ input_layer_36[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_72 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_18… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_37      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_36          │ (None, 256)       │          0 │ dense_72[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_73 (Dense)    │ (None, 256)       │    798,464 │ input_layer_37[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_18      │ (None, 512)       │          0 │ dropout_36[0][0], │
+│ (Concatenate)       │                   │            │ dense_73[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_74 (Dense)    │ (None, 64)        │     32,832 │ concatenate_18[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_37          │ (None, 64)        │          0 │ dense_74[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_75 (Dense)    │ (None, 1)         │         65 │ dropout_37[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 185ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 185ms/step
+Importing HDF5: "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion/relernn_project/splitVCFs/combined_chr20:0-10000000.hdf5"...
+Model: "functional_39"
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)        ┃ Output Shape      ┃    Param # ┃ Connected to      ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ input_layer_38      │ (None, 3118, 30)  │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ bidirectional_19    │ (None, 168)       │     58,464 │ input_layer_38[0… │
+│ (Bidirectional)     │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_76 (Dense)    │ (None, 256)       │     43,264 │ bidirectional_19… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ input_layer_39      │ (None, 3118)      │          0 │ -                 │
+│ (InputLayer)        │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_38          │ (None, 256)       │          0 │ dense_76[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_77 (Dense)    │ (None, 256)       │    798,464 │ input_layer_39[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ concatenate_19      │ (None, 512)       │          0 │ dropout_38[0][0], │
+│ (Concatenate)       │                   │            │ dense_77[0][0]    │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_78 (Dense)    │ (None, 64)        │     32,832 │ concatenate_19[0… │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dropout_39          │ (None, 64)        │          0 │ dense_78[0][0]    │
+│ (Dropout)           │                   │            │                   │
+├─────────────────────┼───────────────────┼────────────┼───────────────────┤
+│ dense_79 (Dense)    │ (None, 1)         │         65 │ dropout_39[0][0]  │
+└─────────────────────┴───────────────────┴────────────┴───────────────────┘
+ Total params: 933,089 (3.56 MB)
+ Trainable params: 933,089 (3.56 MB)
+ Non-trainable params: 0 (0.00 B)
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 183ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 183ms/step
+
+***ReLERNN_PREDICT.py FINISHED!***
+

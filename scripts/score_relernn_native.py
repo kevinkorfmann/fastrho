@@ -64,10 +64,13 @@ def parse_prediction(path: Path) -> dict[int, list[tuple[float, float, float]]]:
     return records
 
 
-def score_arm(label: str, arm: Path) -> dict:
+def score_arm(label: str, arm: Path, use_bias_corrected: bool = False) -> dict:
     manifest_path = arm / "relernn_run_manifest.json"
     manifest = json.loads(manifest_path.read_text())
-    prediction_path = Path(manifest["prediction"])
+    prediction_key = "bias_corrected_prediction" if use_bias_corrected else "prediction"
+    if prediction_key not in manifest:
+        raise KeyError(f"{prediction_key} is absent from {manifest_path}")
+    prediction_path = Path(manifest[prediction_key])
     if not prediction_path.is_file():
         prediction_path = arm / "relernn_project" / "combined.PREDICT.txt"
     records = parse_prediction(prediction_path)
@@ -104,6 +107,7 @@ def score_arm(label: str, arm: Path) -> dict:
         "label": label,
         "arm": str(arm),
         "prediction_sha256": sha256(prediction_path),
+        "prediction_stage": "BSCORRECT" if use_bias_corrected else "PREDICT",
         "manifest_sha256": sha256(manifest_path),
         "training_demography": manifest["training_demography"],
         "phased": "--phased" in manifest["simulate_command"]
@@ -141,12 +145,21 @@ def main() -> None:
         "--arm", action="append", nargs=2, metavar=("LABEL", "PATH"), required=True
     )
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--use-bias-corrected",
+        action="store_true",
+        help="score ReLERNN_BSCORRECT output rather than the raw PREDICT output",
+    )
     args = parser.parse_args()
-    arms = [score_arm(label, Path(path).resolve()) for label, path in args.arm]
+    arms = [
+        score_arm(label, Path(path).resolve(), args.use_bias_corrected)
+        for label, path in args.arm
+    ]
     output = {
         "schema_version": 1,
         "endpoint": "Pearson correlation after averaging the exact truth in each native ReLERNN output window",
         "zero_prediction_rule": "retain finite zero predictions as valid estimator outputs",
+        "prediction_stage": "BSCORRECT" if args.use_bias_corrected else "PREDICT",
         "arms": arms,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

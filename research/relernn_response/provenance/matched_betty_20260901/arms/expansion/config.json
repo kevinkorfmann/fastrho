@@ -1,0 +1,19 @@
+{
+  "name": "expansion",
+  "demography": "expansion",
+  "n_dip": 10,
+  "mu": 1.5e-08,
+  "Ne": 10000.0,
+  "seq_len": 10000000,
+  "n_regions": 20,
+  "popsizes": [
+    10000.0,
+    1000.0
+  ],
+  "epochtimes": [
+    2000
+  ],
+  "genetic_map": null,
+  "species": "HomSap",
+  "relernn_full": true
+}

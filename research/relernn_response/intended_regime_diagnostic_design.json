@@ -1,0 +1,33 @@
+{
+  "analysis_status": "prespecified_before_generation",
+  "decision_rule": "Use the complete six-scenario suite exactly as generated; do not tune or select by test correlation.",
+  "methods": [
+    "fastrho frozen checkpoint",
+    "pyrho matched lookup table",
+    "ReLERNN frozen corrected-default model"
+  ],
+  "purpose": "Distinguish native-window coordinate aggregation from the constant-rate simulation regime used to train and validate ReLERNN.",
+  "relernn_model_rule": "Reuse each scenario's first completed validated corrected-default ReLERNN model without retraining.",
+  "scenarios": [
+    "constant",
+    "bottleneck",
+    "expansion",
+    "deCODE",
+    "HapMap",
+    "dog"
+  ],
+  "scoring_rule": "Pearson correlation after averaging each method and the known constant test-map truth in exact complete ReLERNN native windows.",
+  "seed_base": 92001,
+  "test_map_rule": "For each frozen source region, use one constant recombination rate equal to that source region's length-weighted map mean.",
+  "training_settings_inherited": {
+    "assumed_mu": "scenario generating mutation rate",
+    "demography": "matched scenario history",
+    "epochs": 100,
+    "max_sites": 1750,
+    "phased": true,
+    "upper_rho_theta_ratio": {
+      "dog": 8,
+      "human": 3
+    }
+  }
+}

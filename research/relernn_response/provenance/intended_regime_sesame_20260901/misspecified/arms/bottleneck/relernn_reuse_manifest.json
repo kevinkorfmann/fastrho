@@ -1,0 +1,214 @@
+{
+  "combined_vcf_sha256": "e873bf577411388c52f3289f761cdedfa1d4fd7e19b8d434085d0c2a89aef43b",
+  "config_dir": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/bottleneck",
+  "generation_scenario": "bottleneck",
+  "gpu_id": 0,
+  "max_input_sites": 1603,
+  "n_samples": 20,
+  "native_regime_generation_sha256": "fed718ace37da3344cb7c565a4a8f1374ceccdae0bd8cd3cb1f087d2f41d4d04",
+  "operation": "frozen_model_reuse_prediction",
+  "prediction_command": [
+    "/home/kkor/fastrho_data/relernn_intended_20260831/software/ReLERNN-6655efd-weights/ReLERNN/ReLERNN_PREDICT",
+    "--vcf",
+    "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/bottleneck/combined.vcf",
+    "--projectDir",
+    "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/bottleneck/relernn_project",
+    "--phased",
+    "--seed",
+    "1",
+    "--gpuID",
+    "0"
+  ],
+  "prediction_sha256": "bab9e8daa4732277ff660f925dc2238cec11683c2484ce0eac2416382a898e7f",
+  "prediction_wall_seconds": 28.045505542308092,
+  "schema_version": 1,
+  "seed": 1,
+  "source_model_capacity": 4184,
+  "source_model_weights_sha256": "758d31e74fd54ccad9ea15389f426aec32254e35cd003cf8e057fd08df4a2707",
+  "source_project": "/home/kkor/fastrho-relernn-misspecified-native-20260901/arms/bottleneck/relernn_project",
+  "source_test_results_sha256": "3df865897e6f3d2594c969deb0cff25dcd9d4723743ccb34d8c695db1fb87582",
+  "source_window_sizes_sha256": "12d6443bd7875c5751cfae28b0b6dd0c4c985130dcab8a12c3fb5b96cb2b24c2",
+  "window_sizes_sha256": "3e83134c89ddd07ed093ec7a851cddf42d609c75f8e7925d2ffe5044de23b4c2",
+  "windows": [
+    [
+      "chr1:0-10000000",
+      20,
+      1718000,
+      1252,
+      1571,
+      1750,
+      6
+    ],
+    [
+      "chr2:0-10000000",
+      20,
+      1506000,
+      881,
+      1466,
+      1746,
+      7
+    ],
+    [
+      "chr3:0-10000000",
+      20,
+      1699000,
+      1393,
+      1522,
+      1751,
+      6
+    ],
+    [
+      "chr4:0-10000000",
+      20,
+      1861000,
+      704,
+      1518,
+      1749,
+      6
+    ],
+    [
+      "chr5:0-10000000",
+      20,
+      1649000,
+      135,
+      1364,
+      1750,
+      7
+    ],
+    [
+      "chr6:0-10000000",
+      20,
+      1724000,
+      1148,
+      1483,
+      1751,
+      6
+    ],
+    [
+      "chr7:0-10000000",
+      20,
+      1696000,
+      1126,
+      1456,
+      1754,
+      6
+    ],
+    [
+      "chr8:0-10000000",
+      20,
+      1455000,
+      1132,
+      1469,
+      1748,
+      7
+    ],
+    [
+      "chr9:0-10000000",
+      20,
+      1715000,
+      1381,
+      1603,
+      1750,
+      6
+    ],
+    [
+      "chr10:0-10000000",
+      20,
+      1710000,
+      684,
+      1391,
+      1752,
+      6
+    ],
+    [
+      "chr11:0-10000000",
+      20,
+      1584000,
+      526,
+      1362,
+      1753,
+      7
+    ],
+    [
+      "chr12:0-10000000",
+      20,
+      1509000,
+      938,
+      1338,
+      1750,
+      7
+    ],
+    [
+      "chr13:0-10000000",
+      20,
+      1382000,
+      296,
+      1240,
+      1749,
+      8
+    ],
+    [
+      "chr14:0-10000000",
+      20,
+      1827000,
+      755,
+      1389,
+      1750,
+      6
+    ],
+    [
+      "chr15:0-10000000",
+      20,
+      1605000,
+      400,
+      1389,
+      1755,
+      7
+    ],
+    [
+      "chr16:0-10000000",
+      20,
+      1562000,
+      374,
+      1233,
+      1749,
+      7
+    ],
+    [
+      "chr17:0-10000000",
+      20,
+      1652000,
+      88,
+      1315,
+      1751,
+      7
+    ],
+    [
+      "chr18:0-10000000",
+      20,
+      1609000,
+      279,
+      1316,
+      1748,
+      7
+    ],
+    [
+      "chr19:0-10000000",
+      20,
+      1773000,
+      823,
+      1500,
+      1749,
+      6
+    ],
+    [
+      "chr20:0-10000000",
+      20,
+      1611000,
+      252,
+      1359,
+      1747,
+      7
+    ]
+  ]
+}

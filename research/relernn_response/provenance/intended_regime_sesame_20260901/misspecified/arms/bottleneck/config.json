@@ -1,0 +1,20 @@
+{
+  "Ne": 10000.0,
+  "demography": "bottleneck",
+  "epochtimes": [],
+  "genetic_map": null,
+  "mu": 1.5e-08,
+  "n_dip": 10,
+  "n_regions": 20,
+  "name": "bottleneck_constant_history_native",
+  "native_regime": true,
+  "native_regime_map_rule": "constant at frozen source-region length-weighted mean",
+  "native_regime_seed_base": 92001,
+  "native_regime_source": "/home/kkor/fastrho-relernn-prior-corrected-20260831-sesame/data/arms/bottleneck",
+  "popsizes": [
+    10000.0
+  ],
+  "relernn_full": true,
+  "seq_len": 10000000,
+  "species": "HomSap"
+}

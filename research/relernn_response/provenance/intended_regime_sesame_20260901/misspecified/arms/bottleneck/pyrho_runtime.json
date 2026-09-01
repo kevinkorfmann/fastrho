@@ -1,0 +1,153 @@
+{
+  "lookup_table": "/home/kkor/fastrho-relernn-misspecified-native-20260901/arms/bottleneck/pyrho_table.hdf",
+  "lookup_table_reused": true,
+  "lookup_table_sha256": "3aff916704e8273e401c6624a44d34c053e853f80415ea634b4b7eece0717a36",
+  "lookup_table_wall_seconds": 0.0,
+  "optimize_wall_seconds": 515.0027238223702,
+  "optimized": [
+    {
+      "region": "region_000",
+      "rmap_sha256": "c8fe5bfa7317383b4764bd096ed0533c1187de8b771081f37ee866878632a77b",
+      "vcf_sha256": "90f8084f321a844d8fdcf4e5ec73052193a010146236c536ae9cd595b23e00c1",
+      "wall_seconds": 28.533694410696626
+    },
+    {
+      "region": "region_001",
+      "rmap_sha256": "178b94aa059e6868ac84c980e7c9726752c5be76cced49ffa6b924447c7b2519",
+      "vcf_sha256": "14d67e04b737eb41292ccf0275c7fc08d87c16817dba35a30a9c4acd6d3d0d44",
+      "wall_seconds": 29.604936284944415
+    },
+    {
+      "region": "region_002",
+      "rmap_sha256": "c8412555cc63aaf822dd0fc5f48cc93011d9a031bd5f3a4e48b1a71c573182b7",
+      "vcf_sha256": "a4c1274b6fcae2e9a78a678a160b5ca0ac8b44cb0d9b492894af7c3b7ee0a2dc",
+      "wall_seconds": 27.710442611947656
+    },
+    {
+      "region": "region_003",
+      "rmap_sha256": "7e5631a92b220ece16329300c6341a540aeca962504782f54c959d2dbcbf879d",
+      "vcf_sha256": "91624950b47e7de0b1492e22ccedd40930645ab2da4b6c2d5e8e656262d5460a",
+      "wall_seconds": 36.7848487328738
+    },
+    {
+      "region": "region_004",
+      "rmap_sha256": "ba3729eb968627dd33f109faf1ab370666f40151c4c68344eb77813009e21a7f",
+      "vcf_sha256": "b64c5f3edae95ab6fe8a440e107f162d1014fe9db7f8939755a92f08b19c3774",
+      "wall_seconds": 32.1463424526155
+    },
+    {
+      "region": "region_005",
+      "rmap_sha256": "fc619e073f7b12dda38d21ed1cd71f2fc59ab241b80e45d3bc0b703adfcacc57",
+      "vcf_sha256": "44375b5a777bbf482b1f197b16b538fba3faa06d46a1ed67afce9e2fcca795e9",
+      "wall_seconds": 24.86485042050481
+    },
+    {
+      "region": "region_006",
+      "rmap_sha256": "d4ae0f2ba7a445fabf821c095278df8387f1b36e8a94d837b1a5e86ef6d716df",
+      "vcf_sha256": "1cc0e402916b2aaf33306be065312a486eb043050411af5c38162016583d50d3",
+      "wall_seconds": 25.229763835668564
+    },
+    {
+      "region": "region_007",
+      "rmap_sha256": "91bca0121391cbf1424592e2478c67c4bdb358e611c3654e371ea7570feca051",
+      "vcf_sha256": "0df7b592f63a8915cf1dc67cdb51ad24461e172cec08f7fb52d7aa491cbd1e33",
+      "wall_seconds": 27.551334105432034
+    },
+    {
+      "region": "region_008",
+      "rmap_sha256": "aeb26be1f379ead9c86bc1f3bb46c62239d76b9370ddca6dc44b7e81ccd2522a",
+      "vcf_sha256": "33124367a828c130e160710fcb2abb0b24d4762dcc4ad2691b7d2af0e618d6f7",
+      "wall_seconds": 22.7705845143646
+    },
+    {
+      "region": "region_009",
+      "rmap_sha256": "9e7d469aaa241bcafae75de34a5f78cc77266ca8df742bb1009a796ce7a29c9b",
+      "vcf_sha256": "321c7f878631cd9a5a63674596a1e13bd4507228c16d74b4951dc4de8e724a1e",
+      "wall_seconds": 27.407170796766877
+    },
+    {
+      "region": "region_010",
+      "rmap_sha256": "9620c9f7231802a92c44d1fb8296511995679f066677ec75d67582ba6844a39c",
+      "vcf_sha256": "31c48c07b5f976fc46806fe7ae66a7cabd04e76466e6d300a199d67ef17ff2d0",
+      "wall_seconds": 8.421091854572296
+    },
+    {
+      "region": "region_011",
+      "rmap_sha256": "876e0ed845ce8baff5986ba999fccddde3476397c8780c89a4a363be54509b7a",
+      "vcf_sha256": "766f4b69c4c3098b9d9f646727b4ae5784ceff3d39b7720a785986b05239b8df",
+      "wall_seconds": 25.515867641195655
+    },
+    {
+      "region": "region_012",
+      "rmap_sha256": "b0012d5298fea899437a72bbed4a6d6611a9e28aca920745681cc127e0315832",
+      "vcf_sha256": "e51fba6f8efceac204ff24e6d48883e88446c42034badee90025c86aea7a1e39",
+      "wall_seconds": 24.947802728042006
+    },
+    {
+      "region": "region_013",
+      "rmap_sha256": "ecbfa2c192c488b74c6e088bc051ffae5d16a26df9082817c409974d41060c17",
+      "vcf_sha256": "160267ba0ffa35f278a62111642c3ced9142c7b472cb939049d86d59a4a94ecd",
+      "wall_seconds": 26.344987750053406
+    },
+    {
+      "region": "region_014",
+      "rmap_sha256": "317bd97a693601b8c8b3515ce1a33f0c1fd446109e01e6c438d8ab890038d7a1",
+      "vcf_sha256": "673395f52bc3b95c353956d5144739e5ed7f3857d3c753c4f6d09130d1b91391",
+      "wall_seconds": 26.901411712169647
+    },
+    {
+      "region": "region_015",
+      "rmap_sha256": "1cb894cbb4aca53f05efbc9e7f0c773679d6aa5edb4a19ae2aef2e1700dac384",
+      "vcf_sha256": "ade53ccb5589a75d0be8df6f3687a2ce5e9358ec303deca93e4910038d481d38",
+      "wall_seconds": 38.31820221990347
+    },
+    {
+      "region": "region_016",
+      "rmap_sha256": "f4f8cfc946bd7a2ba30588de3182b40e96a80475f73e47422dd242531c8fc1d5",
+      "vcf_sha256": "e49f7646ae6f258769727ce32e7232931cb9ecaf25fc37b3e784852e8a20b9d5",
+      "wall_seconds": 11.8154640160501
+    },
+    {
+      "region": "region_017",
+      "rmap_sha256": "ce49b0493bededd0464f029a3b6bd7f1c54d957a615f43ded6dfd19893fe5b84",
+      "vcf_sha256": "0e25df2102ab5382f333e3b0f3cba635deb0beaf2a07525239c09aea5adf80ab",
+      "wall_seconds": 24.754015067592263
+    },
+    {
+      "region": "region_018",
+      "rmap_sha256": "cf9b4f98bf7c5fb29e819d86e643404860f33ffbe9ef7890ccd94677be240e88",
+      "vcf_sha256": "afddd7558b8f1f2ec5b893cc13f64f5270afdd3d9524dc43b3d237feb309bb14",
+      "wall_seconds": 14.810756549239159
+    },
+    {
+      "region": "region_019",
+      "rmap_sha256": "f3b06c1d409d26b4793c7849e96058f1d8d9f806e66b9c29352fbcd6cc970fcf",
+      "vcf_sha256": "03390c80becf844103a11fc6a294b33e0253677fc076182ac0b8615b37ddb407",
+      "wall_seconds": 30.449245125055313
+    }
+  ],
+  "region_wall_seconds": {
+    "region_000": 28.533694410696626,
+    "region_001": 29.604936284944415,
+    "region_002": 27.710442611947656,
+    "region_003": 36.7848487328738,
+    "region_004": 32.1463424526155,
+    "region_005": 24.86485042050481,
+    "region_006": 25.229763835668564,
+    "region_007": 27.551334105432034,
+    "region_008": 22.7705845143646,
+    "region_009": 27.407170796766877,
+    "region_010": 8.421091854572296,
+    "region_011": 25.515867641195655,
+    "region_012": 24.947802728042006,
+    "region_013": 26.344987750053406,
+    "region_014": 26.901411712169647,
+    "region_015": 38.31820221990347,
+    "region_016": 11.8154640160501,
+    "region_017": 24.754015067592263,
+    "region_018": 14.810756549239159,
+    "region_019": 30.449245125055313
+  },
+  "schema_version": 1,
+  "total_wall_seconds": 515.0027238223702
+}

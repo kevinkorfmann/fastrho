@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "benchmark_input": {
+    "description": "24 phased bottleneck regions",
+    "haplotypes_per_region": 20,
+    "region_length_bp": 2000000
+  },
+  "measurements": {
+    "fastrho": {
+      "complete_per_dataset_seconds": 12.5,
+      "complete_workflow_stages": [
+        "load pretrained checkpoint",
+        "predict"
+      ],
+      "hardware": "one NVIDIA V100S GPU",
+      "prediction_or_inference_seconds": 12.5,
+      "training_treatment": "pretraining is amortized across datasets"
+    },
+    "pyrho": {
+      "complete_per_dataset_seconds": 187.6,
+      "complete_workflow_stages": [
+        "construct matched-demography lookup table",
+        "infer 24 maps"
+      ],
+      "hardware": "32 allocated AMD EPYC CPU cores",
+      "prediction_or_inference_seconds": 176.7
+    },
+    "relernn": {
+      "complete_per_dataset_seconds": 10064.8,
+      "complete_workflow_stages": [
+        "simulate 100000 training, 10000 validation, and 10000 test examples",
+        "train for 100 epochs",
+        "predict"
+      ],
+      "hardware": {
+        "prediction_and_training": "one NVIDIA B200 GPU",
+        "simulation": "60 allocated AMD EPYC CPU cores"
+      },
+      "prediction_or_inference_seconds": 29.9
+    }
+  },
+  "reporting": {
+    "excluded_from_all_endpoints": [
+      "software installation",
+      "result ingestion",
+      "manuscript scoring"
+    ],
+    "relernn_optional_stage_excluded": "ReLERNN_BSCORRECT uncertainty and bias-correction stage",
+    "use": "absolute wall-clock measurements; no cross-hardware timing ratio"
+  }
+}
