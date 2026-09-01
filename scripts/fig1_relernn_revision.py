@@ -247,15 +247,15 @@ def render(
     ax.set_yscale("log")
     ax.set_xlim(-0.08, 1.05)
     ax.set_ylim(8, 2.0e4)
-    ax.set_xticks([0, 1], ["predict / infer\nonly", "full per-dataset\nworkflow"])
+    ax.set_xticks([0, 1], ["predict / infer\nonly", "dataset-specific\nworkflow"])
     ax.set_yticks([10, 60, 600, 3600, 10080], ["10 s", "1 min", "10 min", "1 h", "2.8 h"])
     ax.set_ylabel("Measured wall-clock")
     ax.grid(axis="y", color="0.9", lw=0.5)
     ax.legend(frameon=False, fontsize=5.3, loc="upper left")
     ax.text(0.55, 210, "+ lookup table", fontsize=4.7, color=BLACK)
     ax.text(0.55, 1800, "+ simulation\n+ training", fontsize=4.7, color=GRAY)
-    ax.text(0.27, 15.5, "training amortized across datasets", fontsize=4.7, color=BLUE)
-    ax.set_title("24 × 2-Mb bottleneck data", loc="left")
+    ax.text(0.27, 15.5, "pretraining amortized across datasets", fontsize=4.7, color=BLUE)
+    ax.set_title("Timing workload: 24 × 2-Mb bottleneck regions", loc="left")
     panel_label(ax, "d")
 
     # e | Existing independent SLiM stress test.
