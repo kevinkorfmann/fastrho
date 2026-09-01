@@ -4,7 +4,7 @@
 Panel A deliberately separates the fine-scale 25-kb comparison from a
 prespecified constant-rate test at the ReLERNN output-window scale.
 The timing panel reports measured workflow stages rather than a normalized
-cross-hardware speed ratio.
+speed ratio.
 """
 
 from __future__ import annotations
@@ -85,6 +85,7 @@ def render(
     demography: dict,
     native: dict,
     misspecified: dict,
+    timing_results: dict,
     selection: dict,
     selection_windows: np.lib.npyio.NpzFile,
     output: Path,
@@ -227,25 +228,27 @@ def render(
     # d | Two measured endpoints make stage inclusion explicit.
     ax = fig.add_subplot(bottom[0, 0])
     timing = {
-        "fastrho": (12.5, 12.5),
-        "pyrho": (176.7, 187.6),
-        "relernn": (29.9, 10064.8),
+        method: (
+            timing_results["measurements"][method]["prediction_or_inference_seconds"],
+            timing_results["measurements"][method]["dataset_specific_workflow_seconds"],
+        )
+        for method, _label, _color, _marker in METHODS
     }
     for method, label, color, marker in METHODS:
         values = timing[method]
         ax.plot([0, 1], values, color=color, marker=marker, ms=4.0, lw=1.0, label=label)
     ax.set_yscale("log")
     ax.set_xlim(-0.08, 1.05)
-    ax.set_ylim(8, 2.0e4)
+    ax.set_ylim(8, 3.0e4)
     ax.set_xticks([0, 1], ["predict / infer\nonly", "dataset-specific\nworkflow"])
-    ax.set_yticks([10, 60, 600, 3600, 10080], ["10 s", "1 min", "10 min", "1 h", "2.8 h"])
+    ax.set_yticks([10, 60, 600, 3600, 14400], ["10 s", "1 min", "10 min", "1 h", "4 h"])
     ax.set_ylabel("Measured wall-clock")
     ax.grid(axis="y", color="0.9", lw=0.5)
     ax.legend(frameon=False, fontsize=5.3, loc="upper left")
-    ax.text(0.55, 210, "+ lookup table", fontsize=4.7, color=BLACK)
-    ax.text(0.55, 1800, "+ simulation\n+ training", fontsize=4.7, color=BLACK)
-    ax.text(0.27, 15.5, "pretraining amortized across datasets", fontsize=4.7, color=BLUE)
-    ax.set_title("Timing workload: 24 × 2-Mb bottleneck regions", loc="left")
+    ax.text(0.55, 410, "+ lookup table", fontsize=4.7, color=BLACK)
+    ax.text(0.55, 2600, "+ simulation\n+ training", fontsize=4.7, color=BLACK)
+    ax.text(0.16, 135, "pretraining amortized across datasets", fontsize=4.7, color=BLUE)
+    ax.set_title("Timing workload: 20 × 10-Mb bottleneck regions", loc="left")
     panel_label(ax, "d")
 
     # e | Existing independent SLiM stress test.
@@ -291,6 +294,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--native-json", required=True, type=Path)
     parser.add_argument("--misspecified-json", required=True, type=Path)
+    parser.add_argument("--timing-json", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     style()
@@ -303,6 +307,7 @@ def main() -> None:
         demography,
         json.loads(args.native_json.read_text()),
         json.loads(args.misspecified_json.read_text()),
+        json.loads(args.timing_json.read_text()),
         selection,
         selection_windows,
         args.output,
