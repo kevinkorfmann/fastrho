@@ -2,7 +2,7 @@
 """Render the isolated reviewer-response version of main-text Figure 1.
 
 Panel A deliberately separates the fine-scale 25-kb comparison from a
-prespecified constant-rate test in ReLERNN's intended native-window regime.
+prespecified constant-rate test at the ReLERNN output-window scale.
 The timing panel reports measured workflow stages rather than a normalized
 cross-hardware speed ratio.
 """
@@ -185,15 +185,18 @@ def render(
     ax_native.set_yticks([0.7, 0.8, 0.9, 1.0])
     ax_native.set_ylabel("Pearson $r$")
     ax_native.grid(axis="y", color="0.90", lw=0.5)
-    ax_native.set_title("ReLERNN intended regime", loc="left", pad=3)
+    ax_native.set_title("Window-based evaluation", loc="left", pad=3)
     ax_native.text(
         0.01,
-        0.04,
-        "native-window medians: " + ", ".join(f"{width:.2f}" for width in widths) + " Mb",
+        -0.78,
+        "ReLERNN window scale: phased input; maxSites = 1,750\n"
+        "median output-window widths (Mb): " + ", ".join(f"{width:.2f}" for width in widths),
         transform=ax_native.transAxes,
-        fontsize=4.2,
+        fontsize=4.6,
         color="0.38",
         va="bottom",
+        linespacing=1.15,
+        clip_on=False,
     )
 
     # b | Held-out interval calibration.
