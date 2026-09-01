@@ -132,7 +132,8 @@ def render(
                 )
     ax_fine.set_xticks(x, [""] * len(SCENARIOS))
     ax_fine.set_xlim(-0.25, len(SCENARIOS) - 0.02)
-    ax_fine.set_ylim(0, 1.08)
+    ax_fine.set_ylim(0, 1)
+    ax_fine.set_yticks([0, 0.5, 1.0])
     ax_fine.set_ylabel("Pearson $r$")
     ax_fine.grid(axis="y", color="0.90", lw=0.5)
     ax_fine.set_title("Fine-scale benchmark (25 kb)", loc="left", pad=4)
@@ -152,25 +153,28 @@ def render(
     )
     panel_label(ax_fine, "a")
 
+    method_offsets = {"fastrho": -0.14, "pyrho": 0.0, "relernn": 0.14}
     for method, label, color, marker in METHODS:
         values = [native["scenarios"][native_key]["methods"][method]["pearson"] for _short, _key, native_key in SCENARIOS]
-        ax_native.plot(x, values, color=color, marker=marker, ms=3.8, lw=1.05, zorder=3)
-        ax_native.text(
-            x[-1] + 0.10,
-            values[-1] + {"fastrho": 0.025, "pyrho": -0.018, "relernn": -0.075}[method],
-            label,
-            color=BLACK if method == "relernn" else color,
-            fontsize=5.4,
-            va="center",
+        positions = x + method_offsets[method]
+        ax_native.plot(positions, values, color=color, lw=0.85, zorder=2)
+        ax_native.scatter(
+            positions,
+            values,
+            color=color,
+            marker=marker,
+            s=17,
+            zorder=3,
             clip_on=False,
         )
         if method in {"pyrho", "relernn"}:
             for index, native_key in ((1, "bottleneck"), (2, "expansion")):
                 constant = misspecified["scenarios"][native_key]["methods"][method]["pearson"]
                 matched = native["scenarios"][native_key]["methods"][method]["pearson"]
-                ax_native.plot([index - 0.08, index], [constant, matched], color=color, lw=0.6, ls=":")
+                matched_position = index + method_offsets[method]
+                ax_native.plot([matched_position - 0.06, matched_position], [constant, matched], color=color, lw=0.6, ls=":")
                 ax_native.scatter(
-                    index - 0.08,
+                    matched_position - 0.06,
                     constant,
                     facecolor="white",
                     edgecolor=color,
@@ -178,6 +182,7 @@ def render(
                     s=17,
                     linewidth=0.85,
                     zorder=5,
+                    clip_on=False,
                 )
     ax_native.set_xticks(x, [short for short, _key, _native_key in SCENARIOS])
     ax_native.set_xlim(-0.25, len(SCENARIOS) - 0.02)
@@ -185,7 +190,24 @@ def render(
     ax_native.set_yticks([0.7, 0.8, 0.9, 1.0])
     ax_native.set_ylabel("Pearson $r$")
     ax_native.grid(axis="y", color="0.90", lw=0.5)
-    ax_native.set_title("Window-based evaluation", loc="left", pad=3)
+    ax_native.set_title("Window-based evaluation (0.7–1.0)", loc="left", pad=3)
+    ax_native.legend(
+        handles=[
+            Line2D([], [], marker=marker, markerfacecolor=color, markeredgecolor=color, color=color, lw=0.8, markersize=3.4, label=label)
+            for _method, label, color, marker in METHODS
+        ],
+        loc="lower center",
+        bbox_to_anchor=(0.50, 0.035),
+        ncol=3,
+        frameon=True,
+        facecolor="white",
+        edgecolor="none",
+        framealpha=0.92,
+        fontsize=4.6,
+        handletextpad=0.25,
+        columnspacing=0.65,
+        borderpad=0.25,
+    )
 
     # b | Held-out interval calibration.
     ax = fig.add_subplot(top[0, 1])
