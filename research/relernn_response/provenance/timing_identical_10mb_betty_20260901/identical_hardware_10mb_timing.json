@@ -1,0 +1,131 @@
+{
+  "benchmark_input": {
+    "description": "20 phased 10-Mb bottleneck regions used in the intended-regime accuracy benchmark",
+    "haplotypes_per_region": 20,
+    "input_checksums_sha256": {
+      "config.json": "03899cb32d024a1731d9357a1c806b32a2d7fe403327d26aba2940064512daa4",
+      "genome.bed": "bebda0a5c954b8d021350745cf9d51bad377324ed6c7ea7fa8ac5fef205c4d5c",
+      "region_000.npz": "15d0693ade6672807665bca374da888be1493107e78218695ea82eb818dc2d3b",
+      "region_000.trees": "1dc099bf877b4090fd09b15c1d5dcdb2d9c0d4d08b01901eadd7eede8773cb1a",
+      "region_000.vcf": "9cc8c589061f6e04e7dd788d9a52faae3b303ff69dfd8c395480c35f947a1e90",
+      "region_001.npz": "fd3075c2432683a483e8a606b155353efa78b34485509281052eb7dec166b212",
+      "region_001.trees": "cfb05ac345d79bb371bd2a3970f4a6ff20bfa8cf843bc36f430990605fd69cc9",
+      "region_001.vcf": "e9f685b1f62b92c1ca24cbe79c46a496dbbb707f6e0527105c2f797dd122ffe4",
+      "region_002.npz": "7e0db6d5f9d3398b2472fd6d711a3991bf3ea5749832de2ac5cc62b85a883859",
+      "region_002.trees": "4efa403e8f63d7b7733ef74724871a0ec8eae1f66dd8c45825556ce9bcd722ff",
+      "region_002.vcf": "be47ed658e06801780d8acf1eb7b37058c7744709538e63dbe97f48b103ed6d7",
+      "region_003.npz": "ab1327adef20bef926b168b5269be052bd537b8740e3ea660d568b8d91120ab9",
+      "region_003.trees": "f8bf744696d92f0a95d42c14f9d534b4ca83fafbabb663bdd3dd8bc41c05799b",
+      "region_003.vcf": "0f04e0925c02494b41689c0af55a9bf5b9d89448821d42ee835c09f3bc23e795",
+      "region_004.npz": "d0da4b69670ad9736877e7b492bc30c1e5cb22cde6379770580056e57d41211f",
+      "region_004.trees": "33c69b318bbbf5ae2f64c60653567f43bdaa5f96ec6da7183de462592775c85e",
+      "region_004.vcf": "4ca89822647aa0165379edbac19675443b1f8528929454f5bd5b316166b4ee48",
+      "region_005.npz": "4687420780615f5c3152c66b0aaa314dcdd860c7f9739fc3043d9d408cb8307e",
+      "region_005.trees": "80f57ae5259bee8c9f072106a0b52dbe912027630167111d952aa6c2ec790ad9",
+      "region_005.vcf": "5b22999c5c8d8fc2d3cbdbb50a17b9a085eac4170a55ee18777022890fa7a7f8",
+      "region_006.npz": "f4eafc9be60226d99d37f3ccbb1c835dd9baec6a60af48903c7d6b5c1a0db65a",
+      "region_006.trees": "a570c7822b39cdc17db772cbf87cef45678b7bcc6f2e41057a297ff8a260ab06",
+      "region_006.vcf": "d857edc90ea280a8e7fa6782f50b888195a82e1fa6b5d5ce94f897692e03373f",
+      "region_007.npz": "4106778fdecb436c08aa3ea48ed15894f2a7e485fc1bb854e8384b9c1372c5ed",
+      "region_007.trees": "341733929c58d5bd73bfa5ddf39e89254cea71940582c529b3c21ef3dc77357a",
+      "region_007.vcf": "9fb918151d0a32277e5e03478b0f0e329eaf9116ed9307a86a23ae8a12cf8527",
+      "region_008.npz": "4461278bec7c6b93eaadb47a23c11fe4df3fb8192e9a6e4ff53c8d2f1bb553ad",
+      "region_008.trees": "d173b838aebf481dbc5566965412f9cf1792f5188468d4254cb9aa595d2dcc02",
+      "region_008.vcf": "44e7d2e708f877d690b766015b1c116ad5af7066ff7435a803ea1e0cb718ec2e",
+      "region_009.npz": "76d22a263159cafc83d278c2b26b8354755054316d7e377a1e6c0c07d813f5ef",
+      "region_009.trees": "3bed7ecc9766933d115c456ad2c8b15344af3d8750a4504122abeaf202d1dd2a",
+      "region_009.vcf": "27f6e72121589aeeb0bf80f4147697334f1be10ecec229bbfa2b48bf44943e29",
+      "region_010.npz": "427632c0c17fcb670058c26b5474c3b5ae123bf3de29c299776114faacca2795",
+      "region_010.trees": "2219e64f2b5fd1ab636bb0c2f557a0aac1678728cbaa773d3d1f98b6a33faa1d",
+      "region_010.vcf": "e41cde52170665ad0e41838ca823ce90362b23dcba037bf91a8abb40e9dfc3ff",
+      "region_011.npz": "1d83426fe37660f95f34b947440702b4bc98c88ba97b1fcf0f1620924f68c207",
+      "region_011.trees": "775cc96d21d13be2c98496fd33789fbe2e09d7e65ebbaa7f78ce990fd4136d5f",
+      "region_011.vcf": "a611d07feeaa40469aaf7d7b929f7f034372b0f85ebaba6d68123ae3ed7d2ccb",
+      "region_012.npz": "46cf144344f690b8064ffb18066771ad2f08b5b3a82c0f85c2da6b13f2f024e0",
+      "region_012.trees": "babd83b389a3b6ce8dd5c8afcdcb3190723441ab6365b5e70ffb94abee4241d0",
+      "region_012.vcf": "32b8d0ea0f3189f22c01fd688f86114772baaa7c53b18ecbccead76dc2a4ac0a",
+      "region_013.npz": "f1cda6c01cf9380334a8e821cafd8317aeee6d8d9a407108ae0463821f52b0ea",
+      "region_013.trees": "ad34f8e1840cfa6ea9dd26fc16bf2670aa80e73a91a17e3807bbded51f2c5e50",
+      "region_013.vcf": "4992d5ef36a133a49026d1211af6735b5dc068363b65be75007ea55248b96e03",
+      "region_014.npz": "b8ac89fc489361b76a8baade3390fa8d95c1430934b4bb3e0f30352f03d414c5",
+      "region_014.trees": "473eca691d04f829a65a580cecf3213ac0b319efe78110cd04652fc9f3570341",
+      "region_014.vcf": "425c053044f8bedafbdae13a0d99182996c6671aa595e05a45cbcf891a0f1ea5",
+      "region_015.npz": "3da0a3001061c5188762c79f8760b6e277104e6b7f5c8c86f11d0cdaee1e942f",
+      "region_015.trees": "7c5b761a30c60bc6db34fee0739f28b7f795d70143838f6ce43cda6a0030f49f",
+      "region_015.vcf": "69c2655b5cd1741fde60379dcdff185a470a7e9120144d34a77971e7da7613c8",
+      "region_016.npz": "b6f4038e1ad498bbc28ded704a843fdfca7a219d7eb2edfa7f2c70c53a7b8fe6",
+      "region_016.trees": "1b8e3d53551d3d25e78951afcd8db09934d358847945c8c25d5055174e06dc9a",
+      "region_016.vcf": "1f717a530895c086aa01ff453c68de940e2a65e011220c45b2049d20a5139874",
+      "region_017.npz": "5b6419aa5626405255ea9e70dbee6909f03549805004cb4cc0ec43110f11b7ce",
+      "region_017.trees": "2548bd612f37bc622b4bf56de034ae21e997ae13067682e26338bb4f74909c6b",
+      "region_017.vcf": "47d0553a5e22d7439a9b573d63d763ffbb6a59df7413a9e79e822b390fbcba1c",
+      "region_018.npz": "74b5341cd3bc4900f79f8026cc6720e41223ace1c326a4af0c231d21d6bb1ed7",
+      "region_018.trees": "52041e967b1db2d3ba76b133c2b410f751160f4495eb7b356f895ee7c2fd4a47",
+      "region_018.vcf": "c4b037a954505345991e7393a967bf611a82f90f0966d776bbadadb5a38cea73",
+      "region_019.npz": "8cccc524a6eb0c6faeee7832286de3fc042c1a5a29d2c2bf0d6bc685a13161af",
+      "region_019.trees": "41a068afd53d80f5b031283441ddc56d27e5b88dd90d6b7b764923f49d2daf3d",
+      "region_019.vcf": "2798f874b5d58a52c86381cc195c4e98869bea1c57c90c18d4ad34f976d3cd1a"
+    },
+    "n_regions": 20,
+    "region_length_bp": 10000000,
+    "source_arm": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-intended-20260831/arms/bottleneck"
+  },
+  "execution": {
+    "allocated_cpus": 28,
+    "design": "sequential execution in one Slurm allocation on one physical node",
+    "gpu": "NVIDIA B200, GPU-fe77529e-8403-c634-3ea3-b7f19a6f726e, 580.95.05",
+    "hostname": "dgx006",
+    "order": [
+      "fastrho",
+      "pyrho",
+      "ReLERNN"
+    ],
+    "slurm_job_id": "8052448"
+  },
+  "measurements": {
+    "fastrho": {
+      "dataset_specific_workflow_seconds": 113.00698919128627,
+      "prediction_or_inference_seconds": 50.519747281912714,
+      "stage_seconds": {
+        "checkpoint_load": 62.487239103298634,
+        "prediction": 50.519747281912714
+      },
+      "training_treatment": "upstream simulation and pretraining are amortized across datasets"
+    },
+    "pyrho": {
+      "dataset_specific_workflow_seconds": 308.2620593132451,
+      "prediction_or_inference_seconds": 279.770833122544,
+      "stage_seconds": {
+        "inference": 279.770833122544,
+        "lookup_table": 28.491226190701127
+      }
+    },
+    "relernn": {
+      "dataset_specific_workflow_seconds": 13729.604168822058,
+      "prediction_or_inference_seconds": 31.77882644115016,
+      "stage_seconds": {
+        "prediction": 31.77882644115016,
+        "simulation": 667.4696707027033,
+        "training": 13030.355671678204
+      }
+    }
+  },
+  "provenance": {
+    "fastrho_prediction_sha256": "6cd7d25ec83617d2a7c0d065ff170aa960e98899cb8dbc19cda701b2b2134995",
+    "lscpu_sha256": "208e8d74daa710c7a432a0945bad7d229beafa1bc65c0a90ddf4ba9bc8e29874",
+    "pyrho_runtime_sha256": "04ba905127626b25aa4d76ca70190a4c5480e0622d8257777af5402eba7eab1f",
+    "relernn_manifest_sha256": "0543a0719421281eac398eed543866404a5aab47dce8691ec86abc451ea1ca6b",
+    "relernn_prediction_sha256": "64ad426fa4b4418ae5262c972f7fb54eef149c5203db4e263aabd9ee6cac06ff"
+  },
+  "reporting": {
+    "excluded_from_all_endpoints": [
+      "software installation",
+      "result ingestion",
+      "manuscript scoring"
+    ],
+    "relernn_optional_stage_excluded": "ReLERNN_BSCORRECT uncertainty and bias-correction stage",
+    "use": "absolute wall-clock measurements on one identical node allocation"
+  },
+  "schema_version": 2,
+  "valid": true
+}

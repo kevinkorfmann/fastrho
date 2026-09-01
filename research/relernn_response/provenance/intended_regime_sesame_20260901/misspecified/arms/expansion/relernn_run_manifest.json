@@ -1,0 +1,11 @@
+{
+  "arm": "expansion",
+  "max_sites": 1750,
+  "predict_wall_seconds": 29.432920023798943,
+  "prediction": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/expansion/relernn_project/combined.PREDICT.txt",
+  "prediction_sha256": "363dd4d7dbc6df815e710f0430571fd2903e508b8d17ccecb3e9ceb1906123cc",
+  "source_project": "/home/kkor/fastrho-relernn-misspecified-native-20260901/arms/expansion/relernn_project",
+  "train_predict_complete": true,
+  "training_reused": true,
+  "training_seed": 1
+}

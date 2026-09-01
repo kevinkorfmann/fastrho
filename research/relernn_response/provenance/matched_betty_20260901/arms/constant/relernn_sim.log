@@ -1,0 +1,43 @@
+2026-08-31 22:03:19.750400: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-31 22:03:19.901402: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8473] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-31 22:03:19.944173: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1471] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Warning: no accessibility mask found. All sites in the genome are assumed to be accessible.
+Warning: no demographic history file found. All training data will be simulated under demographic equilibrium.
+Simulating with window size = 790000 bp.
+Training set:
+Simulate...
+Validation set:
+Simulate...
+Test set:
+Simulate...
+
+SIMULATIONS FINISHED!
+
+SANITY CHECK
+====================
+numSegSites			Min	Mean	Max
+Simulated:			367	1611	4234
+InputVCF chr1:0-10000000:		72	1522	1749
+InputVCF chr2:0-10000000:		1430	1588	1752
+InputVCF chr3:0-10000000:		931	1582	1749
+InputVCF chr4:0-10000000:		1232	1556	1761
+InputVCF chr5:0-10000000:		757	1497	1753
+InputVCF chr6:0-10000000:		337	1529	1747
+InputVCF chr7:0-10000000:		9	1414	1749
+InputVCF chr8:0-10000000:		1133	1570	1754
+InputVCF chr9:0-10000000:		1119	1538	1753
+InputVCF chr10:0-10000000:		1093	1550	1750
+InputVCF chr11:0-10000000:		79	1544	1766
+InputVCF chr12:0-10000000:		1384	1552	1740
+InputVCF chr13:0-10000000:		733	1496	1744
+InputVCF chr14:0-10000000:		790	1475	1756
+InputVCF chr15:0-10000000:		89	1462	1750
+InputVCF chr16:0-10000000:		1430	1619	1757
+InputVCF chr17:0-10000000:		1193	1510	1749
+InputVCF chr18:0-10000000:		1426	1590	1753
+InputVCF chr19:0-10000000:		1334	1522	1750
+InputVCF chr20:0-10000000:		443	1537	1751
+
+
+***ReLERNN_SIMULATE.py FINISHED!***
+

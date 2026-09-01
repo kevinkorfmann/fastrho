@@ -177,16 +177,19 @@ def cmd_score(args):
 
 
 def _relernn_windows_by_region(predict_path):
-    """Parse a ReLERNN PREDICT.txt -> {region_XXX: (starts, ends, rates)}."""
+    """Parse raw or BSCORRECT output using the named recombRate field."""
     import csv, re
     by = {}
     with open(predict_path) as fh:
-        rdr = csv.reader(fh, delimiter="\t")
-        next(rdr)
+        rdr = csv.DictReader(fh, delimiter="\t")
+        required = {"chrom", "start", "end", "recombRate"}
+        if rdr.fieldnames is None or not required.issubset(rdr.fieldnames):
+            raise ValueError(f"Unexpected ReLERNN prediction header in {predict_path}")
         for row in rdr:
             if not row:
                 continue
-            chrom, s, e, r = row[0], float(row[1]), float(row[2]), float(row[-1])
+            chrom = row["chrom"]
+            s, e, r = float(row["start"]), float(row["end"]), float(row["recombRate"])
             i = int(re.search(r"chr(\d+)", chrom).group(1)) - 1
             by.setdefault(f"region_{i:03d}", []).append((s, e, r))
     out = {}
@@ -203,6 +206,52 @@ def _stepfn_mean(pos, rate, a, b):
                                    np.array([a, b], float))[0])
 
 
+def _native_metrics(predicted, expected):
+    """Score native windows while retaining finite zero-valued estimates."""
+    from scipy.stats import pearsonr, spearmanr
+
+    predicted = np.asarray(predicted, dtype=float)
+    expected = np.asarray(expected, dtype=float)
+    keep = (
+        np.isfinite(predicted)
+        & np.isfinite(expected)
+        & (predicted >= 0)
+        & (expected > 0)
+    )
+    predicted = predicted[keep]
+    expected = expected[keep]
+    if len(predicted) < 3:
+        raise ValueError("Too few finite native windows")
+    positive = predicted > 0
+    metrics = {
+        "pearson": float(pearsonr(predicted, expected)[0]),
+        "spearman": float(spearmanr(predicted, expected)[0]),
+        "l2": float(np.sqrt(np.mean((predicted - expected) ** 2))),
+        "n": int(len(predicted)),
+        "n_zero_predictions": int((predicted == 0).sum()),
+    }
+    if int(positive.sum()) >= 3:
+        metrics.update(
+            {
+                "log_pearson": float(
+                    pearsonr(np.log(predicted[positive]), np.log(expected[positive]))[0]
+                ),
+                "log_l2": float(
+                    np.sqrt(
+                        np.mean(
+                            (np.log(predicted[positive]) - np.log(expected[positive])) ** 2
+                        )
+                    )
+                ),
+                "bias_ratio": float(np.median(predicted[positive] / expected[positive])),
+                "pearson_positive_predictions_only": float(
+                    pearsonr(predicted[positive], expected[positive])[0]
+                ),
+            }
+        )
+    return metrics
+
+
 def cmd_score_native(args):
     """Score every method at ReLERNN's OWN data-driven window edges.
 
@@ -212,8 +261,6 @@ def cmd_score_native(args):
     there.  Reveals whether ReLERNN recovers the window mean (its documented strength)
     and how the methods rank once everything is at ReLERNN's native resolution.
     """
-    from fastrho.evaluate import score_rates
-
     rel = _relernn_windows_by_region(args.relernn)
     # optional fine-grid predictions for the other methods (25-kb npz from cmd_fastrho/ingest)
     others = {}
@@ -262,12 +309,11 @@ def cmd_score_native(args):
     for method, (P, T) in acc.items():
         if not P:
             continue
-        P = np.array(P); T = np.array(T)
-        sm = score_rates(P, T)
+        sm = _native_metrics(P, T)
         out["methods"][method] = sm
         print(f"{method:<10} {sm.get('pearson',float('nan')):>8.3f} "
               f"{sm.get('spearman',float('nan')):>8.3f} {sm.get('log_pearson',float('nan')):>7.3f} "
-              f"{sm.get('bias_ratio',float('nan')):>6.2f} {len(P):>5}")
+              f"{sm.get('bias_ratio',float('nan')):>6.2f} {sm['n']:>5}")
     if getattr(args, "out", None):
         with open(args.out, "w") as fh:
             json.dump(out, fh, indent=2)
@@ -293,23 +339,10 @@ def cmd_ingest(args):
             # scale-invariant regardless, so ingest as-is.
             out[name] = resample_to_grid(bp, rho)
     elif args.kind == "relernn":
-        import csv, re
-        by = {}
-        with open(args.predict) as fh:
-            rdr = csv.reader(fh, delimiter="\t")
-            next(rdr)
-            for row in rdr:
-                if not row:
-                    continue
-                chrom, s, e, r = row[0], float(row[1]), float(row[2]), float(row[-1])
-                by.setdefault(chrom, []).append((s, e, r))
-        for chrom, recs in by.items():
-            i = int(re.search(r"chr(\d+)", chrom).group(1)) - 1   # handles b'chr1'
-            recs.sort()
-            starts = np.array([x[0] for x in recs]); ends = np.array([x[1] for x in recs])
-            rate = np.array([x[2] for x in recs])
+        by = _relernn_windows_by_region(args.predict)
+        for name, (starts, ends, rate) in by.items():
             bp = np.concatenate([[starts[0]], ends])
-            out[f"region_{i:03d}"] = resample_to_grid(bp, rate)
+            out[name] = resample_to_grid(bp, rate)
     np.savez(args.save, **out)
     print(f"ingested {args.kind}: {len(out)} regions -> {args.save}")
 

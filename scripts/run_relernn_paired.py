@@ -11,6 +11,7 @@ import math
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import numpy as np
@@ -77,17 +78,57 @@ def auto_uprtr(config_dir: Path, mu: float) -> int:
     return int(math.ceil(1.15 * quantile / mu))
 
 
+def resolve_uprtr(
+    config_dir: Path, mu: float, explicit: float | None
+) -> tuple[float | int, str]:
+    """Resolve the rate-prior bound while recording whether it was prespecified."""
+
+    if explicit is None:
+        return auto_uprtr(config_dir, mu), "analysis_specific_length_weighted_p99.9"
+    if not math.isfinite(explicit) or explicit <= 0:
+        raise ValueError("--upper-rho-theta-ratio must be finite and positive")
+    return explicit, "explicit_cli"
+
+
 def executable(name: str) -> str:
-    path = Path(sys.executable).with_name(name)
+    explicit = os.environ.get(f"{name}_EXECUTABLE")
+    executable_dir = os.environ.get("RELERNN_EXECUTABLE_DIR")
+    path = (
+        Path(explicit)
+        if explicit
+        else Path(executable_dir) / name
+        if executable_dir
+        else Path(sys.executable).with_name(name)
+    )
     if not path.is_file():
         raise FileNotFoundError(path)
     return str(path)
 
 
-def run(command: list[str], log: Path, env: dict[str, str]) -> None:
+def compatibility_provenance() -> dict[str, str]:
+    values = {}
+    for variable in ("DEMO_RELERNN_PATCH", "DEMO_RELERNN_BSCORRECT_PATCH"):
+        raw = os.environ.get(variable)
+        if raw:
+            path = Path(raw)
+            values[f"{variable.lower()}_sha256"] = sha256(path)
+    executable_dir = os.environ.get("RELERNN_EXECUTABLE_DIR")
+    if executable_dir:
+        values["relernn_executable_dir"] = str(Path(executable_dir).resolve())
+    bscorrect_executable = os.environ.get("ReLERNN_BSCORRECT_EXECUTABLE")
+    if bscorrect_executable:
+        values["relernn_bscorrect_executable"] = str(
+            Path(bscorrect_executable).resolve()
+        )
+    return values
+
+
+def run(command: list[str], log: Path, env: dict[str, str]) -> float:
     log.parent.mkdir(parents=True, exist_ok=True)
+    started = time.perf_counter()
     with log.open("w") as handle:
         subprocess.run(command, env=env, stdout=handle, stderr=subprocess.STDOUT, check=True)
+    return float(time.perf_counter() - started)
 
 
 def update_manifest(path: Path, values: dict) -> None:
@@ -101,7 +142,11 @@ def simulate(args: argparse.Namespace, config: dict, project: Path, env: dict[st
         raise FileExistsError(f"Refusing to overwrite ReLERNN project: {project}")
     project.mkdir(parents=True, exist_ok=True)
     combined = combine_vcfs(args.config_dir)
-    uprtr = auto_uprtr(args.config_dir, float(config["mu"]))
+    uprtr, uprtr_source = resolve_uprtr(
+        args.config_dir,
+        float(config["mu"]),
+        args.upper_rho_theta_ratio,
+    )
     command = [
         executable("ReLERNN_SIMULATE"),
         "--vcf",
@@ -146,6 +191,7 @@ def simulate(args: argparse.Namespace, config: dict, project: Path, env: dict[st
             else None,
             "combined_vcf_sha256": sha256(combined),
             "upper_rho_theta_ratio": uprtr,
+            "upper_rho_theta_ratio_source": uprtr_source,
             "n_train": args.n_train,
             "n_validation": args.n_validation,
             "n_test": args.n_test,
@@ -153,10 +199,14 @@ def simulate(args: argparse.Namespace, config: dict, project: Path, env: dict[st
             "simulation_seed": args.seed,
             "compatibility_patch_sha256": sha256(Path(os.environ["DEMO_RELERNN_PATCH"])),
             "simulate_command": command,
+            **compatibility_provenance(),
         },
     )
-    run(command, args.config_dir / "relernn_sim.log", env)
-    update_manifest(manifest, {"simulate_complete": True})
+    elapsed = run(command, args.config_dir / "relernn_sim.log", env)
+    update_manifest(
+        manifest,
+        {"simulate_complete": True, "simulate_wall_seconds": elapsed},
+    )
 
 
 def train_predict(
@@ -177,9 +227,9 @@ def train_predict(
         "--seed",
         str(args.seed),
         "--gpuID",
-        "0",
+        str(args.gpu_id),
     ]
-    run(train_command, args.config_dir / "relernn_train.log", env)
+    train_elapsed = run(train_command, args.config_dir / "relernn_train.log", env)
     predict_command = [
         executable("ReLERNN_PREDICT"),
         "--vcf",
@@ -190,11 +240,18 @@ def train_predict(
         "--seed",
         str(args.seed),
         "--gpuID",
-        "0",
+        str(args.gpu_id),
     ]
-    run(predict_command, args.config_dir / "relernn_predict.log", env)
-    predictions = sorted(glob.glob(str(project / "*PREDICT*txt")))
-    if not predictions:
+    predict_elapsed = run(predict_command, args.config_dir / "relernn_predict.log", env)
+    prediction = project / "combined.PREDICT.txt"
+    if not prediction.is_file():
+        predictions = sorted(
+            path
+            for path in project.glob("*.PREDICT.txt")
+            if ".BSCORRECT" not in path.name
+        )
+        prediction = predictions[0] if predictions else prediction
+    if not prediction.is_file():
         raise FileNotFoundError("ReLERNN prediction output was not created")
     update_manifest(
         manifest,
@@ -203,27 +260,94 @@ def train_predict(
             "training_seed": args.seed,
             "train_command": train_command,
             "predict_command": predict_command,
-            "prediction": predictions[0],
-            "prediction_sha256": sha256(Path(predictions[0])),
+            "train_wall_seconds": train_elapsed,
+            "predict_wall_seconds": predict_elapsed,
+            "prediction": str(prediction),
+            "prediction_sha256": sha256(prediction),
             "train_predict_complete": True,
+            **compatibility_provenance(),
         },
     )
-    print(predictions[0])
+    print(prediction)
+
+
+def bias_correct(
+    args: argparse.Namespace, config: dict, project: Path, env: dict[str, str]
+) -> None:
+    """Run ReLERNN's recommended optional bias-correction module additively."""
+
+    manifest = args.config_dir / "relernn_run_manifest.json"
+    if not manifest.is_file() or not json.loads(manifest.read_text()).get(
+        "train_predict_complete"
+    ):
+        raise RuntimeError("Training and prediction stages are incomplete")
+    # Invoke the patched script with the same interpreter that is running this
+    # wrapper.  Relying on its /usr/bin/env shebang can select the container's
+    # system Python, which lacks the isolated ReLERNN dependencies (notably
+    # msprime) on some compute nodes.
+    command = [
+        sys.executable,
+        executable("ReLERNN_BSCORRECT"),
+        "--projectDir",
+        str(project),
+        "--nCPU",
+        str(args.n_cpu),
+        "--nSlice",
+        str(args.n_slices),
+        "--nReps",
+        str(args.n_reps),
+        "--seed",
+        str(args.seed),
+        "--gpuID",
+        str(args.gpu_id),
+    ]
+    elapsed = run(command, args.config_dir / "relernn_bscorrect.log", env)
+    corrected = project / "combined.PREDICT.BSCORRECTED.txt"
+    if not corrected.is_file():
+        candidates = sorted(project.glob("*.PREDICT.BSCORRECTED.txt"))
+        corrected = candidates[0] if candidates else corrected
+    if not corrected.is_file():
+        raise FileNotFoundError("ReLERNN bias-corrected prediction was not created")
+    update_manifest(
+        manifest,
+        {
+            "bias_correct_command": command,
+            "bias_corrected_prediction": str(corrected),
+            "bias_corrected_prediction_sha256": sha256(corrected),
+            "bias_correct_n_slices": args.n_slices,
+            "bias_correct_n_reps": args.n_reps,
+            "bias_correct_wall_seconds": elapsed,
+            "bias_correct_complete": True,
+            **compatibility_provenance(),
+        },
+    )
+    print(corrected)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=("simulate", "train-predict"))
+    parser.add_argument("stage", choices=("simulate", "train-predict", "bias-correct"))
     parser.add_argument("--config-dir", required=True, type=Path)
     parser.add_argument("--demography-history", type=Path)
     parser.add_argument("--n-train", type=int, default=100000)
     parser.add_argument("--n-validation", type=int, default=10000)
     parser.add_argument("--n-test", type=int, default=10000)
     parser.add_argument("--max-sites", type=int, default=256)
+    parser.add_argument(
+        "--upper-rho-theta-ratio",
+        type=float,
+        help=(
+            "explicit ReLERNN upperRhoThetaRatio; when omitted, retain the historical "
+            "analysis-specific length-weighted p99.9 rule"
+        ),
+    )
     parser.add_argument("--n-cpu", type=int, default=64)
     parser.add_argument("--train-cpu", type=int, default=8)
     parser.add_argument("--epochs", type=int, default=100)
+    parser.add_argument("--n-slices", type=int, default=100)
+    parser.add_argument("--n-reps", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=1)
+    parser.add_argument("--gpu-id", type=int, default=0)
     return parser.parse_args()
 
 
@@ -241,8 +365,10 @@ def main() -> None:
     env.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
     if args.stage == "simulate":
         simulate(args, config, project, env)
-    else:
+    elif args.stage == "train-predict":
         train_predict(args, config, project, env)
+    else:
+        bias_correct(args, config, project, env)
 
 
 if __name__ == "__main__":

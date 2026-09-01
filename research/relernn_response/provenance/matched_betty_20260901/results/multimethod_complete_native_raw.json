@@ -1,0 +1,1525 @@
+{
+  "complete_windows_only": true,
+  "scenarios": {
+    "bottleneck": {
+      "all_prediction_window_bp": {
+        "maximum": 1895000,
+        "median": 1611000.0,
+        "minimum": 172000
+      },
+      "checksums": {
+        "fastrho_prediction_sha256": "8605c7251e996990551f4a2c2440daf85c0fc0ffcc1141bb06562291f0fa516f",
+        "pyrho_prediction_sha256": "e94839e8e941476281ec478e27e89162285cf70e3dd51e8f37f520fb5b6e023c",
+        "relernn_prediction_sha256": "8ba967182b833ad493113d21fd1acf502835fd7c12289e02ae9ba50137d0cd70",
+        "truth_sha256": {
+          "region_000": "15d0693ade6672807665bca374da888be1493107e78218695ea82eb818dc2d3b",
+          "region_001": "fd3075c2432683a483e8a606b155353efa78b34485509281052eb7dec166b212",
+          "region_002": "7e0db6d5f9d3398b2472fd6d711a3991bf3ea5749832de2ac5cc62b85a883859",
+          "region_003": "ab1327adef20bef926b168b5269be052bd537b8740e3ea660d568b8d91120ab9",
+          "region_004": "d0da4b69670ad9736877e7b492bc30c1e5cb22cde6379770580056e57d41211f",
+          "region_005": "4687420780615f5c3152c66b0aaa314dcdd860c7f9739fc3043d9d408cb8307e",
+          "region_006": "f4eafc9be60226d99d37f3ccbb1c835dd9baec6a60af48903c7d6b5c1a0db65a",
+          "region_007": "4106778fdecb436c08aa3ea48ed15894f2a7e485fc1bb854e8384b9c1372c5ed",
+          "region_008": "4461278bec7c6b93eaadb47a23c11fe4df3fb8192e9a6e4ff53c8d2f1bb553ad",
+          "region_009": "76d22a263159cafc83d278c2b26b8354755054316d7e377a1e6c0c07d813f5ef",
+          "region_010": "427632c0c17fcb670058c26b5474c3b5ae123bf3de29c299776114faacca2795",
+          "region_011": "1d83426fe37660f95f34b947440702b4bc98c88ba97b1fcf0f1620924f68c207",
+          "region_012": "46cf144344f690b8064ffb18066771ad2f08b5b3a82c0f85c2da6b13f2f024e0",
+          "region_013": "f1cda6c01cf9380334a8e821cafd8317aeee6d8d9a407108ae0463821f52b0ea",
+          "region_014": "b8ac89fc489361b76a8baade3390fa8d95c1430934b4bb3e0f30352f03d414c5",
+          "region_015": "3da0a3001061c5188762c79f8760b6e277104e6b7f5c8c86f11d0cdaee1e942f",
+          "region_016": "b6f4038e1ad498bbc28ded704a843fdfca7a219d7eb2edfa7f2c70c53a7b8fe6",
+          "region_017": "5b6419aa5626405255ea9e70dbee6909f03549805004cb4cc0ec43110f11b7ce",
+          "region_018": "74b5341cd3bc4900f79f8026cc6720e41223ace1c326a4af0c231d21d6bb1ed7",
+          "region_019": "8cccc524a6eb0c6faeee7832286de3fc042c1a5a29d2c2bf0d6bc685a13161af"
+        },
+        "window_sizes_sha256": "12d6443bd7875c5751cfae28b0b6dd0c4c985130dcab8a12c3fb5b96cb2b24c2"
+      },
+      "complete_windows_only": true,
+      "config": "bottleneck",
+      "input_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/bottleneck",
+      "methods": {
+        "fastrho": {
+          "bias_ratio_positive": 0.7987027305774461,
+          "mae": 3.707502669016482e-09,
+          "n": 114,
+          "n_input": 114,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.8934552025621625,
+          "pearson_positive_predictions_only": 0.8934552025621625,
+          "region_mean_pearson": 0.9710877619799256,
+          "region_mean_spearman": 0.9022556390977443,
+          "rmse": 5.15460304091204e-09,
+          "spearman": 0.8245421220385944,
+          "truth_cv": 0.478631656503029,
+          "truth_mean": 1.513801753494177e-08,
+          "truth_sd": 7.24553440892108e-09
+        },
+        "pyrho": {
+          "bias_ratio_positive": 0.9001724866984275,
+          "mae": 2.434323165565275e-09,
+          "n": 114,
+          "n_input": 114,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9445230230976774,
+          "pearson_positive_predictions_only": 0.9445230230976774,
+          "region_mean_pearson": 0.9853035262067269,
+          "region_mean_spearman": 0.9383458646616539,
+          "rmse": 3.4193137164330726e-09,
+          "spearman": 0.8095350510693056,
+          "truth_cv": 0.478631656503029,
+          "truth_mean": 1.513801753494177e-08,
+          "truth_sd": 7.24553440892108e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.7970659471796816,
+          "mae": 4.256820634547279e-09,
+          "n": 114,
+          "n_input": 114,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.7552855364619069,
+          "pearson_positive_predictions_only": 0.7552855364619069,
+          "region_mean_pearson": 0.961655463600679,
+          "region_mean_spearman": 0.8947368421052632,
+          "rmse": 6.13566059046479e-09,
+          "spearman": 0.641702192583392,
+          "truth_cv": 0.478631656503029,
+          "truth_mean": 1.513801753494177e-08,
+          "truth_sd": 7.24553440892108e-09
+        }
+      },
+      "n_excluded_terminal_windows": 19,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 133,
+      "n_regions": 20,
+      "n_retained_windows": 114,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.3157894736842105,
+        "maximum": 3.887865800746794e-08,
+        "minimum": 9.999999999996122e-09,
+        "q990_rho_theta_ratio": 2.392511736658949,
+        "q999_rho_theta_ratio": 2.569834303613471,
+        "quantiles": {
+          "q500": 1.0754503662401688e-08,
+          "q900": 2.6196243098728787e-08,
+          "q950": 3.208703257790838e-08,
+          "q990": 3.588767604988423e-08,
+          "q999": 3.854751455420206e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 1895000,
+        "median": 1629000.0,
+        "minimum": 1290000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1705000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1637000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1607000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1629000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1607000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1506000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_006": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1669000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1750000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1628000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1531000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_010": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 1658000,
+          "prediction_rows": 6,
+          "retained": 6
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1738000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1697000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1526000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1581000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1290000,
+          "prediction_rows": 8,
+          "retained": 7
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1638000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1802000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1611000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1895000,
+          "prediction_rows": 6,
+          "retained": 5
+        }
+      },
+      "prediction_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/bottleneck",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    },
+    "constant": {
+      "all_prediction_window_bp": {
+        "maximum": 790000,
+        "median": 739000.0,
+        "minimum": 29000
+      },
+      "checksums": {
+        "fastrho_prediction_sha256": "45689ec1b3185684b4e0f5e5f4211d1993e51a05222f056a420d3dbff1b79d10",
+        "pyrho_prediction_sha256": "bd97ebac6ac2b569a537dd6ea8b93bc0d7e8cf8a63752632c0d3511985b0bfff",
+        "relernn_prediction_sha256": "13c48144e507cfe6849d05365b92518142018bb017b3e26ca73b49c05efcf156",
+        "truth_sha256": {
+          "region_000": "15d0693ade6672807665bca374da888be1493107e78218695ea82eb818dc2d3b",
+          "region_001": "fd3075c2432683a483e8a606b155353efa78b34485509281052eb7dec166b212",
+          "region_002": "7e0db6d5f9d3398b2472fd6d711a3991bf3ea5749832de2ac5cc62b85a883859",
+          "region_003": "ab1327adef20bef926b168b5269be052bd537b8740e3ea660d568b8d91120ab9",
+          "region_004": "d0da4b69670ad9736877e7b492bc30c1e5cb22cde6379770580056e57d41211f",
+          "region_005": "4687420780615f5c3152c66b0aaa314dcdd860c7f9739fc3043d9d408cb8307e",
+          "region_006": "f4eafc9be60226d99d37f3ccbb1c835dd9baec6a60af48903c7d6b5c1a0db65a",
+          "region_007": "4106778fdecb436c08aa3ea48ed15894f2a7e485fc1bb854e8384b9c1372c5ed",
+          "region_008": "4461278bec7c6b93eaadb47a23c11fe4df3fb8192e9a6e4ff53c8d2f1bb553ad",
+          "region_009": "76d22a263159cafc83d278c2b26b8354755054316d7e377a1e6c0c07d813f5ef",
+          "region_010": "427632c0c17fcb670058c26b5474c3b5ae123bf3de29c299776114faacca2795",
+          "region_011": "1d83426fe37660f95f34b947440702b4bc98c88ba97b1fcf0f1620924f68c207",
+          "region_012": "46cf144344f690b8064ffb18066771ad2f08b5b3a82c0f85c2da6b13f2f024e0",
+          "region_013": "f1cda6c01cf9380334a8e821cafd8317aeee6d8d9a407108ae0463821f52b0ea",
+          "region_014": "b8ac89fc489361b76a8baade3390fa8d95c1430934b4bb3e0f30352f03d414c5",
+          "region_015": "3da0a3001061c5188762c79f8760b6e277104e6b7f5c8c86f11d0cdaee1e942f",
+          "region_016": "b6f4038e1ad498bbc28ded704a843fdfca7a219d7eb2edfa7f2c70c53a7b8fe6",
+          "region_017": "5b6419aa5626405255ea9e70dbee6909f03549805004cb4cc0ec43110f11b7ce",
+          "region_018": "74b5341cd3bc4900f79f8026cc6720e41223ace1c326a4af0c231d21d6bb1ed7",
+          "region_019": "8cccc524a6eb0c6faeee7832286de3fc042c1a5a29d2c2bf0d6bc685a13161af"
+        },
+        "window_sizes_sha256": "6b5021eff7318b6e82a10dc855fab593524e65c3d23aa8f7b64815b8c3a8f285"
+      },
+      "complete_windows_only": true,
+      "config": "constant",
+      "input_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/constant",
+      "methods": {
+        "fastrho": {
+          "bias_ratio_positive": 0.6305049052338951,
+          "mae": 6.065359674540742e-09,
+          "n": 258,
+          "n_input": 258,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9212744582466891,
+          "pearson_positive_predictions_only": 0.9212744582466891,
+          "region_mean_pearson": 0.9743154485575329,
+          "region_mean_spearman": 0.9488721804511278,
+          "rmse": 7.306752400917221e-09,
+          "spearman": 0.7900745779872702,
+          "truth_cv": 0.49341878268522565,
+          "truth_mean": 1.5157088269090115e-08,
+          "truth_sd": 7.478792042786958e-09
+        },
+        "pyrho": {
+          "bias_ratio_positive": 0.8130445688496601,
+          "mae": 3.2815536098920007e-09,
+          "n": 258,
+          "n_input": 258,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9146415408478049,
+          "pearson_positive_predictions_only": 0.9146415408478049,
+          "region_mean_pearson": 0.9822979800056548,
+          "region_mean_spearman": 0.9428571428571428,
+          "rmse": 4.516078653868326e-09,
+          "spearman": 0.8184037488272575,
+          "truth_cv": 0.49341878268522565,
+          "truth_mean": 1.5157088269090115e-08,
+          "truth_sd": 7.478792042786958e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.7437549054266603,
+          "mae": 5.6313167764636975e-09,
+          "n": 258,
+          "n_input": 258,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.4725110303921473,
+          "pearson_positive_predictions_only": 0.4725110303921473,
+          "region_mean_pearson": 0.8596710581410598,
+          "region_mean_spearman": 0.7338345864661654,
+          "rmse": 8.393664963354592e-09,
+          "spearman": 0.37650009528494127,
+          "truth_cv": 0.49341878268522565,
+          "truth_mean": 1.5157088269090115e-08,
+          "truth_sd": 7.478792042786958e-09
+        }
+      },
+      "n_excluded_terminal_windows": 19,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 277,
+      "n_regions": 20,
+      "n_retained_windows": 258,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.32170542635658916,
+        "maximum": 4.4654797002182106e-08,
+        "minimum": 9.999999999996122e-09,
+        "q990_rho_theta_ratio": 2.5494512201190993,
+        "q999_rho_theta_ratio": 2.897088545288642,
+        "quantiles": {
+          "q500": 1.1117236688805939e-08,
+          "q900": 2.6120586446809314e-08,
+          "q950": 3.221338722596766e-08,
+          "q990": 3.824176830178649e-08,
+          "q999": 4.345632817932963e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 790000,
+        "median": 739000.0,
+        "minimum": 711000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 767000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 772000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 790000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 732000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 743000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 759000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_006": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 714000,
+          "prediction_rows": 14,
+          "retained": 14
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 731000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 729000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 729000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_010": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 766000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 715000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 746000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 739000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 711000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 770000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 727000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 771000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 717000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 750000,
+          "prediction_rows": 14,
+          "retained": 13
+        }
+      },
+      "prediction_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/constant",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    },
+    "decode": {
+      "all_prediction_window_bp": {
+        "maximum": 786000,
+        "median": 666000.0,
+        "minimum": 32000
+      },
+      "checksums": {
+        "fastrho_prediction_sha256": "4af37e79ce041923273d79ffa16bd23d4853519ce799a7d863393e4f8a5def81",
+        "pyrho_prediction_sha256": "fcd9b96ec306fc72c5ffab05b332a37172dfc1a432c1da63048e599cf17cdc53",
+        "relernn_prediction_sha256": "0c1b600199a8a768ae54f12648400597cca2fd8255175bcc72a11f4a019f7227",
+        "truth_sha256": {
+          "region_000": "7294dc6b466ccc1fd29cd434fb4ebf723d7c5473af455bcaff5209024004bba7",
+          "region_001": "a03bcd312898c3d1c0cd99c8bfd41ec4a0462bb5c555267dd7a8c650d50ac2f6",
+          "region_002": "1c04a749b0f419e2a139480c4caa2b5daf9253c447a340686a531a2107377a27",
+          "region_003": "f9123996005a01465a227f3cd9af328c7489f9fa2219aeb530c41791bf1dc6d4",
+          "region_004": "9931b8fab2d2e516f6bc4621ea23ea780f8a60effef4c0421e2d63f3604d6dd2",
+          "region_005": "8b69c560a1182ad578f52edb754527bb1bb1744267d0aada58857b1f12b98840",
+          "region_006": "5c401428a7e512cd767c5f7ec4d63fea40920c4d5a57efedcd5b4a83b9bda8db",
+          "region_007": "3e4f32464435e1067709f7782157a5f6933daa9c118bc0b96a47e5d7f6bec7d2",
+          "region_008": "eb27f6f68d2174696c45e2edcdc29b299f2369b9f1953faf4524b344fa0e48c1",
+          "region_009": "520a19b900b9ffc1794d1177fd66cb50f56a977d3a44d1ca3cd663e841e358c0",
+          "region_010": "9303b4df81c85d47f246085ae16e51efbb5008add3a880cc6ce430b147e1c6e6",
+          "region_011": "df2355eb27381d2be023782c7d3d6b12e3cf286eae94a8b7023f3fdab8657e05",
+          "region_012": "23760c56f4dcdd4d53d14393ce8001ec0f1439ea3e30d5c352c064da5daf6b60",
+          "region_013": "395fae3df57e0904fb2399181d597692047506a0556f729effbc49ef1eb6093b",
+          "region_014": "86fb3596b9a0a4dccd5a7611515ddc4f88017ce71d51f28396d6731d05b7a698",
+          "region_015": "c122c73d05cada3effd6b5a45f4a3876e469ea2775075d46a78df32f4208c4cc",
+          "region_016": "10191be7f33bc90c27e677b15098c8d7ba407027bf930121068e2b9c11282622",
+          "region_017": "e581bbb573b12f62920d4ea6aa8a47e098f3ed43bbf1fe1c9c811efed6e98a05",
+          "region_018": "b0c39265ff07ad60bf36c27de9575cf96adbd4b89d7debdbafb2b6e9cafd178b",
+          "region_019": "5bb330605c92c2fce556396ab365531173b72bae3e610b78bfab21f6563ecb67"
+        },
+        "window_sizes_sha256": "a53daf2ebbd09a1bcb75170363b618d3e9081639520f06210f982c3fc494183f"
+      },
+      "complete_windows_only": true,
+      "config": "decode",
+      "input_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/decode",
+      "methods": {
+        "fastrho": {
+          "bias_ratio_positive": 0.6240149328399858,
+          "mae": 4.2799074501997356e-09,
+          "n": 261,
+          "n_input": 309,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 48,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9354824921174398,
+          "pearson_positive_predictions_only": 0.9354824921174398,
+          "region_mean_pearson": 0.9846284005887562,
+          "region_mean_spearman": 0.9609022556390976,
+          "rmse": 5.726141645311566e-09,
+          "spearman": 0.9533763945977687,
+          "truth_cv": 0.7573792450592697,
+          "truth_mean": 1.0587170241699027e-08,
+          "truth_sd": 8.018503004971975e-09
+        },
+        "pyrho": {
+          "bias_ratio_positive": 0.7908376805617499,
+          "mae": 2.7657353254566944e-09,
+          "n": 261,
+          "n_input": 309,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 48,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9257784602910714,
+          "pearson_positive_predictions_only": 0.9257784602910714,
+          "region_mean_pearson": 0.9833827184460585,
+          "region_mean_spearman": 0.9654135338345864,
+          "rmse": 4.104585990435667e-09,
+          "spearman": 0.9502237430902869,
+          "truth_cv": 0.7573792450592697,
+          "truth_mean": 1.0587170241699027e-08,
+          "truth_sd": 8.018503004971975e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.438801735652259,
+          "mae": 6.289250145136378e-09,
+          "n": 261,
+          "n_input": 309,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 48,
+          "n_region_means": 20,
+          "n_zero_predictions": 10,
+          "pearson": 0.799125636896607,
+          "pearson_positive_predictions_only": 0.7858341741729878,
+          "region_mean_pearson": 0.9314018261440219,
+          "region_mean_spearman": 0.932330827067669,
+          "rmse": 8.27430116042188e-09,
+          "spearman": 0.7973106212302672,
+          "truth_cv": 0.7573792450592697,
+          "truth_mean": 1.0587170241699027e-08,
+          "truth_sd": 8.018503004971975e-09
+        }
+      },
+      "n_excluded_terminal_windows": 19,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 328,
+      "n_regions": 20,
+      "n_retained_windows": 309,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.24521072796934865,
+        "maximum": 3.989992089757069e-08,
+        "minimum": 4.255987699005301e-14,
+        "q990_rho_theta_ratio": 2.287146694529565,
+        "q999_rho_theta_ratio": 2.6084053198518755,
+        "quantiles": {
+          "q500": 8.989889887641193e-09,
+          "q900": 2.1883472545478666e-08,
+          "q950": 2.5611182072328893e-08,
+          "q990": 3.430720041794347e-08,
+          "q999": 3.912607979777813e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 786000,
+        "median": 679000.0,
+        "minimum": 318000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 623000,
+          "prediction_rows": 17,
+          "retained": 16
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 778000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 561000,
+          "prediction_rows": 18,
+          "retained": 17
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 729000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 751000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 725000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_006": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 666000,
+          "prediction_rows": 15,
+          "retained": 15
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 679000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 472000,
+          "prediction_rows": 22,
+          "retained": 21
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 524000,
+          "prediction_rows": 20,
+          "retained": 19
+        },
+        "region_010": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 659000,
+          "prediction_rows": 16,
+          "retained": 15
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 695000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 726000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 712000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 693000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 650000,
+          "prediction_rows": 16,
+          "retained": 15
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 697000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 786000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 318000,
+          "prediction_rows": 32,
+          "retained": 31
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 711000,
+          "prediction_rows": 15,
+          "retained": 14
+        }
+      },
+      "prediction_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/decode",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    },
+    "dog": {
+      "all_prediction_window_bp": {
+        "maximum": 2505000,
+        "median": 2173000.0,
+        "minimum": 95000
+      },
+      "checksums": {
+        "fastrho_prediction_sha256": "523360ad4060a66e32af3e50218b2c1c4e11b28aee27dd9a74653fd73794e43b",
+        "pyrho_prediction_sha256": "cd3a8cb6f51743473f5e6715471ccfb966236ba9151772b56a5b6e9f37238b9d",
+        "relernn_prediction_sha256": "e326d796c66bb9956605196a7cc31dd086971f307f62f9029a2b71adfc11540a",
+        "truth_sha256": {
+          "region_000": "719a0de88252198cadcfdd38597792978018f00a853314d3b9f56e3604541535",
+          "region_001": "63afb8e3afbb2c3d10edc83af12b86a820a7e82edba945286363caa7aa838822",
+          "region_002": "324ea971181febfeffa442093537ec590362d21e2bbb4c47e87d6304c99150db",
+          "region_003": "5ec56a105ede9a064cfd2674088584f4956628e340be7e0fb2a1453aaa241d1e",
+          "region_004": "49389d5430edc1478c98d944c1698fa0442a8e98c4559f0fe8fd77134413acdd",
+          "region_005": "d02021ae06952ba824c5f192db147919515ffc933401891a49642f43a854870f",
+          "region_006": "884e960cb67af8f4a9b0617675ba597db3a8627a5e7a2376179927605adab4d5",
+          "region_007": "dc6f194164485ea1e945098317511903a61ed7599a4c3cd3e9aee1a8a2ac4ee9",
+          "region_008": "dcdf707572a4c3d0e05a4779148f2b12df933170f02905cd1f10ea0528a48a78",
+          "region_009": "36e5449279b57b60cd651113856aae7f3efdc29dfdb666f20ccf5240d69dc755",
+          "region_010": "22ecd04b8a91b5080631d94034a1a5fda5e1b990ef9ad6d0e20fe45b528d51b0",
+          "region_011": "96348db314fd92f4445a56ad47de0116da3d23e8d8ff8dabdd7dd44ea2c0f4e0",
+          "region_012": "205fca6ff184e06558cde9505ee3d16fc7fe1e0e8a2ae009e14e5b634df1b299",
+          "region_013": "155afcdb4622563d50d141f324fdb6452851e6f4ab632cc0a3539f49bb2a7a04",
+          "region_014": "5efdd35c115378229b64128e5edfbc2626c6c0b23b7e8d92646e95b1418bc6e3",
+          "region_015": "9aba3e5473e34a32e9c3f8b7886462a0577688d55cdd86651a277a7c1bca829a",
+          "region_016": "326578b559f41166b531bcb7bbd364bebd38a29ae755075bf021c497b7b7c123",
+          "region_017": "f6814ccd24e3ad7e767631c340806d1e4b5f48d980e8a9cdf9e252fd6f6e659d",
+          "region_018": "48f981a09ff7a4ae03547e710205dbf32096c05787d70d2463b3f9925b235d23",
+          "region_019": "97f8a7c67b8dce474ea7094d0f360e9e07b89b416b810f6f8e32a626f6747975"
+        },
+        "window_sizes_sha256": "a56e63143e6b62de97b16a22f33f058ccaf6ffd9a24e06f8591b9f95a7dd30ab"
+      },
+      "complete_windows_only": true,
+      "config": "dog",
+      "input_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/dog",
+      "methods": {
+        "fastrho": {
+          "bias_ratio_positive": 0.6174858662181163,
+          "mae": 3.747801830503296e-09,
+          "n": 79,
+          "n_input": 80,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 1,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9620882143273153,
+          "pearson_positive_predictions_only": 0.9620882143273153,
+          "region_mean_pearson": 0.9803643401125404,
+          "region_mean_spearman": 0.9624060150375938,
+          "rmse": 4.968931234335363e-09,
+          "spearman": 0.9648347653435699,
+          "truth_cv": 0.7353439729577447,
+          "truth_mean": 9.462225099633904e-09,
+          "truth_sd": 6.957990197785286e-09
+        },
+        "pyrho": {
+          "bias_ratio_positive": 0.7213598231514233,
+          "mae": 2.981777201719499e-09,
+          "n": 79,
+          "n_input": 80,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 1,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9543792858229633,
+          "pearson_positive_predictions_only": 0.9543792858229633,
+          "region_mean_pearson": 0.9752684544592517,
+          "region_mean_spearman": 0.9624060150375938,
+          "rmse": 4.134152001834802e-09,
+          "spearman": 0.9609396889563429,
+          "truth_cv": 0.7353439729577447,
+          "truth_mean": 9.462225099633904e-09,
+          "truth_sd": 6.957990197785286e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.45833250797720904,
+          "mae": 5.2204809553635e-09,
+          "n": 79,
+          "n_input": 80,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 1,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.828204388660017,
+          "pearson_positive_predictions_only": 0.828204388660017,
+          "region_mean_pearson": 0.9108827466690745,
+          "region_mean_spearman": 0.8330827067669173,
+          "rmse": 6.772002898988125e-09,
+          "spearman": 0.8353234754682693,
+          "truth_cv": 0.7353439729577447,
+          "truth_mean": 9.462225099633904e-09,
+          "truth_sd": 6.957990197785286e-09
+        }
+      },
+      "n_excluded_terminal_windows": 20,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 100,
+      "n_regions": 20,
+      "n_retained_windows": 80,
+      "native_truth_rate": {
+        "assumed_mu": 4e-09,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.7341772151898734,
+        "maximum": 3.050708605126838e-08,
+        "minimum": 5.511345277564009e-10,
+        "q990_rho_theta_ratio": 7.47841436888962,
+        "q999_rho_theta_ratio": 7.611935798424346,
+        "quantiles": {
+          "q500": 7.981730406095195e-09,
+          "q900": 1.9939720590282523e-08,
+          "q950": 2.114288189257811e-08,
+          "q990": 2.991365747555848e-08,
+          "q999": 3.0447743193697387e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 2505000,
+        "median": 2224000.0,
+        "minimum": 1981000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2469000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2505000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2254000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2024000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2227000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2178000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_006": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2173000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2393000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2124000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2349000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_010": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2044000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2034000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2224000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2405000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2340000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2131000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2162000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1981000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2373000,
+          "prediction_rows": 5,
+          "retained": 4
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2297000,
+          "prediction_rows": 5,
+          "retained": 4
+        }
+      },
+      "prediction_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/dog",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    },
+    "expansion": {
+      "all_prediction_window_bp": {
+        "maximum": 3037000,
+        "median": 2872000.0,
+        "minimum": 889000
+      },
+      "checksums": {
+        "fastrho_prediction_sha256": "4ec6e742a20dff57e67153d7416e90784ab2bd491b625b41a1f146afd31c06fd",
+        "pyrho_prediction_sha256": "c6a6542ee764108196e15b781c6b3dfa166fe2242f61ad06cf20ea69258b3b17",
+        "relernn_prediction_sha256": "dc0e51c617b93b26dedf48c6242b4a815dfc8c5c6ffb03594e7fdb1314372cac",
+        "truth_sha256": {
+          "region_000": "15d0693ade6672807665bca374da888be1493107e78218695ea82eb818dc2d3b",
+          "region_001": "fd3075c2432683a483e8a606b155353efa78b34485509281052eb7dec166b212",
+          "region_002": "7e0db6d5f9d3398b2472fd6d711a3991bf3ea5749832de2ac5cc62b85a883859",
+          "region_003": "ab1327adef20bef926b168b5269be052bd537b8740e3ea660d568b8d91120ab9",
+          "region_004": "d0da4b69670ad9736877e7b492bc30c1e5cb22cde6379770580056e57d41211f",
+          "region_005": "4687420780615f5c3152c66b0aaa314dcdd860c7f9739fc3043d9d408cb8307e",
+          "region_006": "f4eafc9be60226d99d37f3ccbb1c835dd9baec6a60af48903c7d6b5c1a0db65a",
+          "region_007": "4106778fdecb436c08aa3ea48ed15894f2a7e485fc1bb854e8384b9c1372c5ed",
+          "region_008": "4461278bec7c6b93eaadb47a23c11fe4df3fb8192e9a6e4ff53c8d2f1bb553ad",
+          "region_009": "76d22a263159cafc83d278c2b26b8354755054316d7e377a1e6c0c07d813f5ef",
+          "region_010": "427632c0c17fcb670058c26b5474c3b5ae123bf3de29c299776114faacca2795",
+          "region_011": "1d83426fe37660f95f34b947440702b4bc98c88ba97b1fcf0f1620924f68c207",
+          "region_012": "46cf144344f690b8064ffb18066771ad2f08b5b3a82c0f85c2da6b13f2f024e0",
+          "region_013": "f1cda6c01cf9380334a8e821cafd8317aeee6d8d9a407108ae0463821f52b0ea",
+          "region_014": "b8ac89fc489361b76a8baade3390fa8d95c1430934b4bb3e0f30352f03d414c5",
+          "region_015": "3da0a3001061c5188762c79f8760b6e277104e6b7f5c8c86f11d0cdaee1e942f",
+          "region_016": "b6f4038e1ad498bbc28ded704a843fdfca7a219d7eb2edfa7f2c70c53a7b8fe6",
+          "region_017": "5b6419aa5626405255ea9e70dbee6909f03549805004cb4cc0ec43110f11b7ce",
+          "region_018": "74b5341cd3bc4900f79f8026cc6720e41223ace1c326a4af0c231d21d6bb1ed7",
+          "region_019": "8cccc524a6eb0c6faeee7832286de3fc042c1a5a29d2c2bf0d6bc685a13161af"
+        },
+        "window_sizes_sha256": "ae9c5dc7abbfe58363217b47dc21f2218cc6920a6cb85def6ae4514658d596ad"
+      },
+      "complete_windows_only": true,
+      "config": "expansion",
+      "input_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion",
+      "methods": {
+        "fastrho": {
+          "bias_ratio_positive": 0.6831126174789369,
+          "mae": 5.798676242063655e-09,
+          "n": 60,
+          "n_input": 60,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.7512959255920048,
+          "pearson_positive_predictions_only": 0.7512959255920048,
+          "region_mean_pearson": 0.8581292000825208,
+          "region_mean_spearman": 0.7503759398496239,
+          "rmse": 8.14556187623201e-09,
+          "spearman": 0.6578494026118368,
+          "truth_cv": 0.4670094396987305,
+          "truth_mean": 1.514243885581345e-08,
+          "truth_sd": 7.071661885725726e-09
+        },
+        "pyrho": {
+          "bias_ratio_positive": 0.7635787834133803,
+          "mae": 4.730365501308349e-09,
+          "n": 60,
+          "n_input": 60,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.8315095841655492,
+          "pearson_positive_predictions_only": 0.8315095841655492,
+          "region_mean_pearson": 0.8499751322263689,
+          "region_mean_spearman": 0.8165413533834586,
+          "rmse": 6.7649957641738945e-09,
+          "spearman": 0.7809947207557656,
+          "truth_cv": 0.4670094396987305,
+          "truth_mean": 1.514243885581345e-08,
+          "truth_sd": 7.071661885725726e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.8025287964891751,
+          "mae": 5.20021429842645e-09,
+          "n": 60,
+          "n_input": 60,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.32791411576215607,
+          "pearson_positive_predictions_only": 0.32791411576215607,
+          "region_mean_pearson": 0.5308145755330875,
+          "region_mean_spearman": 0.5022556390977443,
+          "rmse": 7.689421477248418e-09,
+          "spearman": 0.3678243956654627,
+          "truth_cv": 0.4670094396987305,
+          "truth_mean": 1.514243885581345e-08,
+          "truth_sd": 7.071661885725726e-09
+        }
+      },
+      "n_excluded_terminal_windows": 20,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 80,
+      "n_regions": 20,
+      "n_retained_windows": 60,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.31666666666666665,
+        "maximum": 3.3751514845855056e-08,
+        "minimum": 9.999999999996372e-09,
+        "q990_rho_theta_ratio": 2.2354047276778743,
+        "q999_rho_theta_ratio": 2.248631363519091,
+        "quantiles": {
+          "q500": 1.1011634119873359e-08,
+          "q900": 2.476891765660611e-08,
+          "q950": 3.2215669958607084e-08,
+          "q990": 3.353107091516811e-08,
+          "q999": 3.372947045278636e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 3037000,
+        "median": 2898500.0,
+        "minimum": 2693000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 3037000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2939000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2944000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2818000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2885000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2930000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_006": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2942000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2723000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2872000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2693000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_010": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2719000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2729000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2889000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2909000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2732000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2883000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 3010000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2926000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2908000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2945000,
+          "prediction_rows": 4,
+          "retained": 3
+        }
+      },
+      "prediction_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/expansion",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    },
+    "hapmap": {
+      "all_prediction_window_bp": {
+        "maximum": 786000,
+        "median": 678000.0,
+        "minimum": 55000
+      },
+      "checksums": {
+        "fastrho_prediction_sha256": "63cea9c85f82b3ea2869985d3aef57c359f26f8c7f50f72368e6bfb292bef1af",
+        "pyrho_prediction_sha256": "ae452c151ad7c2648c694c08e42795d7e23d15f0d927a1d6853330d5b9a175c9",
+        "relernn_prediction_sha256": "4bc2a6f72d00ffdca5a9fed374a7bef9411a03feb92cad34c123aed82744a449",
+        "truth_sha256": {
+          "region_000": "b1b2d4848970bcb13feb4e5860309adfcd3c038ed236e04680a6c60f89a3fef0",
+          "region_001": "a10f358c180f6905d12b5c7b9a9f3acc7cfc0652f41688512488ce75cbcaeabf",
+          "region_002": "e7c0de9947d81eecfddd22e53c0cc56b1404ca40280a435b57444d9c552258b2",
+          "region_003": "a82f1315e35c383e0df04e0a81f8c8bdf66ffa11d268aef4fa69efcf5ee75bb6",
+          "region_004": "64de6d971a7a772f0b8b7513870ca5b92c0e2499e896b050b067156957f46095",
+          "region_005": "27e1b8d19373bfbfde691591bce5877b469163fc5210512d173115e87c050dd9",
+          "region_006": "f098a07d9afb9d7e7d9a196f3dad1fad6b606edfec05d5bb2b779072a32f9ac4",
+          "region_007": "e6d6cc60241664b369ea6aeda8c48f3470b3447cb94c4f87e40b2cf092d63e97",
+          "region_008": "e5c479ced371a7d47e4514a32040f7296c2bb57f602257c20839d9fd0cead785",
+          "region_009": "d23009b53cb4d7b8832fda8a22917f48c6951e4eed12946bdaf9b2638b21677c",
+          "region_010": "99d6f03c013a7888c31c86f43ee87941b45c392074b5837aa4a7f394c9a9f48b",
+          "region_011": "383b30c131fd07fdc2fadf1be3ad2b261ca2111898257cca4fb3b80144714bf5",
+          "region_012": "3eae2a3bf375352435894facbc547114bb47acdc7d1f0fcde8cced7ac5652d27",
+          "region_013": "3e89f602aa30f3521c6f17453f9c04c4da7cb8fe776095ca704c75cad4003fb4",
+          "region_014": "d8f1302701f1c1b509323f1cad1d764225e23a6c9e5adb586b8ee6e6eabd4bda",
+          "region_015": "63ff30b318fc939dbf09273462b8b33f78fb135357034b8e6be903302f68abe8",
+          "region_016": "189509a189a9e1ca450cac7467cc37783b87b71d4e95627a473fce1d5a6c84a7",
+          "region_017": "7a02d9926fd0b179b07ec14ba2e78c1cec9224127c645b3b774f05f5e5813278",
+          "region_018": "8ee329b3449cdb5c417ddbfd9aced9b36c13c81954f03bd9527831509e024bc0",
+          "region_019": "9ccad5c95d4d7c299246d755b3237ab044ca58a3e835a4185be982de860eb317"
+        },
+        "window_sizes_sha256": "1d55778ec71817d42197dbe51551d133cc5d83fa4164277426ee77e024b53d5c"
+      },
+      "complete_windows_only": true,
+      "config": "hapmap",
+      "input_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/hapmap",
+      "methods": {
+        "fastrho": {
+          "bias_ratio_positive": 0.4709436392516706,
+          "mae": 7.004682511637094e-09,
+          "n": 276,
+          "n_input": 288,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 12,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.931546239739567,
+          "pearson_positive_predictions_only": 0.931546239739567,
+          "region_mean_pearson": 0.9866078911512565,
+          "region_mean_spearman": 0.9729323308270676,
+          "rmse": 8.826481513985618e-09,
+          "spearman": 0.9479996004623223,
+          "truth_cv": 0.72721820124885,
+          "truth_mean": 1.3120317389086536e-08,
+          "truth_sd": 9.541333611505518e-09
+        },
+        "pyrho": {
+          "bias_ratio_positive": 0.7082713005908023,
+          "mae": 4.115915564555984e-09,
+          "n": 276,
+          "n_input": 288,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 12,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9384673078479915,
+          "pearson_positive_predictions_only": 0.9384673078479915,
+          "region_mean_pearson": 0.9883144929269715,
+          "region_mean_spearman": 0.9879699248120299,
+          "rmse": 5.696925555099098e-09,
+          "spearman": 0.9551792925329262,
+          "truth_cv": 0.72721820124885,
+          "truth_mean": 1.3120317389086536e-08,
+          "truth_sd": 9.541333611505518e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.4386038183911512,
+          "mae": 7.777415877077107e-09,
+          "n": 276,
+          "n_input": 288,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 12,
+          "n_region_means": 20,
+          "n_zero_predictions": 4,
+          "pearson": 0.8723852660564066,
+          "pearson_positive_predictions_only": 0.8695171132653825,
+          "region_mean_pearson": 0.9701584674610988,
+          "region_mean_spearman": 0.9533834586466164,
+          "rmse": 1.0024649627888138e-08,
+          "spearman": 0.8570357972009657,
+          "truth_cv": 0.72721820124885,
+          "truth_mean": 1.3120317389086536e-08,
+          "truth_sd": 9.541333611505518e-09
+        }
+      },
+      "n_excluded_terminal_windows": 16,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 304,
+      "n_regions": 20,
+      "n_retained_windows": 288,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.358695652173913,
+        "maximum": 5.653968973631755e-08,
+        "minimum": 5.604460273792347e-11,
+        "q990_rho_theta_ratio": 2.634437225800059,
+        "q999_rho_theta_ratio": 3.5529776881448627,
+        "quantiles": {
+          "q500": 1.1036971681451655e-08,
+          "q900": 2.6759898035229324e-08,
+          "q950": 2.980577466991715e-08,
+          "q990": 3.951655838700088e-08,
+          "q999": 5.3294665322172936e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 786000,
+        "median": 699000.0,
+        "minimum": 511000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 625000,
+          "prediction_rows": 16,
+          "retained": 16
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 747000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 786000,
+          "prediction_rows": 13,
+          "retained": 12
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 728000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 699000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 715000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_006": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 734000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 750000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 585000,
+          "prediction_rows": 18,
+          "retained": 17
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 751000,
+          "prediction_rows": 14,
+          "retained": 13
+        },
+        "region_010": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 624000,
+          "prediction_rows": 16,
+          "retained": 16
+        },
+        "region_011": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 714000,
+          "prediction_rows": 14,
+          "retained": 14
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 663000,
+          "prediction_rows": 16,
+          "retained": 15
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 678000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 655000,
+          "prediction_rows": 16,
+          "retained": 15
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 511000,
+          "prediction_rows": 20,
+          "retained": 19
+        },
+        "region_016": {
+          "excluded_terminal": 0,
+          "nominal_window_bp": 623000,
+          "prediction_rows": 16,
+          "retained": 16
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 641000,
+          "prediction_rows": 16,
+          "retained": 15
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 700000,
+          "prediction_rows": 15,
+          "retained": 14
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 744000,
+          "prediction_rows": 14,
+          "retained": 13
+        }
+      },
+      "prediction_directory": "/vast/projects/smathi/cohort/korfmann/fastrho-relernn-prior-corrected-20260831/arms/hapmap",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    }
+  },
+  "schema_version": 2,
+  "stage": "raw"
+}

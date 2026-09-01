@@ -1,0 +1,47 @@
+{
+  "valid": true,
+  "validation_date": "2026-09-01",
+  "input_files_checked": 62,
+  "input_checksum_mismatches": 0,
+  "input_source": "the prespecified bottleneck arm used for the window-based accuracy benchmark",
+  "fastrho": {
+    "output_regions": 20,
+    "all_outputs_finite": true,
+    "prediction_checksum_verified": true
+  },
+  "pyrho": {
+    "output_regions": 20,
+    "nonempty_output_regions": 20,
+    "runtime_checksum_verified": true
+  },
+  "relernn": {
+    "output_regions": 20,
+    "prediction_rows": 133,
+    "nonfinite_predictions": 0,
+    "zero_predictions": 0,
+    "prediction_checksum_verified": true,
+    "manifest_checksum_verified": true,
+    "matched_demography": true,
+    "phased": true,
+    "assumed_mu": 1.5e-08,
+    "max_sites": 1750,
+    "upper_rho_theta_ratio": 3.0,
+    "seed": 1,
+    "training_simulations": 100000,
+    "validation_simulations": 10000,
+    "test_simulations": 10000,
+    "epochs": 100
+  },
+  "timing": {
+    "slurm_job_state": "COMPLETED",
+    "slurm_exit_code": "0:0",
+    "slurm_elapsed": "03:56:20",
+    "all_stage_values_finite_and_positive": true,
+    "stage_sums_match_workflow_totals": true,
+    "additivity_tolerance_seconds": 1e-05,
+    "sequential_same_allocation": true,
+    "allocated_cpu_threads": 28,
+    "gpu_model": "NVIDIA B200",
+    "memory_gb": 224
+  }
+}

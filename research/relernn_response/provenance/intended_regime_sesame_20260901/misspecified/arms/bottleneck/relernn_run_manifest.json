@@ -1,0 +1,11 @@
+{
+  "arm": "bottleneck",
+  "max_sites": 1750,
+  "predict_wall_seconds": 28.045505542308092,
+  "prediction": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/bottleneck/relernn_project/combined.PREDICT.txt",
+  "prediction_sha256": "bab9e8daa4732277ff660f925dc2238cec11683c2484ce0eac2416382a898e7f",
+  "source_project": "/home/kkor/fastrho-relernn-misspecified-native-20260901/arms/bottleneck/relernn_project",
+  "train_predict_complete": true,
+  "training_reused": true,
+  "training_seed": 1
+}

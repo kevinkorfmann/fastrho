@@ -1,0 +1,153 @@
+{
+  "lookup_table": "/home/kkor/fastrho-relernn-misspecified-native-20260901/arms/expansion/pyrho_table.hdf",
+  "lookup_table_reused": true,
+  "lookup_table_sha256": "3aff916704e8273e401c6624a44d34c053e853f80415ea634b4b7eece0717a36",
+  "lookup_table_wall_seconds": 0.0,
+  "optimize_wall_seconds": 182.39545769058168,
+  "optimized": [
+    {
+      "region": "region_000",
+      "rmap_sha256": "a74932121558a81f92f3be726942237f096a8625e481ac864db960f02e429df8",
+      "vcf_sha256": "ae6b9b1c0f543d78b83cd008ddc2cb6c4095628d81b69287b39255e8344fe7fe",
+      "wall_seconds": 7.255064316093922
+    },
+    {
+      "region": "region_001",
+      "rmap_sha256": "cbcc04a80c1ef9434f4f70c94a7010f9be766003e97b7d205037eb2f3240be84",
+      "vcf_sha256": "3d45f7c78715538cb63ef2344207aaba94260eddabe282ca754aaf7f085f7c1e",
+      "wall_seconds": 8.336707832291722
+    },
+    {
+      "region": "region_002",
+      "rmap_sha256": "8189ab6d84b0887dc8905cd6d4db348fb0979f0015cfc7c989b8ee467252abaa",
+      "vcf_sha256": "d0acb1400e553dd7407ac72735fb58fdb36bcdbeb7bfa356a9f85ba0d9245003",
+      "wall_seconds": 12.395582357421517
+    },
+    {
+      "region": "region_003",
+      "rmap_sha256": "6a84f8787fb46ab19c83f35a015d983023d71bb66fb8c64ee2b530ad66a8a5a3",
+      "vcf_sha256": "b9019cb87b6c55e2006efdcfa0e3dc04668906f3aa995f7d3c65667ea52f353c",
+      "wall_seconds": 10.030340552330017
+    },
+    {
+      "region": "region_004",
+      "rmap_sha256": "a758293540e452914ac1076046a427fd2db5f30d98d269f870b8d891050f56fe",
+      "vcf_sha256": "8f5ba19c941b3aebe243a6e62723e24986a19bded7356e427964923321144850",
+      "wall_seconds": 8.776740664616227
+    },
+    {
+      "region": "region_005",
+      "rmap_sha256": "ccf12bf8f571bde2854c577fdb4a596db4dbdde7f03e9e5252a76ebffde8e32c",
+      "vcf_sha256": "f04f7b45f182de0fdc75f9a2494c6fbb5dc20803efc416800a4b13bd8aad2999",
+      "wall_seconds": 7.927415190264583
+    },
+    {
+      "region": "region_006",
+      "rmap_sha256": "ec745e94a000710e112ab37992eb3be3aa211ee6e3951a42a8959b01dbb85699",
+      "vcf_sha256": "47c856569133226fd93848cc6baef4a1948bbb8733e82a74dd71298174c9f462",
+      "wall_seconds": 10.858704023063183
+    },
+    {
+      "region": "region_007",
+      "rmap_sha256": "1b775e2b4c1726cfec0bda90b8db259f882cc4722513b3d860f5e8c36cd82d41",
+      "vcf_sha256": "1cdb360217c1be8678b4abe739c5e263d1c24cd4340a9d8dc4bd9e5bc09fe5a5",
+      "wall_seconds": 7.403038192540407
+    },
+    {
+      "region": "region_008",
+      "rmap_sha256": "25aeb9555f429ff26711292142e500bff16e9433f74bff0d7a9b0b534081ddad",
+      "vcf_sha256": "76082d2b08a08dc7934db4ade535c1b0ba9d846b2a7e5712ce5df186c1527db1",
+      "wall_seconds": 7.526866715401411
+    },
+    {
+      "region": "region_009",
+      "rmap_sha256": "8a1a26f8b61995a2978c50aa364aa033546995d71f5d8e980649cf78474c5d34",
+      "vcf_sha256": "1f090eaed8b90ec0f06a28b9e1c7d86ce6ff0e6fa1ffc36de7842352004d83c0",
+      "wall_seconds": 8.891764795407653
+    },
+    {
+      "region": "region_010",
+      "rmap_sha256": "28929910e07a82c9bff8e5c6dcfcae7279c9886fe4702eada14f3fc539333a08",
+      "vcf_sha256": "3eb71ec917d82e6cdecc46ae682422868650543620e17ff06fba34acd3595164",
+      "wall_seconds": 8.195622216910124
+    },
+    {
+      "region": "region_011",
+      "rmap_sha256": "f77ede339b17297481add0b5dce3f30693d1a786d26fd4a38a795752bdae8730",
+      "vcf_sha256": "f5c9a5117c5c31613a5d4dcdd2c7160797787252dfe1bbed2cf0da93d7f612ed",
+      "wall_seconds": 10.269304880872369
+    },
+    {
+      "region": "region_012",
+      "rmap_sha256": "aef15f6cfb6a6306bf2e13c097e7d561e31ac90352e9001d55f69a19f6567387",
+      "vcf_sha256": "1f73fb5b906da94dd13c14d9bc08c4d91826002b9799ad5839e9de524969086d",
+      "wall_seconds": 9.617767745628953
+    },
+    {
+      "region": "region_013",
+      "rmap_sha256": "c2540c10b6b5ce13777b4236b379d24f45388143f4080cfc5643bc8fc661df81",
+      "vcf_sha256": "50b311e8e2e4c6892f5e28a47db03cf319d04ba83c9653b85a1a0cd37ad7bd79",
+      "wall_seconds": 8.195217793807387
+    },
+    {
+      "region": "region_014",
+      "rmap_sha256": "4b44c8494d935225f5ec91881ac78feadb5ffd6a05492b50c4312699ba7e9742",
+      "vcf_sha256": "9ea75f5b2a6fd73bd99a055bead3f6404a172e65756dafa19210e53ae312f18b",
+      "wall_seconds": 10.7040477078408
+    },
+    {
+      "region": "region_015",
+      "rmap_sha256": "f4530db1dbc7a10b4b9375c31ab4193cead7a4408f0dc2dbd3bd8639f38a4616",
+      "vcf_sha256": "d82d9f1b3c13c1ee4a23508030250d08276faa052704fd2d56ad03c9cea04442",
+      "wall_seconds": 10.178135994821787
+    },
+    {
+      "region": "region_016",
+      "rmap_sha256": "0e5c49c6a0d005386ec9cc87cefb11f3687437d0b0d663e99698c320e80b0a79",
+      "vcf_sha256": "dade573c9058d740e31ddc1b21c42a10329f5fe0ffa70197a60592d1d198adb7",
+      "wall_seconds": 9.69053147919476
+    },
+    {
+      "region": "region_017",
+      "rmap_sha256": "5e4644522188bc9c50bc87af7d2a64fd48dcc660dbd6f5ad1b92a886d1c35348",
+      "vcf_sha256": "a0d1c2e73808fec14a7676bd1c165ceffce3ddc68a9727f6510c3846dc233519",
+      "wall_seconds": 7.729348789900541
+    },
+    {
+      "region": "region_018",
+      "rmap_sha256": "5a6b9025c453d2203067a1d2bc4eeaf0729b9111ad76a442368c290fa4ec7aab",
+      "vcf_sha256": "0e45e1e98f98e224b66d75a50eaf74e551239501da8dc0a0bcdf9302952f7eb9",
+      "wall_seconds": 9.392074227333069
+    },
+    {
+      "region": "region_019",
+      "rmap_sha256": "f5653bddee5c9c31beeb12bfdfa7094d8eea770239da96a44373383f31a78f1c",
+      "vcf_sha256": "ed1185a9203ef5acd7e19784da36cebdb5091a479f844c8fd0cef617a59d74be",
+      "wall_seconds": 8.941690888255835
+    }
+  ],
+  "region_wall_seconds": {
+    "region_000": 7.255064316093922,
+    "region_001": 8.336707832291722,
+    "region_002": 12.395582357421517,
+    "region_003": 10.030340552330017,
+    "region_004": 8.776740664616227,
+    "region_005": 7.927415190264583,
+    "region_006": 10.858704023063183,
+    "region_007": 7.403038192540407,
+    "region_008": 7.526866715401411,
+    "region_009": 8.891764795407653,
+    "region_010": 8.195622216910124,
+    "region_011": 10.269304880872369,
+    "region_012": 9.617767745628953,
+    "region_013": 8.195217793807387,
+    "region_014": 10.7040477078408,
+    "region_015": 10.178135994821787,
+    "region_016": 9.69053147919476,
+    "region_017": 7.729348789900541,
+    "region_018": 9.392074227333069,
+    "region_019": 8.941690888255835
+  },
+  "schema_version": 1,
+  "total_wall_seconds": 182.39545769058168
+}

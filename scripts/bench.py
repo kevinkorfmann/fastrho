@@ -15,7 +15,7 @@ import os
 import json
 import glob
 import argparse
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field, fields, asdict
 
 import numpy as np
 
@@ -45,7 +45,9 @@ class Config:
 
 def load_config(cfg_dir: str) -> Config:
     with open(os.path.join(cfg_dir, "config.json")) as fh:
-        return Config(**json.load(fh))
+        raw = json.load(fh)
+    allowed = {item.name for item in fields(Config)}
+    return Config(**{key: value for key, value in raw.items() if key in allowed})
 
 
 # ---------------------------------------------------------------------------
@@ -74,9 +76,13 @@ def _demography(cfg: Config):
 # ---------------------------------------------------------------------------
 
 def _write_vcf(path, chrom, gm, positions, seq_len):
-    """Diploid phased VCF; drop non-segregating sites (pyrho requirement)."""
+    """Diploid phased VCF; retain only segregating, strictly biallelic sites."""
     n_hap = gm.shape[0]
-    seg = (gm.sum(0) > 0) & (gm.sum(0) < n_hap)
+    # ``msprime.sim_mutations`` can occasionally create recurrent/multiallelic
+    # sites, whose genotype states exceed 1.  Writing those states with a single
+    # ALT allele produces an invalid VCF and can be interpreted as a fixed allele
+    # by downstream methods.  Keep only sites represented exactly by states 0/1.
+    seg = (gm.min(0) == 0) & (gm.max(0) == 1)
     gm = gm[:, seg]; positions = positions[seg]
     last = -1
     with open(path, "w") as fh:
@@ -222,8 +228,10 @@ def cmd_fastrho(args):
     import tskit, time
     from fastrho.translate import load_model, predict_map_from_ts
     cfg = load_config(args.config)
+    total_start = time.perf_counter()
     model, mcfg, stats = load_model(args.checkpoint, args.stats, device=args.device)
-    out = {}; t0 = time.time()
+    model_load_wall = time.perf_counter() - total_start
+    out = {}; prediction_start = time.perf_counter()
     for tp in sorted(glob.glob(os.path.join(args.config, "region_*.trees"))):
         name = os.path.basename(tp)[:-6]
         ts = tskit.load(tp)
@@ -232,9 +240,13 @@ def cmd_fastrho(args):
         bp = np.r_[pred["pos_left"][0], pred["pos_right"]]
         out[name] = _resample(bp, pred["r_per_bp"], cfg.seq_len)
     name = getattr(args, "save_as", "fastrho") or "fastrho"
+    prediction_wall = time.perf_counter() - prediction_start
+    total_wall = time.perf_counter() - total_start
     np.savez(os.path.join(args.config, "pred_%s.npz" % name),
-             _wall=time.time() - t0, **out)
-    print("%s: %d regions in %.1fs -> pred_%s.npz" % (name, len(out), time.time() - t0, name))
+             _wall=total_wall, _model_load_wall=model_load_wall,
+             _prediction_wall=prediction_wall, **out)
+    print("%s: %d regions in %.1fs (load %.1fs, predict %.1fs) -> pred_%s.npz" %
+          (name, len(out), total_wall, model_load_wall, prediction_wall, name))
 
 
 # ---------------------------------------------------------------------------

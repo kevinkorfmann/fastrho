@@ -1,0 +1,46 @@
+diff --git a/ReLERNN/ReLERNN_BSCORRECT b/ReLERNN/ReLERNN_BSCORRECT
+index 494a753..dd0791c 100755
+--- a/ReLERNN/ReLERNN_BSCORRECT
++++ b/ReLERNN/ReLERNN_BSCORRECT
+@@ -7,5 +7,6 @@ Corrects for this bias and adds 95% confidence intevals to the predictions
+ from ReLERNN.imports import *
+ from ReLERNN.helpers import *
++from ReLERNN.networks import GRU_TUNED84
+ from ReLERNN.simulator import *
+ from ReLERNN.sequenceBatchGenerator import *
+ 
+@@ -53,11 +54,11 @@ def ParametricBootStrap(simParameters,
+     for gpu in gpus:
+         tf.config.experimental.set_memory_growth(gpu, True)
+ 
+-    # load trained model
+-    if(network != None):
+-        model = keras.saving.load_model(network)
+-    else:
++    # Rebuild the fixed ReLERNN architecture when the first bootstrap batch exists.
++    if(network == None):
+         print("Error: no pretrained network found!")
++        sys.exit(1)
++    model = None
+ 
+     if not os.path.exists(tempDir):
+         os.makedirs(tempDir)
+@@ -95,6 +95,9 @@ def ParametricBootStrap(simParameters,
+         batchGenerator= SequenceBatchGenerator(**batch_params)
+ 
+         x,y = batchGenerator.__getitem__(0)
++        if model is None:
++            model = GRU_TUNED84(x, None)
++            model.load_weights(network)
+         predictions = unNormalize(mean,sd,model.predict(x))
+         predictions = [p[0] for p in predictions]
+ 
+@@ -155,7 +158,7 @@ def main():
+     networkDir = os.path.join(projectDir,"networks")
+     bs_resultFile = os.path.join(networkDir,"bootstrapResults.p")
+     bs_plotFile = os.path.join(networkDir,"bootstrapPlot.pdf")
+-    modelWeights = os.path.join(networkDir,"model.keras")
++    modelWeights = os.path.join(networkDir,"model.weights.h5")
+     bs_resultFile = os.path.join(networkDir,"bootstrapResults.p")
+     bsDir = os.path.join(projectDir,"PBS")
+ 

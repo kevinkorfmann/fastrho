@@ -152,7 +152,7 @@ def resolution_detail() -> None:
         "pyrho": ("s", (0, (4, 2.5))),
         "relernn": ("^", (0, (1.5, 2))),
     }
-    for method in ("fastrho", "pyrho", "relernn"):
+    for method in ("fastrho", "pyrho"):
         marker, linestyle = method_style[method]
         top.plot(
             grid_kb,
@@ -177,7 +177,6 @@ def resolution_detail() -> None:
     floor = 1.2e-9
     truth = np.clip(np.asarray(repro["truth_hi"], dtype=float), floor, None)
     series = (
-        ("ReLERNN", ps.C["relernn"], np.asarray(repro["relernn_hi"])),
         ("true map", ps.C["truth"], truth),
         ("pyrho", ps.C["pyrho"], np.asarray(repro["pyrho_hi"])),
         ("fastrho", ps.C["fastrho"], np.asarray(repro["fastrho_hi"])),

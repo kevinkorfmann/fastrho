@@ -1,0 +1,136 @@
+{
+  "bscorrect_results_sha256": "b9a100b2714371935caf4167909f8b282afd29ecc13bad000974c3998c061209",
+  "decision_rule": "Use the complete six-scenario suite exactly as generated; do not tune or select by test correlation.",
+  "misspecified_controls": {
+    "bottleneck": {
+      "complete_windows": 112,
+      "pearson": {
+        "pyrho": 0.8916734413100798,
+        "relernn": 0.8541784546751741
+      },
+      "truth_checksums_identical": true
+    },
+    "expansion": {
+      "complete_windows": 60,
+      "pearson": {
+        "pyrho": 0.9674170966179644,
+        "relernn": 0.7716077736366993
+      },
+      "truth_checksums_identical": true
+    }
+  },
+  "misspecified_results_sha256": "b3fe832a05b0e22d3765444d84e4389d7c84ae76bfdd700ad388a7f8e041bfc0",
+  "raw_results_sha256": "862851c7a492cf601a2ca7f38fc7e4cde99e28e1bd04bc0223bfdba3b1965f73",
+  "scenarios": {
+    "bottleneck": {
+      "bscorrect_relernn_pearson": 0.8828735148954938,
+      "complete_windows": 112,
+      "heldout_relernn_pearson": 0.9583160516388834,
+      "maximum_truth_rho_theta_ratio": 2.2407284903374145,
+      "native_window_median_bp": 1649000.0,
+      "pearson": {
+        "fastrho": 0.9586895071595731,
+        "pyrho": 0.9432100002770867,
+        "relernn": 0.8984643966734314
+      },
+      "upper_rho_theta_ratio": 3.0,
+      "zero_predictions": {
+        "fastrho": 0,
+        "pyrho": 0,
+        "relernn": 0
+      }
+    },
+    "constant": {
+      "bscorrect_relernn_pearson": 0.9388424932298856,
+      "complete_windows": 259,
+      "heldout_relernn_pearson": 0.9573516436538199,
+      "maximum_truth_rho_theta_ratio": 2.240728490337416,
+      "native_window_median_bp": 740000.0,
+      "pearson": {
+        "fastrho": 0.9638020980078795,
+        "pyrho": 0.9564256577794059,
+        "relernn": 0.9462499559164496
+      },
+      "upper_rho_theta_ratio": 3.0,
+      "zero_predictions": {
+        "fastrho": 0,
+        "pyrho": 0,
+        "relernn": 0
+      }
+    },
+    "decode": {
+      "bscorrect_relernn_pearson": 0.9334263277962007,
+      "complete_windows": 273,
+      "heldout_relernn_pearson": 0.9536689593230008,
+      "maximum_truth_rho_theta_ratio": 1.1635122543547354,
+      "native_window_median_bp": 734000.0,
+      "pearson": {
+        "fastrho": 0.9668463426817371,
+        "pyrho": 0.9656401453838209,
+        "relernn": 0.9313318052485026
+      },
+      "upper_rho_theta_ratio": 3.0,
+      "zero_predictions": {
+        "fastrho": 0,
+        "pyrho": 0,
+        "relernn": 9
+      }
+    },
+    "dog": {
+      "bscorrect_relernn_pearson": 0.9223270777047252,
+      "complete_windows": 80,
+      "heldout_relernn_pearson": 0.9482534589448546,
+      "maximum_truth_rho_theta_ratio": 5.965007378708442,
+      "native_window_median_bp": 2282000.0,
+      "pearson": {
+        "fastrho": 0.9656453240444477,
+        "pyrho": 0.9898151273334199,
+        "relernn": 0.9256500253231648
+      },
+      "upper_rho_theta_ratio": 8.0,
+      "zero_predictions": {
+        "fastrho": 0,
+        "pyrho": 0,
+        "relernn": 0
+      }
+    },
+    "expansion": {
+      "bscorrect_relernn_pearson": 0.8359410655573243,
+      "complete_windows": 60,
+      "heldout_relernn_pearson": 0.9061398089166046,
+      "maximum_truth_rho_theta_ratio": 2.240728490337414,
+      "native_window_median_bp": 2853000.0,
+      "pearson": {
+        "fastrho": 0.9415590365470525,
+        "pyrho": 0.9608566788507454,
+        "relernn": 0.8470969733359118
+      },
+      "upper_rho_theta_ratio": 3.0,
+      "zero_predictions": {
+        "fastrho": 0,
+        "pyrho": 0,
+        "relernn": 0
+      }
+    },
+    "hapmap": {
+      "bscorrect_relernn_pearson": 0.9302294596967629,
+      "complete_windows": 262,
+      "heldout_relernn_pearson": 0.9530167219110872,
+      "maximum_truth_rho_theta_ratio": 2.111476951403392,
+      "native_window_median_bp": 743000.0,
+      "pearson": {
+        "fastrho": 0.9778438887292394,
+        "pyrho": 0.9688930737599997,
+        "relernn": 0.9367867928929126
+      },
+      "upper_rho_theta_ratio": 3.0,
+      "zero_predictions": {
+        "fastrho": 0,
+        "pyrho": 0,
+        "relernn": 0
+      }
+    }
+  },
+  "schema_version": 1,
+  "status": "valid"
+}

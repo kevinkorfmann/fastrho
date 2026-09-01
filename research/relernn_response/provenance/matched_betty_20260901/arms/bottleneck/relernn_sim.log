@@ -1,0 +1,87 @@
+2026-08-31 22:03:19.872880: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-31 22:03:20.025658: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8473] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-31 22:03:20.067771: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1471] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Warning: no accessibility mask found. All sites in the genome are assumed to be accessible.
+Simulating with window size = 1895000 bp.
+Simulating under the following population size history:
+DemographyDebugger
+╠══════════════════════════════════╗
+║ Epoch[0]: [0, 1e+03) generations ║
+╠══════════════════════════════════╝
+╟    Populations (total=1 active=1)
+║    ┌───────────────────────────────────────────┐
+║    │       │     start│       end│growth_rate  │
+║    ├───────────────────────────────────────────┤
+║    │  pop_0│   10000.0│   10000.0│ 0           │
+║    └───────────────────────────────────────────┘
+╟    Events @ generation 1e+03
+║    ┌───────────────────────────────────────────────────────────────────────────────┐
+║    │  time│type        │parameters         │effect                                 │
+║    ├───────────────────────────────────────────────────────────────────────────────┤
+║    │  1000│Population  │population=0,      │initial_size → 1e+03 for population 0  │
+║    │      │parameter   │initial_size=1000  │                                       │
+║    │      │change      │                   │                                       │
+║    └───────────────────────────────────────────────────────────────────────────────┘
+╠══════════════════════════════════════╗
+║ Epoch[1]: [1e+03, 3e+03) generations ║
+╠══════════════════════════════════════╝
+╟    Populations (total=1 active=1)
+║    ┌─────────────────────────────────────────┐
+║    │       │    start│      end│growth_rate  │
+║    ├─────────────────────────────────────────┤
+║    │  pop_0│   1000.0│   1000.0│ 0           │
+║    └─────────────────────────────────────────┘
+╟    Events @ generation 3e+03
+║    ┌────────────────────────────────────────────────────────────────────────────────┐
+║    │  time│type        │parameters          │effect                                 │
+║    ├────────────────────────────────────────────────────────────────────────────────┤
+║    │  3000│Population  │population=0,       │initial_size → 1e+04 for population 0  │
+║    │      │parameter   │initial_size=10000  │                                       │
+║    │      │change      │                    │                                       │
+║    └────────────────────────────────────────────────────────────────────────────────┘
+╠════════════════════════════════════╗
+║ Epoch[2]: [3e+03, inf) generations ║
+╠════════════════════════════════════╝
+╟    Populations (total=1 active=1)
+║    ┌───────────────────────────────────────────┐
+║    │       │     start│       end│growth_rate  │
+║    ├───────────────────────────────────────────┤
+║    │  pop_0│   10000.0│   10000.0│ 0           │
+║    └───────────────────────────────────────────┘
+Training set:
+Simulate...
+Validation set:
+Simulate...
+Test set:
+Simulate...
+
+SIMULATIONS FINISHED!
+
+SANITY CHECK
+====================
+numSegSites			Min	Mean	Max
+Simulated:			381	1787	7370
+InputVCF chr1:0-10000000:		1424	1564	1750
+InputVCF chr2:0-10000000:		99	1275	1750
+InputVCF chr3:0-10000000:		366	1387	1747
+InputVCF chr4:0-10000000:		213	1343	1749
+InputVCF chr5:0-10000000:		483	1371	1745
+InputVCF chr6:0-10000000:		967	1491	1747
+InputVCF chr7:0-10000000:		1368	1550	1755
+InputVCF chr8:0-10000000:		956	1555	1749
+InputVCF chr9:0-10000000:		244	1384	1751
+InputVCF chr10:0-10000000:		690	1279	1757
+InputVCF chr11:0-10000000:		46	1346	1750
+InputVCF chr12:0-10000000:		1362	1546	1751
+InputVCF chr13:0-10000000:		1518	1599	1750
+InputVCF chr14:0-10000000:		935	1377	1745
+InputVCF chr15:0-10000000:		589	1453	1750
+InputVCF chr16:0-10000000:		835	1331	1753
+InputVCF chr17:0-10000000:		107	1356	1748
+InputVCF chr18:0-10000000:		1148	1576	1749
+InputVCF chr19:0-10000000:		437	1372	1745
+InputVCF chr20:0-10000000:		549	1341	1750
+
+
+***ReLERNN_SIMULATE.py FINISHED!***
+

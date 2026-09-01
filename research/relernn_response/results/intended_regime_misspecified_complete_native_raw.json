@@ -1,0 +1,470 @@
+{
+  "complete_windows_only": true,
+  "history": "constant (deliberately misspecified)",
+  "scenarios": {
+    "bottleneck": {
+      "all_prediction_window_bp": {
+        "maximum": 1861000,
+        "median": 1609000.0,
+        "minimum": 88000
+      },
+      "checksums": {
+        "pyrho_prediction_sha256": "e8ea69065cb95a0e39e20c3047c9a9e222d97e6a202999a676a8e2a2271f74a0",
+        "relernn_prediction_sha256": "bab9e8daa4732277ff660f925dc2238cec11683c2484ce0eac2416382a898e7f",
+        "truth_sha256": {
+          "region_000": "7447e4780032c273e99222791d833d782e94e2bac9d81b79537c94c05ab95abc",
+          "region_001": "82c4195bf5c5170b38e4d418508c23ffce17b623e75ab42d51ef2c72f4144894",
+          "region_002": "89b6ccb65157d4260a4fffa9be17cd19ae40f6cf4f90f4db12209d95c254d4b4",
+          "region_003": "d5698a5dbd1c1cd380db4e63965825065353c1c34937ccbb145ac6522e1b1f9a",
+          "region_004": "d7e1004953f288f6e4c3c0abda5be71769faa8e651378a708e81e2bc95f72f17",
+          "region_005": "76bff960e4ab38f271dc95b5c9948cbd0b2229d74a3443a95a014c82102fb00c",
+          "region_006": "6f067ba44d840236119d3df282f54b25821acb20731a1fe588cd6be3eafe2514",
+          "region_007": "ce99e4f3b896ed46edc6d389b8e59786b5297d1277b498ef1b2dfd4aad56dc5a",
+          "region_008": "96797d4830262b6f3ab96aedc90267602b597ae1894ba32cab5a95c67de3b9ca",
+          "region_009": "4b7d12e7e49b9833da5b858fd59cce591d72d4f247a7f0289d4e1be0c0d602b8",
+          "region_010": "9d0aa1bfa56b27762a6bc344c73a6534d62ecd87930c099369f4ca0ddb9c832f",
+          "region_011": "20407471703ff03f4ad89db33b178a217cb3af14984c621b98bfd2036670f54e",
+          "region_012": "3ef2bf4fcc8b667c6ca84e6ff9c1eb9c455b6f55398b087f2fb63dbb6bf48071",
+          "region_013": "c883f4c3f3b3d95432730f7e12f4a72b5652033602b3a3f9b4a20e9277fe04a4",
+          "region_014": "eb1436867dd91303126fa70d59bb5f3eb6c00385ae9af3b428649f3b6819ea50",
+          "region_015": "5cf2c47442a33ff5b01165c3d428fb9a8932b11af246ef62f22f55b5ec3abf6f",
+          "region_016": "4be7974c1d77c8704b66aadb6e548255ae064d330a418fbab1fccf1a622d365b",
+          "region_017": "5f72c1693d3718a74f972605c9907691f894bf6eb64289d5794017df7ffe3067",
+          "region_018": "f0f00e1f68d6c1cd4c793415c1cb5b0a78408591783c98a700ce18687e953068",
+          "region_019": "1b6a6dbc1ae71de3e351a512a98f01e925a7ee23c26f9c129b1164280406ce2c"
+        },
+        "window_sizes_sha256": "3e83134c89ddd07ed093ec7a851cddf42d609c75f8e7925d2ffe5044de23b4c2"
+      },
+      "complete_windows_only": true,
+      "config": "bottleneck_constant_history_native",
+      "input_directory": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/bottleneck",
+      "methods": {
+        "pyrho": {
+          "bias_ratio_positive": 0.3782515823692816,
+          "mae": 9.157339651479094e-09,
+          "n": 112,
+          "n_input": 112,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.8916734413100798,
+          "pearson_positive_predictions_only": 0.8916734413100798,
+          "region_mean_pearson": 0.9779739057367476,
+          "region_mean_spearman": 0.8842105263157894,
+          "rmse": 1.0246931058271026e-08,
+          "spearman": 0.8161170493316522,
+          "truth_cv": 0.4673059592786257,
+          "truth_mean": 1.5211906021941635e-08,
+          "truth_sd": 7.1086143360397395e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.3297235669484966,
+          "mae": 9.900412062909552e-09,
+          "n": 112,
+          "n_input": 112,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.8541784546751741,
+          "pearson_positive_predictions_only": 0.8541784546751741,
+          "region_mean_pearson": 0.9755578900676504,
+          "region_mean_spearman": 0.8977443609022555,
+          "rmse": 1.098012338231281e-08,
+          "spearman": 0.7621173764816626,
+          "truth_cv": 0.4673059592786257,
+          "truth_mean": 1.5211906021941635e-08,
+          "truth_sd": 7.1086143360397395e-09
+        }
+      },
+      "n_excluded_terminal_windows": 20,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 132,
+      "n_regions": 20,
+      "n_retained_windows": 112,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.30357142857142855,
+        "maximum": 3.361092735506121e-08,
+        "minimum": 1.0028348882668759e-08,
+        "q990_rho_theta_ratio": 2.2407284903374145,
+        "q999_rho_theta_ratio": 2.2407284903374145,
+        "quantiles": {
+          "q500": 1.1290210148653585e-08,
+          "q900": 2.2906068446299137e-08,
+          "q950": 3.227525749341772e-08,
+          "q990": 3.361092735506121e-08,
+          "q999": 3.361092735506121e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 1861000,
+        "median": 1649000.0,
+        "minimum": 1382000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1718000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1506000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1699000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1861000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1649000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1724000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_006": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1696000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1455000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1715000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1710000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_010": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1584000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1509000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1382000,
+          "prediction_rows": 8,
+          "retained": 7
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1827000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1605000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1562000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1652000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1609000,
+          "prediction_rows": 7,
+          "retained": 6
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1773000,
+          "prediction_rows": 6,
+          "retained": 5
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 1611000,
+          "prediction_rows": 7,
+          "retained": 6
+        }
+      },
+      "prediction_directory": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/bottleneck",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    },
+    "expansion": {
+      "all_prediction_window_bp": {
+        "maximum": 3001000,
+        "median": 2838000.0,
+        "minimum": 997000
+      },
+      "checksums": {
+        "pyrho_prediction_sha256": "fcbc49aba89fb14643cf7fbb864663f2a60136d02443c3995f4959953f20c58a",
+        "relernn_prediction_sha256": "363dd4d7dbc6df815e710f0430571fd2903e508b8d17ccecb3e9ceb1906123cc",
+        "truth_sha256": {
+          "region_000": "7447e4780032c273e99222791d833d782e94e2bac9d81b79537c94c05ab95abc",
+          "region_001": "82c4195bf5c5170b38e4d418508c23ffce17b623e75ab42d51ef2c72f4144894",
+          "region_002": "89b6ccb65157d4260a4fffa9be17cd19ae40f6cf4f90f4db12209d95c254d4b4",
+          "region_003": "d5698a5dbd1c1cd380db4e63965825065353c1c34937ccbb145ac6522e1b1f9a",
+          "region_004": "d7e1004953f288f6e4c3c0abda5be71769faa8e651378a708e81e2bc95f72f17",
+          "region_005": "76bff960e4ab38f271dc95b5c9948cbd0b2229d74a3443a95a014c82102fb00c",
+          "region_006": "6f067ba44d840236119d3df282f54b25821acb20731a1fe588cd6be3eafe2514",
+          "region_007": "ce99e4f3b896ed46edc6d389b8e59786b5297d1277b498ef1b2dfd4aad56dc5a",
+          "region_008": "96797d4830262b6f3ab96aedc90267602b597ae1894ba32cab5a95c67de3b9ca",
+          "region_009": "4b7d12e7e49b9833da5b858fd59cce591d72d4f247a7f0289d4e1be0c0d602b8",
+          "region_010": "9d0aa1bfa56b27762a6bc344c73a6534d62ecd87930c099369f4ca0ddb9c832f",
+          "region_011": "20407471703ff03f4ad89db33b178a217cb3af14984c621b98bfd2036670f54e",
+          "region_012": "3ef2bf4fcc8b667c6ca84e6ff9c1eb9c455b6f55398b087f2fb63dbb6bf48071",
+          "region_013": "c883f4c3f3b3d95432730f7e12f4a72b5652033602b3a3f9b4a20e9277fe04a4",
+          "region_014": "eb1436867dd91303126fa70d59bb5f3eb6c00385ae9af3b428649f3b6819ea50",
+          "region_015": "5cf2c47442a33ff5b01165c3d428fb9a8932b11af246ef62f22f55b5ec3abf6f",
+          "region_016": "4be7974c1d77c8704b66aadb6e548255ae064d330a418fbab1fccf1a622d365b",
+          "region_017": "5f72c1693d3718a74f972605c9907691f894bf6eb64289d5794017df7ffe3067",
+          "region_018": "f0f00e1f68d6c1cd4c793415c1cb5b0a78408591783c98a700ce18687e953068",
+          "region_019": "1b6a6dbc1ae71de3e351a512a98f01e925a7ee23c26f9c129b1164280406ce2c"
+        },
+        "window_sizes_sha256": "c07a1d1870a8c34f705d2f34129aaa755fd43e2ae625f397618a5f94b7f78c3b"
+      },
+      "complete_windows_only": true,
+      "config": "expansion_constant_history_native",
+      "input_directory": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/expansion",
+      "methods": {
+        "pyrho": {
+          "bias_ratio_positive": 0.3661420977857166,
+          "mae": 9.717314743647043e-09,
+          "n": 60,
+          "n_input": 60,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.9674170966179644,
+          "pearson_positive_predictions_only": 0.9674170966179644,
+          "region_mean_pearson": 0.9765694379088857,
+          "region_mean_spearman": 0.8691729323308269,
+          "rmse": 1.0688574804521785e-08,
+          "spearman": 0.8506422145630663,
+          "truth_cv": 0.46724576739536,
+          "truth_mean": 1.517205910233168e-08,
+          "truth_sd": 7.089080398236722e-09
+        },
+        "relernn": {
+          "bias_ratio_positive": 0.4617528896165304,
+          "mae": 7.945977299442467e-09,
+          "n": 60,
+          "n_input": 60,
+          "n_negative_predictions_before_clamp": 0,
+          "n_nonfinite_predictions": 0,
+          "n_nonfinite_truth": 0,
+          "n_nonpositive_truth": 0,
+          "n_region_means": 20,
+          "n_zero_predictions": 0,
+          "pearson": 0.7716077736366993,
+          "pearson_positive_predictions_only": 0.7716077736366993,
+          "region_mean_pearson": 0.9168566542146538,
+          "region_mean_spearman": 0.7172932330827068,
+          "rmse": 9.414703678153857e-09,
+          "spearman": 0.6501362737884708,
+          "truth_cv": 0.46724576739536,
+          "truth_mean": 1.517205910233168e-08,
+          "truth_sd": 7.089080398236722e-09
+        }
+      },
+      "n_excluded_terminal_windows": 20,
+      "n_missing_complete_windows": 0,
+      "n_prediction_windows": 80,
+      "n_regions": 20,
+      "n_retained_windows": 60,
+      "native_truth_rate": {
+        "assumed_mu": 1.5e-08,
+        "fraction_above_default_upper_rho_theta_ratio_1": 0.3,
+        "maximum": 3.3610927355061205e-08,
+        "minimum": 1.0028348882668759e-08,
+        "q990_rho_theta_ratio": 2.240728490337414,
+        "q999_rho_theta_ratio": 2.240728490337414,
+        "quantiles": {
+          "q500": 1.1290210148653585e-08,
+          "q900": 2.3733705271421998e-08,
+          "q950": 3.130386123040431e-08,
+          "q990": 3.3610927355061205e-08,
+          "q999": 3.3610927355061205e-08
+        }
+      },
+      "native_window_bp": {
+        "maximum": 3001000,
+        "median": 2853000.0,
+        "minimum": 2733000
+      },
+      "per_region_window_counts": {
+        "region_000": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2776000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_001": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2743000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_002": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2772000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_003": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2838000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_004": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2844000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_005": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 3001000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_006": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2803000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_007": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2872000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_008": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2979000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_009": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2908000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_010": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2917000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_011": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2908000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_012": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2791000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_013": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2896000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_014": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2869000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_015": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2869000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_016": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2862000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_017": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2839000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_018": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2844000,
+          "prediction_rows": 4,
+          "retained": 3
+        },
+        "region_019": {
+          "excluded_terminal": 1,
+          "nominal_window_bp": 2733000,
+          "prediction_rows": 4,
+          "retained": 3
+        }
+      },
+      "prediction_directory": "/home/kkor/fastrho-relernn-intended-regime-20260901/misspecified/arms/expansion",
+      "sequence_length_bp": 10000000,
+      "stage": "raw"
+    }
+  },
+  "schema_version": 1,
+  "stage": "raw"
+}
