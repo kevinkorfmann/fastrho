@@ -3,8 +3,8 @@
 #SBATCH --partition=dgx-b200
 #SBATCH --exclude=dgx015
 #SBATCH --gpus=1
-#SBATCH --cpus-per-task=60
-#SBATCH --mem=384G
+#SBATCH --cpus-per-task=28
+#SBATCH --mem=224G
 #SBATCH --time=24:00:00
 #SBATCH --output=/vast/projects/smathi/cohort/%u/fastrho-timing-identical-10mb-20260901/logs/%x-%j.out
 #SBATCH --error=/vast/projects/smathi/cohort/%u/fastrho-timing-identical-10mb-20260901/logs/%x-%j.err
@@ -54,6 +54,8 @@ mkdir -p "${TRITON_CACHE_DIR}" "${NUMBA_CACHE_DIR}"
 
 # pyrho: matched-demography lookup construction and inference on the same node.
 pyrho_python=${RESPONSE_SOURCE_ROOT}/envs/pyrho-py312/bin/python
+export PYRHO_TABLE_THREADS=${SLURM_CPUS_PER_TASK}
+export PYRHO_OPTIMIZE_THREADS=8
 "${pyrho_python}" "${RESPONSE_REPO}/scripts/run_pyrho_config.py" "${timing_arm}"
 
 # ReLERNN: matched-demography simulation, 100-epoch training, and prediction.
