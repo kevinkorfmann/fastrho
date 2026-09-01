@@ -158,7 +158,7 @@ def render(
             x[-1] + 0.10,
             values[-1] + {"fastrho": 0.025, "pyrho": -0.018, "relernn": -0.075}[method],
             label,
-            color=color,
+            color=BLACK if method == "relernn" else color,
             fontsize=5.4,
             va="center",
             clip_on=False,
@@ -178,7 +178,6 @@ def render(
                     linewidth=0.85,
                     zorder=5,
                 )
-    widths = [native["scenarios"][native_key]["native_window_bp"]["median"] / 1e6 for _short, _key, native_key in SCENARIOS]
     ax_native.set_xticks(x, [short for short, _key, _native_key in SCENARIOS])
     ax_native.set_xlim(-0.25, len(SCENARIOS) - 0.02)
     ax_native.set_ylim(0.70, 1.005)
@@ -186,18 +185,6 @@ def render(
     ax_native.set_ylabel("Pearson $r$")
     ax_native.grid(axis="y", color="0.90", lw=0.5)
     ax_native.set_title("Window-based evaluation", loc="left", pad=3)
-    ax_native.text(
-        0.01,
-        -0.78,
-        "ReLERNN window scale: phased input; maxSites = 1,750\n"
-        "median output-window widths (Mb): " + ", ".join(f"{width:.2f}" for width in widths),
-        transform=ax_native.transAxes,
-        fontsize=4.6,
-        color="0.38",
-        va="bottom",
-        linespacing=1.15,
-        clip_on=False,
-    )
 
     # b | Held-out interval calibration.
     ax = fig.add_subplot(top[0, 1])
@@ -256,7 +243,7 @@ def render(
     ax.grid(axis="y", color="0.9", lw=0.5)
     ax.legend(frameon=False, fontsize=5.3, loc="upper left")
     ax.text(0.55, 210, "+ lookup table", fontsize=4.7, color=BLACK)
-    ax.text(0.55, 1800, "+ simulation\n+ training", fontsize=4.7, color=GRAY)
+    ax.text(0.55, 1800, "+ simulation\n+ training", fontsize=4.7, color=BLACK)
     ax.text(0.27, 15.5, "pretraining amortized across datasets", fontsize=4.7, color=BLUE)
     ax.set_title("Timing workload: 24 × 2-Mb bottleneck regions", loc="left")
     panel_label(ax, "d")
@@ -291,7 +278,7 @@ def render(
     ax_scale.set_xticks(xx, ["neutral", "hard\nsweep"])
     ax_scale.set_ylim(0.45, 1.03)
     ax_scale.set_ylabel("median estimated / true")
-    ax_scale.text(0.97, 0.87, "1 = correct scale", transform=ax_scale.transAxes, ha="right", va="top", fontsize=5.3, color="0.35")
+    ax_scale.text(0.97, 0.87, "1 = correct scale", transform=ax_scale.transAxes, ha="right", va="top", fontsize=5.3, color=BLACK)
     ax_scale.set_title("SLiM: rate scale", loc="left")
 
     output.parent.mkdir(parents=True, exist_ok=True)
